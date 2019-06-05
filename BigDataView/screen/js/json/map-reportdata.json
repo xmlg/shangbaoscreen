@@ -1,0 +1,874 @@
+{
+  "TASK": [
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"0",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"上海市闸北区7天连锁酒店(上海宝山路地铁站店)",
+        "value": [
+          "31.257238",
+          "121.481638"
+        ]
+      },
+      "TASKENDTIME":"2016-07-23 00:00:00",
+      "TASKUSERNAME":"盛高",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-08-15 00:00:00",
+      "CRTIME":"2016-08-15 20:24:18",
+      "MATERIAL": [
+
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"sss",
+      "TASKUSERID":"154",
+      "TASKUSERIDS":"148",
+      "TASKID":"131",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"95",
+      "TASKSTATUS":"2",
+      "TITLE":"dd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"“有权必有责，有责要担当，失责必追究。”党的十八大以来，以习近平同志为总书记的党中央紧紧抓住落实主体责任这个“牛鼻子”，把权利与义务、责任与担当高度统一起来，要求各级党委扛起全面从严治党的政治责任，以严肃问责推动责任落实，层层传导管党治党压力，处处拧紧管党治党螺丝，开创了全面从严治党新局面，弘扬了对党对人民高度负责的使命担当精神。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://p1.ifengimg.com/cmpp/2016/08/07/10/4c588fda-9df0-4bcb-864b-6e13079dbfc9_size57_w539_h326.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://photocdn.sohu.com/20160808/Img463082192.jpeg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://p2.ifengimg.com/a/2016_34/6f129f5f01dfc59_size22_w550_h421.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"习近平告诫干部该敬畏什么",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"97",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"1",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"2",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"3",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"南方日报连发四评 纵论供给侧结构性改革",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"101",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"做好下半年经济工作，要通过实施组合政策，引导发展预期，加快结构性改革步伐，努力保持经济平稳发展态势。",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"103",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"做好下半年经济工作，要通过实施组合政策，引导发展预期，加快结构性改革步伐，努力保持经济平稳发展态势。",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"104",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"宏观经济政策要坚持稳中求进工作总基调，适度扩大总需求，继续实施积极的财政政策和稳健的货币政策；",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"105",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"2016年7月26日，习近平主持召开中共中央政治局会议分析研究当前经济形势，部署下半年经济工作",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"108",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"2016年7月26日，习近平主持召开中共中央政治局会议分析研究当前经济形势，部署下半年经济工作",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"109",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"国有企业是壮大国家综合实力、保障人民共同利益的重要力量，必须理直气壮做强做优做大，不断增强活力、影响力、抗风险能力，实现国有资产保值增值",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"110",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    },
+    {
+      "CRUSER":"lisi",
+      "ISMATERIAL":"1",
+      "TASKCRUSERNAME":"李四",
+      "TASKADDRESS": {
+        "name":"南京市雨花台区锦江之星酒店(中华门店)",
+        "value": [
+          "32.010038",
+          "118.777874"
+        ]
+      },
+      "TASKENDTIME":"2016-07-29 00:00:00",
+      "TASKUSERNAME":"李四",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-08-15 20:25:49",
+      "MATERIAL": [
+        {
+          "MATERIALAPPFILE":"【学习进行时】在建党95周年庆祝大会的重要讲话中，习近平指出“文化自信，是更基础、更广泛、更深厚的自信。”文化自信成为继道路自信、理论自信和制度自信之后，中国特色社会主义的“第四个自信”。",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"239",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"1",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"https://csmlf.8531.cn//webpic/W0201607/W020160722/W020160722736068283283.jpg",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"2",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b2c4f78_r1_64k.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"3",
+          "CRTIME":"2016-08-15 20:26:46"
+        },
+        {
+          "MATERIALAPPFILE":"http://mlf.8531.cn/masvod/public/2016/07/27/20160727_1562b3e8db5_r1.mp4",
+          "CRUSER":"lisi",
+          "MATERIALEXT":"jpg",
+          "MATERIALAPPENDIXID":"240",
+          "MATERIALID":"29",
+          "MATERIALTYPE":"4",
+          "CRTIME":"2016-08-15 20:26:46"
+        }
+      ],
+      "TASKTYPE":"2",
+      "CONTENT":"要坚定不移深化国有企业改革，着力创新体制机制，加快建立现代企业制度，发挥国有企业各类人才积极性、主动性、创造性，激发各类要素活力。",
+      "TASKUSERID":"155",
+      "TASKUSERIDS":"7753",
+      "TASKID":"132",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "REPORTID":"107",
+      "TASKSTATUS":"1",
+      "TITLE":"ddd"
+    }
+  ],
+  "REPORTS": [
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>习近平告诫干部该敬畏什么</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"习近平告诫干部该敬畏什么",
+      "FLAG":"0",
+      "REPORTID":"97",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>坚持人民立场是不忘初心继续前进的政治保证</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"98",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>G20杭州峰会为全球带来新希望</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"102",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>应李克强邀请缅甸国务资政昂山素季将访华</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"103",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>朴槿惠光复节讲话促日正视历史吁朝停止核开发</p>",
+      "TOPICID":"104",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"99",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>从政党政治本质看中国共产党根本特征。</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"105",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>李克强：国务院已批准《深港通实施方案》</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"106",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>深交所：确保如期做好推出深港通的业务和技术准备</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"107",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>港交所:深港通将进一步巩固香港作为国际金融中心地位</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"108",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>沪指收跌0.49% 万科A涨停迎来3连板</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"109",
+      "GRAPHIC":"0"
+    },
+    {
+      "CRUSER":"lisi",
+      "REPORTTYPE":"1",
+      "SELECTEDTIME":"2016-08-15 11:22:23",
+      "STATUS":"0",
+      "EDITTIME":"",
+      "GNAME":"测试组",
+      "CRTIME":"2016-08-15 10:07:46",
+      "KEYWORDS": [
+        {
+          "NAME":"dd"
+        }
+      ],
+      "SORT":"1",
+      "CONTENT":"<p>要坚定不移深化国有企业改革，着力创新体制机制，加快建立现代企业制度，发挥国有企业各类人才积极性、主动性、创造性，激发各类要素活力。</p>",
+      "TOPICID":"99",
+      "ISTASK":"2",
+      "STATEMENT":"dd",
+      "SELECTEDCONTENT":"报题1",
+      "FLAG":"0",
+      "REPORTID":"110",
+      "GRAPHIC":"0"
+    }
+  ]
+}

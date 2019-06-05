@@ -1,0 +1,40 @@
+define([], function() {
+    function smcfg(Component) {
+        Component._smcfg = {};
+        Component._smcfg.initial = 'uninitialized';
+        Component._smcfg.error = function(eventName, from, to, args, errorCode, errorMessage) {
+            return '从状态-' + 'from' + '到状态-' + to + '的事件-' + eventName + '是 不合法的 :\n' + errorMessage;
+        };
+        Component._smcfg.events = [{
+            name: 'init',
+            from: 'uninitialized',
+            to: 'red'
+        }, {
+            name: 'showTitle',
+            from: 'red',
+            to: 'green'
+        }];
+        Component._smcfg.callbacks = {};
+        Component._smcfg.callbacks.onbeforeinit = function(event, from, to) {
+            this.circle = this.snapElement.circle(150, 150, 0);
+            this.circle.attr({
+                fill: "#bada55",
+                stroke: "#bada55",
+                strokeWidth: 15
+            });
+        };
+        Component._smcfg.callbacks.onenterred = function(e) {
+            this.circle.animate({
+                    stroke: "#F00",
+                    strokeWidth: 15,
+                    r: 100
+                },
+                1000,
+                this.transition
+            );
+            return StateMachine.ASYNC;
+        }
+    };
+
+    return smcfg;
+});

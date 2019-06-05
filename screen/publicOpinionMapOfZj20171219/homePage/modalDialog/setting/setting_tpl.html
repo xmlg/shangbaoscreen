@@ -1,0 +1,43 @@
+<!-- 弹层 end -->
+<div class="m-tcbox">
+    <div class="m-contbox">
+        <div class="m-titbox">设置<a href="javascript:void(0)" ng-click="cancelSetting()" class="m-close">关闭</a></div>
+        <div class="m-installcont">
+            <div class="m-tit">显示模式：</div>
+            <div class="m-right">
+                <div class="m-chickline" ng-click="data.showMode='visitMode'">
+                    <i ng-class="{'z-cur':data.showMode=='visitMode'}" class="ico-chickbox"></i>
+                    <div class="m-txt">参观模式（轮播标题摘要）</div>
+                </div>
+                <div class="m-inputline">轮播间隔：
+                    <input ng-model="data.visitMode.intervalTime"  type="number" class="" />毫秒</div>
+                <div ng-click="data.showMode='dutyMode'" class="m-chickline mart175">
+                    <i ng-class="{'z-cur':data.showMode=='dutyMode'}" class="ico-chickbox"></i>
+                    <div class="m-txt">值班模式（轮播详情）</div>
+                </div>
+                <div class="m-inputline">开头停留时长：
+                    <input ng-model="data.dutyMode.initialWaitingTime" type="number" />毫秒</div>
+                <div class="m-inputline">结尾停留时长：
+                    <input ng-model="data.dutyMode.afterEndWaitingTime" type="number" />毫秒</div>
+                <div class="m-inputline">向上滑动速度：
+                    <input ng-model="data.dutyMode.slideSpeed" type="number" />像素／秒</div>
+            </div>
+        </div>
+        <div class="m-installcont mart175">
+            <div class="m-tit mart25">内容地域设置：</div>
+            <div class="m-right">
+                <div class="m-selbox">
+                    <div class="dropTitle">
+                        <span ng-click="status.showList=!status.showList" ng-bind="data.area.dictName"></span>
+                        <i ng-click="status.showList=!status.showList"><img ng-class="{'expanded':!!status.showList}" src="../images/ico-sel.png" alt="" /></i>
+                    </div>
+                    <ul ng-if="status.showList" class="m-sublistbox">
+                        <li ng-class="{'selected':data.area.id==item.id}" class="m-list" ng-click="data.area = item" ng-repeat="item in status.areaList" ng-bind="item.dictName"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m-btnbox"><a ng-click="cancelSetting()" href="javascript:void(0)" class="m-btn">取消</a><a ng-click="closeSetting()" href="javascript:void(0)" class="m-btn">保存</a></div>
+    </div>
+</div>
+<!-- 弹层 end -->

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<script src="../lib/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+</head>
+<body>
+<div class="tubiao_two">
+	<div class="tit">实时数据采集动态</div>
+	<div class="cont">
+		<div class="top_tit">最新数据来源：新华社</div>
+		<div class="cont_shuju">
+			<div class="leftcon">
+				<p>最新数据采集</p>
+				<h1>168<span>条</span></h1>
+			</div>
+		<div class="rightcon listUl">
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+			<p><span>2017-12-07</span><em>新华社</em><a href="" target="_blank">1、让互联网之光照进现实 世界互联网大会专题                       </a></p>
+		</div>
+		</div>
+	</div>
+</div>
+<script>
+    $(function(){
+        var url = "/isearch/front/search.jhtml"
+        loadData();
+        function loadData(){
+            $.ajax({
+                type:"get",
+                url:url,
+                data:{
+                    code:"551b1ff558194a0eb61d171ef40f3085",
+                    pageSize:30,
+                    searchWord:"",
+                    type:"27,30"
+                },
+                success:function(res){
+                    console.log(res)
+                    if(res.page.content.length > 0){
+                        $('.listUl p').remove();
+                        var data = res.page.content;
+                        // data.sort(function(a,b){
+                        //     var tag=sortDate(a.HOTPOINTNUM,b.HOTPOINTNUM);
+                        //     return tag;
+                        // })
+						
+							var leng = data.length;
+							var count = 0;
+							for(var i=0;i<leng&&i<10;i++){
+								if(/.*[\u4e00-\u9fa5]+.*$/.test(data[i].content)){
+									count ++;
+									var li=$("<p><span>"+dateFormatter(data[i].date)+"</span><em>"+data[i].source+"</em><a href='' target='_blank'>"+(count)+"、"+data[i].title+"</a></p>");
+								// var li=$("<li><p>"+(i+1)+"."+data[i].title+"</p> <p>"+data[i].source+"</p><p>"+dateFormatter(data[i].date)+"</p></li>");
+								$(".listUl").append(li);
+								}
+								
+							}
+						
+
+						
+                        
+                    $('.listUlNone').css('display','none');
+                }
+                }
+            })
+        }
+    })
+
+    function sortDate(a,b){
+        return b-a
+    }
+    function dateFormatter(t){
+        var d=new Date(parseInt(t));
+        var year=d.getFullYear();
+        var day=d.getDate();
+        var month=+d.getMonth()+1;
+        var hour=d.getHours();
+        var minute=d.getMinutes();
+        var second=d.getSeconds();
+        var misec=d.getMilliseconds();
+        var f=year+"-"+formate(month)+"-"+formate(day)+" "+formate(hour)+":"+formate(minute)+":"+formate(second)+":"+formate(misec);
+        return f;
+        // var div=document.getElementById("test");
+        // div.innerHTML=f;
+    //window.setTimeout(init,1);
+    }
+    function formate(d){
+        return d>9?d:'0'+d;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+.box a{
+	color: #fff;
+}
+.box .moduleContainer-content.eventContent {
+    /*background: #fff;*/
+    border: 1px solid #dedbdb;
+}
+.box .related_information {
+    width: 100%;
+    position: relative;
+    margin: 20px auto 0 auto;
+    height: 310px;
+    overflow: hidden;
+}
+.box .related_information div{
+	position: absolute;
+	text-align: center;
+	font-family: 'Microsoft YaHei';
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: .9;
+    overflow:hidden;
+}
+.box .related_information div.active{
+	border: 3px solid #FEFF3B;
+}
+.box .related_information div:nth-child(1) {
+    top: 97px;
+    left: 31%;
+    width: 32.8%;
+    font-size: 26px;
+    height: 117px;
+    /*line-height: 117px;*/
+    background: #3F99D2;
+}
+.box .related_information div:nth-child(1):hover{
+	box-shadow: 0 0 13px #3F99D2;
+}
+.box .related_information div:nth-child(2) {
+    top: 95px;
+    left: 75%;
+    width: 23.1%;
+    font-size: 18px;
+    height: 82px;
+    /*line-height: 82px;*/
+    background: #F19141;
+}
+.box .related_information div:nth-child(2):hover{
+	box-shadow: 0 0 13px #F19141;
+}
+.box .related_information div:nth-child(3) {
+    top: 123px;
+    left: 1%;
+    width: 21.2%;
+    font-size: 16px;
+    height: 76px;
+    /*line-height: 76px;*/
+    background: #6FB33E;
+}
+.box .related_information div:nth-child(3):hover{
+	box-shadow: 0 0 13px #6FB33E;
+}
+.box .related_information div:nth-child(4) {
+    top: 200px;
+    left: 63%;
+    width: 27.6%;
+    font-size: 16px;
+    height: 99px;
+    /*line-height: 99px;*/
+    background: #A38FC7;
+}
+.box .related_information div:nth-child(4):hover{
+	box-shadow: 0 0 13px #A38FC7;
+}
+.box .related_information div:nth-child(5) {
+    top: 231px;
+    left: 34%;
+    width: 21.2%;
+    font-size: 16px;
+    height: 75px;
+    /*line-height: 75px;*/
+    background: #57BBA1;
+}
+.box .related_information div:nth-child(5):hover{
+	box-shadow: 0 0 13px #57BBA1;
+}
+.box .related_information div:nth-child(6) {
+    top: 215px;
+    left: 12%;
+    width: 15%;
+    font-size: 10px;
+    height: 54px;
+    /*line-height: 54px;*/
+    background: #E36972;
+}
+.box .related_information div:nth-child(6):hover{
+	box-shadow: 0 0 13px #E36972;
+}
+.box .related_information div:nth-child(7) {
+    top: 37px;
+    left: 15%;
+    width: 15%;
+    font-size: 12px;
+    height: 53px;
+    /*line-height: 53px;*/
+    background: #58B5E2;
+}
+.box .related_information div:nth-child(7):hover{
+	box-shadow: 0 0 13px #58B5E2;
+}
+.box .related_information div:nth-child(8) {
+    top: 10px;
+    left: 39%;
+    width: 18.7%;
+    font-size: 14px;
+    height: 67px;
+    /*line-height: 67px;*/
+    background: #6A9DCD;
+}
+.box .related_information div:nth-child(8):hover{
+	box-shadow: 0 0 13px #6A9DCD;
+}
+.box .related_information div:nth-child(9) {
+    top: 30px;
+    left: 66%;
+    width: 15%;
+    font-size: 12px;
+    height: 54px;
+    /*line-height: 54px;*/
+    background: #C166A6;
+}
+.box .related_information div:nth-child(9):hover{
+	box-shadow: 0 0 13px #C166A6;
+}
+.box .related_information div p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /* width:100%; */
+}
+.box .moduleContainer-content.eventContent>p {
+    background: url('../images/addIcon2_08.png') 0 0 no-repeat;
+    color: #fff;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    width: 160px;
+    height: 38px;
+    line-height: 31px;
+    padding-left: 15px;
+    z-index: 100;
+}
+.table{
+	display: block;
+	height: 630px;
+	overflow: hidden;
+}
+.table thead{
+    display: inline-block;
+    width: 100%;
+}
+.table thead tr{
+    display: inline-block;
+    width: 100%;
+}
+.table>thead>tr>th{
+	border-bottom: none;
+	color: #fff;
+	font-size: 30px;
+    text-align: center;
+    display: inline-block;
+}
+.table tbody tr td{
+    height: 90px;
+    line-height: 90px;
+    display: inline-block;
+	color: #45DDFF;
+	font-size: 30px;
+    text-align: center;
+    word-break: keep-all;
+    /* 不换行 */
+    white-space: nowrap;
+    /* 不换行 */
+    /*modify by liu.jianghong for 表单校验tips提示框位置*/
+    position: relative;
+    /*modify end */
+    text-overflow: ellipsis;
+    /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/
+    overflow: hidden;
+}
+.table tbody tr:hover td{
+	color: #FEFF3B;
+}
+.table tbody tr:hover td a{
+	color: #FEFF3B;
+}
+.table tbody tr td a{
+	color: #45DDFF;
+	font-size: 30px;
+}
+.tab{
+    margin: auto;
+    text-align: center;
+}
+.tab p{
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 800;
+}
+.tab p.active{
+    color: #FEFF3B;
+}
+.gw{
+    color: #fff;
+    font-size: 34px;
+}
+.gw .list{
+    border: 1px solid #f1f1f1;
+    padding: 0;
+    margin: 0;
+    height: 180px;
+}
+.gw .list .title{
+    display: block;
+    margin: 10px;
+    color: #45DDFF;
+    height: 38px;
+    overflow: hidden;
+    word-break: keep-all;
+    /* 不换行 */
+    white-space: nowrap;
+    /* 不换行 */
+    /*modify by liu.jianghong for 表单校验tips提示框位置*/
+    position: relative;
+    /*modify end */
+    text-overflow: ellipsis;
+    /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/
+    overflow: hidden;
+}
+.gw .list .media{
+    margin: 10px;
+    color: #45DDFF;
+}
+.gw .list .media2{
+    margin: 10px;
+    color: #45DDFF;
+}
+.gw .list .time{
+    margin: 10px;
+    color: #45DDFF;
+}
+.gw .list .time2{
+    margin: 10px;
+    color: #45DDFF;
+}
+.gw .list .content{
+    display: block;
+    margin: 10px;
+    color: #fff;
+    height: 38px;
+    overflow: hidden;
+    word-break: keep-all;
+    /* 不换行 */
+    white-space: nowrap;
+    /* 不换行 */
+    /*modify by liu.jianghong for 表单校验tips提示框位置*/
+    position: relative;
+    /*modify end */
+    text-overflow: ellipsis;
+    /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/
+    overflow: hidden;
+}
+.tt{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}

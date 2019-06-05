@@ -1,0 +1,207 @@
+body,
+ul,
+ol,
+h1,
+h3,
+html,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: SimHei;
+    font-size: 32px;
+}
+
+img {
+    border: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+
+    width: 1920px;
+    height: 1080px;
+    color: white;
+    background: rgb(14, 20, 29);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#ab_scroll {
+    width: 5px;
+    height: 886px;
+    position: absolute;
+    left: 44px;
+    top: 178px;
+    background: rgb(41, 138, 161);
+}
+
+.header {
+    height: 92px;
+    width: 1883px;
+    margin-left: 16px;
+    line-height: 92px;
+    float: left;
+    margin-top: 16px;
+    background: url(../images/header1.png) no-repeat;
+    text-indent: 60px;
+}
+
+.header h1 {
+    font-size: 46px;
+}
+
+.main {
+    height: 972px;
+    width: 1920px;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.left {
+    width: 924px;
+    height: 972px;
+    margin: 19px 12px 0 16px;
+    background: url(../images/main.png) no-repeat;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.right {
+    width: 922px;
+    height: 972px;
+    margin: 19px 30px 0 12px;
+    background: url(../images/main.png) no-repeat;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.left ul {
+    width: 830px;
+    margin-left: 64px;
+    margin-right: 28px;
+    margin-top: 26px;
+    position: absolute;
+}
+
+.left li {
+    height: 134px;
+    margin-bottom: 54px;
+    position: relative;
+}
+
+.left .active {
+    color: #d5d13a;
+    position: relative;
+    white-space: nowrap;
+}
+
+.left li:before {
+    content: "";
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #31d2fe;
+    position: absolute;
+    top: 24px;
+    left: -52px;
+}
+
+.left .title {
+    height: 80px;
+    line-height: 80px;
+    background: #082025;
+    text-indent: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.left .title p {
+    display: initial;
+    white-space: nowrap;
+    position: relative;
+    font-size: 40px;
+}
+
+.left div>span {
+    display: inline-block;
+    margin-top: 20px;
+    color: #34add0;
+    font-weight: bold;
+}
+
+.left .source {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.left i {
+    content: "";
+    display: inline-block;
+    height: 34px;
+    width: 5px;
+    background: #34add0;
+    margin: 0px 19px -5px;
+    position: relative;
+    top: -10px;
+}
+
+
+.left .time {
+    font-weight: bold;
+    font-size: 32px;
+    float: right;
+}
+
+.left .area {
+    font-size: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 32px;
+    width: 200px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.right h3 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.right .textarea {
+    width: 882px;
+    line-height: 50px;
+    color: #fff;
+    margin-top: 34px;
+    margin-left: 30px;
+    text-indent: 20px;
+}
+
+#rightContent {
+    position: absolute;
+}
+
+.noData{
+    width: 100%;
+    line-height: 900px;
+    text-align: center;
+    height: 100%;
+    font-size: 72px;
+    color: #00E8F5;
+    display: none;
+}

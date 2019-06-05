@@ -1,0 +1,52 @@
+{
+  "Data": [
+    {
+      "OPERUSERNAME": "系统管理员",
+      "METADATAID": "634594",
+      "MEDIATYPE": "-1",
+      "OPERTIME": "2016-08-01 20:00:14",
+      "CRTIME": "2016-08-01 20:00:14",
+      "ATTRIBUTE": "个人稿库",
+      "METADATALOGID": "514855",
+      "OPERUSER": "admin",
+      "MEDIATYPEDESC": "I我",
+      "OPERKEY": "iwo.personal.feigao",
+      "OPERATION": "已签发",
+      "OPERSTATEDESC": "",
+      "USERNAME": "系统管理员",
+      "TITLE": "精选报题稿件"
+    },
+    {
+      "OPERUSERNAME": "系统管理员",
+      "METADATAID": "634594",
+      "MEDIATYPE": "-1",
+      "OPERTIME": "2016-07-27 15:03:59",
+      "CRTIME": "2016-07-27 15:03:59",
+      "ATTRIBUTE": "个人稿库",
+      "METADATALOGID": "514208",
+      "OPERUSER": "admin",
+      "MEDIATYPEDESC": "I我",
+      "OPERKEY": "iwo.personal.bianji",
+      "OPERATION": "传稿",
+      "OPERSTATEDESC": "",
+      "USERNAME": "系统管理员",
+      "TITLE": "精选报题稿件"
+    },
+    {
+      "OPERUSERNAME": "系统管理员",
+      "METADATAID": "634594",
+      "MEDIATYPE": "-1",
+      "OPERTIME": "2016-07-27 15:03:34",
+      "CRTIME": "2016-07-27 15:03:34",
+      "ATTRIBUTE": "个人稿库",
+      "METADATALOGID": "514207",
+      "OPERUSER": "admin",
+      "MEDIATYPEDESC": "I我",
+      "OPERKEY": "iwo.personal.xinjian",
+      "OPERATION": "新建",
+      "OPERSTATEDESC": "",
+      "USERNAME": "系统管理员",
+      "TITLE": "精选报题稿件"
+    }
+  ]
+}

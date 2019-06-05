@@ -1,0 +1,14 @@
+{
+    "result": "success",
+    "content":
+    {
+        "AREATOTAL": "500",
+        "CURRENTTOTOAL": "1000",
+        "TOTALCOUNT": "83461",
+        "PAPER": "260",
+        "NETWORK": "200",
+        "COUNTRY": "150",
+        "PROVINCE": "100",
+        "HOTPOINT": "1000"
+    }
+}

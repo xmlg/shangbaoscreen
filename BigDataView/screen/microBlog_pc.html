@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>微博</title>
+    <link rel="stylesheet" type="text/css" href="lib/normalize.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/base.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/ui.daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.ui.datepicker.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="css/weibo_pc.css?v=20170209" />
+</head>
+
+<body>
+<div class="wrap">
+    <!--<div class="header clear">-->
+        <!--<div class="date_choose" style="position: absolute;left: 50%;transform: translateX(-50%);z-index: 999;">-->
+           <!--<i onclick="setmonth(-1)"></i><i onclick="setdate(-1)"></i><input id="data_choose"><i onclick="setdate(1)"></i><i onclick="setmonth(1)"></i>-->
+        <!--</div>-->
+       <!--<div class="micro-map">-->
+           <!--<a href="/dist/planningCenter/cueSelectedTopic/hotHeadLine/template/hotInfoVisual/microMap.html" target="_blank">微博地图展示</a>-->
+       <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="stars"></div>-->
+    <div class="toggle-micro-list">
+        <!--<span class="toggleMicroList" data-id="0">换一批</span>-->
+        <span class="toggleMicroList" data-id="1">1-5</span>
+        <span class="toggleMicroList" data-id="2">6-10</span>
+        <span class="toggleMicroList" data-id="3">11-15</span>
+        <span class="toggleMicroList" data-id="4">16-20</span>
+        <span class="microblog-hot-list">热点列表</span>
+    </div>
+
+    <div class="toolTip">
+        <!--<p>热点</p>-->
+        <!--<p>NO.3  2016; 新闻; 全国; 年度;  新方销量[103370]</p>-->
+        <!--<p>关键字</p>-->
+        <!--<p>NO.2  新闻; [52360]</p>-->
+    </div>
+    <div class="micro-list">
+        <i class="exit">X</i>
+        <div class="micro-all-list">
+            <div class="head-title">微博热点</div>
+            <div class="microlist-item-content">
+                <div class="micro-item-content-tabel clear">
+                    <div class="micro-item-content-tabel-thead clear">
+                        <div class="titleNum">序号</div>
+                        <div class="title">文章标题</div>
+                    </div>
+
+                    <div class="micro-item-content-tabel-tbody">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="micro-content">
+            <div class="head-title"></div>
+            <!--<div class="micro-item" >-->
+                <!--<div class="item-title">传播时间趋势</div>-->
+                <!--<div class="item-canvas" id="showline"></div>-->
+            <!--</div>-->
+            <div class="micro-item">
+                <div class="item-title">原创博主及百分比</div>
+                <div class="item-canvas" id="div_topauthors"></div>
+            </div>
+            <div class="micro-item rttauthors">
+                <div class="item-title">转发博主及百分比</div>
+                <div class="item-canvas" id="div_rttauthors"></div>
+            </div>
+            <div class="micro-item-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/jquery.js"></script>
+<script src="lib/jquery.nicescroll.min.js"></script>
+<!--<script src="js/resize.js"></script>-->
+<script src="lib/d3.js"></script>
+<!--<script src="lib/echarts-plain-original.js"></script>-->
+<script src="js/microBlog/flatpickr.min.js"></script>
+<script src="lib/echarts-all.js"></script>
+<script src="js/microBlog/theme.js"></script>
+<script src="js/config.js"></script>
+<script src="js/microBlog/weibo_pc.js?v=20170122"></script>
+<script src="js/microBlog/microList_pc.js"></script>
+<script>
+
+    var Flatpickr = Flatpickr||{l10n: {}};
+    var inputVal = $("#data_choose");
+    var nowDate = new Date();
+    nowDate = formateDate(nowDate);
+//    console.log(nowDate)
+//    var year,month,day,nowDay;
+//    year = nowDate.getFullYear();
+//    month = (nowDate.getMonth() + 1)<10?'0'+(nowDate.getMonth() + 1):(nowDate.getMonth() + 1);
+//    day = nowDate.getDate()<10?'0'+nowDate.getDate():nowDate.getDate();
+//    console.log(year)
+//    console.log(month)
+//    console.log(day)
+//    nowDay = year+'-'+month+'-'+day;
+    Flatpickr.l10n.weekdays = {
+        shorthand: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        longhand: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    };
+
+    Flatpickr.l10n.months = {
+        shorthand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        longhand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+    };
+//    console.log(nowDay);
+    $("#data_choose").flatpickr({
+        defaultDate:nowDate,
+        onChange:function(){
+            console.log(this);
+            console.log(inputVal.val())
+        },
+
+
+    });
+    //获取默认日期
+    function getDefaultDate(){
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth()+1;
+        month = month > 9 ? month : "0" + month;
+        var day = today.getDate();
+        day = day > 9 ? day : "0" + day;
+        var dayStr = year + "-" + month + "-" + (day);
+        return dayStr;
+    }
+    //按天
+    function setdate(n){
+        var n=parseInt(n);
+        var dayStr=inputVal.val();
+        if(dayStr==''){
+            dayStr  = getDefaultDate();
+        }
+        var date=strToDate(dayStr);
+        date.setDate(date.getDate()+n);
+        if(n>0&&(date.getTime()-new Date().getTime()>0)){
+            alert('暂时没有该天的数据！');
+            return;
+        }
+        var newdatestr=formateDate(date);
+        inputVal.val(newdatestr);
+        //seldate(newdatestr);
+    }
+
+    //按月
+    function setmonth(n){
+        var n=parseInt(n);
+        var dayStr=inputVal.val();
+        if(dayStr==''){
+            dayStr  = getDefaultDate();
+        }
+        var date=strToDate(dayStr);
+        date.setMonth(date.getMonth()+n);
+        var day=date.getDate();
+
+        if(n>0&&(date.getTime()-new Date().getTime()>0)){
+            alert('暂时没有该月的数据！');
+            return;
+        }
+        var tempdate=new Date(date.getFullYear(),date.getMonth(),1);
+        tempdate.setDate(tempdate.getDate()-1);
+        if(tempdate.getDate()<day){//若当前天数大于选择月的月末，则时间修改为选择月的月末
+            date=tempdate;
+        }
+
+        var newdatestr=formateDate(date);
+        inputVal.val(newdatestr);
+       // seldate(newdatestr);
+    }
+
+    //字符串转换为日期
+    function strToDate(dayStr){
+        var dates=dayStr.split('-');
+        var date=new Date(parseInt(dates[0]),parseInt(dates[1],10)-1,parseInt(dates[2],10));
+        return date;
+    }
+
+    //格式化日期
+    function formateDate(date){
+        var year=date.getFullYear();
+        var month=(date.getMonth()+1)<10?'0'+(date.getMonth()+1):date.getMonth()+1;
+        var day=date.getDate()<10?'0'+date.getDate():date.getDate();
+        return year+'-'+month+'-'+day;
+    }
+</script>
+</body>
+
+</html>

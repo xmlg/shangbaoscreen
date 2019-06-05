@@ -1,0 +1,90 @@
+<g class="border">
+	<circle fill="none" stroke="#169EC7" stroke-width="4" stroke-miterlimit="10" cx="196.607" cy="62.238" r="5.684" />
+	<circle fill="none" stroke="#169EC7" stroke-width="4" stroke-miterlimit="10" cx="152.441" cy="177.172" r="5.684" />
+	<polyline fill="none" stroke="#169EC7" stroke-width="2" stroke-miterlimit="10" points="190.922,62.238 166.246,62.238 152.441,78.68 152.441,171.488 " />
+	<circle fill="none" stroke="#169EC7" stroke-width="4" stroke-miterlimit="10" cx="195.975" cy="417.586" r="5.684" />
+	<circle fill="none" stroke="#169EC7" stroke-width="4" stroke-miterlimit="10" cx="151.81" cy="276.617" r="5.685" />
+	<polyline fill="none" stroke="#169EC7" stroke-width="2" stroke-miterlimit="10" points="190.291,417.586 165.615,417.586 151.811,401.145 151.811,282.303 " />
+	<circle fill="none" stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10" cx="436.613" cy="62.238 " r="5.684" />
+	<circle fill="none " stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10 " cx="480.778 " cy="177.172 " r="5.685 " />
+	<polyline fill="none " stroke="#169EC7 " stroke-width="2 " stroke-miterlimit="10 " points="442.297,62.238 466.973,62.238 480.779,78.68 480.779,171.488 " />
+	<circle fill="none " stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10 " cx="437.244 " cy="417.586 " r="5.684 " />
+	<circle fill="none " stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10 " cx="481.41 " cy="276.617 " r="5.684 " />
+	<polyline fill="none " stroke="#169EC7 " stroke-width="2 " stroke-miterlimit="10 " points="442.929,417.586 467.604,417.586 481.41,401.145 481.41,282.303 " />
+</g>
+<g class="info">
+	<text transform="matrix(1 0 0 1 454 255)" fill="#5FBAE0" font-family="'SimHei'" font-size="28">待审</text>
+	<text transform="matrix(1 0 0 1 288 151)" fill="#354E51" font-family="'SimHei'" font-size="24">微信</text>
+	<text transform="matrix(1 0 0 1 278 244)" fill="#67C4D7" font-family="'SimHei'" font-size="24">客户端</text>
+	<text transform="matrix(1 0 0 1 288 425)" fill="#67C4D7" font-family="'SimHei'" font-size="24">纸媒</text>
+	<text transform="matrix(1 0 0 1 288 338)" fill="#354E51" font-family="'SimHei'" font-size="24">微博</text>
+	<text transform="matrix(1 0 0 1 288 67)" fill="#67C4D7" font-family="'SimHei'" font-size="24">网站</text>
+	<text transform="matrix(1 0 0 1 125 255)" fill="#5FBAE0" font-family="'SimHei'" font-size="28">已审</text>
+	<path fill="#0B2936" d="M275.016,84.457c0,5.814-4.715,10.527-10.529,10.527h-45.438c-5.814,0-10.527-4.713-10.527-10.527V39.018
+	c0-5.814,4.713-10.527,10.527-10.527h45.438c5.814,0,10.529,4.713,10.529,10.527V84.457z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M275.016,84.457c0,5.814-4.715,10.527-10.529,10.527
+	h-45.438c-5.814,0-10.527-4.713-10.527-10.527V39.018c0-5.814,4.713-10.527,10.527-10.527h45.438
+	c5.814,0,10.529,4.713,10.529,10.527V84.457z"/>
+	<path fill="#0B2936" d="M275.016,173.699c0,5.814-4.715,10.527-10.529,10.527h-45.438c-5.814,0-10.527-4.713-10.527-10.527v-45.438
+	c0-5.816,4.713-10.529,10.527-10.529h45.438c5.814,0,10.529,4.713,10.529,10.529V173.699z"/>
+	<path fill="none" stroke="#0B2936" stroke-width="2" stroke-miterlimit="10" d="M275.016,173.699
+	c0,5.814-4.715,10.527-10.529,10.527h-45.438c-5.814,0-10.527-4.713-10.527-10.527v-45.438c0-5.816,4.713-10.529,10.527-10.529
+	h45.438c5.814,0,10.529,4.713,10.529,10.529V173.699z"/>
+	<path fill="#0B2936" d="M275.016,262.941c0,5.814-4.715,10.529-10.529,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438
+	c0-5.814,4.713-10.527,10.527-10.527h45.438c5.814,0,10.529,4.713,10.529,10.527V262.941z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M275.016,262.941
+	c0,5.814-4.715,10.529-10.529,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438c0-5.814,4.713-10.527,10.527-10.527
+	h45.438c5.814,0,10.529,4.713,10.529,10.527V262.941z"/>
+	<path fill="#0B2936" d="M275.016,352.184c0,5.814-4.715,10.529-10.529,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438
+	c0-5.814,4.713-10.527,10.527-10.527h45.438c5.814,0,10.529,4.713,10.529,10.527V352.184z"/>
+	<path fill="none" stroke="#0B2936" stroke-width="2" stroke-miterlimit="10" d="M275.016,352.184
+	c0,5.814-4.715,10.529-10.529,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438c0-5.814,4.713-10.527,10.527-10.527
+	h45.438c5.814,0,10.529,4.713,10.529,10.527V352.184z"/>
+	<path fill="#0B2936" d="M275.016,441.428c0,5.814-4.715,10.527-10.529,10.527h-45.438c-5.814,0-10.527-4.713-10.527-10.527v-45.439
+	c0-5.813,4.713-10.527,10.527-10.527h45.438c5.814,0,10.529,4.715,10.529,10.527V441.428z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M275.016,441.428
+	c0,5.814-4.715,10.527-10.529,10.527h-45.438c-5.814,0-10.527-4.713-10.527-10.527v-45.439c0-5.813,4.713-10.527,10.527-10.527
+	h45.438c5.814,0,10.529,4.715,10.529,10.527V441.428z"/>
+	<path fill="#0B2936" d="M420.346,84.457c0,5.814-4.713,10.527-10.527,10.527h-45.438c-5.815,0-10.528-4.713-10.528-10.527V39.018
+	c0-5.814,4.713-10.527,10.528-10.527h45.438c5.814,0,10.527,4.713,10.527,10.527V84.457z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M420.346,84.457c0,5.814-4.713,10.527-10.527,10.527
+	h-45.438c-5.815,0-10.528-4.713-10.528-10.527V39.018c0-5.814,4.713-10.527,10.528-10.527h45.438
+	c5.814,0,10.527,4.713,10.527,10.527V84.457z"/>
+	<path fill="#0B2936" d="M420.346,173.699c0,5.814-4.713,10.527-10.527,10.527h-45.438c-5.815,0-10.528-4.713-10.528-10.527v-45.438
+	c0-5.816,4.713-10.529,10.528-10.529h45.438c5.814,0,10.527,4.713,10.527,10.529V173.699z"/>
+	<path fill="none" stroke="#0B2936" stroke-width="2" stroke-miterlimit="10" d="M420.346,173.699
+	c0,5.814-4.713,10.527-10.527,10.527h-45.438c-5.815,0-10.528-4.713-10.528-10.527v-45.438c0-5.816,4.713-10.529,10.528-10.529
+	h45.438c5.814,0,10.527,4.713,10.527,10.529V173.699z"/>
+	<path fill="#0B2936" d="M420.346,262.941c0,5.814-4.713,10.529-10.527,10.529h-45.438c-5.815,0-10.528-4.715-10.528-10.529v-45.438
+	c0-5.814,4.713-10.527,10.528-10.527h45.438c5.814,0,10.527,4.713,10.527,10.527V262.941z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M420.346,262.941
+	c0,5.814-4.713,10.529-10.527,10.529h-45.438c-5.815,0-10.528-4.715-10.528-10.529v-45.438c0-5.814,4.713-10.527,10.528-10.527
+	h45.438c5.814,0,10.527,4.713,10.527,10.527V262.941z"/>
+	<path fill="#0B2936" d="M420.346,353.553c0,5.813-4.713,10.527-10.527,10.527h-45.438c-5.815,0-10.528-4.715-10.528-10.527v-45.439
+	c0-5.813,4.713-10.527,10.528-10.527h45.438c5.814,0,10.527,4.715,10.527,10.527V353.553z"/>
+	<path fill="none" stroke="#0B2936" stroke-width="2" stroke-miterlimit="10" d="M420.346,353.553
+	c0,5.813-4.713,10.527-10.527,10.527h-45.438c-5.815,0-10.528-4.715-10.528-10.527v-45.439c0-5.813,4.713-10.527,10.528-10.527
+	h45.438c5.814,0,10.527,4.715,10.527,10.527V353.553z"/>
+	<path fill="#0B2936" d="M420.292,441.514c0,5.814-4.714,10.529-10.528,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438
+	c0-5.814,4.713-10.527,10.527-10.527h45.438c5.814,0,10.528,4.713,10.528,10.527V441.514z"/>
+	<path fill="none" stroke="#196072" stroke-width="2" stroke-miterlimit="10" d="M420.292,441.514
+	c0,5.814-4.714,10.529-10.528,10.529h-45.438c-5.814,0-10.527-4.715-10.527-10.529v-45.438c0-5.814,4.713-10.527,10.527-10.527
+	h45.438c5.814,0,10.528,4.713,10.528,10.527V441.514z"/>
+	<text transform="matrix(1 0 0 1 221 73)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="a1"></text>
+	<text transform="matrix(1 0 0 1 221 162)" fill="#354E51" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="a2"></text>
+	<text transform="matrix(1 0 0 1 221 251)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="a3"></text>
+	<text transform="matrix(1 0 0 1 221 341)" fill="#354E51" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="a4"></text>
+	<text transform="matrix(1 0 0 1 220 429)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="a5"></text>
+	<text transform="matrix(1 0 0 1 367 73)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="w1"></text>
+	<text transform="matrix(1 0 0 1 367 162)" fill="#354E51" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="w2"></text>
+	<text transform="matrix(1 0 0 1 367 251)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="w3"></text>
+	<text transform="matrix(1 0 0 1 367 341)" fill="#354E51" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="w4"></text>
+	<text transform="matrix(1 0 0 1 367 429)" fill="#6EC6D5" font-family="'SimHei'" font-size="30" x="20" text-anchor="middle" id="w5"></text>
+	
+	<text transform="matrix(1 0 0 1 449 220)" fill="#FFFFFF" font-family="'SimHei'" font-size="36" x="30" text-anchor="middle" id="wt"></text>
+	<text transform="matrix(1 0 0 1 121 220)" fill="#FFFFFF" font-family="'SimHei'" font-size="36" x="30" text-anchor="middle" id="at"></text>
+</g>
+<g>
+	<circle fill="none " stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10 " cx="535.5" cy="235.5" r="5.684"></circle>
+	<circle fill="none " stroke="#169EC7 " stroke-width="4 " stroke-miterlimit="10 " cx="90.5" cy="235.5" r="5.684"></circle>
+</g>

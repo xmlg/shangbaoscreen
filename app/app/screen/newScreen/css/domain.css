@@ -1,0 +1,79 @@
+/*@font-face {*/
+	/*font-family: 'FangZhengLangTing';*/
+	/*src: url('../font/FZLTHJW.TTF') format('truetype');*/
+/*}*/
+
+body {
+	font-family: "Microsoft Yahei";
+}
+
+body {
+	/*background-image: url(ui/垂直领域传播力排行榜TOP10.jpg);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+	
+}
+
+h1.top {
+	position: absolute;
+	text-align: center;
+	font-family: "Microsoft Yahei";
+	font-size: 74px;
+	font-weight: bolder;
+	/*background-repeat: no-repeat;*/
+	width: 100%;
+	top: -61px;
+	left: 8px;
+	/*letter-spacing: -1.7px;*/
+	padding-left: 15px;
+	color: #73fdff;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(115, 253, 255, 1)), to(rgba(255, 255, 255, 1)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.top_img{
+	text-align: center;
+	position: absolute;
+	width:100%;
+	top: 73px;
+}
+svg {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.title {
+	width: 1294px;
+	height: 58px;
+	position: absolute;
+	left: 327px;
+	top: 247px;
+	overflow: hidden;
+	position: relative;
+}
+
+.title .inner {
+	width:10000px;
+	line-height: 58px;
+	padding: 0px 50px;
+	color: #22D4D2;
+	font-size: 56px;
+	position: absolute;
+			top: 0;
+			left: 0;
+}
+.title .inner a{
+	color: #22D4D2;
+}
+.title-text{
+	display: block;
+	float: left;
+	padding-left: 10px;
+}
+a,a:link,a:visited,a:hover,a:active{
+	color:white;
+	text-decoration: none;
+}

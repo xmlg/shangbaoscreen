@@ -1,0 +1,326 @@
+.bqxt-left {
+    width: 1920px;
+    height: 2900px;
+    padding-left: 70px;
+}
+
+.time-select {
+    width: 1850px;
+    height: 150px;
+    line-height: 150px;
+    margin-top: 25px;
+    font-size: 50px;
+    background-color: #005B66;
+    border-radius: 25px;
+    color: #18e1f3;
+    position: relative;
+}
+
+.time-select .datepicker {
+    top: 666px!important;
+    left: 1800px!important;
+    position: absolute!important;
+    z-index: 9999!important;
+    width: 1775px!important;
+    max-width: initial!important;
+    background-color: #112d3d;
+    border-radius: 50px;
+    height: 1835px;
+    padding: 50px;
+}
+
+.time-select .datepicker .text-strong {
+    font-size: 72px;
+}
+
+.time-select .datepicker .pull-left,
+.pull-right {
+    width: 200px;
+    height: 80px;
+    top: 23px;
+    position: relative;
+    cursor: pointer;
+    background-color: initial;
+    border: none;
+}
+
+.time-select .datepicker table tbody .text-center {
+    border-bottom: 1px solid #000;
+    border-right: 5px solid #000;
+    color: black;
+}
+
+.time-select .datepicker table thead tr.text-center {
+    height: 190px;
+    background-color: #0e151d;
+}
+
+.time-select .datepicker table thead tr.text-center button strong {
+    color: white;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.time-select .datepicker table thead .text-center button {
+    height: 100%;
+    cursor: pointer;
+    background-color: initial;
+    border: none;
+}
+
+.time-select .datepicker table .text-center button {
+    height: 100%;
+    cursor: pointer;
+    background-color: #2ae2ca;
+    border: none;
+}
+
+.time-select .datepicker table .text-center th:first-child button {
+    background: url(../images/time-left.png) no-repeat center center;
+}
+
+.time-select .datepicker table .text-center th:last-child button {
+    transform: rotate(180deg);
+    background: url(../images/time-left.png) no-repeat center center;
+}
+
+.time-select .datepicker table tbody .text-center button:hover {
+    width: 102%!important;
+    margin-left: -2px;
+    padding: 20px;
+    color: #fff;
+    background-color: #112d3d;
+}
+
+.time-select .datepicker table .text-center button:active {
+    color: #fff;
+    background-color: #000;
+}
+
+.time-select .datepicker table .text-center button[disabled] {
+    cursor: not-allowed;
+}
+
+.time-select .datepicker table tbody .text-center button.btn-today {
+    color: white;
+    background-color: rgba(42, 226, 202, 0.65);
+}
+
+.time-select .datepicker table tbody .text-center button.btn-primary {
+    width: 102%!important;
+    margin-left: -2px;
+    color: #fff;
+    background-color: #000;
+}
+
+.time-select .datepicker table .text-center button span {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+.time-select .datepicker table .text-center button span.text-muted {
+    color: grey;
+}
+
+.time-select>input {
+    float: right;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 90px;
+}
+
+.time-select .ml60 {
+    margin-left: 60px;
+}
+
+.item-parent {
+    width: 100%;
+    cursor: -webkit-grab;
+}
+
+.item-parent:active {
+    cursor: -webkit-grabbing !important;
+}
+
+.list-items {
+    overflow: hidden;
+    height: 2750px;
+    position: relative;
+    width: 101%;
+}
+
+.list-items.noTime {
+    height: 2900px;
+}
+
+.list-items .item-title {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #18e1f3;
+}
+
+.item-content .news {
+    width: 1800px;
+    height: 300px;
+    padding: 40px;
+    background: #0d1d28;
+    position: relative;
+    left: 25px;
+    z-index: 2;
+    border-bottom: 10px solid #0e151d;
+}
+
+.item-content .news.active {
+    background-color: #003240;
+    border: 4px solid #0ed4f3;
+}
+
+.list-items .item {
+    /*margin-bottom: 110px;*/
+}
+
+.list-items .item-none {
+    height: 400px;
+}
+
+.list-items .item-content {
+    width: 99%;
+    background: url(../images/item-bg.png) repeat-y center center;
+}
+
+.list-items .img-1 {
+    width: 1849px;
+    height: 342px;
+    position: absolute;
+    top: -20px;
+    background: url('../images/left_bg_1.png') no-repeat left center;
+}
+
+.list-items .item-relative {
+    position: relative;
+}
+
+.list-items .img-2 {
+    width: 1849px;
+    height: 108px;
+    position: absolute;
+    bottom: -20px;
+    background: url('../images/left_bg_2.png') no-repeat left center;
+}
+
+.news .news-ji {
+    width: 145px;
+    height: 145px;
+    float: left;
+    text-align: center;
+    font-size: 130px;
+    font-weight: bold;
+    margin-right: 40px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #01c9f9;
+}
+
+.news .news-zhong {
+    width: 145px;
+    height: 145px;
+    float: left;
+    text-align: center;
+    font-size: 130px;
+    font-weight: bold;
+    margin-right: 40px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #01c9f9;
+}
+
+.news .news-min {
+    width: 145px;
+    height: 145px;
+    float: left;
+    text-align: center;
+    font-size: 130px;
+    font-weight: bold;
+    margin-right: 40px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #01c9f9;
+}
+
+.news-right .news-content {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 60px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.news-right .news-content.active {
+    color: white;
+}
+
+.news-right .news-content span {
+    cursor: pointer;
+    line-height: 100px;
+}
+
+.news-source {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.news-source>div {
+    display: inline-block;
+    /*margin-right: 30px;*/
+    /* width: 284px;
+    height: 95px; */
+    width: 100px;
+    height: 100px;
+    line-height: 80px;
+    font-size: 60px;
+    border-radius: 10px;
+    text-align: center;
+    color: #051118;
+    background-color: #062835;
+    border: 5px solid #091720;
+}
+
+.news-source .others {
+    width: 210px;
+}
+
+.news-source .active {
+    background-color: #003341;
+    color: #fff;
+    border: 5px solid #1b8da4;
+}
+
+/* .news-source .khd {
+    color: #01c9f9;
+    background-color: #003341;
+    border: 8px solid #43d5ff;
+}
+
+.news-source .wyd {
+    color: #55cee8;
+    background-color: #1f4047;
+    border: 5px solid #55cee8;
+}
+
+.news-source .bzd {
+    color: #36ffe5;
+    background-color: #10433c;
+    border: 5px solid #36ffe5;
+} */
+
+.bqxt-left .shadow {
+    z-index: 3;
+    position: absolute;
+    bottom: 190px;
+    height: 300px;
+    width: 1850px;
+    background: linear-gradient(rgba(13, 20, 29, 0.1), rgba(13, 20, 29, 0.5), rgba(13, 20, 29, 1));
+}

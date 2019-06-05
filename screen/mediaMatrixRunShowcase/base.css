@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0 auto;
+    /*background-color: #0E141D;*/
+    background-color: #0d141d;
+    /*background-color: #0C1D24;*/
+    font-family: simhei;
+    width: 3840px;
+    overflow: hidden;
+    height: 2160px;
+}
+
+.left {
+    width: 65.06%;
+    height: 100%;
+    float: left;
+}
+
+.left-top {
+    height: 50%;
+}
+
+.left-buttom {
+    width: 0px;
+    overflow: hidden;
+    height: 50%;
+}
+
+.right {
+    overflow: hidden;
+    height: 0;
+    width: 34.94%;
+    display: flex;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.setOptionModal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+}
+
+.setOption {
+    display: none;
+    position: fixed;
+    top: 469px;
+    width: 1500px;
+    height: 1000px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 72px;
+    color: white;
+    z-index: 1000;
+    border: 20px solid grey;
+    border-radius: 20px;
+}
+
+.setOption .head {
+    height: 150px;
+}
+
+.setOption .head img {
+    float: left
+}
+
+.setOption .head span {
+    position: relative;
+    top: 20px;
+}
+
+.setOption .body {
+    padding-top: 20px;
+    padding-left: 150px;
+}
+
+.setOption .body .row {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.setOption .body .row .name {
+    float: left
+}
+
+.setOption .body .row .value input[type='number'] {
+    width: 500px;
+    font-size: 66px;
+}
+
+.setOption .body .row .value input[type='checkbox'] {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.setOption .foot {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    height: 150px;
+    padding-left: 913px;
+}
+
+.setOption .foot button {
+    margin-left: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: grey;
+    width: 230px;
+    float: left;
+    font-size: 66px;
+    border-radius: 20px;
+}
+
+.mediaMatrixRunShowcase_modal {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     background-color: rgba(0,0,0,0.7);
+     z-index: 10;
+ }
+
+.mediaMatrixRunShowcase_modal .mediaMatrixRunShowcase_popup {
+     width: 2475px;
+     height: 940px;
+     background-image: url(images/error_popup.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     position: absolute;
+     left: 19%;
+     bottom: 30%;
+ }
+
+.mediaMatrixRunShowcase_popup .error_hint {
+     color: #4cd6fd;
+     font-size: 72px;
+     position: absolute;
+     top: 400px;
+     left: 660px;
+ }

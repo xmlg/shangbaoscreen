@@ -1,0 +1,850 @@
+{
+  "timeStamp": 1481001842542,
+  "Business and Industrial": [
+    {
+      "name": "Petroleum",
+      "degree": 9,
+      "type": "concept"
+    },
+    {
+      "name": "OPEC",
+      "degree": 8,
+      "type": "organization"
+    },
+    {
+      "name": "Donald Trump",
+      "degree": 7,
+      "type": "person"
+    },
+    {
+      "name": "Congress",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Democratic Party",
+      "degree": 3,
+      "type": "concept"
+    },
+    {
+      "name": "Gary Richards",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Hillary Rodham Clinton",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Jill Stein",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Brent crude",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "NASA",
+      "degree": 2,
+      "type": "organization"
+    },
+    {
+      "name": "Barack Obama",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "United States Department of Commerce",
+      "degree": 2,
+      "type": "organization"
+    },
+    {
+      "name": "Real estate",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Major League Baseball",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Dow Jones Industrial Average",
+      "degree": 2,
+      "type": "concept"
+    }
+  ],
+  "Health and Fitness": [
+    {
+      "name": "Donald Trump",
+      "degree": 4,
+      "type": "person"
+    },
+    {
+      "name": "Health care",
+      "degree": 3,
+      "type": "concept"
+    },
+    {
+      "name": "Immune system",
+      "degree": 3,
+      "type": "concept"
+    },
+    {
+      "name": "National Collegiate Athletic Association",
+      "degree": 2,
+      "type": "organization"
+    },
+    {
+      "name": "Federal Reserve Bank",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Partners HealthCare",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Hillary Rodham Clinton",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Medicine",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Influenza",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Nutrition",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Al Gore",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Buffalo Bills",
+      "degree": 1,
+      "type": "organization"
+    },
+    {
+      "name": "Percy Harvin",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Galveston Police Department",
+      "degree": 1,
+      "type": "organization"
+    },
+    {
+      "name": "Christopher Williams",
+      "degree": 1,
+      "type": "person"
+    }
+  ],
+  "Education": [
+    {
+      "name": "High school",
+      "degree": 23,
+      "type": "concept"
+    },
+    {
+      "name": "University",
+      "degree": 7,
+      "type": "concept"
+    },
+    {
+      "name": "School",
+      "degree": 5,
+      "type": "concept"
+    },
+    {
+      "name": "Donald Trump",
+      "degree": 4,
+      "type": "person"
+    },
+    {
+      "name": "Charter school",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "Education",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "American football",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "Stanford University",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "New Jersey Institute of Technology",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Utah junior high school",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Bountiful Police",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Tom Ross",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "STANFORD",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "National Collegiate Athletic Association",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Primary school",
+      "degree": 3,
+      "type": "concept"
+    }
+  ],
+  "Law, Government and Politics": [
+    {
+      "name": "Donald Trump",
+      "degree": 19,
+      "type": "person"
+    },
+    {
+      "name": "Barack Obama",
+      "degree": 11,
+      "type": "person"
+    },
+    {
+      "name": "Democratic Party",
+      "degree": 7,
+      "type": "concept"
+    },
+    {
+      "name": "Hillary Rodham Clinton",
+      "degree": 6,
+      "type": "person"
+    },
+    {
+      "name": "Crime",
+      "degree": 6,
+      "type": "concept"
+    },
+    {
+      "name": "Sgt. Ray Kelly",
+      "degree": 5,
+      "type": "person"
+    },
+    {
+      "name": "Derick Ion Almena",
+      "degree": 4,
+      "type": "person"
+    },
+    {
+      "name": "Alameda County Sheriff's Office",
+      "degree": 4,
+      "type": "organization"
+    },
+    {
+      "name": "Obama administration",
+      "degree": 4,
+      "type": "organization"
+    },
+    {
+      "name": "YouTube",
+      "degree": 4,
+      "type": "company"
+    },
+    {
+      "name": "Houston Police Department",
+      "degree": 4,
+      "type": "organization"
+    },
+    {
+      "name": "Death",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "Shelley Mack",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "Charlie Baker",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "Matteo Renzi",
+      "degree": 3,
+      "type": "person"
+    }
+  ],
+  "Religion and Spirituality": [
+    {
+      "name": "Baylor University",
+      "degree": 2,
+      "type": "organization"
+    },
+    {
+      "name": "Jaren Lewis",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Orange County, California",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "American football",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "James Dobson",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Trump",
+      "degree": 1,
+      "type": "company"
+    },
+    {
+      "name": "Ku Klux Klan",
+      "degree": 1,
+      "type": "organization"
+    },
+    {
+      "name": "David Duke",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Joel Goza",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Prophetic Black Church",
+      "degree": 1,
+      "type": "organization"
+    },
+    {
+      "name": "Bryan Brazos Christian",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Houston Yates",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "SA Jefferson",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Sam Houston",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Horizon Christian Academy",
+      "degree": 1,
+      "type": "organization"
+    }
+  ],
+  "Technology and Computing": [
+    {
+      "name": "Facebook",
+      "degree": 4,
+      "type": "company"
+    },
+    {
+      "name": "Twitter",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "Donald Trump",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Microsoft",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "GoPro",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Sony",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Google",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Associated Press",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Selecta",
+      "degree": 1,
+      "type": "company"
+    },
+    {
+      "name": "Selecta Biosciences",
+      "degree": 1,
+      "type": "company"
+    },
+    {
+      "name": "Spark Therapeutics",
+      "degree": 1,
+      "type": "company"
+    },
+    {
+      "name": "Werner Cautreels",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Omid Farokhzad",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Robert S. Langer",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Food and Drug Administration",
+      "degree": 1,
+      "type": "organization"
+    }
+  ],
+  "Finance": [
+    {
+      "name": "Dow Jones Industrial Average",
+      "degree": 14,
+      "type": "concept"
+    },
+    {
+      "name": "Goldman Sachs",
+      "degree": 8,
+      "type": "company"
+    },
+    {
+      "name": "Investment",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "Donald Trump",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "JPMorgan Chase",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "Charles Schwab",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "Starbucks",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "Howard Schultz",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "Matteo Renzi",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "UnitedHealth",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Southwestern Energy",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Standard Chartered",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Federal Reserve System",
+      "degree": 2,
+      "type": "organization"
+    },
+    {
+      "name": "Exelon",
+      "degree": 2,
+      "type": "company"
+    },
+    {
+      "name": "Brent crude",
+      "degree": 2,
+      "type": "person"
+    }
+  ],
+  "Science": [
+    {
+      "name": "National Weather Service",
+      "degree": 7,
+      "type": "organization"
+    },
+    {
+      "name": "Weather",
+      "degree": 5,
+      "type": "concept"
+    },
+    {
+      "name": "Martin Van Buren",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Calvin Trillin",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Joan Didion",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Frankie Muniz",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Amy Acker",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Brian Backer",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "John Rzeznik",
+      "degree": 2,
+      "type": "person"
+    },
+    {
+      "name": "Earthquake",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Tropical cyclone",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Rain",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Wind",
+      "degree": 2,
+      "type": "concept"
+    },
+    {
+      "name": "Alan Kafka",
+      "degree": 1,
+      "type": "person"
+    },
+    {
+      "name": "Boston College",
+      "degree": 1,
+      "type": "organization"
+    }
+  ],
+  "Art and Entertainment": [
+    {
+      "name": "Donald Trump",
+      "degree": 9,
+      "type": "person"
+    },
+    {
+      "name": "American film actors",
+      "degree": 6,
+      "type": "concept"
+    },
+    {
+      "name": "TheWrap",
+      "degree": 5,
+      "type": "company"
+    },
+    {
+      "name": "Amazon.com",
+      "degree": 5,
+      "type": "company"
+    },
+    {
+      "name": "Tom Cruise",
+      "degree": 4,
+      "type": "person"
+    },
+    {
+      "name": "HBO",
+      "degree": 4,
+      "type": "company"
+    },
+    {
+      "name": "Music",
+      "degree": 4,
+      "type": "concept"
+    },
+    {
+      "name": "Yahoo",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "Oakland Raiders",
+      "degree": 3,
+      "type": "organization"
+    },
+    {
+      "name": "Taylor Swift",
+      "degree": 3,
+      "type": "person"
+    },
+    {
+      "name": "Trump",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "CBS",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "Sony",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "DirecTV",
+      "degree": 3,
+      "type": "company"
+    },
+    {
+      "name": "American Broadcasting Company",
+      "degree": 3,
+      "type": "company"
+    }
+  ],
+  "Current Events": [
+    {
+      "name": "Donald Trump",
+      "degree": 50,
+      "type": "person"
+    },
+    {
+      "name": "Trump",
+      "degree": 21,
+      "type": "company"
+    },
+    {
+      "name": "Barack Obama",
+      "degree": 14,
+      "type": "person"
+    },
+    {
+      "name": "Tsai Ing-wen",
+      "degree": 11,
+      "type": "person"
+    },
+    {
+      "name": "Hillary Rodham Clinton",
+      "degree": 11,
+      "type": "person"
+    },
+    {
+      "name": "The Great Atlantic & Pacific Tea Company",
+      "degree": 10,
+      "type": "company"
+    },
+    {
+      "name": "Democratic Party",
+      "degree": 10,
+      "type": "concept"
+    },
+    {
+      "name": "Chen Shui-bian",
+      "degree": 8,
+      "type": "concept"
+    },
+    {
+      "name": "Ben Carson",
+      "degree": 6,
+      "type": "person"
+    },
+    {
+      "name": "Derick Ion Almena",
+      "degree": 6,
+      "type": "person"
+    },
+    {
+      "name": "Xi Jinping",
+      "degree": 6,
+      "type": "person"
+    },
+    {
+      "name": "Steven Mnuchin",
+      "degree": 5,
+      "type": "person"
+    },
+    {
+      "name": "Shelley Mack",
+      "degree": 5,
+      "type": "person"
+    },
+    {
+      "name": "Sgt. Ray Kelly",
+      "degree": 5,
+      "type": "person"
+    },
+    {
+      "name": "Derick Ion",
+      "degree": 5,
+      "type": "person"
+    }
+  ],
+  "Sports": [
+    {
+      "name": "National Football League",
+      "degree": 22,
+      "type": "organization"
+    },
+    {
+      "name": "American football",
+      "degree": 19,
+      "type": "concept"
+    },
+    {
+      "name": "Major League Baseball",
+      "degree": 15,
+      "type": "concept"
+    },
+    {
+      "name": "Giants",
+      "degree": 9,
+      "type": "organization"
+    },
+    {
+      "name": "Khalil Mack",
+      "degree": 8,
+      "type": "person"
+    },
+    {
+      "name": "Derek Carr",
+      "degree": 7,
+      "type": "person"
+    },
+    {
+      "name": "Mark Melancon",
+      "degree": 7,
+      "type": "person"
+    },
+    {
+      "name": "New York Yankees",
+      "degree": 7,
+      "type": "organization"
+    },
+    {
+      "name": "American Football Conference",
+      "degree": 7,
+      "type": "organization"
+    },
+    {
+      "name": "Andrew McCutchen",
+      "degree": 6,
+      "type": "person"
+    },
+    {
+      "name": "Oakland Raiders",
+      "degree": 5,
+      "type": "organization"
+    },
+    {
+      "name": "Warriors",
+      "degree": 5,
+      "type": "organization"
+    },
+    {
+      "name": "Green Bay Packers",
+      "degree": 5,
+      "type": "organization"
+    },
+    {
+      "name": "New York Jets",
+      "degree": 5,
+      "type": "organization"
+    },
+    {
+      "name": "Buffalo Bills",
+      "degree": 5,
+      "type": "organization"
+    }
+  ]
+}

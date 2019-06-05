@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'FangZhengLangTing';
+  src:url('../font/FZLTHJW.TTF') format('truetype');
+}
+
+body {
+	font-family: 'FangZhengLangTing';
+}

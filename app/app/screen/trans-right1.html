@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/tarnsLeft.css" />
+    <link rel="stylesheet" href="css/editmeeting.css">
+    <title>Title</title>
+</head>
+<body>
+<h1>每日原创稿件转载趋势分析</h1>
+<div class="rightcontent hotcurve">
+    <div class="reportheader" style="margin-top: 10px">
+        热度曲线
+
+    </div>
+    <div class="hotarea">
+        <svg>
+            <g transform="translate(50,200)" style="stroke: #ffffff;stroke-width: 3px;">
+                <g class="backgroundline"></g>
+                <g class="axis-line">
+                    <line x1="0" y1="0" x2="0" y2="-215"></line>
+                    <line x1="0" y1="0" x2="525" y2="0"></line>
+                </g>
+                <g class="x-axis">
+                </g>
+                <g class="y-axis"></g>
+                <g class="main"></g>
+            </g>
+            <defs>
+                <filter id="filter3000" inkscape:label="Glow" inkscape:menu="Shadows and Glows" inkscape:menu-tooltip="Glow of object's own color at the edges" color-interpolation-filters="sRGB">
+                    <feGaussianBlur id="feGaussianBlur3002" stdDeviation="3" result="result91" />
+                    <feComposite id="feComposite3004" in2="result91" in="SourceGraphic" operator="over" />
+                </filter>
+
+            </defs>
+        </svg>
+
+        <div class="legend">
+        </div>
+    </div>
+</div>
+<!--<div id="main" class="content" ></div>-->
+<script src="lib/d3.min.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="js/resize.js"></script>
+<script src="lib/jquery.nicescroll.min.js"></script>
+<script src="js/TimedTask.js"></script>
+<script src="js/test1029.js"></script>
+<!--<script src="lib/echarts3.min.js"></script>-->
+<!--<script src="js/transhipment.js"></script>-->
+</body>
+</html>

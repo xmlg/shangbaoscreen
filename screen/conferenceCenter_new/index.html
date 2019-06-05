@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html ng-app="preSelectedTopicsModule">
+
+<head>
+    <title>编前选题</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="lib/ngAnimate.css" />
+    <link rel="stylesheet" type="text/css" href="lib/flarevideo.css" />
+    <link rel="stylesheet" type="text/css" href="lib/flarevideo.default.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftList.css" />
+    <link rel="stylesheet" type="text/css" href="css/centerAndRight.css" />
+</head>
+
+<body ng-controller="preSelectedTopicsCtrl">
+    <div class="bor"></div>
+    <div class="top">
+        <div>编前选题</div>
+    </div>
+    <div class="bottom">
+        <!-- 左侧代码 -->
+        <div class="left">
+            <div class="bqxt-left">
+                <!-- <div class="time-select" ng-hide="status.isFromPlanningCenter"> -->
+                <div class="time-select">
+                    <span class="ml60" ng-bind="status.selectedDateCN"></span>
+                    <span>({{status.week}})</span>
+                    <span>选题</span>
+                    <input type="image" src="images/select.png" bs-show="status.datepickerShow" ng-model="status.selectedDate" autoclose='true' name="date" bs-datepicker>
+                </div>
+                <div class="list-items" ng-class="{'noTime': status.isFromPlanningCenter}" scroll-bar load-watch="status.topicListLoadWatch">
+                    <div class="item-parent">
+                        <div class="item" ng-repeat="group in data.topicsGroup">
+                            <div class="item-title" ng-bind="group.GNAME"></div>
+                            <div class="item-relative" ng-init="getSelectedTopic(group)">
+                                <div class="img-1"></div>
+                                <div class="item-content" ng-init="getIndex($index,$parent.$index,item)" ng-click="clickTopic(item)" ng-repeat="item in group.topicList">
+                                    <div class="news" ng-class="{true: 'active', false: ''}[status.curTopic==item]">
+                                        <div class="news-ji" ng-if="item.REPORTTYPE=='3'">急</div>
+                                        <div class="news-zhong" ng-if="item.REPORTTYPE=='2'">重</div>
+                                        <div class="news-min" ng-if="item.REPORTTYPE=='4'">敏</div>
+                                        <div class="news-right">
+                                            <div class="news-content" ng-class="{true: 'active', false: ''}[status.curTopic==item]">
+                                                <span title="{{item.TITLE}}" ng-bind="getSelectedTopicTitle(item)"></span>
+                                                <div class="news-source">
+                                                    <div class="{{item.METATYPEINFO[0].METATYPEBYAPP||item.METATYPEINFO[0].METATYPEBYAPPOTHER?'active':''}}">端</div>
+                                                    <div class="{{item.METATYPEINFO[0].METATYPEBYWEB||item.METATYPEINFO[0].METATYPEBYWEBOTHER?'active':''}}">网</div>
+                                                    <div class="{{item.METATYPEINFO[0].METATYPEBYPAPER||item.METATYPEINFO[0].METATYPEBYPAPEROTHER?'active':''}}">报</div>
+                                                    <div class="others {{item.METATYPEINFO[0].METATYPEBYOTHER?'active':''}}">其他</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="img-2"></div>
+                            </div>
+                        </div>
+                        <div class="item item-none"></div>
+                    </div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+        </div>
+        <!-- 右侧代码 -->
+        <div class="right">
+            <div class="bqxt_centerAndRight">
+                <div class="bqxt_center">
+                    <div class="bqxt_centerTitle">
+                        <span>报题详情</span>
+                    </div>
+                    <div class="bqxt_centerBottom">
+                        <div class="bqxt_details">
+                            <div class="bqxt_details_content">
+                                <div class="bqxt_details_content-title" title="{{status.curTopic.TITLE}}" ng-bind="status.curTopic.TITLE"></div>
+                                <div class="bqxt_details_text" scroll-bar load-watch="status.contentLoadWatch">
+                                    <div>
+                                        <div class="bqxt_centerTop">
+                                            <div class="bqxt_centerTops">
+                                                <div class="bqxt_arrange_title">
+                                                    发稿安排
+                                                </div>
+                                                <div ng-if="status.curTopic!=undefined" class="bqxt_arrange">
+                                                    <div ng-if="status.curTopic.METATYPEINFO[0].METATYPEBYAPP||status.curTopic.METATYPEINFO[0].METATYPEBYAPPOTHER" class="bqxt_arrange_content bqxt_arrange_left">
+                                                        <div class="bqxt_arrange_category">
+                                                            <div class="bqxt_arrange_key">客户端：</div>
+                                                            <div class="bqxt_arrange_value">
+                                                                <span ng-bind="dealWithArrangeMentData('METATYPEBYAPP')"></span>　
+                                                                <span ng-bind="status.curTopic.METATYPEINFO[0].METATYPEBYAPPOTHER"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="status.curTopic.METATYPEINFO[0].METATYPEBYWEB||status.curTopic.METATYPEINFO[0].METATYPEBYWEBOTHER" class="bqxt_arrange_content bqxt_clean">
+                                                        <div class="bqxt_arrange_category">
+                                                            <div class="bqxt_arrange_key">网站端：</div>
+                                                            <div class="bqxt_arrange_value">
+                                                                <span ng-bind="dealWithArrangeMentData('METATYPEBYWEB')"></span> 
+                                                                <span ng-bind="status.curTopic.METATYPEINFO[0].METATYPEBYWEBOTHER"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="status.curTopic.METATYPEINFO[0].METATYPEBYPAPER||status.curTopic.METATYPEINFO[0].METATYPEBYPAPEROTHER" class="bqxt_arrange_content bqxt_clean">
+                                                        <div class="bqxt_arrange_category">
+                                                            <div class="bqxt_arrange_key">报纸端：</div>
+                                                            <div class="bqxt_arrange_value">
+                                                                <span ng-bind="dealWithArrangeMentData('METATYPEBYPAPER')"></span>　
+                                                                <span ng-bind="status.curTopic.METATYPEINFO[0].METATYPEBYPAPEROTHER"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="status.curTopic.METATYPEINFO[0].METATYPEBYOTHER" class="bqxt_arrange_content bqxt_clean">
+                                                        <div class="bqxt_arrange_category">
+                                                            <div class="bqxt_arrange_key">其他：</div>
+                                                            <div class="bqxt_arrange_value">
+                                                                <span class="text-warp" ng-bind="status.curTopic.METATYPEINFO[0].METATYPEBYOTHER"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bqxt_details_hidden" ng-if="status.curTopic.CONTENT">
+                                            <div class="bqxt_details_hidden_children" ng-init="handleHtmlContent()" ng-bind-html="status.curTopic.CONTENT|trsSce">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bqxt_right">
+                    <div class="bqxt_centerTitle">
+                        <span>相关信息</span>
+                    </div>
+                    <div class="bqxt_rightTop">
+                        <div class="bqxt_information_top_parent_parent" scroll-bar load-watch="status.btxtXgxxWatch">
+                            <div class="bqxt_information_top_parent">
+                                <div class="bqxt_information_top">
+                                    <div class="bqxt_information_col" ng-if="status.curTopic.EXECUTOR">
+                                        <span>执行人：</span>
+                                        <p ng-if="status.curTopic.EXECUTOR" ng-bind="status.curTopic.EXECUTOR" ng-init="handleExecutor()"></p>
+                                    </div>
+                                    <div class="bqxt_information_col" ng-if="status.curTopic.REFEREE">
+                                        <span>推荐人：</span>
+                                        <p ng-bind="status.curTopic.REFEREE.USERNAME"></p>
+                                    </div>
+                                    <!-- <div class="bqxt_information_col reason" ng-if="status.curTopic.RECOMMENDEDREASON">
+                                        <span>推荐理由：</span>
+                                        <p ng-bind="status.curTopic.RECOMMENDEDREASON"></p>
+                                    </div> -->
+                                    <div class="bqxt_information_col reason" ng-if="status.curTopic.RECOMMENDEDREASON">
+                                        <span>推荐理由：</span>
+                                        <br/>
+                                        <div ng-bind="status.curTopic.RECOMMENDEDREASON"></div>
+                                    </div>
+                                </div>
+                                <div ng-if="status.curTopic.APPENDIXINFO!==undefined&&status.curTopic.APPENDIXINFO.length!=0" class="bqxt_information_bottom">
+                                    <!--  <div class="bqxt_information_bottom" scroll-bar load-watch="status.appendixLoadWatch"> -->
+                                    <div class="bqxt_information_bottom_parent">
+                                        <span class="bqxt_information_span">附件：</span>
+                                        <div ng-repeat="appendixItem in status.curTopic.APPENDIXINFO" class="bqxt_rightTop_options">
+                                            <div class="bqxt_rightTop_options_title" title="{{appendixItem.REPORTAPPDESC}}" ng-bind="appendixItem.REPORTAPPDESC"></div>
+                                            <button class="bqxt_rightTop_btn" ng-click="operateAppendix(appendixItem)" ng-init="queryOper(appendixItem)" ng-bind="appendixItem.oper"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bqxt_rightTitle">
+                        <span>稿件跟踪 ({{status.relatedDrafts==undefined?'0':status.relatedDrafts.length}})</span>
+                    </div>
+                    <div class="bqxt_rightBottom">
+                        <switch-draft-dir selected-index="status.selectedIndex" modal-show="status.draftDetail" data="status.relatedDrafts" ng-if="status.curTopic&&status.relatedDrafts"></switch-draft-dir>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="play-video scale-fade" class="scale-fade" ng-if="status.showMaterial">
+        <div class="video-head">
+            <div class="video-head-title">
+                <img src="images/video-bg.png"><span class="video-title">最新素材预览</span><img src="images/video-bg.png">
+            </div>
+            <div class="video-close">
+                <span ng-if="status.curPlay.REPORTFILEEXT=='mp4'" class="time" ng-bind="status.videoTime"></span>
+                <span ng-click="closeVideo()" class="close">关闭</span>
+            </div>
+        </div>
+        <div class="video-content">
+            <video-player class="videoPlay" video-time="status.videoTime" source-id="status.curPlay.REPORTAPPFILE" ng-if="status.curPlay.REPORTFILEEXT=='mp4'"></video-player>
+            <div ng-if="status.curPlay.REPORTFILEEXT=='jpg'||status.curPlay.REPORTFILEEXT=='JPG'||status.curPlay.REPORTFILEEXT=='PNG'||status.curPlay.REPORTFILEEXT=='png'||status.curPlay.REPORTFILEEXT=='GIF'||status.curPlay.REPORTFILEEXT=='gif'||status.curPlay.REPORTFILEEXT=='BMP'||status.curPlay.REPORTFILEEXT=='bmp'||status.curPlay.REPORTFILEEXT=='JPEG'||status.curPlay.REPORTFILEEXT=='jpeg'" class="matiralImage">
+                <img ng-src="{{status.curPlay.REPORTAPPFILE}}" ng-init="handleImage()" ng-style="status.imgStyle">
+            </div>
+        </div>
+    </div>
+    <!-- 稿件详情 -->
+    <div class="news-detail scale-fade" ng-if="status.draftDetail">
+        <div class="news-head">
+            <span class="close" ng-click="closeDetail()"></span>
+        </div>
+        <div class="news-content">
+            <div class="content"></div>
+            <div class="content-tat">
+                <h1 class="content-title" ng-bind="status.relatedDrafts[status.selectedIndex].TITLE"></h1>
+                <div class="content-text" scroll-bar load-watch="status.draftDetail" ng-if="status.relatedDrafts[status.selectedIndex].CONTENT" ng-init="handleContent()">
+                    <div class="content-textC" ng-bind-html="status.relatedDrafts[status.selectedIndex].CONTENT|trsSce"></div>
+                </div>
+                <div class="content-text" ng-if="status.relatedDrafts[status.selectedIndex].URL!=undefined">
+                    <div class="iframeParent">
+                        <div>
+                            <iframe class="content-iframe" ng-src="{{status.relatedDrafts[status.selectedIndex].URL|trsSceUrl}}"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.0.js"></script>
+    <script src="lib/jquery.flash.js"></script>
+    <script src="lib/jquery.ui.slider.js"></script>
+    <script src="lib/flarevideo.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="lib/angular-strap.js"></script>
+    <script src="lib/angular-strap.tpl.js"></script>
+    <script src="util/resize.js"></script>
+    <script src="lib/iscroll.js"></script>
+    <script src="util/httpService.js"></script>
+    <script src="js/switchDraftDirective.js"></script>
+    <script src="js/scrollBarDir.js"></script>
+    <script src="js/dataManager.js"></script>
+    <script src="js/videoPlayer.js"></script>
+    <script src="js/preSelectedTopics.js"></script>
+</body>
+
+</html>

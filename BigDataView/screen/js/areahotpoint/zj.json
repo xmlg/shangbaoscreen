@@ -1,0 +1,430 @@
+[
+	{
+		"TITLE": "感谢杭州市民！感谢全省人民！",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 68,
+		"CHILDERNS": [
+			{
+				"LAT": 30.9,
+				"LNG": 120.08,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.9,
+				"LNG": 120.08,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88
+				,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.9,
+				"LNG": 120.08
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.75,
+				"LNG": 120.75,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.68,
+				"LNG": 121.43,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0
+				,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 120.57,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 120.57,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.93,
+				"LNG": 118.87,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0
+				,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08,
+				"LNG": 119.65
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88
+				,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 120.57,
+				"FLAGFORZB": false
+				,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.93,
+				"LNG": 118.87,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 120.57,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.9,
+				"LNG": 120.08,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.9
+				,
+				"LNG": 120.08,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.68,
+				"LNG": 121.43
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.28
+				,
+				"LNG": 120.15,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0,
+				"LNG": 122.2,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.28,
+				"LNG": 120.15,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.0
+				,
+				"LNG": 120.57,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.68,
+				"LNG": 121.43
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.28,
+				"LNG": 120.15,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.28,
+				"LNG": 120.15,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.93,
+				"LNG": 118.87,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.45,
+				"LNG": 119.92,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08
+				,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.9,
+				"LNG": 120.08
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.93,
+				"LNG": 118.87,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 30.75,
+				"LNG": 120.75,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.68,
+				"LNG": 121.43,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.08
+				,
+				"LNG": 119.65,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88
+				,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 29.88,
+				"LNG": 121.55
+				,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false
+				,
+				"FINALHOTPOINTGUIDID": "774100128461639681"
+			}
+		]
+	}, {
+		"TITLE": "俄美战机现“3米对峙” 两国关系再添变数",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 52,
+		"CHILDERNS": []
+	}, {
+		"TITLE": "两男子吞服近700克毒品欲闯关 被警察机场擒获",
+		"FLAGFORZB": false
+		,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 47,
+		"CHILDERNS": []
+	}, {
+		"TITLE": "俄美关系降至冷战后最差 叙利亚成双方最难解的结",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 30,
+		"CHILDERNS": []
+	}, {
+		"TITLE": "８月份进出口远超预期双双正增长进口同比增10.8%"
+		,
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 28,
+		"CHILDERNS": [
+			{
+				"LAT": 29.88,
+				"LNG": 121.55,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774082961850650625"
+			}
+		]
+	}, {
+		"TITLE": "人民币汇率保持合理均衡 国际化有望稳步推进",
+		"FLAGFORZB": false
+		,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 26,
+		"CHILDERNS": []
+	}, {
+		"TITLE": "收益率持续下探 银行理财产品端现净值化转型",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 25,
+		"CHILDERNS": [
+			{
+				"LAT": 30.0,
+				"LNG": 120.57,
+				"FLAGFORZB": false
+				,
+				"FINALHOTPOINTGUIDID": "774044399482589184"
+			}, {
+				"LAT": 28.0,
+				"LNG": 120.7,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774044399482589184"
+			}
+		]
+	}, {
+		"TITLE": "国足新星也要当学霸 张玉宁被华东师范大学录取",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15
+		,
+		"CLUSTERNUMS": 24,
+		"CHILDERNS": [
+			{
+				"LAT": 28.68,
+				"LNG": 121.43,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774126869758496768"
+			}, {
+				"LAT": 28.68,
+				"LNG": 121.43,
+				"FLAGFORZB": false,
+				"FINALHOTPOINTGUIDID": "774126869758496768"
+			}
+		]
+	}, {
+		"TITLE": "李小鹏主持召开交通部部务会 推动交通运输转型升级",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 24,
+		"CHILDERNS": []
+	}, {
+		"TITLE": "李克强同老挝总理通伦举行会谈",
+		"FLAGFORZB": false,
+		"LAT": 30.28,
+		"LNG": 120.15,
+		"CLUSTERNUMS": 23,
+		"CHILDERNS": []
+	}
+]

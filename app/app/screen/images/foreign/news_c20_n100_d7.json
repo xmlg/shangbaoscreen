@@ -1,0 +1,1195 @@
+{
+  "timeStamp": 1481029820442,
+  "nodes": [
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "Here is a list of the Oakland fire victims who died in the Ghost Ship warehouse fire in the city\u2019s Fruitvale neighborhood that began late Friday night Dec. 2, 2016. Authorities are still working to identify some of the dead at the artist collective. ...",
+      "sentiment": -0.548725009,
+      "image": "http:\/\/www.mercurynews.com\/wp-content\/uploads\/2016\/12\/sjm-firemain-1206-40.jpg?w=1024&h=819",
+      "author": "Bay Area News Group",
+      "degree": 4,
+      "source": "http:\/\/www.mercurynews.com\/2016\/12\/05\/oakland-fire-victims-list-of-those-who-died-in-deadly-warehouse-fire\/",
+      "type": "article",
+      "stream": 0,
+      "name": "Oakland fire victims: List of those who died in deadly warehouse fire",
+      "id": 0,
+      "sigmaDegree": 7,
+      "category": "fire department",
+      "prominence": 0.7
+    },
+    {
+      "geo": "",
+      "name": "Fruitvale, Kern County, California",
+      "degree": 2,
+      "locationType": "City",
+      "alias": [
+        "fruitvale"
+      ],
+      "id": 1,
+      "source": "http:\/\/dbpedia.org\/resource\/Fruitvale,_Kern_County,_California",
+      "type": "location"
+    },
+    {
+      "geo": "37.80444444444444 -122.27083333333333",
+      "name": "Oakland, California",
+      "degree": 3,
+      "locationType": "City",
+      "alias": [
+        "oakland"
+      ],
+      "id": 2,
+      "source": "http:\/\/dbpedia.org\/resource\/Oakland,_California",
+      "type": "location"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "LONDON (AP) \u2014 Thomas Bjorn is the first Scandinavian to be appointed captain of Europe's Ryder Cup team. The 45-year-old Dane will lead the team against the United States in 2018 at Le Golf National in Paris after being chosen by a five-man panel, including Europe's past three captains. ...",
+      "sentiment": -0.472860008,
+      "image": "http:\/\/ww2.hdnux.com\/photos\/55\/26\/65\/11890005\/3\/core_promo.jpg",
+      "author": "",
+      "degree": 9,
+      "source": "http:\/\/www.chron.com\/sports\/article\/Thomas-Bjorn-appointed-Europe-s-Ryder-Cup-captain-10742561.php",
+      "type": "article",
+      "stream": 0,
+      "name": "Thomas Bjorn appointed Europe's Ryder Cup captain for 2018",
+      "id": 3,
+      "sigmaDegree": 15,
+      "category": "europe",
+      "prominence": 0.6666666666666667
+    },
+    {
+      "name": "Thomas Bj\u00f8rn",
+      "degree": 1,
+      "id": 4,
+      "source": "http:\/\/dbpedia.org\/resource\/Thomas_Bj\u00f8rn",
+      "type": "person"
+    },
+    {
+      "name": "Ryder Cups",
+      "degree": 1,
+      "id": 5,
+      "type": "person"
+    },
+    {
+      "geo": "",
+      "name": "United States",
+      "degree": 6,
+      "locationType": "Country",
+      "alias": [
+        "u.s.",
+        "us",
+        "united states"
+      ],
+      "id": 6,
+      "source": "http:\/\/dbpedia.org\/resource\/United_States",
+      "type": "location"
+    },
+    {
+      "name": "Europe",
+      "degree": 1,
+      "locationType": "Country",
+      "id": 7,
+      "type": "location"
+    },
+    {
+      "geo": "51.50805555555556 -0.12472222222222222",
+      "name": "London",
+      "degree": 1,
+      "locationType": "City",
+      "id": 8,
+      "source": "http:\/\/dbpedia.org\/resource\/London",
+      "type": "location"
+    },
+    {
+      "name": "Hazeltine",
+      "degree": 1,
+      "locationType": "City",
+      "id": 9,
+      "type": "location"
+    },
+    {
+      "name": "Paris",
+      "degree": 2,
+      "locationType": "City",
+      "id": 10,
+      "type": "location"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "NEW YORK \u2014 President-elect Donald Trump is taking his show back on the road. Trump is slated to hold the second stop of this \u2018\u2018thank you\u2019\u2019 tour Tuesday in North Carolina, less than a week after his bombastic return to rallies at an Ohio appearance that felt more like a raucous campaign stop than a traditional speech by a president-to-be. ...",
+      "sentiment": -0.0473648012,
+      "image": "http:\/\/apps.bostonglobe.com\/metro\/graphics\/2016\/12\/will\/assets\/will-lead.jpg",
+      "author": "Jonathan Lemire",
+      "degree": 10,
+      "source": "http:\/\/www.bostonglobe.com\/news\/politics\/2016\/12\/06\/donald-trump-taking-show-back-road\/UyEMAip6PNmWjoEWUO6E8J\/story.html",
+      "type": "article",
+      "stream": 0,
+      "name": "Donald Trump is taking the show back on the road",
+      "id": 11,
+      "sigmaDegree": 20,
+      "category": "home and garden",
+      "prominence": 0.8
+    },
+    {
+      "name": "Donald Trump",
+      "degree": 5,
+      "alias": [
+        "donald trump",
+        "president-elect donald trump",
+        "donald j. trump"
+      ],
+      "id": 12,
+      "source": "http:\/\/dbpedia.org\/resource\/Donald_Trump",
+      "type": "person"
+    },
+    {
+      "name": "Trump's Cabinet",
+      "degree": 1,
+      "id": 13,
+      "type": "company"
+    },
+    {
+      "name": "James Mattis",
+      "degree": 1,
+      "id": 14,
+      "source": "http:\/\/dbpedia.org\/resource\/James_Mattis",
+      "type": "person"
+    },
+    {
+      "name": "United States Department of Housing and Urban Development",
+      "degree": 1,
+      "id": 15,
+      "source": "http:\/\/dbpedia.org\/resource\/United_States_Department_of_Housing_and_Urban_Development",
+      "type": "organization"
+    },
+    {
+      "geo": "",
+      "name": "North Carolina",
+      "degree": 1,
+      "locationType": "StateOrCounty",
+      "id": 16,
+      "source": "http:\/\/dbpedia.org\/resource\/North_Carolina",
+      "type": "location"
+    },
+    {
+      "name": "NEW YORK",
+      "degree": 1,
+      "locationType": "City",
+      "alias": [
+        "new york"
+      ],
+      "id": 17,
+      "source": "http:\/\/dbpedia.org\/resource\/New_York",
+      "type": "location"
+    },
+    {
+      "name": "Federal Housing Administration",
+      "degree": 1,
+      "id": 18,
+      "source": "http:\/\/dbpedia.org\/resource\/Federal_Housing_Administration",
+      "type": "organization"
+    },
+    {
+      "name": "Al Gore",
+      "degree": 1,
+      "id": 19,
+      "source": "http:\/\/dbpedia.org\/resource\/Al_Gore",
+      "type": "person"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "TEHRAN, Iran (AP) \u2014 Iran's president said on Tuesday that his country will not allow incoming U.S. President Donald Trump to \"tear up\" Iran's landmark nuclear deal with world powers and also warned Tehran will react to any extension of American sanctions. The comments by Hassan Rouhani came during a speech at the University of Tehran commemorating the killings of Iranian students protesting a visit by then-U.S. Vice President Richard Nixon in 1953. ...",
+      "sentiment": -0.542774022,
+      "image": "http:\/\/ww4.hdnux.com\/photos\/55\/51\/34\/11966271\/3\/rawImage.jpg",
+      "author": "NASSER KARIMI",
+      "degree": 9,
+      "source": "http:\/\/www.chron.com\/news\/politics\/article\/Iran-president-Trump-won-t-be-able-to-harm-the-10726847.php",
+      "type": "article",
+      "stream": 0,
+      "name": "Iran president: Trump won't be able to harm the nuclear deal",
+      "id": 20,
+      "sigmaDegree": 19,
+      "category": "government",
+      "prominence": 0.8444444444444444
+    },
+    {
+      "name": "Hassan Rouhani",
+      "degree": 1,
+      "id": 21,
+      "type": "person"
+    },
+    {
+      "geo": "32.0 53.0",
+      "name": "Iran",
+      "degree": 1,
+      "locationType": "Country",
+      "id": 22,
+      "source": "http:\/\/dbpedia.org\/resource\/Iran",
+      "type": "location"
+    },
+    {
+      "geo": "35.69611111111111 51.42305555555556",
+      "name": "Tehran",
+      "degree": 1,
+      "locationType": "City",
+      "id": 23,
+      "source": "http:\/\/dbpedia.org\/resource\/Tehran",
+      "type": "location"
+    },
+    {
+      "name": "University of Tehran",
+      "degree": 1,
+      "id": 24,
+      "source": "http:\/\/dbpedia.org\/resource\/University_of_Tehran",
+      "type": "organization"
+    },
+    {
+      "name": "Mohammad Reza Pahlavi",
+      "degree": 1,
+      "id": 25,
+      "source": "http:\/\/dbpedia.org\/resource\/Mohammad_Reza_Pahlavi",
+      "type": "person"
+    },
+    {
+      "name": "Richard Nixon",
+      "degree": 1,
+      "id": 26,
+      "source": "http:\/\/dbpedia.org\/resource\/Richard_Nixon",
+      "type": "person"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "President-elect Donald Trump is trying to remake the American economy one business at a time. The strategy? ...",
+      "sentiment": -0.408318013,
+      "image": "http:\/\/www.bostonglobe.com\/rf\/image_585w\/Boston\/2011-2020\/2016\/11\/29\/BostonGlobe.com\/Ideas\/Images\/nabokov-1540167.jpg",
+      "author": "Evan Horowitz",
+      "degree": 11,
+      "source": "http:\/\/www.bostonglobe.com\/business\/2016\/12\/06\/why-trump-could-save-jobs-but-damage-economy\/UsRiP2v8ZtNYWdI2YUEniI\/story.html",
+      "type": "article",
+      "stream": 0,
+      "name": "Why Trump could save jobs but damage the economy",
+      "id": 27,
+      "sigmaDegree": 23,
+      "category": "business and industrial",
+      "prominence": 0.8363636363636363
+    },
+    {
+      "name": "Trump",
+      "degree": 3,
+      "id": 28,
+      "type": "company"
+    },
+    {
+      "geo": "40.0 -86.0",
+      "name": "Indiana",
+      "degree": 1,
+      "locationType": "StateOrCounty",
+      "id": 29,
+      "source": "http:\/\/dbpedia.org\/resource\/Indiana",
+      "type": "location"
+    },
+    {
+      "name": "China",
+      "degree": 2,
+      "locationType": "Country",
+      "alias": [
+        "china"
+      ],
+      "id": 30,
+      "source": "http:\/\/dbpedia.org\/resource\/China",
+      "type": "location"
+    },
+    {
+      "geo": "",
+      "name": "Mexico",
+      "degree": 1,
+      "locationType": "Country",
+      "id": 31,
+      "source": "http:\/\/dbpedia.org\/resource\/Mexico",
+      "type": "location"
+    },
+    {
+      "name": "Carrier",
+      "degree": 1,
+      "id": 32,
+      "type": "company"
+    },
+    {
+      "name": "Vietnam",
+      "degree": 1,
+      "locationType": "Country",
+      "id": 33,
+      "type": "location"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "Here is a list of the Oakland fire victims who died in the Ghost Ship warehouse fire in the city\u2019s Fruitvale neighborhood that began late Friday night Dec. 2, 2016. Authorities are still working to identify some of the dead at the artist collective. ...",
+      "sentiment": -0.560263991,
+      "image": "http:\/\/www.mercurynews.com\/wp-content\/uploads\/2016\/12\/cct-firemain-1206-061.jpg?w=1024&h=683",
+      "author": "Bay Area News Group",
+      "degree": 2,
+      "source": "http:\/\/www.mercurynews.com\/2016\/12\/05\/oakland-fire-victims-list-of-those-killed-in-the-ghost-ship-blaze\/",
+      "type": "article",
+      "stream": 0,
+      "name": "Oakland fire victims: List of those killed in the Ghost Ship blaze",
+      "id": 34,
+      "sigmaDegree": 5,
+      "category": "fire department",
+      "prominence": 1.0
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "She was like a lot of Bay Area artists looking for an affordable place where she could live and work. She rented a $300-a-month trailer in a communal living collective of like-minded souls in an Oakland warehouse convenient to BART. After just three months, however, she moved out. ...",
+      "sentiment": -0.225307003,
+      "image": "http:\/\/www.mercurynews.com\/wp-content\/uploads\/2016\/12\/sjm-firemain-1206-41.jpg?w=1024&h=819",
+      "author": "Tammerlin Drummond",
+      "degree": 11,
+      "source": "http:\/\/www.mercurynews.com\/2016\/12\/05\/oaklands-high-rents-help-drive-artists-into-unsafe-living-conditions\/",
+      "type": "article",
+      "stream": 0,
+      "name": "Oakland\u2019s high rents help drive artists into unsafe living conditions",
+      "id": 35,
+      "sigmaDegree": 13,
+      "category": "fire department",
+      "prominence": 0.4727272727272728
+    },
+    {
+      "name": "Jonah Strauss",
+      "degree": 1,
+      "id": 36,
+      "type": "person"
+    },
+    {
+      "name": "Ghost Ship",
+      "degree": 1,
+      "id": 37,
+      "type": "company"
+    },
+    {
+      "geo": "37.75 -122.28333333333333",
+      "name": "San Francisco Bay Area",
+      "degree": 1,
+      "locationType": "Region",
+      "id": 38,
+      "source": "http:\/\/dbpedia.org\/resource\/San_Francisco_Bay_Area",
+      "type": "location"
+    },
+    {
+      "name": "Bay Area",
+      "degree": 1,
+      "locationType": "City",
+      "id": 39,
+      "type": "location"
+    },
+    {
+      "name": "YouTube",
+      "degree": 1,
+      "id": 40,
+      "source": "http:\/\/dbpedia.org\/resource\/YouTube",
+      "type": "company"
+    },
+    {
+      "name": "Tammerlin Drummond",
+      "degree": 1,
+      "id": 41,
+      "type": "person"
+    },
+    {
+      "name": "Carmen Brito",
+      "degree": 1,
+      "id": 42,
+      "type": "person"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "BEIJING \u2014 \u00a0China warned President-elect Donald J. Trump on Monday that he was risking a confrontation over Taiwan, even as Mr. Trump broadened the dispute with new messages on Twitter challenging Beijing\u2019s trade policies and military activities in the South China Sea. ...",
+      "sentiment": -0.250393003,
+      "image": "https:\/\/static01.nyt.com\/images\/2016\/12\/06\/world\/06CHINATRUMP-1\/06CHINATRUMP-1-articleLarge.jpg",
+      "author": "JANE PERLEZ",
+      "degree": 12,
+      "source": "http:\/\/cn.nytimes.com\/asia-pacific\/20161206\/china-donald-trump-taiwan-twitter\/en-us\/",
+      "type": "article",
+      "stream": 0,
+      "name": "China Amplifies Warning on Taiwan, and Trump Takes a Tougher Line",
+      "id": 43,
+      "sigmaDegree": 30,
+      "category": "government",
+      "prominence": 1.0
+    },
+    {
+      "geo": "39.91388888888889 116.39166666666667",
+      "name": "Beijing",
+      "degree": 2,
+      "locationType": "City",
+      "alias": [
+        "beijing"
+      ],
+      "id": 44,
+      "source": "http:\/\/dbpedia.org\/resource\/Beijing",
+      "type": "location"
+    },
+    {
+      "geo": "23.766666666666666 121.0",
+      "name": "Taiwan",
+      "degree": 2,
+      "locationType": "Country",
+      "alias": [
+        "taiwan"
+      ],
+      "id": 45,
+      "source": "http:\/\/dbpedia.org\/resource\/Taiwan",
+      "type": "location"
+    },
+    {
+      "name": "Twitter",
+      "degree": 2,
+      "alias": [
+        "twitter"
+      ],
+      "id": 46,
+      "source": "http:\/\/dbpedia.org\/resource\/Twitter",
+      "type": "company"
+    },
+    {
+      "name": "Tsai Ing-wen",
+      "degree": 2,
+      "alias": [
+        "tsai ing-wen"
+      ],
+      "id": 47,
+      "source": "http:\/\/dbpedia.org\/resource\/Tsai_Ing-wen",
+      "type": "person"
+    },
+    {
+      "name": "Communist Party of China",
+      "degree": 1,
+      "id": 48,
+      "source": "http:\/\/dbpedia.org\/resource\/Communist_Party_of_China",
+      "type": "organization"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "U.S. Navy veteran Wendy Drey, right, of Citrus Hill, Calif., comes out of a tent as she packs up to leave the Oceti Sakowin camp where people have gathered to protest the Dakota Access oil pipeline in Cannon Ball, N.D., Monday, Dec. 5, 2016. Drey's tent does not have a wood floor or a wood stove which are considered necessary to ride out the upcoming wintry weather. ...",
+      "sentiment": -0.514900982,
+      "image": "http:\/\/ww3.hdnux.com\/photos\/55\/52\/56\/11971490\/3\/920x920.jpg",
+      "author": "",
+      "degree": 9,
+      "source": "http:\/\/www.chron.com\/news\/texas\/article\/Spokesman-offers-few-clues-on-Trump-s-pipeline-10716795.php",
+      "type": "article",
+      "stream": 0,
+      "name": "Spokesman offers few clues on Trump's pipeline stance",
+      "id": 49,
+      "sigmaDegree": 13,
+      "category": "weather",
+      "prominence": 0.5777777777777777
+    },
+    {
+      "name": "Wendy Drey",
+      "degree": 1,
+      "id": 50,
+      "type": "person"
+    },
+    {
+      "name": "Jason Miller",
+      "degree": 1,
+      "id": 51,
+      "type": "person"
+    },
+    {
+      "geo": "",
+      "name": "North Dakota",
+      "degree": 1,
+      "locationType": "StateOrCounty",
+      "id": 52,
+      "source": "http:\/\/dbpedia.org\/resource\/North_Dakota",
+      "type": "location"
+    },
+    {
+      "name": "Dakota Access",
+      "degree": 1,
+      "locationType": "City",
+      "id": 53,
+      "type": "location"
+    },
+    {
+      "name": "Army",
+      "degree": 1,
+      "id": 54,
+      "type": "organization"
+    },
+    {
+      "name": "N.D.",
+      "degree": 1,
+      "locationType": "StateOrCounty",
+      "id": 55,
+      "type": "location"
+    },
+    {
+      "name": "Cannon Ball",
+      "degree": 1,
+      "locationType": "City",
+      "id": 56,
+      "type": "location"
+    },
+    {
+      "date": "Tue Dec 06 00:00:00 UTC 2016",
+      "summary": "TAIPEI, Taiwan \u2014 Taiwan President Tsai Ing-wen said Tuesday that her phone call with President-elect Donald Trump should not be interpreted a significant shift in American policy, and stressed that both sides see the value of maintaining regional stability.\n\u2018\u2018Of course I have to stress that one phone call does not mean a policy shift,\u2019\u2019 she told a small group of American reporters in Taipei. \u2018\u2018The phone call was a way for us to express our respect for the US election as well as congratulate President-elect Trump on his win.\u2019\u2019\nTrump\u2019s phone call with Tsai broke four decades of diplomatic protocol, alarming some commentators who feared it could spark a dangerous confrontation with China. Others though, especially Republicans, have welcomed it as a sign that Trump will not be bullied by China, and believe the United States should offer more support to Taiwan\u2019s island democracy. ...",
+      "sentiment": -0.191141993,
+      "image": "http:\/\/apps.bostonglobe.com\/metro\/graphics\/2016\/12\/will\/assets\/will-lead.jpg",
+      "author": "Lavanya Ramanathan",
+      "degree": 11,
+      "source": "https:\/\/www.bostonglobe.com\/news\/world\/2016\/12\/06\/taiwanese-president-downplays-conversation-with-donald-trump\/y5AsoAZzUrP0kqSxujdBBO\/story.html",
+      "type": "article",
+      "stream": 0,
+      "name": "Taiwanese president downplays conversation with Donald Trump",
+      "id": 57,
+      "sigmaDegree": 23,
+      "category": "news",
+      "prominence": 0.8363636363636363
+    },
+    {
+      "name": "President-elect Trump",
+      "degree": 1,
+      "id": 58,
+      "type": "person"
+    },
+    {
+      "name": "China Policy Institute",
+      "degree": 1,
+      "id": 59,
+      "source": "http:\/\/dbpedia.org\/resource\/China_Policy_Institute",
+      "type": "organization"
+    },
+    {
+      "geo": "",
+      "name": "Washington, D.C.",
+      "degree": 1,
+      "locationType": "City",
+      "id": 60,
+      "source": "http:\/\/dbpedia.org\/resource\/Washington,_D.C.",
+      "type": "location"
+    },
+    {
+      "name": "Afterlife",
+      "degree": 1,
+      "id": 61,
+      "type": "concept"
+    },
+    {
+      "name": "Death",
+      "degree": 1,
+      "id": 62,
+      "type": "concept"
+    },
+    {
+      "name": "Ryder Cup",
+      "degree": 1,
+      "id": 63,
+      "type": "concept"
+    },
+    {
+      "name": "PGA Championship",
+      "degree": 1,
+      "id": 64,
+      "type": "concept"
+    },
+    {
+      "name": "Democratic Party",
+      "degree": 2,
+      "id": 65,
+      "type": "concept"
+    },
+    {
+      "name": "International trade",
+      "degree": 1,
+      "id": 66,
+      "type": "concept"
+    },
+    {
+      "name": "Economics",
+      "degree": 1,
+      "id": 67,
+      "type": "concept"
+    },
+    {
+      "name": "Tariff",
+      "degree": 1,
+      "id": 68,
+      "type": "concept"
+    },
+    {
+      "name": "Eviction",
+      "degree": 1,
+      "id": 69,
+      "type": "concept"
+    },
+    {
+      "name": "Construction permit",
+      "degree": 1,
+      "id": 70,
+      "type": "concept"
+    },
+    {
+      "name": "Live USB",
+      "degree": 1,
+      "id": 71,
+      "type": "concept"
+    },
+    {
+      "name": "South China Sea",
+      "degree": 2,
+      "id": 72,
+      "type": "concept"
+    },
+    {
+      "name": "East China Sea",
+      "degree": 1,
+      "id": 73,
+      "type": "concept"
+    },
+    {
+      "name": "Sioux",
+      "degree": 1,
+      "id": 74,
+      "type": "concept"
+    },
+    {
+      "name": "Diplomacy",
+      "degree": 1,
+      "id": 75,
+      "type": "concept"
+    }
+  ],
+  "links": [
+    {
+      "id": 0,
+      "source": 0,
+      "value": 1,
+      "target": 1
+    },
+    {
+      "id": 1,
+      "source": 0,
+      "value": 1,
+      "target": 2
+    },
+    {
+      "id": 2,
+      "source": 3,
+      "value": 1,
+      "target": 4
+    },
+    {
+      "id": 3,
+      "source": 3,
+      "value": 1,
+      "target": 5
+    },
+    {
+      "id": 4,
+      "source": 3,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 5,
+      "source": 3,
+      "value": 1,
+      "target": 7
+    },
+    {
+      "id": 6,
+      "source": 3,
+      "value": 1,
+      "target": 8
+    },
+    {
+      "id": 7,
+      "source": 3,
+      "value": 1,
+      "target": 9
+    },
+    {
+      "id": 8,
+      "source": 3,
+      "value": 1,
+      "target": 10
+    },
+    {
+      "id": 9,
+      "source": 11,
+      "value": 1,
+      "target": 12
+    },
+    {
+      "id": 10,
+      "source": 11,
+      "value": 1,
+      "target": 13
+    },
+    {
+      "id": 11,
+      "source": 11,
+      "value": 1,
+      "target": 14
+    },
+    {
+      "id": 12,
+      "source": 11,
+      "value": 1,
+      "target": 15
+    },
+    {
+      "id": 13,
+      "source": 11,
+      "value": 1,
+      "target": 16
+    },
+    {
+      "id": 14,
+      "source": 11,
+      "value": 1,
+      "target": 17
+    },
+    {
+      "id": 15,
+      "source": 11,
+      "value": 1,
+      "target": 18
+    },
+    {
+      "id": 16,
+      "source": 11,
+      "value": 1,
+      "target": 19
+    },
+    {
+      "id": 17,
+      "source": 11,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 18,
+      "source": 20,
+      "value": 1,
+      "target": 12
+    },
+    {
+      "id": 19,
+      "source": 20,
+      "value": 1,
+      "target": 21
+    },
+    {
+      "id": 20,
+      "source": 20,
+      "value": 1,
+      "target": 22
+    },
+    {
+      "id": 21,
+      "source": 20,
+      "value": 1,
+      "target": 23
+    },
+    {
+      "id": 22,
+      "source": 20,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 23,
+      "source": 20,
+      "value": 1,
+      "target": 24
+    },
+    {
+      "id": 24,
+      "source": 20,
+      "value": 1,
+      "target": 25
+    },
+    {
+      "id": 25,
+      "source": 20,
+      "value": 1,
+      "target": 26
+    },
+    {
+      "id": 26,
+      "source": 27,
+      "value": 1,
+      "target": 12
+    },
+    {
+      "id": 27,
+      "source": 27,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 28,
+      "source": 27,
+      "value": 1,
+      "target": 28
+    },
+    {
+      "id": 29,
+      "source": 27,
+      "value": 1,
+      "target": 29
+    },
+    {
+      "id": 30,
+      "source": 27,
+      "value": 1,
+      "target": 30
+    },
+    {
+      "id": 31,
+      "source": 27,
+      "value": 1,
+      "target": 31
+    },
+    {
+      "id": 32,
+      "source": 27,
+      "value": 1,
+      "target": 32
+    },
+    {
+      "id": 33,
+      "source": 27,
+      "value": 1,
+      "target": 33
+    },
+    {
+      "id": 34,
+      "source": 34,
+      "value": 1,
+      "target": 1
+    },
+    {
+      "id": 35,
+      "source": 34,
+      "value": 1,
+      "target": 2
+    },
+    {
+      "id": 36,
+      "source": 35,
+      "value": 1,
+      "target": 36
+    },
+    {
+      "id": 37,
+      "source": 35,
+      "value": 1,
+      "target": 37
+    },
+    {
+      "id": 38,
+      "source": 35,
+      "value": 1,
+      "target": 2
+    },
+    {
+      "id": 39,
+      "source": 35,
+      "value": 1,
+      "target": 38
+    },
+    {
+      "id": 40,
+      "source": 35,
+      "value": 1,
+      "target": 39
+    },
+    {
+      "id": 41,
+      "source": 35,
+      "value": 1,
+      "target": 40
+    },
+    {
+      "id": 42,
+      "source": 35,
+      "value": 1,
+      "target": 41
+    },
+    {
+      "id": 43,
+      "source": 35,
+      "value": 1,
+      "target": 42
+    },
+    {
+      "id": 44,
+      "source": 43,
+      "value": 1,
+      "target": 12
+    },
+    {
+      "id": 45,
+      "source": 43,
+      "value": 1,
+      "target": 30
+    },
+    {
+      "id": 46,
+      "source": 43,
+      "value": 1,
+      "target": 44
+    },
+    {
+      "id": 47,
+      "source": 43,
+      "value": 1,
+      "target": 45
+    },
+    {
+      "id": 48,
+      "source": 43,
+      "value": 1,
+      "target": 46
+    },
+    {
+      "id": 49,
+      "source": 43,
+      "value": 1,
+      "target": 47
+    },
+    {
+      "id": 50,
+      "source": 43,
+      "value": 1,
+      "target": 48
+    },
+    {
+      "id": 51,
+      "source": 43,
+      "value": 1,
+      "target": 28
+    },
+    {
+      "id": 52,
+      "source": 43,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 53,
+      "source": 43,
+      "value": 1,
+      "target": 10
+    },
+    {
+      "id": 54,
+      "source": 49,
+      "value": 1,
+      "target": 50
+    },
+    {
+      "id": 55,
+      "source": 49,
+      "value": 1,
+      "target": 12
+    },
+    {
+      "id": 56,
+      "source": 49,
+      "value": 1,
+      "target": 51
+    },
+    {
+      "id": 57,
+      "source": 49,
+      "value": 1,
+      "target": 52
+    },
+    {
+      "id": 58,
+      "source": 49,
+      "value": 1,
+      "target": 53
+    },
+    {
+      "id": 59,
+      "source": 49,
+      "value": 1,
+      "target": 54
+    },
+    {
+      "id": 60,
+      "source": 49,
+      "value": 1,
+      "target": 55
+    },
+    {
+      "id": 61,
+      "source": 49,
+      "value": 1,
+      "target": 56
+    },
+    {
+      "id": 62,
+      "source": 57,
+      "value": 1,
+      "target": 45
+    },
+    {
+      "id": 63,
+      "source": 57,
+      "value": 1,
+      "target": 58
+    },
+    {
+      "id": 64,
+      "source": 57,
+      "value": 1,
+      "target": 47
+    },
+    {
+      "id": 65,
+      "source": 57,
+      "value": 1,
+      "target": 28
+    },
+    {
+      "id": 66,
+      "source": 57,
+      "value": 1,
+      "target": 6
+    },
+    {
+      "id": 67,
+      "source": 57,
+      "value": 1,
+      "target": 44
+    },
+    {
+      "id": 68,
+      "source": 57,
+      "value": 1,
+      "target": 59
+    },
+    {
+      "id": 69,
+      "source": 57,
+      "value": 1,
+      "target": 60
+    },
+    {
+      "id": 70,
+      "source": 57,
+      "value": 1,
+      "target": 46
+    },
+    {
+      "id": 71,
+      "source": 0,
+      "value": 1,
+      "target": 61
+    },
+    {
+      "id": 72,
+      "source": 0,
+      "value": 1,
+      "target": 62
+    },
+    {
+      "id": 73,
+      "source": 3,
+      "value": 1,
+      "target": 63
+    },
+    {
+      "id": 74,
+      "source": 3,
+      "value": 1,
+      "target": 64
+    },
+    {
+      "id": 75,
+      "source": 11,
+      "value": 1,
+      "target": 65
+    },
+    {
+      "id": 76,
+      "source": 20,
+      "value": 1,
+      "target": 65
+    },
+    {
+      "id": 77,
+      "source": 27,
+      "value": 1,
+      "target": 66
+    },
+    {
+      "id": 78,
+      "source": 27,
+      "value": 1,
+      "target": 67
+    },
+    {
+      "id": 79,
+      "source": 27,
+      "value": 1,
+      "target": 68
+    },
+    {
+      "id": 80,
+      "source": 35,
+      "value": 1,
+      "target": 69
+    },
+    {
+      "id": 81,
+      "source": 35,
+      "value": 1,
+      "target": 70
+    },
+    {
+      "id": 82,
+      "source": 35,
+      "value": 1,
+      "target": 71
+    },
+    {
+      "id": 83,
+      "source": 43,
+      "value": 1,
+      "target": 72
+    },
+    {
+      "id": 84,
+      "source": 43,
+      "value": 1,
+      "target": 73
+    },
+    {
+      "id": 85,
+      "source": 49,
+      "value": 1,
+      "target": 74
+    },
+    {
+      "id": 86,
+      "source": 57,
+      "value": 1,
+      "target": 75
+    },
+    {
+      "id": 87,
+      "source": 57,
+      "value": 1,
+      "target": 72
+    }
+  ],
+  "numStreams": 1,
+  "status": "OK"
+}

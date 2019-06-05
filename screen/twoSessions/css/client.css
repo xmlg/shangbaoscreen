@@ -1,0 +1,226 @@
+body,html{
+
+	margin: 0;
+
+	padding: 0;
+
+}
+
+body{
+
+	width: 1920px;
+
+	height: 1080px;
+
+	background-color: rgb(14,20,29);
+
+	box-sizing: border-box;
+
+	font-family: simhei;
+
+}
+
+.top{
+
+	color: white;
+
+	float: left;
+
+	height: 80px;
+
+	width: 1840px;
+
+	margin-top: 20px;
+
+	margin-left: 20px;
+
+	background-image: url(../images/clentTop_03.jpg);
+
+	background-size: 100% 100%;
+
+	font-size: 46px;
+
+	font-family: simhei;
+
+	line-height: 80px;
+
+	padding-left: 50px;
+
+}
+
+.main{
+
+	float: left;
+
+	width: 1840px;
+
+	height: 930px;
+
+	margin: 15px 20px;
+
+	overflow: hidden;
+
+	background-image: url(../images/clentbg_03.jpg);
+
+	background-size: 100% 100%;
+
+}
+
+.main_child{
+
+	width: 1816px;
+
+	height: 855px;
+
+	margin-left: 30px;
+
+	margin-top: 30px;
+
+	
+
+	overflow: hidden;
+
+}
+
+.item{
+
+	width: 1679px;
+
+	height: 285px;
+
+	float: left;
+
+	margin-left: 30px;
+
+	margin-top: 30px;
+
+}
+
+.item_name{
+
+	width: 1880px;
+
+	height: 40px;
+
+	font-family: simhei;
+
+	font-size: 42px;
+
+	padding-left: 50px;
+
+	color: white;
+
+}
+
+.item_logo{
+
+	width: 120px;
+
+	height: 120px;
+
+	border-radius: 35px;
+
+	float: left;
+
+	overflow: hidden;
+
+	margin-top: 48px;
+
+}
+
+.item_main{
+
+	background-image: url(../images/itemBg_07.jpg);
+
+	background-size: 100% 100%;
+
+	float: left;
+
+	width: 1415px;
+
+	line-height: 77px;
+
+	height: 150px;
+
+	margin-left: 30px;
+
+	margin-top:15px;
+
+	font-size: 41px;
+
+	font-family: simhei;
+
+	color: white;
+
+	overflow: hidden;
+
+	padding: 20px;
+
+}
+
+.right_scroll{
+
+	width: 20px;
+
+	height: 800px;
+
+	background:rgba(16,84,109,0.8) ;
+
+	position: absolute;
+
+	left: 1810px;
+
+	top: 187px;
+
+	border-radius: 15px;
+
+	z-index: 999;
+
+}
+
+.scroll_child{
+
+	background: rgba(19,181,228,0.9);
+
+	position: absolute;
+
+	width: 20px;
+
+	height: 100px;
+
+	left: 1810px;
+
+	top: 187px;
+
+	border-radius: 15px;
+
+	z-index: 1000;
+
+}
+
+#mark{
+
+	width: 1781px;
+
+	height: 145px;
+
+	position: absolute;
+
+	border-radius: 30px;
+
+	left: 78px;
+
+	
+
+	 background: -webkit-linear-gradient( rgba(28,72,90,0.8),rgba(14,20,29,0)); /* Safari 5.1 - 6.0 */
+
+  background: -o-linear-gradient( rgba(28,72,90,0.8),rgba(14,20,29,0)); /* Opera 11.1 - 12.0 */
+
+  background: -moz-linear-gradient( rgba(28,72,90,0.8),rgba(14,20,29,0)); /* Firefox 3.6 - 15 */
+
+  background: linear-gradient( rgba(13,20,30,0),rgba(13,20,30,1)); /* ��׼���﷨ */
+
+	top: 885px;
+
+}
+

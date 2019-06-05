@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "name": "市消防局",
+            "acceptCount": 21,
+            "reCount": 21,
+            "reProportion": "100%"
+        },
+        {
+            "name": "市教育局",
+            "acceptCount": 19,
+            "reCount": 18,
+            "reProportion": "94.73%"
+        },
+        {
+            "name": "市商务局",
+            "acceptCount": 28,
+            "reCount": 26,
+            "reProportion": "92.85%"
+        },
+        {
+            "name": "市妇联",
+            "acceptCount": 27,
+            "reCount": 25,
+            "reProportion": "92.59%"
+        } ,
+        
+        {
+            "name": "市质监局",
+            "acceptCount": 35,
+            "reCount": 31,
+            "reProportion": "88.57%"
+        },
+        {
+            "name": "市社保局",
+            "acceptCount": 72,
+            "reCount": 62,
+            "reProportion": "86.11%"
+        },
+        {
+            "name": "市住建局",
+            "acceptCount": 36,
+            "reCount": 28,
+            "reProportion": "77.77%"
+        },
+         {
+            "name": "市地税局",
+            "acceptCount": 34,
+            "reCount": 21,
+            "reProportion": "61.76%"
+        }
+
+    ]
+}

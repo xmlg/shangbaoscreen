@@ -1,0 +1,241 @@
+svg g.mark01 circle.circle1,
+svg g.mark01 circle.circle2,
+svg g.mark02 circle.circle1,
+svg g.mark02 circle.circle2 {
+    -webkit-animation-name: circleAnim;
+    animation-name: circleAnim;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes circleAnim {
+    0% {
+        -webkit-transform: rscale(0.9);
+        transform: rscale(0.9);
+        stroke-width: 0.9px;
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        stroke-width: 2px;
+    }
+}
+
+@keyframes circleAnim {
+    0% {
+        -webkit-transform: rscale(0.9);
+        transform: rscale(0.9);
+        stroke-width: 0.9px;
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        stroke-width: 2px;
+    }
+}
+
+body {
+    overflow: hidden;
+    background-color: #0E141D;
+}
+
+body .header {
+    position: absolute;
+    margin: 16px 20px 0;
+    padding-left: 10px;
+    width: 1880px;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 80px;
+    color: white;
+    font-family: simhei;
+}
+
+body .left {
+    float: left;
+    padding-top: 85px;
+    width: 50%;
+    height: 100%;
+    /*background-color: rgba(255, 0, 0, 0.5);*/
+}
+
+body .right {
+    float: left;
+    width: 96%;
+    height: 100%;
+}
+
+body .right .up {
+    padding-top: 58px;
+    height: 100%;
+}
+
+div.compass {
+    position: absolute;
+    top: 162px;
+    left: 106px;
+    width: 91px;
+    height: 91px;
+    background-image: url("../img/compass.png");
+    background-size: 100% 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+div.compass .S {
+    position: absolute;
+    bottom: -26px;
+    left: 39px;
+}
+
+div.compass .N {
+    position: absolute;
+    top: -25px;
+    left: 39px;
+}
+
+div.compass .E {
+    position: absolute;
+    top: 31px;
+    left: 95px;
+}
+
+div.compass .W {
+    position: absolute;
+    top: 31px;
+    right: 98px;
+}
+
+img.underline1 {
+    position: absolute;
+    top: 205px;
+    left: 316px;
+    width: 375px;
+    height: 7px;
+}
+
+img.underline2 {
+    position: absolute;
+    top: 211px;
+    left: 1495px;
+    width: 265px;
+    height: 5px;
+}
+
+.list-header-1 {
+    margin-top: 85px;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    font-size: 41px;
+    font-family: SimHei;
+}
+
+ol.list1 {
+    margin-top: 55px;
+    margin-left: 70px;
+    padding: 0;
+}
+
+ol.list1 li {
+    position: relative;
+
+    height: 85px;
+    color: #45DDFF;
+    list-style: none;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: SimHei;
+    line-height: 85px;
+}
+
+ol.list1 li.focus {
+    color: yellow;
+}
+
+ol.list1 li.focus .mark {
+    top: -15px;
+    left: -20px;
+    width: 57px;
+    height: 57px;
+    background-image: url("../images/mark.png");
+    background-size: 100% 100%;
+}
+
+ol.list1 li.focus .bar-inner {
+    background-color: yellow !important;
+}
+
+ol.list1 li .mark,
+ol.list1 li .content,
+ol.list1 li .bar {
+    float: left;
+    height: 100%;
+}
+
+ol.list1 li .mark {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+ol.list1 li .content {
+    overflow: hidden;
+    margin-left: 46px;
+    width: 1280px;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+}
+
+ol.list1 li .content .content-inner {
+    white-space: nowrap;
+}
+
+ol.list1 li .bar {
+    margin-left: 25px;
+    width: 375px;
+}
+
+ol.list1 li .bar .value {
+    float: left;
+    padding-right: 7px;
+    width: auto;
+    height: 100%;
+    text-align: right;
+    letter-spacing: 1.1px;
+    font-size: 40px;
+    line-height: 32px;
+}
+
+ol.list1 li .bar .bar-outer {
+    /* float: left;*/
+    margin-top: 2px;
+    width: 350px;
+    height: 26px;
+    background-color: #266D85;
+    text-align: center;
+    line-height: 29px;
+    margin-left: 95px;
+}
+
+ol.list1 li .bar .bar-outer .bar-inner {
+    height: 100%;
+    background-color: #43D5FF;
+}
+
+.focus2 {
+    background: rgb(101, 103, 40) !important;
+}

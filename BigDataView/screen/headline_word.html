@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+ 
+    <link rel="stylesheet" href="css/headline_word.css">
+
+<title></title>
+</head>
+<body>
+
+    <header class="header">
+        
+    </header>
+
+    <section class="demo">
+
+       
+        <dl class="list maki">
+            <dt>热词榜</dt>
+           <!-- <dd><a href="#">Mspanguro</a></dd>
+            <dd><a href="#">Toro</a></dd>
+            <dd><a href="#">Ebi</a></dd>
+            <dd><a href="#">Saba</a></dd>
+            <dd><a href="#">Ika</a></dd>
+            <dd><a href="#">Tako</a></dd>
+            <dd><a href="#">Tomago</a></dd>
+            <dd><a href="#">Kani</a></dd>
+            <dd><a href="#">Katsuo</a></dd>
+            <dd><a href="#">Maguro</a></dd>
+            <dd><a href="#">Maguro</a></dd>-->
+        </dl>
+
+        <a href="#" id="toggle" class="toggle" style="display: none">Toggle</a>
+    </section>
+
+
+  
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/makisu.js"></script>
+    <script>
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)
+                return unescape(r[2]);
+            return null;
+        }
+        var type=getQueryString("type");
+        if(type=="china"){
+            type=0;
+        }else{
+            type=1;
+        }
+
+        var url="modelid=keywords&serviceid=hotpointcluster&typeid=widget&user_id=admin&department=admin&top=8&type="+type;
+        $.ajax({
+            type: "GET",
+            url: "/wcm/bigdata.do",
+            data:url,
+            dataType: "json",
+            success: function(data){
+                console.log(1);
+                var html="";
+                data.forEach(function(array,index,array2){
+                    html+="<dd><a>"+(index+1)+"、"+array.keyword+"</a></dd>";
+                });
+                $(".list").append(html);
+                load();
+            }
+        });
+
+        // The `enabled` flag will be `false` if CSS 3D isn't available
+
+        function load(){
+            if ( $.fn.makisu.enabled ) {
+
+                var $sashimi = $( '.sashimi' );
+                var $nigiri = $( '.nigiri' );
+                var $maki = $( '.maki' );
+
+                // Create Makisus
+
+                $nigiri.makisu({
+                    selector: 'dd',
+                    overlap: 0.85,
+                    speed: 1.7
+                });
+
+                $maki.makisu({
+                    selector: 'dd',
+                    overlap: 0.6,
+                    speed: 0.85
+                });
+
+                $sashimi.makisu({
+                    selector: 'dd',
+                    overlap: 0.2,
+                    speed: 0.5
+                });
+
+                // Open all
+
+                $( '.list' ).makisu( 'open' );
+
+
+                // Disable all links
+
+                $( '.demo a' ).click( function( event ) {
+                    event.preventDefault();
+                });
+
+            } else {
+
+                $( '.warning' ).show();
+            }
+        }
+        // Toggle on click
+
+        $( '.toggle' ).on( 'click', function() {
+            $( '.list' ).makisu( 'toggle' );
+        });
+
+    </script>
+    
+
+</body>
+</html>

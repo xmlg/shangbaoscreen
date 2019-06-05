@@ -1,0 +1,140 @@
+@font-face {
+	font-family: 'FangZhengLangTing';
+	src: url('../font/FZLTHJW.TTF') format('truetype');
+}
+
+body {
+	font-family: 'FangZhengLangTing';
+}
+
+body {
+	/*background-image: url(../ui/原创稿件排行榜.jpg);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+	background-color: #0D141E;
+}
+
+h1.top-top {
+	position: absolute;
+	top: 30px;
+	left: 35px;
+	width: 1884px;
+	height: 82px;
+	line-height: 84px;
+	background-image: url(../img/header-bg.png);
+	background-size: 100% 100%;
+	margin: 0px;
+	font-weight: 900;
+	color: #FFFFFF;
+	font-size: 46px;
+	padding-left: 49px;
+	letter-spacing: 2px;
+}
+
+h1.top {
+	position: absolute;
+	text-align: center;
+	color: #00FCFE;
+	font-size: 50px;
+	font-weight: 500;
+	background-repeat: no-repeat;
+	width: 100%;
+	top: 106px;
+	left: 8px;
+	letter-spacing: -1.7px;
+	padding-left: 15px;
+	background-image: url(../img/title-bg-3.png);
+	background-size: 100% 72%;
+	background-position: 12px 8px;
+}
+
+div.main {
+	position: absolute;
+	top: 183px;
+	left: 35px;
+	width: 1850px;
+	height: 840px;
+	background-image: url(../img/grad-bg-2.png);
+	background-size: 100% 100%;
+}
+
+.list-header {
+	margin-top: 28px;
+	height: 100px;
+	/*background-color: #11425F;*/
+}
+
+.list-header .th1,
+.list-header .th2,
+.list-header .th3,
+.list-header .th4 {
+	float: left;
+	text-align: center;
+	height: 100%;
+	line-height: 102px;
+	font-size: 46px;
+	color: #10B3E0;
+}
+
+.list-header .th1 {
+	width: 300px;
+	padding-right: 106px;
+}
+
+.list-header .th2 {
+	width: 928px;
+	padding-right: 182px;
+}
+
+.list-header .th3 {
+	width: 192px;
+}
+
+.list-header .th4 {
+	width: 420px;
+	padding-left: 64px;
+}
+
+.list-item {
+	height: 72px;
+	color: #ffffff;
+}
+
+.list-item:nth-child(even) {
+	background-color: #0D5668;
+}
+
+.list-item .td1,
+.list-item .td2,
+.list-item .td3,
+.list-item .td4 {
+	float: left;
+	line-height: 80px;
+	font-size: 40px;
+	height: 100%;
+}
+
+.list-item .td1 {
+	padding-left: 84px;
+	width: 300px;
+}
+
+.list-item .td2 {
+	padding-right: 180px;
+	width: 928px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .td3 {
+	width: 192px;
+	text-align: center;
+}
+
+.list-item .td4 {
+	width: 420px;
+	padding-left: 56px;
+	text-align: center;
+}

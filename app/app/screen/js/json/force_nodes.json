@@ -1,0 +1,1696 @@
+[
+  {
+    "name": "ROOT",
+    "value": 8.9709550157701,
+    "id": 0,
+    "depth": 0,
+    "category": 2
+  },
+  {
+    "name": "NODE_1",
+    "value": 6.448341286266254,
+    "id": 1,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_2",
+    "value": 9.423812993005335,
+    "id": 2,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_3",
+    "value": 6.763166238089191,
+    "id": 3,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_4",
+    "value": 3.695146759060382,
+    "id": 4,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_5",
+    "value": 6.585634285041861,
+    "id": 5,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_6",
+    "value": 8.570266280173254,
+    "id": 6,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_7",
+    "value": 9.21626063242705,
+    "id": 7,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_8",
+    "value": 9.338338943889301,
+    "id": 8,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_9",
+    "value": 3.536371903868419,
+    "id": 9,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_10",
+    "value": 9.026093082999568,
+    "id": 10,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_11",
+    "value": 2.229567471418548,
+    "id": 11,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_12",
+    "value": 3.781380712135034,
+    "id": 12,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_13",
+    "value": 4.933240222988282,
+    "id": 13,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_14",
+    "value": 7.123459332978513,
+    "id": 14,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_15",
+    "value": 6.634279930930589,
+    "id": 15,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_16",
+    "value": 4.88635205021078,
+    "id": 16,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_17",
+    "value": 6.982650048125812,
+    "id": 17,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_18",
+    "value": 3.3907847279965946,
+    "id": 18,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_19",
+    "value": 5.921981521926872,
+    "id": 19,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_20",
+    "value": 7.375941866357929,
+    "id": 20,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_21",
+    "value": 4.478416088805959,
+    "id": 21,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_22",
+    "value": 3.468893581656083,
+    "id": 22,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_23",
+    "value": 4.627966436980154,
+    "id": 23,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_24",
+    "value": 6.816437331187798,
+    "id": 24,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_25",
+    "value": 8.59996429665678,
+    "id": 25,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_26",
+    "value": 5.410903606939435,
+    "id": 26,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_27",
+    "value": 6.033992796305338,
+    "id": 27,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_28",
+    "value": 5.474604289737071,
+    "id": 28,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_29",
+    "value": 9.010561154725352,
+    "id": 29,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_30",
+    "value": 5.613026617600468,
+    "id": 30,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_31",
+    "value": 3.9540406410177944,
+    "id": 31,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_32",
+    "value": 3.9549565665598063,
+    "id": 32,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_33",
+    "value": 2.473002133825922,
+    "id": 33,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_34",
+    "value": 2.2670505291032548,
+    "id": 34,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_35",
+    "value": 4.47230606734613,
+    "id": 35,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_36",
+    "value": 5.982490743336633,
+    "id": 36,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_37",
+    "value": 3.9975718835359544,
+    "id": 37,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_38",
+    "value": 2.3238975711831493,
+    "id": 38,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_39",
+    "value": 8.011557525604841,
+    "id": 39,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_40",
+    "value": 3.7186266692780343,
+    "id": 40,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_41",
+    "value": 2.073285993030627,
+    "id": 41,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_42",
+    "value": 8.166377069670556,
+    "id": 42,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_43",
+    "value": 8.471617119361916,
+    "id": 43,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_44",
+    "value": 9.368243585995717,
+    "id": 44,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_45",
+    "value": 8.000606930107935,
+    "id": 45,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_46",
+    "value": 8.178209140309885,
+    "id": 46,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_47",
+    "value": 6.873207757389352,
+    "id": 47,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_48",
+    "value": 6.56202485696752,
+    "id": 48,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_49",
+    "value": 4.000880799795381,
+    "id": 49,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_50",
+    "value": 2.5786939816093835,
+    "id": 50,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_51",
+    "value": 7.603286625991121,
+    "id": 51,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_52",
+    "value": 3.4624632692050543,
+    "id": 52,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_53",
+    "value": 5.075536824376703,
+    "id": 53,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_54",
+    "value": 6.411309955836508,
+    "id": 54,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_55",
+    "value": 7.639485725147553,
+    "id": 55,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_56",
+    "value": 6.525984126248726,
+    "id": 56,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_57",
+    "value": 6.900989772437386,
+    "id": 57,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_58",
+    "value": 4.605483753420103,
+    "id": 58,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_59",
+    "value": 7.778129599699909,
+    "id": 59,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_60",
+    "value": 4.808953787656639,
+    "id": 60,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_61",
+    "value": 4.947298224670011,
+    "id": 61,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_62",
+    "value": 3.418228948465515,
+    "id": 62,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_63",
+    "value": 3.589799532136105,
+    "id": 63,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_64",
+    "value": 5.628395502000055,
+    "id": 64,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_65",
+    "value": 5.98902201661199,
+    "id": 65,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_66",
+    "value": 5.6573339423290605,
+    "id": 66,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_67",
+    "value": 4.213078917404335,
+    "id": 67,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_68",
+    "value": 8.144507959057925,
+    "id": 68,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_69",
+    "value": 7.0625380419311306,
+    "id": 69,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_70",
+    "value": 9.271781866332656,
+    "id": 70,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_71",
+    "value": 4.723368597656876,
+    "id": 71,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_72",
+    "value": 7.0657381078624155,
+    "id": 72,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_73",
+    "value": 6.023925051969366,
+    "id": 73,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_74",
+    "value": 5.394436311050523,
+    "id": 74,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_75",
+    "value": 9.569534318936487,
+    "id": 75,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_76",
+    "value": 6.026398648986454,
+    "id": 76,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_77",
+    "value": 3.35159812627408,
+    "id": 77,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_78",
+    "value": 9.486978303287716,
+    "id": 78,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_79",
+    "value": 7.023805233541305,
+    "id": 79,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_80",
+    "value": 4.083227349638895,
+    "id": 80,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_81",
+    "value": 4.583822078163651,
+    "id": 81,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_82",
+    "value": 9.290374191341199,
+    "id": 82,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_83",
+    "value": 2.1289715195995953,
+    "id": 83,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_84",
+    "value": 9.60184082447958,
+    "id": 84,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_85",
+    "value": 9.805892889537294,
+    "id": 85,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_86",
+    "value": 3.546745286650646,
+    "id": 86,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_87",
+    "value": 8.334938728332107,
+    "id": 87,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_88",
+    "value": 6.328668666038226,
+    "id": 88,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_89",
+    "value": 7.170107056802655,
+    "id": 89,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_90",
+    "value": 6.712110875509509,
+    "id": 90,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_91",
+    "value": 5.4059977451876975,
+    "id": 91,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_92",
+    "value": 9.17657426821385,
+    "id": 92,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_93",
+    "value": 3.0567878037637577,
+    "id": 93,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_94",
+    "value": 4.179636838410374,
+    "id": 94,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_95",
+    "value": 5.0702802741704325,
+    "id": 95,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_96",
+    "value": 3.2892531778221414,
+    "id": 96,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_97",
+    "value": 6.839061108738161,
+    "id": 97,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_98",
+    "value": 4.337713624845367,
+    "id": 98,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_99",
+    "value": 5.969405940801684,
+    "id": 99,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_100",
+    "value": 7.589446507463235,
+    "id": 100,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_101",
+    "value": 4.376005368991006,
+    "id": 101,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_102",
+    "value": 2.9085444545791734,
+    "id": 102,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_103",
+    "value": 4.9150328312922635,
+    "id": 103,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_104",
+    "value": 3.096423987724311,
+    "id": 104,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_105",
+    "value": 8.531077738876466,
+    "id": 105,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_106",
+    "value": 7.465591243977066,
+    "id": 106,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_107",
+    "value": 9.872691118418267,
+    "id": 107,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_108",
+    "value": 6.463713397959788,
+    "id": 108,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_109",
+    "value": 2.3887438882641376,
+    "id": 109,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_110",
+    "value": 9.28370804390842,
+    "id": 110,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_111",
+    "value": 8.92132663591258,
+    "id": 111,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_112",
+    "value": 6.232287102992389,
+    "id": 112,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_113",
+    "value": 9.187323730746337,
+    "id": 113,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_114",
+    "value": 8.057037263811798,
+    "id": 114,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_115",
+    "value": 7.19461704885936,
+    "id": 115,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_116",
+    "value": 4.7971273265671535,
+    "id": 116,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_117",
+    "value": 5.518094763521983,
+    "id": 117,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_118",
+    "value": 5.3910565557296195,
+    "id": 118,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_119",
+    "value": 7.448973819836123,
+    "id": 119,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_120",
+    "value": 4.985741711456241,
+    "id": 120,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_121",
+    "value": 5.376664978933402,
+    "id": 121,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_122",
+    "value": 7.1727957022335165,
+    "id": 122,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_123",
+    "value": 3.883635549547778,
+    "id": 123,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_124",
+    "value": 8.614580368412541,
+    "id": 124,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_125",
+    "value": 2.7776499365100413,
+    "id": 125,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_126",
+    "value": 9.193920303591144,
+    "id": 126,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_127",
+    "value": 7.55599012772667,
+    "id": 127,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_128",
+    "value": 8.234593361006851,
+    "id": 128,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_129",
+    "value": 2.307815528164454,
+    "id": 129,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_130",
+    "value": 3.6189441449503903,
+    "id": 130,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_131",
+    "value": 5.157700735084539,
+    "id": 131,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_132",
+    "value": 9.841005092311558,
+    "id": 132,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_133",
+    "value": 8.554684092266703,
+    "id": 133,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_134",
+    "value": 8.345825456410278,
+    "id": 134,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_135",
+    "value": 9.559739735352677,
+    "id": 135,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_136",
+    "value": 4.799404312964487,
+    "id": 136,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_137",
+    "value": 9.764736727085008,
+    "id": 137,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_138",
+    "value": 4.574763013798927,
+    "id": 138,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_139",
+    "value": 2.78869891133054,
+    "id": 139,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_140",
+    "value": 4.767243747135559,
+    "id": 140,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_141",
+    "value": 2.185170415166615,
+    "id": 141,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_142",
+    "value": 2.623935358466923,
+    "id": 142,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_143",
+    "value": 6.2170080353288295,
+    "id": 143,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_144",
+    "value": 8.005640673022082,
+    "id": 144,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_145",
+    "value": 5.124707348204035,
+    "id": 145,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_146",
+    "value": 6.148281932846805,
+    "id": 146,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_147",
+    "value": 3.663297582145745,
+    "id": 147,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_148",
+    "value": 5.17371983493797,
+    "id": 148,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_149",
+    "value": 4.023609334824545,
+    "id": 149,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_150",
+    "value": 7.506489416053098,
+    "id": 150,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_151",
+    "value": 2.1022172607944185,
+    "id": 151,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_152",
+    "value": 8.306203018217397,
+    "id": 152,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_153",
+    "value": 3.919568524512158,
+    "id": 153,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_154",
+    "value": 7.7803318663242695,
+    "id": 154,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_155",
+    "value": 4.1853149281035105,
+    "id": 155,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_156",
+    "value": 4.392974617527489,
+    "id": 156,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_157",
+    "value": 5.9947546752764165,
+    "id": 157,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_158",
+    "value": 4.935590218587228,
+    "id": 158,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_159",
+    "value": 5.656399408389008,
+    "id": 159,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_160",
+    "value": 3.5959253066329104,
+    "id": 160,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_161",
+    "value": 3.624396839168641,
+    "id": 161,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_162",
+    "value": 7.973096607672323,
+    "id": 162,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_163",
+    "value": 7.398921360202824,
+    "id": 163,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_164",
+    "value": 9.14476810569771,
+    "id": 164,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_165",
+    "value": 9.082948829381564,
+    "id": 165,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_166",
+    "value": 4.404107835991322,
+    "id": 166,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_167",
+    "value": 2.437779194973537,
+    "id": 167,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_168",
+    "value": 5.3644421784474545,
+    "id": 168,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_169",
+    "value": 3.433504403225415,
+    "id": 169,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_170",
+    "value": 5.078662829944166,
+    "id": 170,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_171",
+    "value": 8.913130777464842,
+    "id": 171,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_172",
+    "value": 6.263109412621535,
+    "id": 172,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_173",
+    "value": 7.155393117400385,
+    "id": 173,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_174",
+    "value": 8.449193274220951,
+    "id": 174,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_175",
+    "value": 7.922306348752242,
+    "id": 175,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_176",
+    "value": 9.23958682663251,
+    "id": 176,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_177",
+    "value": 6.787251935421791,
+    "id": 177,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_178",
+    "value": 4.6357819344457365,
+    "id": 178,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_179",
+    "value": 3.249115381082362,
+    "id": 179,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_180",
+    "value": 6.946466694360668,
+    "id": 180,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_181",
+    "value": 3.928494697792109,
+    "id": 181,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_182",
+    "value": 2.454478625277231,
+    "id": 182,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_183",
+    "value": 7.601106096251145,
+    "id": 183,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_184",
+    "value": 3.6504823563484763,
+    "id": 184,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_185",
+    "value": 2.6876587301780646,
+    "id": 185,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_186",
+    "value": 8.676264571045458,
+    "id": 186,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_187",
+    "value": 5.966658337656206,
+    "id": 187,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_188",
+    "value": 2.451724396477573,
+    "id": 188,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_189",
+    "value": 4.395535873222585,
+    "id": 189,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_190",
+    "value": 9.899411607966021,
+    "id": 190,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_191",
+    "value": 7.210655258972041,
+    "id": 191,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_192",
+    "value": 4.413763159403521,
+    "id": 192,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_193",
+    "value": 6.586239865780453,
+    "id": 193,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_194",
+    "value": 5.918784305701017,
+    "id": 194,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_195",
+    "value": 8.553650005183231,
+    "id": 195,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_196",
+    "value": 2.9443120380883485,
+    "id": 196,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_197",
+    "value": 9.948507085606217,
+    "id": 197,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_198",
+    "value": 5.556499891078346,
+    "id": 198,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_199",
+    "value": 7.497662291555436,
+    "id": 199,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_200",
+    "value": 9.135882709509712,
+    "id": 200,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_201",
+    "value": 6.873326627462779,
+    "id": 201,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_202",
+    "value": 3.6500067610044926,
+    "id": 202,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_203",
+    "value": 2.638544485352323,
+    "id": 203,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_204",
+    "value": 9.876555402501802,
+    "id": 204,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_205",
+    "value": 5.614945726288624,
+    "id": 205,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_206",
+    "value": 5.568112303729965,
+    "id": 206,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_207",
+    "value": 6.54855020491185,
+    "id": 207,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_208",
+    "value": 9.688936378713407,
+    "id": 208,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_209",
+    "value": 6.352560909563174,
+    "id": 209,
+    "depth": 0,
+    "category": 1
+  },
+  {
+    "name": "NODE_210",
+    "value": 6.706430586222364,
+    "id": 210,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_211",
+    "value": 6.977005826334038,
+    "id": 211,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_212",
+    "value": 2.9997995503062587,
+    "id": 212,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_213",
+    "value": 7.73812200632306,
+    "id": 213,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_214",
+    "value": 2.0972713823168263,
+    "id": 214,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_215",
+    "value": 4.296699626644315,
+    "id": 215,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_216",
+    "value": 6.919243087886391,
+    "id": 216,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_217",
+    "value": 8.34069471662741,
+    "id": 217,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_218",
+    "value": 8.401862626910175,
+    "id": 218,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_219",
+    "value": 7.513776699070997,
+    "id": 219,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_220",
+    "value": 2.5025722440009144,
+    "id": 220,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_221",
+    "value": 4.880372071789559,
+    "id": 221,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_222",
+    "value": 8.761107872644017,
+    "id": 222,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_223",
+    "value": 3.923474079460915,
+    "id": 223,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_224",
+    "value": 8.708873171382884,
+    "id": 224,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_225",
+    "value": 9.393927275599582,
+    "id": 225,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_226",
+    "value": 7.427787215659221,
+    "id": 226,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_227",
+    "value": 4.402295424096533,
+    "id": 227,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_228",
+    "value": 3.422870221423471,
+    "id": 228,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_229",
+    "value": 7.288536631596628,
+    "id": 229,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_230",
+    "value": 4.770411105933707,
+    "id": 230,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_231",
+    "value": 4.500210406224916,
+    "id": 231,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_232",
+    "value": 4.089512393980623,
+    "id": 232,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_233",
+    "value": 2.6967414448482696,
+    "id": 233,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_234",
+    "value": 9.260079476077713,
+    "id": 234,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_235",
+    "value": 9.856421159815625,
+    "id": 235,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_236",
+    "value": 3.388833610641244,
+    "id": 236,
+    "depth": 1,
+    "category": 1
+  },
+  {
+    "name": "NODE_237",
+    "value": 3.719565240920362,
+    "id": 237,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_238",
+    "value": 9.122139982112428,
+    "id": 238,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_239",
+    "value": 4.734607780497576,
+    "id": 239,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_240",
+    "value": 6.838370894320628,
+    "id": 240,
+    "depth": 2,
+    "category": 0
+  },
+  {
+    "name": "NODE_241",
+    "value": 4.461033869245847,
+    "id": 241,
+    "depth": 2,
+    "category": 0
+  }
+]

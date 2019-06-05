@@ -1,0 +1,124 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+body {
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	// margin: 0 auto;
+}
+
+.wrap .main {
+	width: 1920px;
+	height: 950px;
+	margin: 0 auto;
+}
+
+.wrap .main .banner {
+	width: 100%;
+	height: 100%;
+}
+
+.main .flexslider {
+	width: 100%;
+	height: 100%;
+}
+
+.main .flexslider .flex-viewport {
+	height: 100%;
+}
+
+.main .flexslider .slides {
+	width: 100%;
+	height: 100%;
+}
+
+.main .flexslider .slides li {
+	width: 100%;
+	height: 100%;
+}
+
+.main .flexslider .slides li iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.wrap .footer {
+	width: 1920px;
+	height: 130px;
+	background-color: rgb(12, 19, 29);
+	margin: 0 auto;
+}
+
+.footer #carousel {
+	height: 100%;
+}
+
+.footer .flex-viewport {
+	height: 100%;
+}
+
+.footer .slides {
+	height: 100%;
+	text-align: center;
+}
+
+.footer .slides li {
+	width: 160px;
+	display: inline-block;
+	height: 100%;
+	background-image: url(../img/chengpin_item_03.jpg);
+    background-size: 100% 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.footer .slides li:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	top: 0;
+	left: 0;
+}
+
+.footer .slides li .link-name {
+	position: absolute;
+    width: auto;
+    height: 30px;
+    right: 15px;
+    top: 80px;
+    font-size: 14px;
+    line-height: 30px;
+    z-index: 9999;
+    text-align: center;
+    color: white;
+    background-image: url(../img/foot_div_03.jpg);
+    background-size: 100% 100%;
+}
+
+.footer .slides li.active iframe{
+	box-shadow: 0px 0px 100px 20px rgb(20,194,209);
+}
+
+.footer iframe {
+    display: inline;
+    width: 1040px;
+    height: 940px;
+    border-radius: 4px;
+    transform: translate(-440px, -407px) scale(0.132, 0.105);
+}

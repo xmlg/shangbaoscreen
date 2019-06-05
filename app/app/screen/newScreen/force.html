@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="lib/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/base_top.css" />
+    <link type="text/css" rel="stylesheet" href="./css/forceStyle.css"/>
+    <title>稿件影响力路径</title>
+    <style type="text/css">
+/*body{*/
+    /*background: rgba(2,2,22,0.9);*/
+/*}*/
+		.links line {
+		  stroke-opacity: 0.1;
+		  stroke-width: 100px;
+		}
+
+
+    </style>
+</head>
+<body>
+<h1 class="top">稿件影响力路径</h1>
+<h2 class="top_img"><img src="images/header_title.png" width="531" alt=""></h2>
+<div class="main">
+    <div class="forceMap">
+        <svg id="forceSvg" width="1600" height="800" style="margin-top:50px;">
+         <defs>
+             <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#01f6ff;stop-opacity:1;" />
+      <stop offset="100%" style="stop-color:#fc01ff;
+      stop-opacity:0.1" />
+    </radialGradient>
+             <!--group =3为APP传播点-->
+      <radialGradient id="grad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#ededed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#626262;
+      stop-opacity:0.6" />
+    </radialGradient>
+             <!--group =2为新华社源点-->
+       <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#FF0000 ;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFF00;
+      stop-opacity:0.4" />
+    </radialGradient>
+             <!--group =4为报纸传播点-->
+     <radialGradient id="grad4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#00d7ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#053943;
+      stop-opacity:0.2" />  
+    </radialGradient>
+             <!--group =5为微信传播-->
+    <radialGradient id="grad5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#dedc47;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9e6f04;
+      stop-opacity:0.7" />
+    </radialGradient>
+  </defs>
+        </svg>
+    </div>
+    <div class="forceMsg">
+
+     <div class="forceInfo">
+
+     </div>
+    </div>
+    <div class="explain" >
+        <span><i></i>本报社</span>
+        <span><i></i>网站</span>
+        <span><i></i>APP</span>
+        <span><i></i>电子报</span>
+        <span><i></i>微信</span>
+    </div>
+</div>
+<div class=""></div>
+<!--<script type="text/javascript" src="./lib/d3.js"></script>-->
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<!--<script type="text/javascript" src="./lib/d3.min.js"></script>-->
+<script type="text/javascript" src="./lib/d3.v4.min.js"></script>
+<!--<script type="text/javascript" src="./js/d3.geom.js"></script>-->
+<!--<script type="text/javascript" src="./js/d3.layout.js"></script>-->
+<script type="text/javascript" src="js/resize.js"></script>
+<!--<script type="text/javascript" src="./js/travlPath.js"></script>-->
+<!--<script type="text/javascript" src="js/transPath.js"></script>-->
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+
+
+    var url_param = getQueryString("zbGuid");
+    var zhaiyao="";
+    $.ajax({
+        type : "get",
+        url : "/isearch/front/show/reprint.jhtml",
+        data : {docId:url_param},
+        dataType : "html",
+        success : function(result) {
+
+            if(result!=null&&result.length>0){
+
+                if(result.length>=100){
+                    result=result.substring(0,100)+"...";
+                }
+                zhaiyao=result;
+            }
+        }
+    });
+
+
+    var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+   // var color = d3.scaleOrdinal(d3.schemeCategory10);
+    /**布局开始*/
+    var simulation = d3.forceSimulation()
+
+             .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(100)) 
+            /* .force("link", d3.forceLink().distance("30").id(function(d) { return d.id; })) */
+            .force("charge", d3.forceManyBody().strength(-300))
+            .force("center", d3.forceCenter(width/2 , height/2 ));
+    /**布局结束*/
+    d3.json('json/getExReprintMaualsByGUID.json', function(error, graph
+                                                                                                     /* d3.json("miserables.json", function(error, graph) */){
+        if (error) throw error;
+        /**绘制开始*/
+        var link = svg.append("g")
+                .selectAll("line")
+                .attr("class", "links")
+                .data(graph.links)
+                .enter().append("line")
+                 .attr("stroke", function(d) { 
+			            return "url(#grad1)";
+			        });
+
+
+        var node = svg.append("g")
+                .attr("class", "nodes")
+                .style("cursor","pointer")
+                .selectAll("circle")
+                .data(graph.nodes)
+                .attr("animation","flickerFlame")
+                .enter().append("circle")
+                .attr("r", function(d){
+				        if(d.group==1){
+				            return "20";
+				        }else if(d.group==2){
+				            return "50";
+				        }else if(d.group==3){
+				            return "20  ";
+				        }else if(d.group==4){
+				            return "20  ";
+				        }else if(d.group==5){
+				            return "20  ";
+				        }
+                })
+		        .attr("fill", function(d) {
+                        if(d.group==1){
+                            return "url(#grad1)";
+                        }else if(d.group==2){
+                            return "url(#grad2)";
+                        }else if(d.group==3){
+                            return "url(#grad3)";
+                        }else if(d.group==4){
+                            return "url(#grad4)";
+                        }else if(d.group==5){
+                            return "url(#grad5)";
+                        }
+		        })
+                .on("click",function(d){
+                    var aa=window.open();
+                    setTimeout(function(){
+                        aa.location = '/dist/index.html#/decisioncenterverdetail?guid='+d.zbguid;
+                    }, 100);
+                })
+
+                .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+
+
+        console.log(graph.nodes);
+        var svg_text = svg.selectAll("text")
+                .data(graph.nodes)
+                .enter()
+                .append("text")
+                .style("fill",function(d){
+                	if(d.id=="新华社"){
+                		return "#FFFF00";
+                	}else{
+                		return "#EEEE00";
+                	}
+                	
+                })
+                .style("font-size",function(d){
+                	if(d.id=="新华社"){
+                		return "32px";
+                	}else{
+                		return "24px";
+                	}
+                })
+                
+                  .style("display",function(d){
+                	if(d.group=="1"){
+                		return "none";
+                	}
+                	if(d.group=="2"){
+                		return "none";
+                	}
+                	if(d.group=="3"){
+                		return "none";
+                	}
+                	if(d.group=="4"){
+                		return "none";
+                	}
+                	if(d.group=="5"){
+                		return "none";
+                	}
+                })
+                .style("font","微软雅黑")
+                .attr("dx",15)
+                .attr("dy",15)
+                .text(function(d){
+                   /* if(d.group==1){
+                        return "";
+                    }else{*/
+                        return d.id;
+                    /*}*/
+                    });
+
+        node.append("title")
+                .text(function(d) {
+                    if(d.id=="新华社"){
+                        return zhaiyao;
+                    }
+                    return d.id; });
+
+
+        simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+
+        simulation.force("link")
+                .links(graph.links);
+        /**更新连线坐标，对于每一个时间间隔*/
+        function ticked() {
+            link
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+
+            node
+                    .attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+            svg_text
+                    .attr("x", function(d){ return d.x; })
+                    .attr("y", function(d){ return d.y; });
+            graph.nodes.forEach(function(d,i){
+                d.x = d.x - 20/2 < 0     ? 20/2+2 : d.x ;
+                d.x = d.x + 20/2 > width ? width - 20/2+2 : d.x ;
+                d.y = d.y - 20/2 < 0      ? 20/2+2 : d.y ;
+                d.y = d.y + 20/2  > height ? height - 20/2+2  : d.y ;
+            });
+
+        }
+    });
+    /**绘制结束*/
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.1).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
+    function ajax() {
+        //先声明一个异步请求对象
+        var xmlHttpReg = null;
+        if (window.ActiveXObject) {//如果是IE
+            xmlHttpReg = new ActiveXObject("Microsoft.XMLHTTP");
+        } else if (window.XMLHttpRequest) {
+            xmlHttpReg = new XMLHttpRequest(); //实例化一个xmlHttpReg
+        }
+        //如果实例化成功,就调用open()方法,就开始准备向服务器发送请求
+        if (xmlHttpReg != null) {
+            //xmlHttpReg.open("get", "/isearch/front/show/reprint.jhtml?docId="+url_param, true);
+            //xmlHttpReg.send(null);
+            //xmlHttpReg.onreadystatechange = doResult; //设置回调函数
+        }
+        //回调函数
+        //一旦readyState的值改变,将会调用这个函数,readyState=4表示完成相应
+        //设定函数doResult()
+        function doResult() {
+            if (xmlHttpReg.readyState == 4) {//4代表执行完成
+                if (xmlHttpReg.status == 200) {//200代表执行成功
+                    //将xmlHttpReg.responseText的值赋给ID为resText的元素
+                    var str=xmlHttpReg.responseText;
+                    var  forceInfo= document.getElementsByClassName('forceInfo')[0];
+                    var json = eval('(' + str + ')');
+                    var chuanboInfo = json.chuanboDescribe;
+                    forceInfo.innerHTML= "稿件是由<span>"+chuanboInfo.shoufaMedia+"</span>于"+
+                    "<span>"+chuanboInfo.shoufaTime+
+                    "</span>第一次采用，一共由<span class='transTotal'>"+
+                    chuanboInfo.chuanboMediaCount+"</span>家媒体采用了<span class='transTotal'>"+chuanboInfo.chuanboCount +"</span>次，影响力为 <span class='transTotal'>"+chuanboInfo.cei+"</span>.";
+
+
+                    	
+                    	
+                    //	"影响时长 <span class='transTime'>"+chuanboInfo.chuanboTime+"</span>，"+
+                    //        "    影响总量 <span class='transTotal'>"+chuanboInfo.chuanboCount+"</span>篇，被 <span class='transMedia'>"+chuanboInfo.chuanboMediaCount+"</span>家媒体转载。";
+
+
+
+
+                }
+            }
+        }
+    }
+    ajax();
+
+
+
+</script>
+</body>
+</html>

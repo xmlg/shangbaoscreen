@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+	<title>核心圈用户总量</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<div class="coreCircleUserSum" style="display: none;">
+		<div class="coreCircleUserSum_top">
+			<div class="corecircle_title">
+				<!-- <span>核心圈用户总量</span> -->
+				<div class="currtime_date" id="currtime_date"><!-- 2017年3月30日 --></div>
+				<img src="images/title_left.png" class="title_left">
+				<img src="images/title_right.png" class="title_right">
+			</div>
+			<div class="currtime_time" id="currtime_time"><!-- 13:30:20 --></div>
+		</div>
+		<div class="coreCircleUserSum_bottom">
+			<div class="coreCircleUserSum_right">
+				<div class="currtime_title">
+					核心圈
+					<p>用户总量</p>
+				</div>
+				<!-- <div class="currtime_clock"><img src="images/time_clock.png"></div> -->
+				
+				<div class="corecircle_count" id="corecircle_count">{{coredata.corecircle_count}}<!-- 1234567890 --></div>
+			</div>
+			<div class="coreCircleUserSum_left">
+				<div class="realtime_traffic">
+					<div class="realtime_title">实时访问量</div>
+					<div class="realtime_count" id="realtime_count">{{coredata.realtime_count}}<!-- 1234567890 --></div>
+				</div>
+				<div class="traffic_type">
+					<div class="website_traffic">
+						<div class="website_title">网站</div>
+						<div class="website_count" id="website_count">{{coredata.website_count}}<!-- 1234567890 --></div>
+					</div>
+					<div class="client_traffic">
+						<div class="client_title">客户端</div>
+						<div class="client_count" id="client_count">{{coredata.client_count}}<!-- 1234567890 --></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="coreCircleUserSum_modal" style="display: none;">
+			<div class="coreCircleUserSum_popup">
+				<div class="error_hint">数据计算更新中，请在6点之后查看</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="lib/jquery-2.1.0.js"></script>
+	<script src="lib/countUp.js"></script>
+	<script src="lib/myCountUp.js"></script>
+	<script src="util/resize.js"></script>
+	<script src="coreCircleUserSum.js"></script>
+	<script src="lib/angular.js"></script>
+		<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope,$http) {
+		//纸板头条
+	    $http.get('coreCircleUserSum.json').then(function(data){
+	    	//console.log(data);
+	    	$scope.coredata=data.data;
+			
+	    });
+	});
+
+	</script>
+</body>
+</html>

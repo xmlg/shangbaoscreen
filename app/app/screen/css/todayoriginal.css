@@ -1,0 +1,162 @@
+@font-face {
+	font-family: 'FangZhengLangTing';
+	src: url('../font/FZLTHJW.TTF') format('truetype');
+}
+@font-face {
+            font-family: 'YouYuan';
+            src: url('../font/幼圆.TTF') format('truetype');
+        }
+        
+body {
+	font-family: 'FangZhengLangTing';
+}
+
+body {
+	/*background-image: url(../ui/原创稿件排行榜.jpg);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+
+}
+
+h1.top-top {
+	position: absolute;
+	top: 30px;
+	left: 35px;
+	width: 1884px;
+	height: 82px;
+	line-height: 84px;
+	background-image: url(../img/header-bg.png);
+	background-size: 100% 100%;
+	margin: 0px;
+	font-weight: 900;
+	color: #FFFFFF;
+	font-size: 46px;
+	padding-left: 49px;
+	letter-spacing: 2px;
+}
+
+h1.top {
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	background-repeat: no-repeat;
+	width: 100%;
+	top: 56px;
+	left: 8px;
+	font-family: 'YouYuan';
+	padding-left: 15px;
+	background-image: url(../img/title-bg-3.png);
+	background-size: 100% 72%;
+	background-position: 12px 8px;
+}
+
+div.main {
+	position: absolute;
+	top: 183px;
+	left: 35px;
+	width: 1850px;
+	height: 840px;
+	background-image: url(../img/grad-bg-2.png);
+	background-size: 100% 100%;
+}
+
+.list-header {
+	margin-top: 28px;
+	height: 100px;
+	/*background-color: #11425F;*/
+}
+
+.list-header .th1,
+.list-header .th2,
+.list-header .th3,
+.list-header .th4,
+.list-header .th5{
+	float: left;
+	text-align: center;
+	height: 100%;
+	line-height: 102px;
+	font-size: 46px;
+	color: #ffffff;
+}
+
+.list-header .th1 {
+	width: 300px;
+	padding-right: 106px;
+}
+
+.list-header .th2 {
+	/*width: 928px;*/
+	width: 718px;
+	padding-right: 80px;
+}
+
+.list-header .th3 {
+	width: 192px;
+}
+
+.list-header .th4 {
+	width: 420px;
+	padding-left: 64px;
+}
+.list-header .th5{
+
+}
+.td2:hover {
+	color: rgb(219,60,2);
+}
+.list-item {
+	height: 72px;
+	color: #27A6C7;
+}
+
+.list-item:nth-child(even) {
+	background-color: #0D5668;
+}
+.list-item:last-child {
+	background: -webkit-linear-gradient(to right, #0D5668 , rgba(0,0,0,0)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(to right, #0D5668 , rgba(0,0,0,0)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(to right, #0D5668 , rgba(0,0,0,0)); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, #0D5668 , rgba(0,0,0,0)); /* 标准的语法 */
+}
+
+.list-item .td1,
+.list-item .td2,
+.list-item .td3,
+.list-item .td4,
+.list-item .td5{
+	float: left;
+	line-height: 80px;
+	font-size: 40px;
+	height: 100%;
+}
+
+.list-item .td1 {
+	padding-left: 84px;
+	width: 300px;
+}
+
+.list-item .td2 {
+	padding-right: 80px;
+	/*width: 928px;*/
+	width: 718px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .td3 {
+	width: 192px;
+	text-align: center;
+}
+
+.list-item .td4 {
+	width: 420px;
+	padding-left: 56px;
+	text-align: center;
+}
+.list-item .td5 {
+	width: 200px;
+	background-size: contain;
+}

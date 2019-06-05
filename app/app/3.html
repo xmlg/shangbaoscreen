@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>传播效果大屏</title>
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+</head>
+
+<body style="overflow: hidden !important;">
+    <div class="cb-ld-container">
+        <div class="cb-ld-header">
+            <h1 style="    position: absolute;left: -77px;top: 11px;"></h1>
+            <a href="#" class="ld-home-logo"></a>
+            <h1>传播效果</h1>
+            <!-- 雅安传媒数据库 -->
+        </div>
+        <!-- <div class="ld-main-lf">
+            <div class="ld-nav-lf">
+                <div class="ld-nav-fr nav-fr-cur">
+                    <a href="javascript:;" class="ld-nav-fr" onclick="getMenuHtml('propagate.web','网站');">网站传播</a>
+                </div>
+                <div class="ld-nav-fr">
+                    <a href="javascript:;" class="ld-nav-fr" onclick="getMenuHtml('propagate.web','报纸');">报纸传播</a>
+                </div>
+                
+            </div>
+             -->
+        </div>
+        <div class="ld-main-rt">
+            <!--文章传播力排行榜-->
+            <div class="ld-wz-bk lf">
+                <div class="ld-wz-top">
+                    <span class="ld-ls-bj1"></span>
+                    <span class="ld-ls-bj2"></span>
+                    <span class="ld-ls-bj3"></span>
+                    <span class="ld-ls-bj4"></span>
+                    <div class="ld-wz-con">
+                        <div class="wz-cb-tit clearfix">
+                            <h2 id="cbl-phb"></h2>
+                            <!-- <div class="re-ls-sel rt">
+                            <div class="lb-sel-bk">
+                                <a href="javascript:;" class="ab-sel-bac">时间范围</a>
+                                <ul style="display: none;">
+                                    <li class="selete"><a href="javascript:;" selectid="1">一天</a></li>
+                                    <li class="selete"><a href="javascript:;" selectid="3">三天</a></li>
+                                    <li class="selete"><a href="javascript:;" selectid="7">七天</a></li>
+                                    <li class="selete"><a href="javascript:;" selectid="本周">本周</a></li>
+                                    <li class="selete"><a href="javascript:;" selectid="本月">本月</a></li>
+                                    <li class="selete"><a href="javascript:;" selectid="本年">本年</a></li>
+                                </ul>
+                            </div>
+                            </div> -->
+                        </div>
+                        <div class="ld-wz-ls">
+                            <div class="ld-ls-tit">
+                                <p style="width: 87px;">排名</p>
+                                <p style="width: 380px;">标题</p>
+                                <p style="width: 100px;">来源</p>
+                                <p style="width: 93px;">传播力值</p>
+                            </div>
+                            <div class="scroll">
+                                <ul class="ld-wz-ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="ld-load-more">
+                    
+                </a>
+            </div>
+            <!--end 文章传播力排行榜-->
+            <!--最新文章传播情况-->
+            <div class="ld-wz-bk rt">
+                <div class="ld-wz-top">
+                    <span class="ld-ls-bj1"></span>
+                    <span class="ld-ls-bj2"></span>
+                    <span class="ld-ls-bj3"></span>
+                    <span class="ld-ls-bj4"></span>
+                    <div class="ld-wz-con">
+                        <div class="zx-wz-tit clearfix">
+                            <h2 id="zx-wzqk"></h2>
+                        </div>
+                        <div class="ld-wz-ls">
+                            <div class="ld-ls-tit">
+                                <p style="width: 87px;">时间</p>
+                                <p style="width: 380px;">标题</p>
+                                <p style="width: 100px;">来源</p>
+                                <p style="width: 93px;">传播力值</p>
+                            </div>
+                            <div class="scroll">
+                                <ul class="rw-wz-ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="ld-load-more ">
+                    
+                </a>
+            </div>
+            <!--end 最新文章传播情况-->
+        </div>
+        <div class="cb-footer-lf"></div>
+        <div class="cb-footer-rt"></div>
+    </div>
+    <script src="./js/lib/jquery-2.1.3.min.js"></script>
+    <script src="./js/jc.js"></script>
+    <script src="./js/highlights.js"></script>
+    <script src="./js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        $(".scroll").mCustomScrollbar({
+            scrollButtons: { enable: false },
+        });
+    </script>
+</body>
+
+</html>

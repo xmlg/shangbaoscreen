@@ -1,0 +1,24 @@
+.list{
+    color: #fff;
+    height: 237px;
+    border: 1px solid #fff;
+}
+.list p{
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    padding: 0 20px;
+    color: #00FCFE;
+}
+.list p.content{
+    font-size: 35px;
+    line-height: 47px;
+    overflow: hidden;
+    height: 140px;
+    color: #fff;
+}
+.tt{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,140 @@
+.productUsageScale {
+    width: 100%;
+    height: 100%;
+    padding: 22px 0;
+    background-color: #0e141c;
+}
+
+.productUsageScale .productUsageScale-title {
+    width: 100%;
+    height: 86px;
+    font-size: 60px;
+    color: white;
+    padding-left: 50px;
+    line-height: 86px;
+    margin-bottom: 26px;
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+}
+
+.productUsageScale .productUsageScale-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 0 0;
+    background: url('../images/product-usage-scale-content-bg.png') no-repeat -5px top;
+}
+
+.productUsageScale .product-sum {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 17px;
+    font-size: 72px;
+    color: #48d1f8;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    background: url('../images/product-usage-scale-content-title-bg.png') no-repeat center center;
+}
+
+.productUsageScale .product-number {
+    width: 100%;
+    height: 400px;
+    line-height: 400px;
+    color: #11F7EC;
+    font-size: 160px;
+    text-align: center;
+    text-shadow: 0px 0px 20px #11F7EC;
+    font-weight: bold;
+}
+
+.productUsageScale .product-data {
+    margin-top: 60px;
+}
+
+.productUsageScale .product-data .ringchart-wrap {
+    left: 0;
+    top: -20px;
+}
+
+.productUsageScale .product-data .ring {
+    width: 244px;
+    height: 244px;
+}
+
+.productUsageScale .product-data>div {
+    font-size: 60px;
+    color: #4cd6fd;
+    text-align: center;
+    margin-left: 65px;
+    display: inline-block;
+}
+
+.productUsageScale .product-data>div>img {
+    margin-bottom: 65px;
+}
+
+.productUsageScale .product-proportion {
+    height: 90px;
+    text-align: center;
+    line-height: 70px;
+    color: #4cd6fd;
+    font-size: 72px;
+    background: url('../images/product-usage-scale-content-proportion.png') no-repeat center center;
+}
+
+.productUsageScale .product-data-logo-outer {
+    width: 95%;
+    height: 45.3%;
+    margin-top: 35px;
+    left: 29px;
+    position: relative;
+    overflow: hidden;
+}
+
+.productUsageScale .product-data-logo {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*.productUsageScale .product-data-logo {
+    width: 96%;
+    height: 46%;
+    margin-top: 35px;
+    left: 10px;
+    overflow: hidden;
+    position: relative;
+}*/
+
+.productUsageScale .ringchart-wrap .ringchart-num p {
+    position: relative;
+    top: 10px;
+}
+
+
+/*
+.product-data-logo-leftbg {
+    position: relative;
+    top: -67px;
+    opacity: 0.7;
+}
+*/
+
+.product-data-logo-leftbg-outer {
+    position: relative;
+    top: -39px;
+    left: 5px;
+    width: 71px;
+    height: 43px;
+    background: #0E141C;
+    transform: rotate(48deg);
+}
+
+.product-data-logo-leftbg {
+    position: absolute;
+    top: 13.5px;
+    left: 0px;
+    width: 74px;
+    height: 24px;
+    background: #0E141C;
+    border-top: 3px solid #11AAD4;
+}

@@ -1,0 +1,37 @@
+[{
+    "tagName": "全国",
+    "tagId": 1
+}, {
+    "tagName": "杭州",
+    "tagId": 2
+}, {
+    "tagName": "宁波",
+    "tagId": 3
+}, {
+    "tagName": "温州",
+    "tagId": 4
+}, {
+    "tagName": "嘉兴",
+    "tagId": 5
+}, {
+    "tagName": "湖州",
+    "tagId": 6
+}, {
+    "tagName": "绍兴",
+    "tagId": 7
+}, {
+    "tagName": "金华",
+    "tagId": 8
+}, {
+    "tagName": "衢州",
+    "tagId": 9
+}, {
+    "tagName": "舟山",
+    "tagId": 10
+}, {
+    "tagName": "台州",
+    "tagId": 11
+}, {
+    "tagName": "丽水",
+    "tagId": 12
+}]

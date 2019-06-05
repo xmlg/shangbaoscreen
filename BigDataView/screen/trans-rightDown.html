@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>原创稿件影响力媒体覆盖</title>
+    <link rel="stylesheet" href="lib/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/department.css" />
+    <style type="text/css">
+      @font-face {
+            font-family: 'YouYuan';
+            src: url('font/幼圆.TTF') format('truetype');
+        }
+        h1{
+            font-family: 'YouYuan';
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+<h1>原创稿件影响力媒体覆盖</h1>
+
+<div style="display:none;position: absolute;color: #03C9BF;font-size: 37px;font-weight: 900;top: 560px;left: 552px;z-index: 100;letter-spacing: -1px;">
+    <span>TOP</span>
+    <span style="font-size: 45px;line-height: 2px;position: relative;left: -10px;">10</span>
+</div>
+
+<svg>
+    <defs>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="15%" style="stop-color:rgb(0,0,0);stop-opacity:1"></stop>
+            <stop offset="35%" style="stop-color:rgb(35,35,35);stop-opacity:1"></stop>
+            <stop offset="45%" style="stop-color:rgb(105,105,105);stop-opacity:1"></stop>
+            <stop offset="65%" style="stop-color:rgb(205,205,205);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:1"></stop>
+        </radialGradient>
+        <mask id="mask" maskContentUnits="objectBoundingBox">
+            <rect x="0" y="0" width="1" height="1" fill="url(#grad1)"></rect>
+        </mask>
+    </defs>
+    <g class="pie" style="mask:url(#mask)" transform="translate(617,578)">
+        <circle r="325" stroke="none" fill="none"></circle>
+    </g>
+    <g class="legend" transform="translate(617,578)">
+        <!--<g transform="translate(150,-375)">
+            <line x1=0 y1=0 x2=200 y2=0 stroke="#1C9C9E"></line>
+            <circle cx=200 cy=0 r=12 stroke="none" fill="#1C9C9E"></circle>
+        </g>-->
+    </g>
+    <g class="decorate" transform="translate(617,578)">
+        <circle style="r: 152;stroke: #26EDE8;stroke-width: 1px;fill: none;"></circle>
+        <circle style="r: 354;stroke: #26EDE8;stroke-width: 1px;fill: none;"></circle>
+        <path id="path1" d="M76.63,-39.04 A86,86 0 1 0 60.81,60.81L53.03,53.03 A75,75 0 1 1 66.83,-34.05 Z" stroke="rgba(0, 247, 232, 0.8)" fill="rgba(0, 245, 245, 0.7)"></path>
+        <path id="path2" d="M48.12,94.45 A106,106 0 1 0 -74.95,74.95L-65.76,65.76 A93,93 0 1 1 42.22,82.86 Z" stroke="rgba(8, 96, 97, 0.8)" fill="rgba(0, 135, 135, 0.7)"></path>
+        <path id="path3" d="M-19.87,-125.44 A127,127 0 1 0 89.80,-89.8L79.20,-79.2 A112,112 0 1 1 -17.52,-110.62 Z" stroke="rgba(11, 54, 60, 0.8)" fill="rgba(0, 105, 105, 0.7)"></path>
+    </g>
+</svg>
+<div class="list-wrapper-par" style="display: none">
+    <div class="list-wrapper">
+        <div class="list-header">
+            <div class="th1">
+                排名
+            </div>
+            <div class="th2">
+                部门
+            </div>
+            <div class="th3">
+                影响力指数
+            </div>
+        </div>
+        <div class="list">
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery.min.js"></script>
+<script src="js/resize.js"></script>
+<script src="lib/d3.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/department.js"></script>
+</body>
+
+</html>

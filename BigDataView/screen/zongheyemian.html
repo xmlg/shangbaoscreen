@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<link rel="stylesheet" type="text/css" href="../screen/css/jquery.bxslider.css"/>
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<script src="../screen/js/jquery-1.9.1.min.js"></script>
+<script src="../screen/js/jquery.bxslider.js"></script>
+<script src="../screen/js/angular.js"></script>
+<style>
+.baoliao_neiy{ width:96%; margin:20px auto; }
+.baoliao_neiy .zh_leftcon{width: 30%;float: left;}
+.baoliao_neiy .tit{ height:75px; line-height:75px; color:#fff;background: linear-gradient(70deg,#218ba3, #0c141e); font-size:40px; text-indent:40px;}
+.baoliao_neiy .baoliaocont{ margin:30px 100px; border-left:10px solid #008d8d;}
+.baoliao_neiy .baoliaocont .cont{ margin:0 0 40px 115px; position:relative; color:#fff; font-size:18px;}
+.baoliao_neiy .baoliaocont .cont span{ position:absolute; left:-175px;  top:50%; margin-top:-24px; height:48px; width:105px; color:#010100; font-size:16px; background:#14c3d1; display:block; line-height:48px; text-align:center; border-radius:10px;}
+.baoliao_neiy .baoliaocont .cont p{ background:#0e2836; padding:20px;}
+.baoliao_neiy .baoliaocont .cont h1{ font-size:18px; font-weight:normal;}.baoliao_neiy .kehuduancont{margin:0px 0 0px 0; padding:0 0 0 60px; position:relative; color:#fff; font-size:14px;}
+.baoliao_neiy .kehuduancont span{ /*width:50px; */height:50px; position:absolute; left:0px; top:50%; margin-top:-15px;}
+.baoliao_neiy .kehuduancont span img{ width:100%;}
+.baoliao_neiy .kehuduancont h1{ font-size:14px; font-weight:normal;text-overflow: ellipsis;width: 78%;
+    overflow: hidden;
+    white-space: nowrap;}
+.baoliao_neiy .kehuduancont p{ padding:10px; border:1px solid #42d5ff; background:#226078;width: 70%;height: 55px;text-overflow: ellipsis;overflow: hidden;}
+
+.baoliao_neiy .toubantt ul{ margin:30px 0 0 0;}
+.baoliao_neiy .toubantt ul li{ height:30px; line-height:30px; margin:0 0 10px 0;font-size:18px; padding:0 0 0 250px; position:relative;}
+.baoliao_neiy .toubantt ul li strong{ width:250px; position:absolute; left:0px; top:0px; height:30px; text-align:right;}
+.baoliao_neiy .toubantt ul li strong b{background:#16e1f3; display:inline-block; height:30px;}
+.baoliao_neiy .toubantt ul li span{ width:80%; float:left; color:#fff; margin:0 5%;}
+.baoliao_neiy .toubantt ul li em{ color:#fff701; float:left; width:10%;}
+	.zh_concon{ width:30%; float:left; margin:0 5%; display:inline;}
+.zh_concon .toubantt2{ margin:0 0 10px 0;}
+.zh_concon .toubantt2 ul li{font-size:14px; padding:0 100px 0 0; position:relative; height:30px; line-height:30px;}
+.zh_concon .toubantt2 ul li strong{ width:100px; position:absolute; right:0px; top:7px; height:15px; text-align:left; color:#fff; font-weight:normal; line-height:15px;}
+.zh_concon .toubantt2 ul li strong b{ height:15px;background:#16e1f3; display:inline-block;}
+.zh_concon .toubantt2 ul li span{ width:100%; color:#16e1f3; }
+
+.zh_rightcon{ width:30%; float:right;}
+.zh_rightcon .cont{ border:1px solid #2a5460; border-radius:10px; margin:20px 0; padding:20px ; font-size:14px; color:#fff;}
+.zh_rightcon .cont h1{ font-size:18px; text-align:center;}
+.zh_rightcon .cont p{ margin:20px 0 0 0; text-indent:20px;}
+.whiteBox .white{color: #fff !important;}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="baoliao_neiy">
+		<div class="zh_leftcon">
+   		  	<div class="tit">突发爆料</div>
+   		  	<div class="lunbo1">
+	       	  	<div class="kehuduancont" ng-repeat="news in newsLists">
+	        		<span>{{news.time | date:'HH:mm'}}</span>
+	            	<h1>{{news.recordUser}}  {{news.source}}</h1>
+	            	<p>{{news.content|limitTo:50}}</p>
+	        	</div>
+	        	
+        	</div>
+    		<div class="tit">近期政策</div>
+    		<div class="lunbo2">
+	       	  	<div class="kehuduancont" ng-repeat="policy in policies">
+	        		<span>{{policy.URLDATE | date:'HH:mm'}}</span>
+	            	<h1>{{policy.URLTITLE}}</h1>
+	            	<p>{{policy.ABSTRACTCONTENT|limitTo:50}}</p>
+	        	</div>
+	        	
+        	</div>
+         <!--  <div class="jingqizc"> -->
+           	 <!--  <p>近期政策</p> -->
+<!-- <table border="0" cellpadding="0" cellspacing="0" >
+  <tr class="tou">
+    <td>&nbsp;</td>
+    <td class="chang">浙江省</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>定海新闻网</td>
+    <td class="chang">内容内容内容内容内容内容内容内容内容</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+                <table border="0" cellpadding="0" cellspacing="0" >
+  <tr class="tou">
+    <td>&nbsp;</td>
+    <td class="chang">全国</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>定海新闻网</td>
+    <td class="chang">内容内容内容内容内容内容内容内容内容</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+           	  <p>历史今天</p>
+                <table border="0" cellpadding="0" cellspacing="0" >
+  <tr class="tou">
+    <td>1927</td>
+    <td class="chang">内容内容内容内容内容内容内容内容内容内容内容内容</td>
+    <td></td>
+  </tr>
+</table> -->
+
+            <!-- </div> -->
+    		<!-- <div class="tit">全球涉浙舆情</div> -->
+            <!-- <div class="ditu"><img src="images/ditu20180119_02.png" /></div> --><!-- <div class="jingqizc">
+                <table border="0" cellpadding="0" cellspacing="0" >
+  <tr class="tou">
+    <td>情感指数</td>
+    <td class="chang">舆情内容</td>
+    <td>来源</td>
+    <td>时间</td>
+  </tr>
+  <tr>
+    <td>定海新闻网</td>
+    <td class="chang">内容内容内容内容内容内容内容内容内容</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table></div> -->
+        </div>
+        <div class="zh_concon">
+    		<div class="tit">深圳市热点新闻</div>
+        	<div class="toubantt2">
+        	<ul class="ulone">
+            	<li style="text-align:center"><strong>热度</strong><span>{{today}}</span></li>
+            	<li class="item" ng-repeat="item in lists track by $index" ng-if="$index<3"><strong>
+				<b style="width:{{item.HOTPOINTNUM/10}}%"></b></strong>
+				<span class="white title" ng-bind="item.TITLE|limitTo:20"></span>
+				<span class="content" ng-bind="item.content" style="display: none;"></span></li>
+                </ul>
+                </div>
+                <div class="tit">广东省热点新闻</div>
+        	<div class="toubantt2">
+        	<ul>
+            	<li style="text-align:center"><strong>热度</strong><span>{{today}}</span></li>
+            	<li class="item" ng-repeat="item in plists track by $index" ng-if="$index<3"><strong>
+				<b style="width:{{item.HOTPOINTNUM/10}}%"></b></strong>
+				<span class="white title" ng-bind="item.TITLE|limitTo:20"></span>
+				<span class="content" ng-bind="item.content" style="display: none;"></span></li>
+                </ul>
+                </div>
+                <div class="tit">全国热点新闻</div>
+        	<div class="toubantt2">
+        	<ul>
+            	<li style="text-align:center"><strong>热度</strong><span>{{today}}</span></li>
+            	<li class="item" ng-repeat="item in glists track by $index" ng-if="$index<5"><strong>
+				<b style="width:{{item.HOTPOINTNUM/10}}%"></b></strong>
+				<span class="white title" ng-bind="item.TITLE|limitTo:20"></span>
+				<span class="content" ng-bind="item.content" style="display: none;"></span></li>
+                </ul>
+                </div>
+        </div>
+        <div class="zh_rightcon">
+                <div class="tit">稿件详情</div>
+        		<div class="cont">
+                	<h1 class="detailTitle"></h1>
+                    <p class="detailContent"></p>
+                </div>
+        </div>
+</div>
+
+
+<script type="text/javascript">
+
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope,$http) {
+			var myDate = new Date();
+			var today = myDate.getFullYear()+"-"+myDate.getMonth()+1+"-"+myDate.getDate();
+			$scope.today = today;
+		    $http.get('/wcm/bigdata.do?modelid=hotpoint&serviceid=areahotpoint&loaddate='+today+'&area=001013013').then(function(data){
+		    	$scope.lists=data.data;
+		    });
+			$http.get('/wcm/bigdata.do?modelid=hotpoint&serviceid=areahotpoint&loaddate='+today+'&area=001013').then(function(data){
+		    	$scope.plists=data.data;
+		    });
+			$http.get('/wcm/bigdata.do?modelid=hotpoint&serviceid=areahotpoint&loaddate='+today+'&area=001').then(function(data){
+		    	$scope.glists=data.data;
+		    });
+			$http.get('/isearch/front/storme_news.jhtml?pageSize=20').then(function(data){
+		    	$scope.newsLists=data.data;
+				setTimeout(function(){
+					$('.lunbo1').bxSlider({
+					mode: 'vertical',
+					speed:4000,
+					infiniteLoop:true,
+					minSlides: 3,
+					auto:true,
+					pager:false,
+				  });
+				},2000);
+		    });
+
+			$http.get('/wcm/bigdata.do?group=&modelid=searchNew&page_no=0&page_size=10&serviceid=recentpolicy&type=1').then(function(data){
+				console.log(data.data.PAGEITEMS);
+		    	$scope.policies=data.data.PAGEITEMS;
+				setTimeout(function(){
+					$('.lunbo2').bxSlider({
+						mode: 'vertical',
+						speed:4200,
+						infiniteLoop:true,
+						minSlides: 3,
+						auto:true,
+						pager:false,
+					 });
+				},2000);
+				
+		    });
+		});
+
+
+        liNum=$('.ulone li').length;
+		setInterval(function(){
+			var geshu=$('.whiteBox').nextAll().length;
+			if (geshu!=0) {
+				$('.whiteBox').removeClass('whiteBox').next().addClass('whiteBox');
+			}else{
+				$('.whiteBox').removeClass('whiteBox');
+				$('.ulone li:eq(1)').addClass('whiteBox');
+			}
+
+			var curTitle=$('.whiteBox').children('.title').html();
+			var curContent=$('.whiteBox').children('.content').html();
+			$('.detailTitle').html(curTitle);
+			$('.detailContent').html(curContent);
+        }, 2000);
+    </script>
+
+
+
+</body>
+</html>

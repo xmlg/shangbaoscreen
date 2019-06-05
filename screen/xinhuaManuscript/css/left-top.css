@@ -1,0 +1,106 @@
+.left-top {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+}
+
+.left-top .header {
+    margin: 0px 20px 0;
+    padding-left: 28px;
+    width: 1880px;
+    height: 90px;
+    background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 90px;
+    color: white;
+    position: relative;
+    top: 20px;
+    z-index: 1;
+}
+
+.left-top .column_div {
+    position: absolute;
+    height: 970px;
+    width: 10px;
+    left: 105px;
+    top: 95px;
+    background-color: rgb(0, 140, 141);
+}
+
+.left-top .content {
+    float: left;
+    width: 1840px;
+    height: 930px;
+    margin: 0px 20px;
+    overflow: hidden;
+}
+
+.left-top .item {
+    position: relative;
+    width: 1829px;
+    /*height: 360px;*/
+    margin-top: 115px;
+}
+
+.left-top .item_id {
+    vertical-align: middle;
+    margin-top: 81px;
+    margin-left: 10px;
+    width: 163px;
+    height: 77px;
+    background-color: rgb(20, 194, 209);
+    border-radius: 20px;
+    float: left;
+    color: black;
+    font-size: 54px;
+    text-align: center;
+    line-height: 77px;
+}
+
+.left-top .item_content {
+    margin-left: 40px;
+    float: left;
+    width: 1604px;
+    /*height: 350px;*/
+    background-image: url(../images/brokeItem_03.jpg);
+    background-size: 100% 100%;
+}
+
+.left-top .item_details {
+    margin-left: 30px;
+    font-size: 54px;
+    margin-top: -42px;
+}
+
+.left-top .item_details span {
+    margin-left: 30px;
+    color: white;
+}
+
+.left-top .item_text {
+    background-color: rgb(14, 41, 55);
+    margin: 0px 20px 20px 20px;
+    font-size: 60px;
+    width: 1564px;
+    /*height: 300px;*/
+    padding: 20px;
+    overflow: hidden;
+    color: white;
+    line-height: 92px;
+}
+
+.left-top .clientlogo {
+    background-color: initial;
+}
+
+.left-top .clientlogo img {
+    width: 137px;
+}
+
+#brokeMessage {
+    display: none;
+}

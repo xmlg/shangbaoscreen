@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="origApp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="lib/ngAnimate.css">
+    <link rel="stylesheet" href="css/orignalDraftPropaRank.css"/>
+    <style>
+        .midnewsdetail div {
+            color: #fff;
+            transform: translate(0px, 0px) translateZ(0px);
+            font-size: 90px;
+            padding: 0 40px;
+            line-height: 130px;
+            text-indent: 2em;
+        }
+        .newsinfo span{
+            text-align: left;
+        }
+        .newsinfo>span:first-child{
+            text-align: left;
+            text-indent: 20px;
+        }
+        .rightBotSc::-webkit-scrollbar {display:none}
+    </style>
+    <title>报刊稿件原创排行</title>
+</head>
+
+<body class="body">
+<div class="allnr" ng-controller="origCtrl">
+    <div class="titlename">报刊稿件原创排行</div>
+    <div class="orank">
+        <div class="hotnews">
+            <div class="hideDateDiv" ng-show="status.isFromPlanningCenter"></div>
+            <ul ng-hide="status.isFromPlanningCenter">
+            
+                <li ng-click="getOtherDateInfo(1)" ng-class="{true:'active',false:''}[isSelected==1]">昨日</li>
+                <li ng-click="getOtherDateInfo(3)" ng-class="{true:'active',false:''}[isSelected==3]">三日</li>
+                <li ng-click="getOtherDateInfo(7)" ng-class="{true:'active',false:''}[isSelected==7]">七日</li>
+            </ul>
+            <div class="newsList">
+                <div class="newsinfo" ng-repeat="data in dateinfo track by $index">
+                    <p ng-class="{true:'active',false:''}[status.selectedItemId == data.zbGuid]"
+                       ng-bind="$index+1+'.'+data.title" ng-click="getManuscriptDetail(data.zbGuid)">
+                    </p>
+
+                    <div class="newsdetail">
+                        <span style="text-indent: 150px;">来源:{{data.siteName}}</span>&nbsp;&nbsp;
+                            <span>
+                                传播力指数：<span ng-bind="data.ceiIndex"></span>
+                            </span>
+                        <div class="wp">
+                            <div class="wpp" style="width: {{data.ceiIndex/currceiIndex*100}}%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list_page" ng-if="status.isFromPlanningCenter">
+                <div class="pager">
+                </div>
+            </div>
+        </div>
+        <!--中间-->
+        <manuscriptdetail></manuscriptdetail>
+    </div>
+</div>
+<script src="lib/jquery-2.1.0.js"></script>
+<script src="util/resize.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/angular-animate.min.js"></script>
+<script src="lib/iscroll.js"></script>
+<script src="lib/jquery.ui.slider.js"></script>
+<script type="text/javascript " src="lib/jquery.pager.js "></script>
+<script type="text/javascript" src="util/htmlParse.js"></script>
+<script src="util/httpService.js"></script>
+<script src="lib/d3.min.js"></script>
+<script type="text/javascript" src="util/scrollBarDir.js"></script>
+<script type="text/javascript" src="template/indexfordetail.js"></script>
+<script type="text/javascript" src="template/radarDir.js"></script>
+<script type="text/javascript" src="js/orignalDraftPropaRank.js"></script>
+</body>
+
+</html>

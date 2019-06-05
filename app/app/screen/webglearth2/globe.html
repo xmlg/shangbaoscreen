@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="v2/api_v2.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/queue.v1.js"></script>
+	    <style type="text/css">
+    .we-pm-icon{cursor:pointer;-webkit-animation: scaleout .8s infinite ease-in-out;animation: scaleout .8s infinite ease-in-out;}
+   .we-pm-icon:nth-child(odd)
+{
+animation-delay:2s;
+-webkit-animation-delay:2s; /* Safari 和 Chrome */
+}
+	.we-pm-icon {
+    position: absolute;
+    z-index: 64;
+    /*box-shadow:5px 5px 5px 2px yellow;*/
+    width: 9px !important;
+    height: 9px !important;
+    margin-left: -13px;
+    margin-top: -25px;
+    background: linear-gradient(#f4f5f2, rgb(230,250,0));
+    /* background-image: none; */
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 3px #cbe208;
+}
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(1.0) }
+    100% {
+        -webkit-transform: scale(1.5);
+        opacity: 0.8;
+    }
+}
+@keyframes scaleout {
+   0% { -webkit-transform: scale(1.0) }
+    100% {
+        -webkit-transform: scale(1.5);
+        opacity: 0.8;
+    }
+}
+    </style>
+    <script>
+      function initialize() {
+        var earth = new WE.map('earth_div');
+
+
+        //WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+    /*    var base = WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+                  attribution: ''
+                }).addTo(earth);
+*/
+    WE.tileLayer('http://data.webglearth.com/natural-earth-color/{z}/{x}/{y}.jpg', {
+          tileSize: 256,
+          bounds: [[-85, -180], [85, 180]],
+          minZoom: 0,
+          maxZoom: 16,
+          attribution: '',
+          tms: true
+        }).addTo(earth);
+        earth.setView([39.9,116.3], 1.8);
+     
+        // var swiss = WE.tileLayerJSON('http://tileserver.maptiler.com/swissimage25m.json');
+        // swiss.addTo(earth);
+        // var marker = WE.marker([51.5, -0.09]).addTo(earth);
+        // marker.bindPopup("<b>Hello world!</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
+        //
+        //var marker2 = WE.marker([30.058056, 31.228889]).addTo(earth);
+        //marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", {maxWidth: 120, closeButton: false});
+        //
+        // var markerCustom = WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
+
+
+
+        //console.log(cities,events);
+
+
+        // earth.setView([39.9,116.3], 3.5);
+
+        queue().defer(d3.json,"data/72HoursCities.json").defer(d3.json,"/cas/casData/screenJson?type=ThreedaysArticle").defer(d3.json, "data/capitals.json").await(function(error,cities,events,capitals){
+          if(error)throw error;
+          cities.forEach(function(item,index){
+              //将城市json中的地域信息 在 事件json中匹配，将匹配到的标题赋值到城市标题中
+            //item.TITLE = events[item.AREA].TITLE;
+              events.Records.forEach(function(ca_item,_index){
+                  if(ca_item.region == item.AREANAME){
+                      if(item.TITLE && item.TITLE!=''){
+                          cities.push({
+                                  "AREANAME": item.AREANAME,
+                                  "INDEX": cities.length+1,
+                                  "AREA": "001016",
+                                  "HOTNUM": "4543",
+                                  "LOADDATE": "2016-10-20",
+                                  "TITLE" : ca_item.title
+                              });
+                      }else{
+                          item.TITLE = ca_item.title;
+                      }
+
+
+              }
+              })
+
+          });
+          cities.forEach(function(item,index){
+
+              capitals.contents.forEach(function(_item,_index){
+                  //如果省会json 的省会名 与 城市json的地域名匹配，将这个省的经纬度赋值到城市上
+                    if(_item.province == item.AREANAME){
+                        item.latitude = _item.latitude;
+                        item.longitude = _item.longitude;
+                    }
+
+                });
+          });
+//          console.log(cities);
+//          console.log(earth);
+          var index = 0;
+          var points = {};
+          var interval = setInterval(function(){
+             var _marker;
+            if(!points[index]){
+              
+              _marker = WE.marker([cities[index].latitude,cities[index].longitude]).addTo(earth);
+      //        _marker.bindPopup("<font style='text-align:center;' color=orange>["+cities[index].AREANAME+"]</font>&nbsp;"+cities[index].TITLE, {maxWidth: 120, closeButton: false});//.openPopup()
+              //earth.panTo([cities[index].latitude,cities[index].longitude],100);
+              points[index] = _marker; 
+            }else{
+              _marker = points[index];
+              //_marker.openPopup();
+            }
+            index++;
+            if(index>=cities.length){
+              //clearInterval(interval);
+              index = 0;
+            }
+            setTimeout(function(){
+                // earth.removeMarker(_marker);
+                _marker.closePopup();
+            },1000);
+
+
+          },1000);
+
+
+        });
+
+         var before = null;
+         requestAnimationFrame(function animate(now) {
+             var c = earth.getPosition();
+             var elapsed = before? now - before: 0;
+             before = now;
+             earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+             requestAnimationFrame(animate);
+         });
+
+      }
+    </script>
+    <style>
+      html, body{padding: 0; margin: 0; background-color: rgba(0,0,0,0);}
+      #earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+    </style>
+
+  </head>
+  <body onload="initialize()">
+    <div id="earth_div"></div>
+  </body>
+</html>

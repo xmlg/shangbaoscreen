@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>集团舆情配置</title>
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.5/css/bootstrap.min.css" />
+		<style type="text/css">
+			html {
+				min-width: 650px !important;
+			}
+			
+			body {
+				padding-top: 10px;
+			}
+			
+			td,
+			th {
+				vertical-align: middle !important;
+			}
+			
+			.URLTIME {
+				white-space: nowrap;
+			}
+			
+			.URLTITLE {
+				/*max-width: 500px;*/
+				position: relative;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				padding-left: 30px !important;
+			}
+			
+			.URLTITLE .circle {
+				position: absolute;
+				left: 5px;
+				top: 12px;
+				background-color: #5bc0de;
+				width: 20px;
+				height: 20px;
+				border-radius: 100%;
+			}
+			
+			button.btn-default {
+				letter-spacing: 4px;
+			}
+			
+			.sort-mark {
+				color: #005DFF;
+			}
+			
+			.sid-th,
+			.time-th,
+			.title-th,
+			.button-th {
+				cursor: pointer;
+			}
+			
+			.top—container {
+				position: absolute;
+				height: 20px;
+				top: 9px;
+				left: 50%;
+				right: 10px;
+			}
+			
+			.top—container .progress-bar {
+				cursor: pointer;
+			}
+			
+			div.load {
+				position: fixed;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 10000;
+			}
+			
+			div.load img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -50px;
+			}
+			
+			.tops-list li {
+				position: relative;
+				padding-right: 45px;
+			}
+			
+			.tops-list li button {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -10px;
+			}
+		</style>
+		<style id="dynamicCSS" type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="load">
+			<img src="img/loading.gif" />
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<a class="navbar-brand" href="#">
+									集团舆情配置
+								</a>
+							</div>
+							<div class="navbar-form navbar-left" style="float: right !important;">
+								<button type="submit" class="btn btn-success" data-toggle="modal" data-target="#helpModal">帮助</button>
+								<button type="submit" class="send-data btn btn-success">保存配置</button>
+							</div>
+
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-info" style="position: relative;margin: 0px;">
+						<!-- Default panel contents -->
+						<div class="panel-heading">
+							集团舆情
+						</div>
+						<div class="top—container progress">
+							<div class="progress-bar progress-bar-success" data-toggle="modal" data-target="#topsModal" style="width: 0%;">
+
+							</div>
+						</div>
+						<!-- Table -->
+						<table class="table table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="text-center">#</th>
+									<th class="sid-th">SID<span class="sort-mark"></span></th>
+									<th class="title-th">标题<span class="sort-mark"></span></th>
+									<th class="time-th">时间<span class="sort-mark"></span></th>
+									<th class="button-th text-center">置顶<span class="sort-mark"></span></th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+						<div class="panel-footer" style="padding: 10px 0px 5px 0px;">
+							<nav class="text-center">
+								<ul class="pagination" style="margin: 0px;">
+									<li>
+										<a class='prePage' href="#" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+										</a>
+									</li>
+									<!--<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>-->
+									<li class="inster-befor">
+										<a class='nextPage' href="#" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">帮助</h4>
+					</div>
+					<div class="modal-body">
+						1.最大置顶新闻数量为7条。<br>
+						2.进度条可以点击，点击后显示所有置顶新闻。<br>
+						3.点击表头各列可选则排序模式。<br>
+						4.鼠标放在标题前的蓝色圆圈是会显示全部标题信息。<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="topsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">当前置顶</h4>
+					</div>
+					<div class="modal-body">
+						<ul class="list-group tops-list">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/d3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/corpCorrelationConfig/corpCorrelationConfig.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function generatedynamicCSS() {
+				var width = window.innerWidth;
+
+				var css = [
+					'.URLTITLE {',
+					'	max-width:' + ((width - 800) > 100 ? (width - 800) : '100') + 'px;',
+					'}'
+				];
+				var $dynamicCSS = $('#dynamicCSS');
+				$dynamicCSS.text(css.join('\n'));
+			}
+			generatedynamicCSS();
+			window.addEventListener('resize', generatedynamicCSS);
+		</script>
+	</body>
+
+</html>

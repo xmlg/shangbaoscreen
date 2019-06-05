@@ -1,0 +1,16 @@
+<div ng-if="status.show" class="m-burstxtcont slide-down">
+    <div class="m-titbox">
+        <div class="m-tab" ng-bind="status.articleInfo.FIELD"></div>
+        <div class="m-txt" ng-bind="data.DOCTITLE"></div>
+        <a ng-if="isClose" href="#" class="m-close" ng-click="close()">关闭</a>
+    </div>
+    <div class="m-txtarea">
+        <div class="m-txt" ng-if="data.HTMLCONTENT" scroll-end="scrollEnd()" scroll-bar auto-scroll-config="status.config">
+            <p config="status.config" class="content" ng-bind-html="data.HTMLCONTENT">
+            </p>
+        </div>
+        <div class="m-morebox">
+            <a ng-href="{{data.URL}}" target="_blank" class="m-more">查看原文</a>
+        </div>
+    </div>
+</div>

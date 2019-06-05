@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>草图</title>
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html {
+				width: 100%;
+				height: 100%;
+				background-color: #ffffff;
+				overflow: auto;
+			}
+			
+			body {
+				background-image: url(img/中央厨房BG.jpg);
+				background-size: 100% 100%;
+				background-position: 0px -1px;
+				position: relative;
+				overflow: hidden;
+				margin: 0px;
+				width: 1920px;
+				height: 1080px;
+			}
+			
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.scaleplate {
+				background-color: rgba(255, 255, 0, 0.5);
+				position: absolute;
+			}
+			
+			.tool {
+				width: 255px;
+				height: 100px;
+				position: absolute;
+				top: 480px;
+				left: 905px;
+				z-index: 10;
+			}
+			
+			.tool textarea {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#textarea2 {
+				position: absolute;
+				left: -260px;
+				top: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg>
+			<defs>
+				<filter id="turbFilter">
+					<feTurbulence id="turb" type="turbulence" baseFrequency="0.5 1" numOctaves="1" in="SourceGraphic"></feTurbulence>
+				</filter>
+			</defs>
+			<g id="g" transform="matrix(1,0,0,1,900,915)">
+				<path d="M0 1000 0-1000 M1000 0 -1000 0" stroke="red " stroke-width="1"></path>
+				<g  transform="matrix(1,0,0,1,0,0)">
+					
+				</g>
+			</g>
+			<path id='1' d="M0 -147  -55 -147 -80 -135 -80 -105 81 -105 81 -135 73 -145" stroke="#ff0 " stroke-width="1" fill="none"></path>
+			<g transform="matrix(1,0,0,1,1743,32)">
+				<text>数字报</text>
+				<path d="M7 12 1 12 0 11 0 6 1 5 7 5 7 12 12 16 123 16 127 12" stroke="#fff " stroke-width="1" fill="none"></path>
+				<path transform="rotate(180) translate(-134,-17)" d="M7 12 1 12 0 11 0 6 1 5 7 5 7 12 12 16 123 16 127 12" stroke="#fff " stroke-width="1" fill="none"></path>
+				<rect style="    
+					x: 13;
+    				y: 3.5;
+    				width: 4px;
+    				height: 10px;
+    				fill: rgb(255, 255, 255);"></rect>
+
+				<rect style="    
+					x: 17.5;
+    				y: 3.5;
+    				width: 4px;
+    				height: 10px;
+    				fill: rgb(255, 255, 255);"></rect>
+
+				<rect style="    
+					x: 116.5;
+    				y: 3.5;
+    				width: 4px;
+    				height: 10px;
+    				fill: rgb(255, 255, 255);"></rect>
+			</g>
+			<g transform="matrix(1,0,0,1,1743,59)">
+				<path d="M7 12 1 12 0 11 0 6 1 5 7 5 7 12 12 16 123 16 127 12" stroke="#fff " stroke-width="1" fill="none"></path>
+				<path transform="rotate(180) translate(-134,-17)" d="M7 12 1 12 0 11 0 6 1 5 7 5 7 12 12 16 123 16 127 12" stroke="#fff " stroke-width="1" fill="none"></path>
+			</g>
+		</svg>
+		<div class="tool">
+			<textarea name="" id="textarea1" cols="30" rows="10"></textarea>
+			<textarea name="" id="textarea2" cols="10" rows="10"></textarea>
+		</div>
+		<button style="position: absolute; top:300px;right:0px ">切换背景</button>
+		<script src="lib/jquery-2.1.3.js " type="text/javascript " charset="utf-8 "></script>
+		<script type="text/javascript ">
+			var path = $('#1');
+			var textarea = $('#textarea1');
+
+			textarea.text(path.attr('d'));
+			textarea.on('keyup', function() {
+				try {
+					path.attr('d', textarea.val());
+				} catch(e) {
+					//TODO handle the exception
+				}
+
+			});
+
+			var g = $('#g');
+			var textarea2 = $('#textarea2');
+
+			textarea2.text(g.attr('transform'));
+			textarea2.on('keyup', function() {
+				try {
+					g.attr('transform', textarea2.val());
+				} catch(e) {
+					//TODO handle the exception
+				}
+
+			});
+
+			var f = true;
+			$('button').click(function() {
+				f = !f;
+				if(f) {
+					$('body').css({
+						'background-image': 'url(img/中央厨房BG.jpg)'
+					});
+				} else {
+					$('body').css({
+						'background-image': 'url(img/中央厨房BG.png)'
+					})
+				}
+			})
+		</script>
+		</div>
+	</body>
+
+</html>

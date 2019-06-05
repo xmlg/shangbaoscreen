@@ -1,0 +1,33 @@
+<g id="reltimeaccess" opacity="0">
+    <text transform="translate(20, -40)" fill="#60BBDD" font-family="SimHei" font-size="18">
+        统一指挥
+    </text>
+    <text transform="translate(110, -40)" fill="#60BBDD" font-family="SimHei" font-size="18">
+        一次采集
+    </text>
+    <text transform="translate(200, -40)" transform="" fill="#60BBDD" font-family="SimHei" font-size="18">
+        多种生成
+    </text>
+    <text transform="translate(290, -40)" fill="#60BBDD" font-family="SimHei" font-size="18">
+        多端分发
+    </text>
+    <text transform="translate(380, -40)" fill="#60BBDD" font-family="SimHei" font-size="18">
+        统一评价
+    </text>
+    <image x="10" y="-15" xlink:href="svg/reltime.png" />
+    <text x="175" y="20" fill="#60BBDD" font-family="SimHei" font-size="18">
+        实时访问量
+    </text>
+    <text x="220" id="trafficTotal" y="45" style="text-anchor: middle" fill="white" font-family="SimHei" font-size="21">
+    </text>
+    <text x="110" y="100" fill="#60BBDD" font-family="SimHei" font-size="18">
+        网站
+    </text>
+    <text x="120" id="trafficWebsite" y="125" style="text-anchor: middle" fill="white" font-family="SimHei" font-size="21">
+    </text>
+    <text x="310" y="100" fill="#60BBDD" font-family="SimHei" font-size="18">
+        客户端
+    </text>
+    <text x="340" id="trafficClient" y="125" style="text-anchor: middle" fill="white" font-family="SimHei" font-size="21">
+    </text>
+</g>

@@ -1,0 +1,14 @@
+{
+    "result": "success",
+    "content":
+    {
+        "SZB": 1759,
+        "APP": 1225,
+        "WEIBO": 80,
+        "XHS": 200,
+        "WEIXIN": 28,
+        "TOTAL": 4970,
+        "WEBSITE": 1878,
+        "EMAIL": 100
+    }
+}

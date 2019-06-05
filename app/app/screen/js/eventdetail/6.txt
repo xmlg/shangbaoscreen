@@ -1,0 +1,72 @@
+{
+	"official_data": [
+		{
+			"guid": "775713145703501824",
+			"shorttitle": "辽宁人大代表",
+			"cluster_nums": 1347
+		}, {
+			"guid": "778032468648939520",
+			"shorttitle": "“一只皮鞋”的贿选故事终将落幕",
+			"cluster_nums": 48
+		}, {
+			"guid": "775758994563813376",
+			"shorttitle": "绝不容拉票贿选侵蚀党和国家肌体",
+			"cluster_nums": 43
+		}, {
+			"guid": "777825170454368256",
+			"shorttitle": "党中央的决心给予群众信心",
+			"cluster_nums": 41
+		}, {
+			"guid": "777508038747246592",
+			"shorttitle": "别再干拉票贿选的傻事",
+			"cluster_nums": 35
+		}, {
+			"guid": "778177469093662720",
+			"shorttitle": "辽宁贿选案打破的那些“禁区”",
+			"cluster_nums": 28
+		}, {
+			"guid": "778755835735724032",
+			"shorttitle": "换届风气监督工作会议",
+			"cluster_nums": 15
+		}, {
+			"guid": "778041123767209984",
+			"shorttitle": "省党代表选举",
+			"cluster_nums": 11
+		}
+	],
+	"folkString": [
+		{
+			"guid": "775663323072040961",
+			"shorttitle": "全国人大会议",
+			"cluster_nums": 122
+		}, {
+			"guid": "778446913179111424",
+			"shorttitle": "辽宁私企被中美调查",
+			"cluster_nums": 13
+		}, {
+			"guid": "779113692368883712",
+			"shorttitle": "外交部发布会上被人问起的这家企业",
+			"cluster_nums": 12
+		}, {
+			"guid": "778179943766577154",
+			"shorttitle": "辽宁贿选案打破的那些“禁区”",
+			"cluster_nums": 7
+		}, {
+			"guid": "778092862943940608",
+			"shorttitle": "辽宁党代表选举在",
+			"cluster_nums": 7
+		}, {
+			"guid": "775853847771500545",
+			"shorttitle": "创下两个“新中国史上首次”",
+			"cluster_nums": 6
+		}, {
+			"guid": "777473850195202048",
+			"shorttitle": "吕福春4 0 岁出头成副部考察人选还为晋升送钱",
+			"cluster_nums": 5
+		}, {
+			"guid": "775863785407270912",
+			"shorttitle": "牵涉辽宁贿选案",
+			"cluster_nums": 5
+		}
+	]
+}

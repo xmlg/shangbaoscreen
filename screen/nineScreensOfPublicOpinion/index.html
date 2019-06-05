@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>今日热点头条</title>
+    <link href="lib/perfect-scrollbar/perfect-scrollbar-0.4.10.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/todayHotHeadLine.css" />
+</head>
+
+<body>
+    <div class="big-border"></div>
+    <div class="BigScreenHotHeadlines">
+        <div class="header">
+            <span id="header_title">今日头条热点</span>
+        </div>
+        <div class="noData">暂无今日数据</div>
+        <div class="content">
+            <div class="content-left">
+                <div class="content-ltop">
+                    <ul>
+                        <li>序号</li>
+                        <li>标题</li>
+                        <li>发布媒体</li>
+                        <li>发布时间</li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="content-llower">
+                    <div class="content-text">
+                        <div class="ulstyle" id="list">
+                            <ul class="ulclick">
+                                <li class="list-serial-number"></li>
+                                <li class="list-title"></li>
+                                <li class="list-new"></li>
+                                <li class="list-publishing-media"></li>
+                                <li class="list-release-time"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="list_page">
+                        <div class="pager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right" id="content-right">
+                <div class="todayHotHeadLine_right_info">
+                    <img src="./images/tit-1.png" class="todayHotHeadLine_right_left">
+                    <span>稿件详情</span>
+                    <img src="./images/tit-2.png" class="todayHotHeadLine_right_right">
+                </div>
+                <div class="todayHotHeadLine_right_body" id="todayHotHeadLine_right_body">
+                 <div>
+                    <div class="todayHotHeadLine_right_title"></div>
+                    <div class="todayHotHeadLine_right_adds">
+                        <span class="todayHotHeadLines_right_resource"></span>
+                        <span class="todayHotHeadLine_right_date"></span>
+                    </div>
+                    <div class="todayHotHeadLine_manuscript_content">
+                        <div class="todayHotHeadLine_right_text">
+                           <!--  <div class="todayHotHeadLine_right_text_div">看病便宜了么?</div>
+                            <div class="todayHotHeadLine_right_text_div">——患者说:药费.大型设备检查明显下降个毛线</div> -->
+                            
+                        </div>
+                    </div>
+                    <div class="shadow top_shadow"></div>
+                    <div class="shadow middle_shadow"></div>
+                    <div class="shadow bottom_shadow"></div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.0.js"></script>
+    <script src="util/resize.js"></script>
+    <script src="lib/jquery.pager.js"></script>
+    <script src="js/todayHotHeadLine.js"></script>
+    <script src="lib/perfect-scrollbar/perfect-scrollbar-0.4.10.with-mousewheel.min.js"></script>
+    <script src="lib/perfect-scrollbar/perfect-scrollbar-0.4.10.min.js"></script>
+   <!--  <script src="lib/iscroll.js"></script>
+    <script src="js/scroll.js"></script> -->
+    <script>
+    jQuery(document).ready(function($) {
+        $('.todayHotHeadLine_manuscript_content').perfectScrollbar();
+    });
+    </script>
+</body>
+
+</html>

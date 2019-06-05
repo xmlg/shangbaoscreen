@@ -1,0 +1,70 @@
+.page2 .right .barChart {
+    width: 95%;
+    height: 50%;
+    text-align: center;
+    font-size: 18px;
+    background: url('../images/bgColor.png');
+    background-size: cover;
+}
+
+.page2 .right .barChart .chart-title {
+    width: 100%;
+    height: 85px;
+    font-size: 40px;
+    background: #123644;
+    line-height: 85px;
+}
+
+.page2 .right .barChart .chart-title span {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.page2 .right .blogChart .chart-title {
+    color: #12b5e4;
+}
+
+.page2 .right .weChatChart .chart-title {
+    color: #1e936b;
+}
+
+.page2 .right .blogChart .blogBarChart,
+.page2 .right .weChatChart .weChatBarChart {
+    width: 100%;
+    height: calc(100% - 85px);
+    position: relative;
+}
+
+.page2 .right .blogChart .blogBarChart .xaxis .tick text,
+.page2 .right .blogChart .blogBarChart .yaxis .tick text {
+    y: 10;
+    fill: #12b5e4;
+    font-size: 16px;
+}
+
+.page2 .right .blogChart .blogBarChart .divide-dots-container circle {
+    fill: #12b5e4;
+}
+
+.page2 .right .weChatChart .weChatBarChart .xaxis .tick text,
+.page2 .right .weChatChart .weChatBarChart .yaxis .tick text {
+    y: 10;
+    fill: #1e936b;
+    font-size: 16px;
+}
+
+.page2 .right .weChatChart .weChatBarChart .divide-dots-container circle {
+    fill: #1e936b;
+}
+
+.page2 .right .blogBarChart .data-panel,
+.page2 .right .weChatBarChart .data-panel {
+    position: absolute;
+    width: 180px;
+    top: 20px;
+    left: 200px;
+    background-color: rgba(4, 38, 59, 0.7);
+    display: none;
+    padding: 10px;
+    font-size: 20px;
+}

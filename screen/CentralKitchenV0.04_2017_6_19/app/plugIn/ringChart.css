@@ -1,0 +1,91 @@
+.ringchart-wrap,
+.ringchart-circle,
+.ringchart-percent {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.ringchart-wrap {
+    top: 50px;
+    left: 25px;
+    background-color: #ccc;
+}
+
+.ringchart-circle {
+    box-sizing: border-box;
+    border: 20px solid #ccc;
+    clip: rect(0, 200px, 200px, 100px);
+}
+
+.ringchart-clip-auto {
+    clip: rect(auto, auto, auto, auto)!important;
+}
+
+.ringchart-percent {
+    box-sizing: border-box;
+    top: -20px;
+    left: -20px;
+}
+
+.ringchart-left {
+    transition: transform ease;
+    border: 20px solid blue;
+    clip: rect(0, 100px, 200px, 0);
+}
+
+.ringchart-right {
+    border: 20px solid blue;
+    clip: rect(0, 200px, 200px, 100px);
+}
+
+.ringchart-wth0 {
+    width: 0!important;
+}
+
+.ringchart-num {
+    position: absolute;
+    box-sizing: border-box;
+    width: 160px;
+    height: 160px;
+    line-height: 29px;
+    text-align: center;
+    font-size: 40px;
+    left: 20px;
+    top: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.ringchart-num>.num {
+    color: white;
+}
+
+.ringchart-num>.text {
+    font-size: 15px!important;
+    line-height: 35px!important;
+}
+
+#pcRing {
+    display: none;
+    z-index: 9999;
+    width: 300px;
+    height: 300px;
+    z-index: 9999;
+    position: relative;
+    top: 721px;
+    left: 1063px;
+}
+
+#mobileRing {
+    display: none;
+    z-index: 9999;
+    width: 300px;
+    height: 300px;
+    z-index: 9999;
+    position: absolute!important;
+    top: 720px;
+    left: 1185px;
+}

@@ -1,0 +1,133 @@
+body {
+  width: 300px;
+}
+
+.audio_area #playhead {
+  width: 2px;
+  height: 2px;
+  background-color: #0CBB08;
+}
+
+.audio_area {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: -2px;
+  width: 170px;
+  height: 56px;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+  /* word-wrap: normal; */
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+}
+
+.audio_wrp {
+  /* border: 1px solid #ebebeb; */
+  /* background-color: #fcfcfc; */
+  overflow: hidden;
+  /* padding: 12px 20px 12px 12px; */
+  height: 56px;
+}
+
+.audio_play_area {
+  float: left;
+  margin: 15px 12px 10px 18px;
+  font-size: 0;
+  width: 18px;
+  height: 25px;
+}
+
+.audio_area .pic_audio_default {
+  display: none;
+  width: 18px;
+}
+
+.audio_area .audio_length {
+  float: right;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-left: 1em;
+}
+
+.audio_info_area {
+  height: 44px;
+  padding:3px 5px;
+  margin: 5px 0;
+  border-left: solid 2px black;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.audio_area {
+  font-weight: 400;
+  font-size: 17px;
+  margin-top: -2px;
+  width: auto;
+  overflow: hidden;
+
+}
+.audio_title{
+  color: white;
+}
+
+.audio_area .audio_source {
+  font-size: 14px;
+}
+
+.tips_global {
+  color: #8c8c8c;
+}
+
+.audio_area .progress_bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #eee;
+  height: 2px;
+  width: 100%;
+}
+
+.audio_play_area .icon_audio_default {
+  background: transparent url(./img/icon_audio_unread26f1f1.png) no-repeat 0 0;
+  width: 18px;
+  height: 25px;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-background-size: 18px auto;
+  background-size: 18px auto;
+}
+
+.audio_play_area .icon_audio_playing {
+  background: transparent url(./img/icon_audio_reading_126f1f1.png) no-repeat 0 0;
+  width: 18px;
+  height: 25px;
+  vertical-align: middle;
+  -webkit-background-size: 18px auto;
+  background-size: 18px auto;
+  -webkit-animation: audio_playing 1s infinite;
+  display: none;
+}
+
+@-webkit-keyframes audio_playing {
+  30% {
+    background-image: url(./img/icon_audio_reading_126f1f1.png)
+  }
+  31% {
+    background-image: url(./img/icon_audio_reading_226f1f1.png)
+  }
+  61% {
+    background-image: url(./img/icon_audio_reading_226f1f1.png)
+  }
+  62% {
+    background-image: url(./img/icon_audio_reading_326f1f1.png)
+  }
+  100% {
+    background-image: url(./img/icon_audio_reading_326f1f1.png)
+  }
+}

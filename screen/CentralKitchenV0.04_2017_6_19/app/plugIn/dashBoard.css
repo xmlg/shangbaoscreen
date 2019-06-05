@@ -1,0 +1,51 @@
+#dashBoard {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+#dashBoard .percentNum {
+    color: white;
+    text-align: center;
+    font-size: 21px;
+}
+
+#dashBoard .title {
+    text-align: center;
+    color: #67c4d7;
+    font-size: 15px;
+}
+
+.dashBoard {
+    width: 110px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashBoard img {
+    position: absolute;
+}
+
+.dashBoard .circle1 {
+    top: 0px;
+    left: 0px;
+    transform: rotate(0deg);
+}
+
+.dashBoard .semicircleMask {
+    top: 10px;
+    left: 10px;
+}
+
+.dashBoard .circle2 {
+    top: 10px;
+    left: 10px;
+    transform: rotate(0deg);
+}
+
+.dashBoard .hand {
+    top: 16px;
+    left: 19px;
+    transform: rotate(0deg);
+}

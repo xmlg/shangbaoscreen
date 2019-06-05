@@ -1,0 +1,448 @@
+﻿@font-face {
+    font-family: 'FangZhengLangTing';
+    src: url('../font/FZLTHJW.TTF') format('truetype');
+}
+
+body {
+    font-family: 'FangZhengLangTing';
+}
+
+body {
+    /*background-image: url(../ui/事件分析.jpg);*/
+    background-size: 100% 100%;
+    background-color: #0D141E;
+}
+
+.section {
+    float: left;
+    width: 640px;
+    height: 360px;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    width: 600px;
+    height: 27px;
+    line-height: 27px;
+    background-image: url(../img/header-bg.png);
+    background-size: 100% 100%;
+    margin: 0px;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 17px;
+    padding-left: 8px;
+}
+
+.section-1 {
+    padding-top: 93px;
+   
+}
+.title1{
+	width:60%;
+	height:39px; 
+	   position: absolute;
+	   left: 113px;
+	   top: 50px; 
+	   z-index: 10; 
+	   text-anchor: middle;
+	   color: white;
+	   font-size: 22px;
+	   line-height: 32px;
+	   padding: 5px;
+	   padding-left: 20px;
+	   white-space:nowrap; 
+    	overflow:hidden; 
+   		 text-overflow:ellipsis;
+   		 background-image: url(../img/sjys_title.jpg);
+   		 background-size: 100% 100%;
+   		font-weight: bold;
+}
+.section-1-bg{
+	 background-image: url(../img/szyq_bg.jpg);
+    background-size: 100% 100%;
+    margin-left: 30px;
+    width: 550px;
+    height: 300px;
+    margin-top: -35px;
+    padding-top: 30px;
+}
+.section-1 h2 {
+    margin: 0px;
+    color: #ffffff;
+    padding-left: 64px;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    margin-bottom: 24px;
+    margin-top: 30px;
+   
+}
+/*.section .section-2{
+	overflow: hidden;
+}*/
+h2 span {
+    margin-left: 14px;
+}
+.event-Reduction-Article{
+	position: relative;
+    top: 52px;
+    left: 20px;
+    margin: 0px;
+    width: 601px;
+    height: 174px;
+    /*background-color: rgba(255, 0, 0, 0.59);*/
+    background-image: url(../img/p-bg.png);
+    background-size: 100% 100%;
+    color: #ffffff;
+    font-size: 13px;
+    overflow: hidden;
+    letter-spacing: -0.6px;
+    line-height: 24px;
+}
+.event-Reduction-Article p {
+	padding: 5px 14px 14px;
+	font-size: 20px;
+	letter-spacing:3px;
+    /*margin: 0px;
+    width: 601px;
+    position: relative; 
+    height: 174px;
+ font-size:20px;
+    color: #ffffff;
+    padding: 21px 14px 14px;
+    font-size: 13px;
+    letter-spacing: -0.6px;
+    line-height: 24px;*/
+   display: inline-block;
+}
+
+.section-2 .img-container {
+    position: absolute;
+    top: 239px;
+    left: 20px;
+    width: 645px;
+    height: 109px;
+    overflow: hidden;
+}
+
+.section-2 .img-container .img-wrapper {
+    float: left;
+    width: 170px;
+    height: 109px;
+    margin-right: 45px;
+}
+
+.section-2 .img-container .img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-3 svg {
+    position: absolute;
+    top: 58px;
+    left: 20px;
+    width: 600px;
+    height: 305px;
+    background-image: url(../img/svg-bg.png);
+    background-size: 100% 100%;
+}
+
+.section-3 .legend {
+    position: absolute;
+    top: 73px;
+    left: 78px;
+}
+
+.section-3 .item {
+    float: left;
+}
+
+.section-3 .item .color-lump {
+    width: 25px;
+    height: 16px;
+    background-color: rgb(7, 162, 168);
+    display: inline-block;
+}
+
+.section-3 .item .name {
+    display: inline-block;
+    color: #468494;
+    margin: 0px 5px;
+    position: relative;
+    top: -2px;
+}
+
+.section-4 {
+    background-image: url(../img/section-bg.png);
+    background-size: 100% 100%;
+}
+
+.section-4 svg {
+    width: 640px;
+    height: 320px;
+    margin-top: 40px;
+}
+
+.section-5 h2 {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 20px;
+}
+
+.section-5 h2 .standpoint-name-1,
+.section-5 h2 .standpoint-color-1,
+.section-5 h2 .vs-bg,
+.section-5 h2 .standpoint-name-2,
+.section-5 h2 .standpoint-color-2 {
+    float: left;
+}
+
+.section-5 h2 .standpoint-name-1,
+.section-5 h2 .standpoint-name-2 {
+    width: 120px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.section-5 h2 .standpoint-name-1 {
+    text-align: right;
+    color: #43D3FB;
+}
+
+.section-5 h2 .standpoint-name-2 {
+    text-align: left;
+    color: #EAE33F;
+}
+
+.section-5 h2 .standpoint-color-1 {
+    background-color: #43D3FB;
+    height: 13px;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.section-5 h2 .standpoint-color-2 {
+    background-color: #EAE33F;
+    height: 13px;
+    width: 50px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.section-5 h2 .vs-bg {
+    width: 150px;
+    height: 100%;
+    background-image: url(../img/vs-bg.png);
+    background-size: 100% 100%;
+    background-position: 0px 3px;
+}
+
+.section-5 .main {
+    width: 100%;
+    height: 245px;
+    margin-top: 24px;
+}
+
+.section-5 .main .item {
+    height: 55px;
+}
+
+.section-5 .main .viewpoint1,
+.section-5 .main .viewpoint2 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.section-5 .main .viewpoint1 .item {
+    padding-right: 31px;
+}
+
+.section-5 .main .viewpoint1 .item .text {
+    height: 17px;
+    overflow: hidden;
+    text-align: right;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.section-5 .main .viewpoint1 .item .bar-inner,
+.section-5 .main .viewpoint1 .item .value {
+    float: right
+}
+
+.section-5 .main .viewpoint1 .item .bar-inner {
+    height: 13px;
+    /*width: 185px;*/
+    background-color: #43D3FB;
+    margin-top: 10px;
+}
+
+.section-5 .main .viewpoint1 .item .value {
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    color: #43D3FB;
+}
+
+.section-5 .main .viewpoint2 .item {
+    padding-left: 31px;
+}
+
+.section-5 .main .viewpoint2 .item .text {
+    height: 17px;
+    overflow: hidden;
+    text-align: left;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.section-5 .main .viewpoint2 .item .bar-inner,
+.section-5 .main .viewpoint2 .item .value {
+    float: left
+}
+
+.section-5 .main .viewpoint2 .item .bar-inner {
+    height: 13px;
+    /*width: 185px;*/
+    background-color: #EAE33F;
+    margin-top: 10px;
+}
+
+.section-5 .main .viewpoint2 .item .value {
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+    color: #EAE33F;
+}
+
+.section-6 .svg-1 {
+    position: absolute;
+    top: 58px;
+    left: 20px;
+    width: 600px;
+    height: 305px;
+}
+
+.section-6 .svg-2 {}
+
+.section-7 svg {
+    width: 640px;
+    height: 360px;
+}
+
+.section-7 .legend {
+    position: absolute;
+    color: #2EBCBB;
+}
+
+.section-7 .legend.legend-1 {
+    top: 56px;
+    left: 286px;
+}
+
+.section-7 .legend.legend-2 {
+    top: 155px;
+    left: 451px;
+}
+
+.section-7 .legend.legend-3 {
+    top: 319px;
+    left: 380px;
+}
+
+.section-7 .legend.legend-4 {
+    top: 312px;
+    right: 405px;
+}
+
+.section-7 .legend.legend-5 {
+    top: 144px;
+    right: 447px;
+}
+
+.section-7 .legend .name {
+    font-size: 14px;
+}
+
+.section-7 .legend .value {
+    font-size: 21px;
+    font-weight: 900;
+    position: relative;
+    top: 3px;
+    left: 2px;
+}
+
+.section-8 h2 {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 30px;
+}
+
+.section-8 h2 div {
+    float: left;
+}
+
+.section-8 h2 .standpoint-1 {
+    width: 135px;
+    height: 100%;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: right;
+    padding-right: 15px;
+    color: #ffffff;
+}
+
+.section-8 h2 .standpoint-2 {
+    width: 135px;
+    height: 100%;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 15px;
+    color: #ffffff;
+}
+
+.section-8 h2 .vs-bg {
+    position: relative;
+    top: -2px;
+    width: 230px;
+    height: 100%;
+    background-image: url(../img/vs-bg-2.png);
+    background-size: 100% 100%;
+}
+
+.section-8 .main {
+    height: 245px;
+}
+
+.section-8 .main .svg-1 , .section-8 .main .svg-2 {
+    width: 320px;
+    height: 245px;
+    float: left;
+}
+
+.section-9 svg {
+    margin-top: 65px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 600px;
+    height: 270px;
+}
+.emotion_bg{
+	background-image: url(../img/emotion_BG.jpg);
+	background-size: 100% 100%;
+}
+.text-tspan{
+	font-size: 16px;
+	
+}

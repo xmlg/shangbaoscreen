@@ -1,0 +1,9 @@
+{
+    "result": "success",
+    "content":
+    {
+        "PROVICE": "100",
+        "COUNTRY": "120",
+        "TOTAL": "220"
+    }
+}

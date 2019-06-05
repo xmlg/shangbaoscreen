@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<script src="../../screen/js/angular.js"></script>
+<style>
+.baoye_neiy .rdzz_rightList ul li strong b{color:#fff; display:inline-block; height:60px; float:left; width:10%;}
+.baoye_neiy .rdzz_rightList ul li a{ width:65%; float:left; color:#fff; background:none; margin:0 0;height:60px;}
+.baoye_neiy .rdzz_rightList ul li em{ color:#fff; float:left; width:15%; height:60px;}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="baoye_neiy">
+  <div class="tit">最新广东相关政策</div>
+  <div class="rdzz_rightList zc_zxxx">
+        	<h1 class="nei_tit wid2">最新政策消息</h1>
+            <ul>
+            	<li ng-repeat="item in wmlist"><span class="{{item.ERTICAL}}" ></span><a ng-href="{{item.ZB_GUID}}" ng-bind="item.URLTITLE" target="_blank"></a><strong ng-bind="item.URLDATE"></strong><em ng-bind="item.CHANNEL"></em></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+</div>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope,$http) {
+	    //网媒头条
+	    $http.get('/wcm/bigdata.do?group=广东&modelid=searchNew&page_no=0&page_size=10&serviceid=recentpolicy&type=0').then(function(data){
+	    	console.log(data);
+			var datalist = data.data.PAGEITEMS;
+			for(var i in datalist){
+			datalist[i].ZB_GUID='http://172.16.23.53/dist/index.html#/decisioncenterverdetail?guid='+datalist[i].ZB_GUID+'&menutype=news';
+			datalist[i].URLDATE=formatDateTime(datalist[i].URLDATE);
+			var ii =parseInt(i)%4+1;
+			datalist[i].ERTICAL='bg1'+ii;
+			}
+	    	$scope.wmlist=datalist;
+	    });
+	});
+	function formatDateTime(inputTime) {    
+    var date = new Date(inputTime);  
+    var y = date.getFullYear();    
+    var m = date.getMonth() + 1;    
+    m = m < 10 ? ('0' + m) : m;    
+    var d = date.getDate();    
+    d = d < 10 ? ('0' + d) : d;    
+  
+    return y + '.' + m + '.' + d;    
+	};  
+
+</script>
+</body>
+</html>

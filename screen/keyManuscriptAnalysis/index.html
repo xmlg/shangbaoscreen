@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app="keyManuscriptAnalysisModule">
+
+<head>
+    <title>稿件传播力分析</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/keyManuscriptAnalysis.css" />
+    <link rel="stylesheet" type="text/css" href="css/radar.css">
+</head>
+
+<body ng-controller="keyManuscriptAnalysisCtrl">
+    <div class="bor"></div>
+    <div class="top">
+        <div>稿件传播力分析</div>
+        <!-- <div class="searchDiv">id：
+            <input type="text" value="212212122127871163">
+        </div> -->
+    </div>
+    <div class="bottom keyManuscriptAnalysis_main">
+        <!-- 左侧代码 -->
+        <div class="left">
+            <div class="detail_center">
+                <div class="detail_centerTitle">
+                    <span>稿件详情</span>
+                </div>
+                <div class="detail_center-main">
+                    <div class="details">
+                        <div class="details_content">
+                            <div class="details_content-title" title="{{data.currArticle.TITLE}}" ng-bind="data.currArticle.TITLE"></div>
+                            <div class="details_content-info"><span ng-bind="data.currArticle.PUBTIME | date:'yyyy/MM/dd HH:mm:ss'"></span><span class="ml60">作者：</span><span ng-bind="data.currArticle.AUTHOR"></span></div>
+                            <div class="details_text" scroll-bar load-watch="status.contentLoadWatch">
+                                <div>
+                                    <div class="bqxt_details_hidden">
+                                        <div class="bqxt_details_hidden_children" ng-bind-html="data.currArticle.CONTENT|trsSce">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧代码 -->
+        <div class="right">
+            <div class="">
+                <div class="bqxt_right">
+                    <div class="right_centerTitle">
+                        <span>稿件分析</span>
+                    </div>
+                    <div>
+                        <div class="analysisTitle">传播指数：<span ng-bind="data.currArticle.CEIINDEX"></span></div>
+                        <div class="spreadIndexCon">
+                            <radar ng-if="data.currArticle.CONTRIBOFREAD" curr-article="data.currArticle"></radar>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="analysisTitle">外部媒体转载（共<span ng-bind="data.exAll"></span>次）</div>
+                        <div class="foreignMedium_list">
+                            <ul>
+                                <li>
+                                    <span>媒体核心头条</span>
+                                    <span ng-if="data.currArticle.EXCOREMEDIATOPS==0" class="white">-</span>
+                                    <span ng-if="data.currArticle.EXCOREMEDIATOPS>0" class="white">转载<a ng-bind="data.currArticle.EXCOREMEDIATOPS"></a>次</span>
+                                </li>
+                                <li>
+                                    <span>核心媒体</span>
+                                    <span ng-if="data.currArticle.EXCOREMEDIAS==0" class="white">-</span>
+                                    <span ng-if="data.currArticle.EXCOREMEDIAS>0" class="white">转载<a ng-bind="data.currArticle.EXCOREMEDIAS"></a>次</span>
+                                </li>
+                                <li>
+                                    <span>一级媒体</span>
+                                    <span ng-if="data.currArticle.EXLV1MEDIAS==0" class="white">-</span>
+                                    <span ng-if="data.currArticle.EXLV1MEDIAS>0" class="white">转载<a ng-bind="data.currArticle.EXLV1MEDIAS"></a>次</span>
+                                </li>
+                                <li>
+                                    <span>二级媒体</span>
+                                    <span ng-if="data.currArticle.EXLV2MEDIAS==0" class="white">-</span>
+                                    <span ng-if="data.currArticle.EXLV2MEDIAS>0" class="white">转载<a ng-bind="data.currArticle.EXLV2MEDIAS"></a>次</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div>
+                        <div class="analysisTitle">集团媒体刊发列表（共<span ng-bind="data.currImps.length"></span>次）</div>
+                        <div class="list_table">
+                            <switch-table-dir ng-if="data.currImps" data="data.currImps"></switch-table-dir>
+                            <!-- <div>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-l" cellspacing="0">媒体</th>
+                                            <th class="text-l" cellspacing="0">版面/栏目</th>
+                                            <th class="col-time" cellspacing="0">发稿时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="imp in data.currImps">
+                                            <td ng-if="imp.MEDIANAME!=''" ng-bind="imp.MEDIANAME"></td>
+                                            <td ng-if="imp.MEDIANAME==''">-</td>
+                                            <td ng-if="imp.DOCCHANNEL!=''" ng-bind="imp.DOCCHANNEL"></td>
+                                            <td ng-if="imp.DOCCHANNEL==''">-</td>
+                                            <td class="col-time" ng-bind="imp.PUBTIME | date:'yyyy/MM/dd HH:mm:ss'"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="dot" ng-show="data.currImps.length>5">
+                                    <a class="active"></a>
+                                    <a></a>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.0.js"></script>
+    <script src="lib/jquery.ui.slider.js"></script>
+    <script src="lib/d3.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="lib/angular-strap.js"></script>
+    <script src="lib/angular-strap.tpl.js"></script>
+    <script src="util/resize.js"></script>
+    <script src="lib/iscroll.js"></script>
+    <script src="util/httpService.js"></script>
+    <script src="js/switchTableDirective.js"></script>
+    <script src="js/scrollBarDir.js"></script>
+    <script src="js/radarDir.js"></script>
+    <script src="js/dataManager.js"></script>
+    <script src="js/keyManuscriptAnalysis.js"></script>
+</body>
+
+</html>

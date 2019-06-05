@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0 auto;
+    /*background-color: #0E141D;*/
+    background-color: #0d141d;
+    /*background-color: #0C1D24;*/
+    font-family: simhei;
+    width: 5760px;
+    overflow: hidden;
+    height: 3240px;
+}
+.bor{
+    border: 12px #2BD3FF solid;
+    border-radius: 50px;
+    height: 3228px;
+    width: 5748px;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+}
+.main {
+    width: 100%;
+    background-color: inherit;  
+}
+
+.main>div {
+    width: 33.33333333333%;
+    float: left;
+    background-color: inherit;
+}

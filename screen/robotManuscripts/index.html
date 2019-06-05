@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>传媒长廊互动展示页</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row banner cf">
+			<div class="col-md-2">
+				<img src="images/logo.png" class="logo">
+			</div>
+			<div class="col-md-10 txt">
+				<p class="txt_static" id="static">机器新闻写作是利用算法和自然语言生成器编写新闻内容，即利用设计好的算法模型快速搜寻与主题相关的信息，将其汇总到知识库，再提炼有价值的信息，自动形成报道。</p>
+				<p>除目前通用的基于模板的稿件生成技术以外，我们还尝试实现机器自动发现热点，然后分析热点相关的数据，自动提取和汇总事件各方观点，对每一个观点从多个角度进行汇总，形成更加灵活实用的机器人稿件，并取得了一定的成果。</p>
+				<a href="javascript:;" class="txt_static click_shuaxin" id="hasDate" style="display: none;">机器人已经备好<span class="num"></span>篇新稿件待您审阅，点此刷新</a>
+				<!-- <img src="images/jiazai.png" alt="加载图标" class="jiazai" style="display: none;"> -->
+			</div>	
+		</div>
+		<div class="row context cf">
+			<div class="col-md-2 summary">
+				<a href="javascript:;" class="nba active" id="1">
+					<img src="images/nb_select.png" alt="icon" class="summary_img" data-val="nb">
+					<span class="summary_span">NBA快讯</span>
+				</a>
+				<a href="javascript:;" class="zq" id="2">
+					<img src="images/zq.png" alt="icon" class="summary_img" data-val="zq">
+					<span class="summary_span">足球快讯</span>
+				</a>
+				<a href="javascript:;" class="tf" id="3">
+					<img src="images/tf.png" alt="icon" class="summary_img" data-val="tf">
+					<span class="summary_span">台风快讯</span>
+				</a>
+				<a href="javascript:;" class="dz" id="4">
+					<img src="images/dz.png" alt="icon" class="summary_img" data-val="dz">
+					<span class="summary_span">地震快讯</span>
+				</a>
+				<a href="javascript:;" class="cj" id="5">
+					<img src="images/cj.png" alt="icon" class="summary_img" data-val="cj">
+					<span class="summary_span">财经快讯</span>
+				</a>
+				<a href="javascript:;" class="sj" id="6">
+					<img src="images/sj.png" alt="icon" class="summary_img" data-val="sj">
+					<span class="summary_span">数据解读</span>
+				</a>
+			</div>
+			<div class="col-md-3 detail_list">
+				<div id="lists"></div>
+			</div><!-- 新闻列表 -->
+			<div class="col-md-7 detail_info"></div><!-- 新闻内容 -->
+		</div>	
+	</div>
+	<script src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/roma.js"></script>
+
+	<script src="js/index.js"></script>
+</body>
+</html>

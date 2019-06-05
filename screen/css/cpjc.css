@@ -1,0 +1,138 @@
+* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body,
+		html {
+			/*width: 3840px;*/
+			width: 1920px;
+			height: 1080px;
+			overflow: hidden;
+			scroll: no
+		}
+		
+		body {
+			font-family: simhei;
+		}
+		
+		#main {
+			height: 950px;
+			width: 3840px;
+			/*background: sandybrown;*/
+			float: left;
+			display: inline;
+			overflow: hidden;
+		}
+		
+		#footer {
+			float: left;
+			height: 130px;
+			width: 1920px;
+			background: rgb(12, 19, 29);
+			/*text-align: center;*/
+		}
+		
+		.item {
+			float: left;
+			width: 1920px;
+			height: 100%;
+		}
+		
+		.frame {
+			width: 1920px;
+			height: 100%;
+			border: 0;
+		}
+		
+		.footer_item {
+			width: 160px;
+			height: 125px;
+			margin-left: 10px;
+			position: relative;
+			box-shadow: aqua;
+			background-image: url(../img/chengpin_item_03.jpg);
+			background-size: 100% 100%;
+			display: inline-block;
+			margin-top: 4px;
+		}
+		
+		.foot_bg {}
+		
+		.img_class {
+			display: inline;
+			width: 1040px;
+			height: 940px;
+			border-radius: 4px;
+			transform: translate(-440px, -407px) scale(0.132, 0.105);
+			
+		}
+		
+		.foot_name {
+			position: absolute;
+			width:auto;
+			height: 30px;
+			right:15px;
+			top:85px;
+			font-size: 14px;
+			line-height: 30px;
+			z-index: 9999;
+			text-align: center;
+			color: white;
+			background-image: url(../img/foot_div_03.jpg);
+			background-size: 100% 100%;
+		}
+		/*.img_class{
+			-webkit-transition:;
+		}*/
+		
+		.aaa {
+			width: 1920px;
+			height: 150px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		.img_none {
+			box-shadow:0px 0px 100px 20px rgb(20,194,209) ;
+		}
+		
+		.foot_img {
+			position: absolute;
+			width: 184px;
+			height: 120px;
+			left: 11px;
+			top: 12px;
+		}
+		
+		#name {
+			height: 30px;
+			width: 99.5%;
+			margin-left: 2px;
+			background-color: rgb(14, 20, 29);
+		}
+		
+		#name .cpjk {
+			width: 600px;
+			height: 30px;
+			float: left;
+			color: white;
+			font-size: 18px;
+			line-height: 30px;
+			background-image: url(../img/zjzx_app.jpg);
+			background-size: 100% 100%;
+		}
+		
+		.frame_name {
+			float: left;
+			background-image: url(../img/top1_03.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			margin-left: 57%;
+			height: 26px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 18px;
+			color: white;
+		}

@@ -1,0 +1,51 @@
+{
+  "Task": [
+    {
+      "CRUSER":"admin",
+      "ISMATERIAL":"0",
+      "TASKCRUSERNAME":"系统管理员",
+      "TASKADDRESS": {
+        "name":"给你个任务",
+        "value": [
+          "120.192824",
+          "30.266227"
+        ]
+      },
+      "TASKENDTIME":"2016-07-22 00:00:00",
+      "TASKUSERNAME":"赵峥琳",
+      "STATUS":"6",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-07-21 17:03:38",
+      "TASKTYPE":"2",
+      "CONTENT":"G20系列报道任务",
+      "TASKUSERIDS":"6484",
+      "TASKID":"109",
+      "ISURGENT":"0",
+      "FLAG":"0",
+      "TITLE":"前往市区采访"
+    },
+    {
+      "CRUSER":"admin",
+      "ISMATERIAL":"0",
+      "TASKCRUSERNAME":"系统管理员",
+      "TASKADDRESS": {
+        "name":"社那",
+        "value": [
+          "120.202824",
+          "30.166227"
+        ]
+      },
+      "TASKENDTIME":"2016-07-27 00:00:00",
+      "STATUS":"0",
+      "TASKSTARTTIME":"2016-07-21 00:00:00",
+      "CRTIME":"2016-07-21 17:14:22",
+      "TASKTYPE":"1",
+      "CONTENT":"G20峰会主会场新闻",
+      "TASKID":"110",
+      "ISURGENT":"1",
+      "FLAG":"0",
+      "TITLE":"设置一下"
+    }
+  ],
+  "EventId":0
+}

@@ -1,0 +1,150 @@
+﻿(function() {
+    function App() {
+        var self = this;
+        App.prototype.start();
+        /*var srterval = window.setInterval(function() {
+                window.location.reload()
+            },340*1000)*/
+    }
+    App.prototype.getId = function() {
+        var self = this;
+        self.quest = new UrlSearch();
+        self.id = self.quest.id
+        self.url = '/screen/consensus/getnewlist?id=' + self.id + '&pagesize=20&startpage=0';
+
+    }
+    App.prototype.start = function() {
+        var self = this;
+        App.prototype.getId();
+        App.prototype.getOptionData(this.url)
+    }
+    App.prototype.getOptionData = function(url) {
+            var self = this;
+
+            $.get(url, function(data) {
+                var data = JSON.parse(data);
+                /*if ($.isEmptyObject(data) == true) {
+                    alert('暂无数据');
+                }*/
+                /*if (data.ISSUCCESS == 'false') {
+                    $("#ab_scroll").hide();
+                    var mainDiv = $('.main');
+                    mainDiv.append('<div class="noData">暂无今日数据</div>');
+                }*/
+                if ($.isEmptyObject(data) == true) {
+                    $("#ab_scroll").hide();
+                    var mainDiv = $('.main');
+                    mainDiv.append('<div class="noData">暂无今日数据</div>');
+                } else {
+                    $("#ab_scroll").show();
+                    var dat = data.ITEMS.PAGEITEMS;
+                    var datalen = dat.length;
+                    var n = 2;
+                    var MONITOR_NAME = dat[0].MONITOR_NAME;
+                    var topTitle = (MONITOR_NAME != null) ? MONITOR_NAME : '一次舆情';
+                    $('.top').text(topTitle);
+                    if (datalen >= 8) {
+                        App.prototype.drawOptionList(dat[0]);
+                        App.prototype.drawOptionList(dat[1]);
+                        App.prototype.drawOptionList(dat[2]);
+                        App.prototype.drawOptionList(dat[3]);
+                        App.prototype.drawOptionList(dat[4]);
+                        App.prototype.drawOptionList(dat[5]);
+                        App.prototype.drawOptionList(dat[6]);
+                        App.prototype.drawOptionList(dat[7]);
+                        var setinter = window.setInterval(function() {
+                            if (n < datalen - 1) {
+                                n++;
+                                App.prototype.drawOptionList(dat[n]);
+                                App.prototype.DoMove('main');
+                            } else {
+                                n = -1;
+                                App.prototype.start();
+                            }
+                        }, 15000)
+                    }
+                    if (datalen < 8 && datalen > 1) {
+                        App.prototype.drawOptionList(dat[0]);
+                        App.prototype.drawOptionList(dat[1]);
+                        App.prototype.drawOptionList(dat[2]);
+                        App.prototype.drawOptionList(dat[3]);
+                        App.prototype.drawOptionList(dat[4]);
+                        App.prototype.drawOptionList(dat[5]);
+                        App.prototype.drawOptionList(dat[6]);
+                        var srterval = window.setInterval(function() {
+                            window.location.reload()
+                        }, 340 * 1000)
+                    }
+                    if (datalen == 1) {
+                        App.prototype.drawOptionList(dat[0])
+                        var srterval = window.setInterval(function() {
+                            window.location.reload()
+                        }, 340 * 1000)
+                    }
+                }
+
+            })
+        }
+        /**
+         * [drawOptionList description]添加一个列表信息
+         * @param  {[type]} data [description]
+         * @return {[type]}      [description]
+         */
+    App.prototype.drawOptionList = function(data) {
+        var self = this;
+        /*var author;
+        if (data.DOCAUTHOR == null) {
+            author = '';
+        } else {
+            author = '|   作者      ' + data.DOCAUTHOR;
+        }*/
+        var chnl;
+        if (data.DOCCHANNEL == null) {
+            chnl = '';
+        } else {
+            chnl = data.DOCCHANNEL;
+        }
+        if (data.DOCTITLE.length > 61) {
+            var context = data.DOCTITLE.substring(0, 60);
+            context = context + '...';
+        } else {
+            var context = data.DOCTITLE;
+        }
+
+        var mainDiv = $('.main');
+        mainDiv.append("<div class='item'><div class='top_circle'></div><div class='item_message'><span class='item_time'>" + data.SOURCESITE + "</span><span class='item_name'>" + chnl + "</span><span class='item_from'>" + data.DOCPUBTIME + "</span></div><div class='item_text'>" + context + "</div></div>")
+        mainDiv.find(".noData").hide();
+    }
+    App.prototype.DoMove = function(ele) {
+        var ele = $('.' + ele)
+        var item0 = ele.children()[0];
+        var item0_height = item0.offsetHeight;
+        $(item0).animate({
+            'margin-top': -item0_height + "px"
+        }, {
+            duration: 3000,
+            queue: false,
+            complete: function() {
+                $(item0).remove();
+            }
+        })
+    }
+
+    function UrlSearch() {
+        var name, value;
+        var str = location.href; //取得整个地址栏
+        var num = str.indexOf("?")
+        str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+
+        var arr = str.split("&"); //各个参数放到数组里
+        for (var i = 0; i < arr.length; i++) {
+            num = arr[i].indexOf("=");
+            if (num > 0) {
+                name = arr[i].substring(0, num);
+                value = arr[i].substr(num + 1);
+                this[name] = value;
+            }
+        }
+    }
+    var app = new App();
+})()

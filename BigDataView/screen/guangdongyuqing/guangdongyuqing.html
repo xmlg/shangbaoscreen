@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<script src="../lib/jquery.min.js"></script>
+<script src="../../lib/echarts/dist/echarts.js"></script>
+<script type="text/javascript" src="../js/laydate.dev.js"></script>
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<link rel="stylesheet" href="../css/mycss.css">
+</head>
+<body>
+<div class="baoye_neiy">
+  <div class="tit">广东省舆情追踪</div>
+  <div id="map" style="width:36%;    top: -100px;"></div>
+  <div class="rdzz_rightList hot_redian">
+        	<h1 class="nei_tit">舆情热点</h1>
+            <ul>
+            	<li><em>新快报</em><span></span>一氧化碳中毒女孩急救路上被堵，东莞公安开辟绿色通道放行</li>
+            	<li><em>金羊网</em><span class="bg2"></span>广州海关跨境电商业务连续4年居全国之首</li>
+            	<li><em>南方网</em><span class="bg3"></span>广东启动中小学教师“县管校聘”管理改革，关系到每位公办老师</li>
+            	<li><em>人民网</em><span class="bg4"></span>珠海横琴自贸区通过一体化建设“扩容”</li>
+            	<li><em>凤凰网</em><span class="bg5"></span>走进新时代实现中国梦 牢记社会责任的广州</li>
+            	<li><em>南方都市报</em><span class="bg6"></span>新年“小目标”：广州每年将焚烧处理 1.7 万吨垃圾</li>
+            </ul>
+            <img width="700px;" src="images/icon3.png" alt="" />
+        </div>
+        <div class="clear"></div>
+</div>
+<script src="../../server.js"></script>
+<!--弹窗-->
+<script src="../lib/layer/layer.js"></script>
+<script src="../lib/laytpl/laytpl.js"></script>
+<script src="../lib/layui/layui.js"></script>
+
+<script>
+    var nameNum='001013',
+	    placeName="guangdong",
+        time=laydate.now();
+    function Map(placeName,times,nameNum){
+        $.ajax({
+            type:"get",
+            url:'../../lib/echarts/src/util/mapData/geoJson/'+placeName+'.json',
+            beforeSend:function(){
+                indexA =layer.load(1, {
+                    shade: [0.4,'#fff'] //0.1透明度的白色背景
+                });
+            },
+            success:function(placeJson){
+                layer.close(indexA);
+                echarts.registerMap(placeName,placeJson); // 注册地图
+                var mapChart = echarts.init(document.getElementById('map'));
+                option = {
+                    title: {
+                        left: 'center',
+                        textStyle: {
+                            color: '#fff',
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                    },
+                    visualMap: {
+                        min: 10,
+                        max: 400,
+                        text:['热度高','热度低'],
+                        textStyle: {
+                            color: '#fff',
+                        },
+                        realtime: false,
+                        calculable: true,
+                        inRange: {
+                            color: ['#0ed7e0','#5ee496','#78e87d','#c9f632', '#ffff00']
+                        }
+                    },
+                    
+                    
+                    series: [ 
+                        {
+                            name: ' ',
+                            type: 'map',
+                            mapType: placeName,
+                            label: {
+                                normal: {
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            }, 
+                            itemStyle: {
+                                normal: {
+                                    borderColor: '#389BB7',
+                                    areaColor: '#86dde0',
+                                    label:{
+                                        textStyle: {
+                                            fontSize:'16',
+                                            color:'#F6754D'
+                                        }
+                                    },
+                                },
+                                emphasis: {
+                                    areaColor: '#fac027',
+                                    borderWidth: 0
+                                }
+                            },
+                            animation: false,
+                            data:[],
+                            
+                        }
+                    ]
+                };
+                var tempData=[];
+                //获取热度值
+                // var mapDataUrl = XNbigUrl;
+                $.ajax({
+                    type:"get",
+                    url:XNbigUrl,
+                    async:false,
+                    data:{
+                        // area:nameNum,
+                        // cluster_name:"country_1",
+                        // field:"000",
+                        // loaddate:time,
+                        // modelid:"countryhotpoint",
+                        // // pagesize:10,
+                        // serviceid:"areahotpoint",
+                        // startpage:0,
+                        // subjectarea:0,
+                        // typeid:"widget"
+                        modelid:"hotpoint",
+                        serviceid:"areahotpoint",
+                        loaddate:time,
+                        area:nameNum
+                    },
+                    success:function(data){
+                        var data=eval("("+data+")");
+                        if(data.length > 0){
+                            tempData=[];
+                            for(var i=0;i<data.length;i++){
+                                tempData.push({
+                                    "name":data[i].AREANAME,
+                                    "value":data[i].HOTPOINTNUM,
+                                    "area":data[i].AREA
+                                })
+                            }
+                            tempData.sort(function(a,b){
+                                var tag=sortDate(a.value,b.value);
+                                return tag;
+                            });
+                            
+                            option.series[0].data=tempData; 
+                            option.visualMap.max=tempData[0].value;
+                        }
+                    }
+                });
+                mapChart.setOption(option);
+            }
+        })
+    }
+    Map(placeName,time,nameNum);
+    function sortDate(a,b){
+        return b-a
+    }
+
+    laydate({
+        elem: '#J-xl',max:laydate.now()
+    });
+    //设置input 默 认时间
+    $('#J-xl').attr('value',laydate.now());
+    function getData(time,cluster_name){
+        //Map(placeName,time,nameNum)
+        listData1(startpage,nameNum,time,cluster_name)
+    }
+</script>
+</body>
+</html>

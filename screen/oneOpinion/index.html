@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="onceOptionModule" ng-controller="onceOptionCtrl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>一次舆情</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <div id="ab_scroll"></div>
+    <div class="header">
+        <h1 ng-bind="data.title"></h1>
+    </div>
+    <div class="noData">暂无今日数据</div>
+    <div class="main">
+        <div class="left">
+            <ul>
+                <li ng-class="{true:'active',false:''}[status.selectedItem==item]" ng-repeat="item in data.datasetData">
+                    <div auto-scroll-finish="scrollFinsh('title')" auto-scroll item="item" selected-item="status.selectedItem" class="title">
+                        <p ng-bind="item.DOCTITLE"></p>
+                    </div>
+                    <div>
+                        <span class="source" ng-bind="item.SOURCESITE" title="{{item.SOURCESITE}}"></span><i></i><span class="area" ng-bind="item.DOCCHANNEL" title="{{item.CONTENT.DOCCHANNEL}}"></span><span class="time" ng-bind="item.DOCPUBTIME"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div ng-if="status.selectedItem" class="right" content-scroll item="item" auto-scroll-finish="scrollFinsh('content')">
+            <div id="rightContent">
+                <h3 ng-bind="status.selectedItem.DOCTITLE"></h3>
+                <div class="textarea" ng-bind-html="status.selectedItem.CONTENT">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/resize1.js"></script>
+    <script type="text/javascript" src="js/controller/onceOpinionCtrl.js"></script>
+    <script type="text/javascript" src="js/factory/onceOpinionService.js"></script>
+    <script type="text/javascript" src="js/directive/autoScrollDir.js"></script>
+    <script type="text/javascript" src="js/directive/contentScroll.js"></script>
+</body>
+
+</html>

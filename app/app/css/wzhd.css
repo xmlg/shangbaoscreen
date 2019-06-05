@@ -1,0 +1,434 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+}
+
+
+/*div {
+	margin: 0 auto;
+}*/
+
+p {
+    font: 26px "微软雅黑";
+    color: #fff;
+}
+
+@font-face {
+    font-family: QUARTZ REGULAR;
+    src: url(../QUARTZ REGULAR.TTF);
+    /*路径*/
+}
+
+@font-face {
+    font-family: AGENCYB;
+    src: url(../AGENCYB.TTF);
+    /*路径*/
+}
+
+@font-face {
+    font-family: AGENCYR;
+    src: url(../AGENCYR.TTF);
+    /*路径*/
+}
+
+@font-face {
+    font-family: 方正兰亭中黑;
+    src: url(../方正兰亭中黑.TTF);
+    /*路径*/
+}
+
+body {
+    background: url(../images/1-bg.png) no-repeat;
+}
+
+.left {
+    width: 1254px;
+    float: left;
+}
+
+.right {
+    float: left;
+    margin-left: 26px;
+    width: 590px;
+}
+
+.content-1 {
+    height: 180px;
+    margin-top: 54px;
+    margin-bottom: 34px;
+    margin-left: 60px;
+}
+
+.ru {
+    width: 496px;
+    height: 100%;
+    float: left;
+    margin-left: 16px;
+    background: url(../images/content1-bg1.png) 0px 16px no-repeat;
+}
+
+.ru p,
+.dian p {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 72px;
+    float: left;
+    width: 100%;
+}
+
+.sz1,
+.sz2 {
+    font-family: Quartz;
+    color: #ffffff;
+    font-size: 90px;
+    float: right;
+}
+
+.sz1 {
+    margin-right: 67px;
+    margin-top: 27px;
+}
+
+.sz2 {
+    margin-right: 60px;
+    margin-top: 27px;
+}
+
+.dian {
+    width: 576px;
+    height: 100%;
+    float: left;
+    margin-left: 74px;
+    background: url(../images/content1-bg2.png) 0px 16px no-repeat;
+}
+
+.content-2 {
+    height: 295px;
+    margin-bottom: 2px;
+    background: url(../images/table1.png) 0px 16px no-repeat;
+}
+
+.table2 {
+    height: 198px;
+    width: 1086px;
+    margin-left: 108px;
+    margin-top: 6px;
+}
+
+.content-2 img {}
+
+.content-2 ul {
+    margin-left: 84px;
+    margin-top: 14px;
+}
+
+.content-2 ul span {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 12px;
+}
+
+.content-2 ul li {
+    float: left;
+    font-size: 14px;
+    color: #2cbfd9;
+    width: 88px;
+    text-align: center;
+}
+
+.title2 {
+    margin-left: 106px;
+    width: 234px;
+    text-align: center;
+}
+
+.content-3 {
+    height: 460px;
+    margin-left: 60px;
+    background: url(../images/table2.png) 0px 6px no-repeat;
+}
+
+.title3 {
+    width: 160px;
+    margin-left: 524px;
+    text-align: center;
+    color: #00fcff;
+    line-height: 48px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.content-3 table {
+    width: 1128px;
+    /*height: 358px;*/
+    margin: auto;
+    color: white;
+    margin-top: 18px;
+    margin-left: 32px;
+    table-layout: fixed;
+}
+
+.table3-word1,
+.table3-word3,
+.table3-word4 {
+    font-size: 14px;
+    font-family: "方正兰亭中黑";
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.table3-word3 {
+    color: #6196b4;
+}
+
+.table3-word4 {
+    color: #f09469;
+}
+
+.table3-word2 {
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+.table3-td1 {
+    width: 264px;
+    padding-right: 14px;
+    text-align: left!important;
+}
+
+.table3-td2 {
+    width: 160px;
+}
+
+.table3-td3 {
+    width: 114px;
+}
+
+.table3-td4 {
+    width: 166px;
+}
+
+.table3-td5 {
+    width: 104px;
+}
+
+.table3-td6 {
+    width: 106px;
+}
+
+.table3-td7 {
+    width: 110px;
+    text-align: center;
+}
+
+.table3-td8 {
+    width: 90px;
+}
+
+.content-3 table thead td {
+    color: #2bbeda;
+    font-family: "方正兰亭中黑";
+    font-size: 16px;
+    height: 38px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.content-3 table tbody td {
+    height: 40px;
+}
+
+.content-3-border {
+    border: 1px solid #276a87;
+    width: 44px;
+    padding: 0px 12px;
+    height: 16px;
+    border-radius: 20px 20px;
+    text-align: center;
+    background: #13394e;
+    margin: auto;
+    display: block;
+    font-size: 16px;
+}
+
+.content-4 {
+    height: 504px;
+    width: 590px;
+    margin-bottom: 10px;
+    margin-top: 58px;
+    background: url(../images/table3-bg.png) no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.content4-col1 {
+    float: left;
+    width: 100%;
+    margin-top: 4px;
+    padding-top: 6px;
+}
+
+.content4-col1 p {
+    line-height: 78px;
+    font-size: 28px;
+}
+
+.content4-num1 {
+    font-size: 60px;
+    font-family: AGENCYB;
+    font-weight: bold;
+    margin: 0px 6px;
+}
+
+.content4-num2 {
+    font-size: 40px;
+    font-family: AGENCYB;
+    font-weight: bold;
+    margin: 0px 6px;
+}
+
+
+.content4-col2 {
+    float: left;
+    width: 100%;
+    font-size: 28px;
+    margin-top: 40px;
+    padding-top: 6px;
+}
+
+.content4-col2 p {
+    line-height: 62px;
+    font-size: 28px;
+}
+
+.content4-col3 {
+    margin-top: 62px;
+    float: left;
+    width: 100%;
+    font-size: 24px;
+}
+
+.content4-item1 p {
+    line-height: 74px;
+    font-size: 24px;
+}
+
+.content4-item1,
+.content4-item2,
+.content4-item3 {
+    width: 196px;
+    float: left;
+}
+
+.content4-item2 p {
+    line-height: 36px;
+    font-size: 24px;
+}
+
+.content4-item3 p {
+    font-size: 20px;
+    line-height: 68px;
+}
+
+.content4-col4 {
+    margin-top: 58px;
+    float: left;
+    width: 100%;
+    font-size: 24px;
+}
+
+.content4-col4 p {
+    line-height: 72px;
+    font-size: 24px;
+}
+
+.content-5 {
+    height: 450px;
+    /*background: url(../images/table4-bg.png) 0px 12px no-repeat;*/
+    background: url(../images/table4.png) 0px 12px no-repeat;
+}
+
+.content-5 .title5 {
+    margin-left: 210px;
+    color: #00fcff;
+    width: 138px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 34px;
+}
+
+.content-5 table {
+    /*width: 508px;*/
+    /*height: 354px;*/
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    /*margin-left: 32px; */
+    /*有序号列表*/
+    margin-left: 80px;
+    font-size: 14px;
+    font-family: "方正兰亭中黑";
+    table-layout: fixed;
+}
+
+.content-5 tbody td {
+    height: 40px;
+}
+
+.content-5 thead td {
+    color: #2bbeda;
+    height: 48px;
+    font-size: 16px;
+}
+
+
+
+/*有序号列表*/
+
+
+/*.table5-td0{
+	width: 32px;
+}
+
+.table5-td0-bg1{
+	background: url(../images/table5-td0-bg1.png) 0px 7px no-repeat;
+}
+
+.table5-td0-bg2{
+	background: url(../images/table5-td0-bg2.png) 0px 7px no-repeat;
+}*/
+
+.table5-td1 {
+    width: 116px;
+    /*有序号列表*/
+    /*width: 112px;*/
+    /*padding-left: 14px;*/
+    text-align: left!important;
+}
+
+.table5-td2 {
+    /*有序号列表*/
+    /*width: 118px;*/
+    width: 106px;
+}
+
+.table5-td3 {
+    /*有序号列表*/
+    /*width: 138px;*/
+    width: 142px;
+}
+
+.table5-td4 {
+    /*有序号列表*/
+    /*width: 102px;*/
+    width: 106px;
+}

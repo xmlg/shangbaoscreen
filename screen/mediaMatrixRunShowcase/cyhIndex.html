@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="refresh" content="14400">
+    <title>深圳报业集团全媒体调度与监控中心</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./util/ringChart.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="left">
+    <div class="leftTop">
+        <div class="leftTop-tit">
+            集团用户总量
+        </div>
+        <!--<div class="leftTop-circle">-->
+            <!--<div class="name">内部</div>-->
+            <!--<div class="sum">{{fullData.neibu}}</div>-->
+        <!--</div>-->
+        <!--<div class="leftTop-circle">-->
+            <!--<div class="name">代运营</div>-->
+            <!--<div class="sum">{{fullData.daiyunying}}</div>-->
+        <!--</div>-->
+        <div class="leftTop-sum" ng-bind="fullData.jituanyonghuzongliang | toThousands">
+        </div>
+        <div class="leftTop-items">
+            <div class="item">
+                <p class="name">官方微博</p>
+                <p class="sum" ng-bind="fullData.jtyhszxgfwb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">官方微信</p>
+                <p class="sum" ng-bind="fullData.jtyhszxgfwx | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">客户端</p>
+                <p class="sum" ng-bind="fullData.jtyhkhd | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">代运营</p>
+                <p class="sum" ng-bind="fullData.daiyunying | toThousands"></p>
+            </div>
+        </div>
+    </div>
+    <div class="leftBottom">
+        <div class="leftBottom-tit">
+            官方微博用户总量
+        </div>
+        <div class="leftBottom-sum">
+            <div class="item">
+                <p class="name">深圳特区报</p>
+                <p class="num" ng-bind="fullData.gfwbsztqb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳商报</p>
+                <p class="num" ng-bind="fullData.gfwbszsb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳晚报</p>
+                <p class="num" ng-bind="fullData.gfwbszwb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳晶报</p>
+                <p class="num" ng-bind="fullData.gfwbszjb | toThousands"></p>
+            </div>
+            <p class="sum" ng-bind="fullData.gfwbyhzl | toThousands"></p>
+        </div>
+    </div>
+</div>
+<div class="center">
+    <div class="centerTop">
+        <div class="centerTop-tit">
+            客户端用户总量
+        </div>
+        <div class="centerTop-sum">
+            <div class="item">
+                <p class="name">读特</p>
+                <p class="num" ng-bind="fullData.khdyhdt | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">读创</p>
+                <p class="num" ng-bind="fullData.khdyhdc | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">@深圳</p>
+                <p class="num" ng-bind="fullData.khdyhasz | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳ZAKER</p>
+                <p class="num" ng-bind="fullData.khdyhzaker | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳网易</p>
+                <p class="num" ng-bind="fullData.khdyhwy | toThousands"></p>
+            </div>
+            <p class="sum" ng-bind="fullData.khdyhzl | toThousands"></p>
+
+        </div>
+    </div>
+    <div class="centerMid"></div>
+    <div class="centerBottom">
+        <div class="centerBottom-tit">
+            官方微信用户总量
+        </div>
+        <div class="centerBottom-sum">
+            <div class="item">
+                <p class="name">深圳特区报</p>
+                <p class="num" ng-bind="fullData.gfwxsztqb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳商报</p>
+                <p class="num" ng-bind="fullData.gfwxszsb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳晚报</p>
+                <p class="num" ng-bind="fullData.gfwxszwb | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">晶报</p>
+                <p class="num" ng-bind="fullData.gfwxszjb | toThousands"></p>
+            </div>
+            <p class="sum" ng-bind="fullData.gfwxyhzl | toThousands"></p>
+        </div>
+    </div>
+</div>
+<div class="right">
+    <div class="right-top">
+        <div class="rightTop-tit">
+            集团日访问总量
+        </div>
+        <div class="rightTop-sum">
+            <div class="item">
+                <p class="name">网站</p>
+                <p class="num" ng-bind="fullData.jtfwwz | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">客户端</p>
+                <p class="num" ng-bind="fullData.jtfwkhd | toThousands"></p>
+            </div>
+            <p class="sum" ng-bind="fullData.jtfwzl | toThousands"></p>
+        </div>
+    </div>
+    <div class="right-mid">
+        <div class="rightMid-tit">
+            客户端日访问总量
+        </div>
+        <div class="rightMid-sum">
+            <div class="item">
+                <p class="name">读特</p>
+                <p class="num" ng-bind="fullData.khdfwdt | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">读创</p>
+                <p class="num" ng-bind="fullData.khdfwdc | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">@深圳</p>
+                <p class="num" ng-bind="fullData.khdfwasz | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳ZAKER</p>
+                <p class="num" ng-bind="fullData.khdfwzaker | toThousands"></p>
+            </div>
+            <div class="item">
+                <p class="name">深圳网易</p>
+                <p class="num" ng-bind="fullData.khdfwszwy | toThousands"></p>
+            </div>
+            <p class="sum" ng-bind="fullData.khdfwzl | toThousands"></p>
+        </div>
+    </div>
+    <div class="right-bottom">
+        <div class="rightBottom-tit">
+            客户端装机总量
+        </div>
+        <div class="rightBottom-sum">
+            <p class="sum" ng-bind="fullData.khdzjzl | toThousands"></p>
+        </div>
+        <div style="position: absolute;left: 280px;top: 125px;transform: scale(0.35,0.35)">
+            <div id="circleLeft"></div>
+        </div>
+        <div style="position: absolute;left: 456px;top: 125px;transform: scale(0.35,0.35)">
+            <div id="circleRight"></div>
+        </div>
+    </div>
+</div>
+<!--<div class="leftBottom"></div>-->
+<script src="./lib/jquery-2.1.0.js"></script>
+<script src="./util/ringChart.js"></script>
+<script src="./lib/angular.js"></script>
+<script src="./lib/dataHandle.js" type="text/javascript"></script>
+<script src="./js/cyhIndex.js"></script>
+<script src="../js/resize.js"></script>
+
+</body>
+</html>

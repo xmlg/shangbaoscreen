@@ -1,0 +1,229 @@
+svg g.mark01 circle.circle1,
+svg g.mark01 circle.circle2,
+svg g.mark02 circle.circle1,
+svg g.mark02 circle.circle2 {
+  -webkit-animation-name: circleAnim;
+          animation-name: circleAnim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+@-webkit-keyframes circleAnim {
+  0% {
+    -webkit-transform: rscale(0.9);
+            transform: rscale(0.9);
+    stroke-width: 0.9px;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    stroke-width: 2px;
+  }
+}
+@keyframes circleAnim {
+  0% {
+    -webkit-transform: rscale(0.9);
+            transform: rscale(0.9);
+    stroke-width: 0.9px;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    stroke-width: 2px;
+  }
+}
+body {
+  overflow: hidden;
+  background-color: #0E141D;
+  background-size: cover;
+}
+body .header {
+  position: absolute;
+  top: 40px;
+  left: 49px;
+  padding-left: 22px;
+  width: 1808px;
+  height: 82px;
+  background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+  background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+  color: #ffffff;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-size: 50px;
+  font-family: SimHei;
+  line-height: 82px;
+}
+body .left {
+  float: left;
+  padding-top: 117px;
+  width: 50%;
+  height: 100%;/*background-color: rgba(255, 0, 0, 0.5);*/
+  position: relative;
+}
+body .south-1{
+  position: absolute;
+  right: 88px;
+  bottom: 27px;
+  width: 99.2px;
+}
+body .south-2{
+  position: absolute;
+  right: 75px;
+  bottom: 3px;
+  width: 126.4px;
+}
+body .right {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+body .right .up {
+  padding-top: 117px;
+  height: 50%;
+}
+img.underline1 {
+  position: absolute;
+  top: 233px;
+  left: 1172px;
+  width: 339px;
+  height: 8px;
+}
+img.underline2 {
+  position: absolute;
+  top: 235px;
+  left: 1723px;
+  width: 137px;
+  height: 8px;
+}
+#svg0 {
+  position: absolute;
+  top: 233px;
+  left: 15px;
+  z-index: 1;
+  width: 910px;
+  height: 761px;
+  background-image: url("../img/chinamap.png");
+  background-size: 100% 100%;
+}
+.list-header-1 {
+  padding-top: 65px;
+  padding-left: 325px;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  font-weight: 900;
+  font-size: 38px;
+  font-family: SimHei;
+}
+ol.list1 {
+  margin-top: 40px;
+  margin-bottom: 0;
+  margin-left: 56px;
+  padding: 0;
+}
+ol.list1 li {
+  position: relative;
+  margin-bottom: 43px;
+  height: 42px;
+  color: #40D0F2;
+  list-style: none;
+  letter-spacing: 1.2px;
+  font-weight: 900;
+  font-size: 42px;
+  font-family: SimHei;
+  line-height: 42px;
+}
+ol.list1 li.focus {
+  color: #FEC400;
+}
+ol.list1 li.focus .color {
+  background-color: #EAE43C !important;
+}
+ol.list1 li.focus .mark {
+  top: -4px;
+  left: -60px;
+  width: 52px;
+  height: 53px;
+  background-image: url("../img/mark.png");
+  background-size: 100% 100%;
+}
+ol.list1 li .content,
+ol.list1 li .value,
+ol.list1 li .color {
+  float: left;
+  height: 100%;
+}
+ol.list1 li .mark {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+ol.list1 li .content {
+  overflow: hidden;
+  width: 600px;
+  letter-spacing: -1.5px;
+}
+ol.list1 li .content .content-inner {
+  white-space: nowrap;
+}
+ol.list1 li .value {
+  padding-right: 14px;
+  width: 145px;
+  text-align: right;
+  line-height: 40px;
+}
+ol.list1 li .color {
+  margin-top: 7px;
+  width: 117px;
+  height: 27px;
+  background-color: #43D5FF;
+}
+div.list2 {
+  position: absolute;
+  width: 905px;
+  height: 400px;
+  background-image: url("../img/list2.png");
+  background-size: 100% 100%;
+}
+div.list2 .grid {
+  position: absolute;
+  top: 94px;
+  left: 6px;
+  width: 900px;
+  height: 303px;
+}
+div.list2 .grid .cell {
+  float: left;
+  width: 450px;
+  height: 92px;
+}
+div.list2 .grid .cell .info {
+  padding-right: 52px;
+  padding-left: 27px;
+  height: 43px;
+  color: #81C6E7;
+  letter-spacing: -3.0px;
+  font-weight: 900;
+  font-size: 27px;
+  line-height: 47px;
+}
+div.list2 .grid .cell .content {
+  overflow: hidden;
+  padding-left: 26px;
+  width: 423px;
+  height: 35px;
+  background-color: #46697d;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -2.5px;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 33px;
+}

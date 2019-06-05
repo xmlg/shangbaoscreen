@@ -1,0 +1,45 @@
+{
+   "data": [
+        {
+            "name": "市消防局",
+            "allCount": 21,
+            "reCount": 21
+        },
+       {
+            "name": "市地税局",
+            "allCount": 34,
+            "reCount": 21
+        },
+        {
+            "name": "市商务局",
+            "allCount": 28,
+            "reCount": 26
+        },
+        {
+            "name": "市质监局",
+            "allCount": 35,
+            "reCount": 31
+        },
+        {
+            "name": "市教育局",
+            "allCount": 19,
+            "reCount": 18
+        },
+        {
+            "name": "市妇联",
+            "allCount": 27,
+            "reCount": 25
+        },
+        {
+            "name": "市社保局",
+            "allCount": 72,
+            "reCount": 62
+            
+        },
+        {
+            "name": "市住建局",
+            "allCount": 36,
+            "reCount": 28 
+        }
+    ]
+}

@@ -1,0 +1,376 @@
+﻿html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+body {
+    color: white;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "simhei", "Arial";
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.headline-main-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background: #0e141d;
+    /*padding: 0 30px;*/
+    padding-top: 30px;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.headline-main-container .headline-header {
+    position: relative;
+    /*width: 100%;*/
+    height: 80px;
+    font-size: 45px;
+    font-family: 微软雅黑;
+    font-weight: bolder;
+    margin: 0 30px;
+    background: -webkit-linear-gradient(left, #238aa4, #000);
+}
+
+.headline-main-container .headline-header .header-title {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    font-size: 46px;
+    font-family: simhei;
+    font-weight: bolder;
+}
+
+
+/* .headline-main-container .title {
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    height: 90px;
+    line-height: 90px;
+    padding-left: 20px;
+    font-size: 45px;
+    font-family: 微软雅黑;
+    font-weight: bolder;
+}
+
+.headline-main-container .headline-header .day {
+    float: right!important;
+    right: 0!important;
+    left: auto!important;
+    padding-left: 0!important;
+    padding-right: 20px;
+}
+
+.headline-main-container .headline-header .line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: -webkit-linear-gradient(left, #fff, #000);
+}
+
+.headline-main-container .headline-header .line .node {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    top: -2px;
+    left: 0px;
+    display: block;
+    background-color: #fff;
+} */
+
+.headline-main-container .headline-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 970px;
+    padding: 40px 60px;
+}
+
+.headline-main-container .headline-paper,
+.headline-main-container .headline-network {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: block;
+}
+
+.headline-main-container .headline-content-wrapper .content-title {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 45px;
+}
+
+.headline-main-container .headline-content-wrapper .content-title .desc {
+    margin-left: 33%;
+}
+
+.headline-main-container .headline-content-wrapper .content-title .value {
+    position: relative;
+    float: right;
+    font-size: 38px;
+    color: #fff600;
+}
+
+.headline-main-container .headline-content-wrapper .content-items-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.headline-main-container .headline-content-wrapper .content-item {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    padding: 20px 0 0 0;
+}
+
+.headline-main-container .headline-content-wrapper .content-item-bar-wrapper {
+    position: relative;
+    float: left;
+    width: 26%;
+    padding: 5px 0;
+    height: 100%;
+}
+
+.headline-main-container .headline-content-wrapper .content-item-bar-wrapper .content-item-bar {
+    position: relative;
+    float: right;
+    height: 100%;
+    display: block;
+}
+
+.headline-main-container .headline-content-wrapper .content-item .content-item-desc {
+    position: relative;
+    float: left;
+    width:64%;
+    height: 100%;
+    padding-left: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.headline-main-container .headline-content-wrapper .content-item .content-item-value {
+    position: relative;
+    float: left;
+    width: 10%;
+    height: 100%;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: right;
+    font-size: 40px;
+}
+
+
+/**************************/
+
+.headline-main-container .headline-summary,
+.headline-main-container .headline-details {
+    position: relative;
+    float: left;
+    height: 100%;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.headline-main-container .headline-summary {
+    width: 1240px;
+    /*background-color: lightgray;*/
+}
+
+
+/* .headline-main-container .headline-details {
+    width: 620px;
+    background-color: lightblue;
+} */
+
+.headline-main-container .headline-summary .active-title {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.headline-main-container .headline-summary .active-title>div {
+    position: relative;
+    width: 50%;
+    margin-left: 50%;
+    /*background-color: lightgreen;*/
+    text-align: center;
+}
+
+.headline-main-container .headline-summary .active-title .active-title-desc {
+    height: 90px;
+    line-height: 90px;
+    background-color: #43d5ff;
+    color: #000;
+    font-weight: bold;
+}
+
+.headline-main-container .headline-summary .active-title .active-title-info {
+    height: 50px;
+    /*background-color: #43d5ff;*/
+    color: #fff;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.headline-main-container .headline-summary .active-title .active-title-info .item {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid #fff;
+}
+
+.headline-main-container .headline-summary .active-title .active-title-info .day {
+    border-right: 0px;
+}
+
+.headline-main-container .headline-summary .summary {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.headline-main-container .headline-summary .summary .summary-item {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    padding: 13px 0 0 0;
+}
+
+.headline-main-container .headline-summary .summary .summary-item .bar-wrapper {
+    position: relative;
+    float: left;
+    width: 62%;
+}
+
+.headline-main-container .headline-summary .summary .summary-item .item-short-title {
+    position: relative;
+    float: left;
+    width: 38%;
+    height: 100%;
+    padding-left: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.headline-main-container .headline-summary .summary .summary-item .item-short-title .short-title-border {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 120%;
+    height: 5px;
+    margin-left: -20%;
+    background: -webkit-linear-gradient(left, #4a4e55, #fff, #4a4e55);
+    display: none;
+}
+
+.headline-main-container .headline-summary .summary .summary-item.active .short-title-border {
+    display: block;
+}
+
+.headline-main-container .summary-item .bar-wrapper .bar {
+    position: relative;
+    float: right;
+    height: 100%;
+    display: block;
+}
+
+.headline-main-container .headline-details {
+    padding: 0 0 0 30px;
+    width: 620px;
+}
+
+.headline-main-container .headline-details .pointer {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: 17px;
+    display: block;
+    background-color: #009f07;
+    z-index: 0;
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+
+.headline-main-container .details-wrapper {
+    border: 5px solid;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #0f3847, #000);
+    border-image: -webkit-linear-gradient(-55deg, #fff, #000, #fff) 30 30;
+    border-image: linear-gradient(-38deg, #fff, #000, #fff) 30 30;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.headline-main-container .details-wrapper .detail-item {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.headline-main-container .details-wrapper .detail-item .detail-item-title-wrapper {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* .headline-main-container .details-wrapper .detail-item .detail-item-title-wrapper .detail-item-title{
+    position: relative;
+} */
+
+.headline-main-container .details-wrapper .detail-item .detail-item-source {
+    position: relative;
+    float: left;
+    width: 150px;
+    text-align: right;
+}

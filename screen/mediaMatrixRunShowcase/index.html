@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>媒体矩阵运行展示</title>
+    <link rel="stylesheet" type="text/css" href="util/ringChart.css">
+    <link rel="stylesheet" type="text/css" href="trafficScale/trafficScale.css">
+    <link rel="stylesheet" type="text/css" href="numberOfUsers/numberOfUsers.css">
+    <link rel="stylesheet" type="text/css" href="productUsageScale/productUsageScale.css">
+    <link rel="stylesheet" type="text/css" href="base.css">
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="left">
+        <div class="left-top">
+            <div class="trafficScale">
+                <div class="header_parent">
+                    <div class="header">
+                        集团媒体访问规模
+                    </div>
+                </div>
+                <div class="mainModule_org">
+                    <div class="mainModule_parent">
+                        <div class="mainModule realTime">
+                            <div style="display:none" class="title trafficHeader">
+                                <span>实时访问量</span>
+                            </div>
+                            <div id="trafficTotal" class="content">
+                             {{fulldata.trafficTotal}}   <!-- 146,571,311 -->
+                            </div>
+                            <div class="footer">
+                                <div class="footerLeft">
+                                    <h3 style="display:none" class="title trafficHeader">网站</h3>
+                                    <p id="trafficWebsite">
+                                       {{fulldata.trafficWebsite}} <!-- 101,232,398 -->
+                                    </p>
+                                </div>
+                                <div class="footerRight">
+                                    <h3 style="display:none" class="title trafficHeader">客户端</h3>
+                                    <p id="trafficClient">
+                                       {{fulldata.trafficClient}} <!-- 672,232,332 -->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainModule_right_org">
+                    <div class="mainModule_right_parent">
+                        <div class="mainModule yesterday">
+                            <div style="display:none" class="title trafficHeader">
+                                <span>昨日访问占比</span>
+                            </div>
+                            <div id="yesterdayTrafficTotal" class="content">
+							{{fulldata.yesterdayTrafficTotal}}
+                            </div>
+                            <div class="footer">
+                                <div class="footerLeft">
+                                    <div id="yesterdayWebsite">{{fulldata.productTitle}}
+                                    </div>
+                                    <p class="trafficHeader" style="display:none">桌面场景</p>
+                                </div>
+                                <div class="footerRight">
+                                    <div id="yesterdayMobile">{{fulldata.yesterdayMobile}}
+                                    </div>
+                                    <p class="trafficHeader" style="display:none">移动场景</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left-buttom">
+            <div class="numberOfUsers">
+                <div class="numberOfUsers_top">
+                    <h1>集团媒体用户规模</h1>
+                </div>
+                <div class="numberOfUsers_bottom">
+                    <div class="numberOfUsers_B_top">
+                        <h1 style="display:none" class="userTitle">用户总量</h1></div>
+                    <div class="numberOfUsers_B_middle">
+                        <p id="totalUser">{{fulldata.totalUser}}</p>
+                    </div>
+                    <div class="numberOfUsers_B_bottom">
+                        <ul>
+                            <!-- <li>
+                                <div class="numberOfUsers_B_col1">
+                                    <span style="display:none" class="userTitle">网站</span>
+                                    <p id="websiteUser"></p>
+                                </div>
+                                <div class="numberOfUsers_B_col2">
+                                    <span style="display:none" class="userTitle">新增</span>
+                                    <p id="websiteUserAdd"></p>
+                                </div>
+                            </li> -->
+                            <li>
+                                <div class="numberOfUsers_B_col1">
+                                    <span style="display:none" class="userTitle">客户端</span>
+                                    <p id="clientUser">{{fulldata.clientUser}}</p>
+                                </div>
+                                <div class="numberOfUsers_B_col2">
+                                    <span style="display:none" class="userTitle">新增</span>
+                                    <p id="clientUserAdd">{{fulldata.clientUserAdd}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="numberOfUsers_B_col1">
+                                    <span style="display:none" class="userTitle">微信</span>
+                                    <p id="wechatUser">{{fulldata.wechatUser}}</p>
+                                </div>
+                                <div class="numberOfUsers_B_col2">
+                                    <span style="display:none" class="userTitle">净增</span>
+                                    <p id="wechatUserAdd">{{fulldata.wechatUserAdd}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="numberOfUsers_B_col1">
+                                    <span style="display:none" class="userTitle">微博</span>
+                                    <p id="weiboUser">{{fulldata.weiboUser}}</p>
+                                </div>
+                                <div class="numberOfUsers_B_col2">
+                                    <span style="display:none" class="userTitle">净增</span>
+                                    <p id="weiboUserAdd">{{fulldata.weiboUserAdd}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="productUsageScale">
+            <div class="productUsageScale-title">集团媒体产品规模</div>
+            <div class="productUsageScale-content">
+                <div class="product-sum"><span class="productTitle" style="display:none">产品总数</span></div>
+                <div id="productNumber" class="product-number">{{fulldata.productNumber}}</div>
+                <div class="product-proportion"><span class="productTitle" style="display:none">平台占比</span></div>
+                <div class="product-data">
+                    <div>
+                        <div id="websiteProRing" class="ring"></div>
+                        <div class="productTitle" style="display:none">网站</div>
+                    </div>
+                    <div>
+                        <div id="clientProRing" class="ring"></div>
+                        <!-- <img src="images/product-app.png"> -->
+                        <div class="productTitle" style="display:none">客户端</div>
+                    </div>
+                    <div>
+                        <div id="wechatProRing" class="ring"></div>
+                        <div class="productTitle" style="display:none">微信</div>
+                    </div>
+                    <div>
+                        <div id="weiboProRing" class="ring"></div>
+                        <div class="productTitle" style="display:none">微博</div>
+                    </div>
+                </div>
+                <div class="product-data-logo-outer">
+                    <div class="product-data-logo" id="productLogo"></div>
+                </div>
+                <!-- <div class="product-data-logo" id="productLogo"></div> -->
+                <!-- <img class="product-data-logo-leftbg" src="images/product-data-logo-leftbg.png" alt="集团媒体产品规模左下脚图片"> -->
+                <div class="product-data-logo-leftbg-outer">
+                    <div class="product-data-logo-leftbg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="setOption">
+            <div class="head">
+                <img src="images/option.png">
+                <span>设置</span>
+            </div>
+            <div class="body">
+                <div class="row">
+                    <div class="name">首轮轮播间隔：</div>
+                    <div class="value">
+                        <input type="number" min="0" name="" value="10">ms</div>
+                </div>
+                <div class="row">
+                    <div class="name">　　轮播间隔：</div>
+                    <div class="value">
+                        <input type="number" min="0" name="" value="10">ms</div>
+                </div>
+                <div class="row">
+                    <div class="name">　　开启音效：</div>
+                    <div class="value">
+                        <input type="checkbox"> </div>
+                </div>
+            </div>
+            <div class="foot">
+                <button>确定</button>
+                <button>重置</button>
+            </div>
+        </div>
+        <div class="setOptionModal"></div>
+    </div>
+    <div class="mediaMatrixRunShowcase_modal" style="display: none;">
+        <div class="mediaMatrixRunShowcase_popup">
+            <div class="error_hint">数据计算更新中，请在6点之后查看</div>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.0.js"></script>
+    <script src="util/resize.js"></script>
+    <script src="util/ringChart.js"></script>
+    <script src="lib/countUp.js"></script>
+    <script src="util/myCountUp.js"></script>
+    <script src="util/httpService.js"></script>
+    <script src="trafficScale/trafficScale.js"></script>
+    <script src="numberOfUsers/numberOfUsers.js"></script>
+    <script src="productUsageScale/proLogoCloud/proLogCloud.js"></script>
+    <script src="productUsageScale/productUsageScale.js"></script>
+    <script src="start.js"></script>
+	<script src="lib/angular.js"></script>
+	<script>
+	      /*  $(document).ready(function(){
+            //获取数据
+            var dataUrl = "/newindex/mediaMatrixRunShowcase/json/meitijuzhen.json";
+            $.ajax({
+			url: dataUrl,
+			dataType:'json',
+			success:function(data){
+				var fulldata = data;
+				window.onload=fulldata;
+			},
+			error:function(data){
+			alert(111111);
+			}
+//                dataType: dataType
+            });
+        });*/
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope,$http) {
+		//纸板头条
+	    $http.get('./json/meitijuzhen.json').then(function(data){
+	    	//console.log(data);
+	    	$scope.fulldata=data.data;
+			console.log(data);
+	    });
+	});
+
+	</script>
+</body>
+
+</html>

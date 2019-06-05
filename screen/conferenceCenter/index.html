@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>编前会会中</title>
+    <link rel="stylesheet" href="css/editmiddle.css?v=1.1" />
+    <link rel="stylesheet" href="css/scroll.css?v=1.1" />
+    <link rel="stylesheet" href="css/selectSimulation.css?v=1.1" />
+    <link rel="stylesheet" href="css/beforeMeeting2.css">
+</head>
+<script>
+//              function audio_play(a){
+
+//                  var aper = $(a).parent().parent().parent();
+
+//                  var perfirst = $(aper).children().first();
+
+//                  var perlast = $(aper).children().last();
+
+//              var b = $(perfirst);
+
+//              var Audio = b[0];
+
+//              var time = Audio.duration;
+
+//              if(Audio.paused) {
+
+//                  window.startAgain();
+
+//                  Audio.play();
+
+//                  var timer = setInterval(currentpage, 50);
+
+//              } else {
+
+//                  clearInterval(window.setine);
+
+//                  Audio.pause();
+
+//                  $(perlast).css('width', 0);
+
+//                  var timer = setInterval(currentpage, 50);
+
+//              }
+
+//      
+
+//              function currentpage() {
+
+//                  var percentage = (Audio.currentTime * 100 / Audio.duration) + '%';
+
+//                  if(percentage == "NaN%") {
+
+//                      percentage = 0 + '%';
+
+//                  }
+
+//                  var styles = {
+
+//                      "width": percentage,
+
+//                  };
+
+//                  $(perlast).css(styles);
+
+//              }
+
+//      
+
+//          }
+
+
+
+function closelay() {
+
+    var e1 = document.getElementById('modal-overlay');
+
+    var el_children = $('.modal-main');
+
+    var el_children_class = el_children.children().first();
+
+    var el_children_id = $(el_children_class).attr('class');
+
+    if (el_children_id == 'modal_video') {
+
+        var elevideo1 = $('#modal_video');
+
+        elevideo1[0].pause();
+
+    }
+
+    if (el_children_id == 'modal_aiduo') {
+
+        var eleaudio = $('#modal_audio_source');
+
+        eleaudio[0].pause();
+
+    }
+
+    //          var elevideo = $('#modal_video');
+
+    //          var eleaudio = $('#modal_audio_source');
+
+    //          if(elevideo[0].play()) {
+
+    //              elevideo[0].pause();
+
+    //          }
+
+    //          if(eleaudio[0].play()) {
+
+    //              eleaudio[0].pause();
+
+    //          }
+
+    e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+
+}
+
+
+
+function overlay(a) {
+
+    var a_ele = $(a);
+
+    var e1 = document.getElementById('modal-overlay');
+
+    var el_children = $('.modal-main');
+
+    el_children.empty();
+
+
+
+    var a_classname = a_ele.attr('class');
+
+    if (a_classname == 'video_left_video' || a_classname == 'video_right_video') {
+
+        $('#residualTime').css({
+
+            'display': ''
+
+        });
+
+        var a_url = a_ele.attr('src');
+
+        var a_text = '<video id="modal_video" class="modal_video" src=' + a_url + ' controls ></video>';
+
+        el_children.append(a_text);
+
+        e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+
+        var elevideo = $('#modal_video');
+
+        if (e1.style.visibility == "visible") {
+
+            elevideo[0].play();
+
+            var timer = setInterval(function() {
+
+                video_time('modal_video');
+
+            }, 1000)
+
+        } else {
+
+            elevideo[0].pause();
+
+            clearInterval(timer);
+
+        }
+
+
+
+    }
+
+    if (a_classname == 'picture_left_video' || a_classname == 'picture_right_video') {
+
+        $('#residualTime').css({
+
+            'display': 'none'
+
+        });
+
+        var a_url = a_ele.attr('src');
+        var img = new Image();
+        img.src = a_url;
+        img.onload = function() {
+            var aspectRatio = 1830 / 960;
+            var myAspectRatio = img.width / img.height;
+            var width, height, top, left;
+            if (aspectRatio > myAspectRatio) {
+                height = "960px";
+                width = 960 * myAspectRatio;
+                left = ((1830 - width) / 2) + "px";
+                width = width + "px";
+            } else {
+                width = "1830px";
+                height = 1830 / myAspectRatio;
+                top = ((960 - height) / 2) + "px";
+                height = height + "px";
+            }
+            var a_text = '<img id="modal_picture_video" style="width:' + width + ';height:' + height + ';top:' + top + ';left:' + left + '" src=' + a_url + '>';
+
+            el_children.append(a_text);
+
+            e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+        };
+    }
+
+    if (a_classname == 'text_left_text' || a_classname == 'text_right_text') {
+
+        $('#residualTime').css({
+
+            'display': 'none'
+
+        });
+
+        var a_secondParent = a_ele.parent().parent();
+
+        var a_currentTime = a_secondParent.children().first().text();
+
+        var a_currentName = a_secondParent.parent().children('.a_name').text();
+
+        var a_content = "<p><span>" + a_ele.text().replace(/ /g, "　").replace(/\n/g, "</span><br/><span>") + "</span></p>";
+
+        //var a_text = '<div id="modal_video"><div id="main_text"><div id="text_l"><span id="text_name">'+a_currentName+'</span></div><div id="text_r"><div id="text_curTime">'+a_currentTime+'</div><div id="text_text">'+a_content+'</div></div></div></div></div>';
+
+        var a_text = '<div id="modal_text"><div id="modaltext_message"><div id="modaltext_name">' + a_currentName + '</div><div id="modaltext_time">' + a_currentTime + '</div></div><div id="modaltext_text">' + a_content + '</div></div>';
+
+        el_children.append(a_text);
+
+        e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+
+    }
+
+    if (a_classname == 'playlogo') {
+
+        $('#residualTime').css({
+
+            'display': ''
+
+        });
+
+        var a_url = a_ele.parent().parent().parent().children().first().attr('src');
+
+        var a_content = a_ele.parent().parent().parent().children().last().text();
+
+        var a_text = '<div id="modal_aiduo" class="modal_aiduo"><audio controls id="modal_audio_source" src=' + a_url + '></audio><img src="bqh/aaa.png" style="position: relative;left: -465px;"><div class="modal_aiduo_message"><div id="modal_aiduo_player"></div><div id="modal_audio_content">' + "这是一条音频" /*a_content*/ + '</div></div></div>';
+
+        el_children.append(a_text);
+
+        e1.style.visibility = (e1.style.visibility == "visible") ? "hidden" : "visible";
+
+        var elevideo = $('#modal_audio_source');
+
+        if (e1.style.visibility == "visible") {
+
+            elevideo[0].play();
+
+            var timer = setInterval(function() {
+
+                video_time('modal_audio_source');
+
+            }, 1000)
+
+        } else {
+
+            elevideo[0].pause();
+
+            clearInterval(timer);
+
+        }
+
+    }
+
+}
+
+
+
+function video_time(ele) {
+
+    var ele = $('#' + ele);
+
+    var allTime = ele[0].duration;
+
+    var currtime = ele[0].currentTime;
+
+    var residualTime = parseInt(allTime) - parseInt(currtime);
+
+    var asa = formatSeconds(residualTime);
+
+    $('#residualTime').text(asa);
+
+}
+
+
+
+function formatSeconds(a) {
+
+    var hh = parseInt(a / 3600);
+
+    if (hh < 10) hh = "0" + hh;
+
+    var mm = parseInt((a - hh * 3600) / 60);
+
+    if (mm < 10) mm = "0" + mm;
+
+    var ss = parseInt((a - hh * 3600) % 60);
+
+    if (ss < 10) ss = "0" + ss;
+
+    var length = hh + ":" + mm + ":" + ss;
+
+    if (a > 0) {
+
+        return length;
+
+    } else {
+
+        return "";
+
+    }
+
+}
+</script>
+
+<body>
+<div class="bor"></div>
+    <div id="modal-overlay" class="modal_video">
+        <div class="modal-top">
+            <div class="modal_left"></div>
+            <div class="modal_title">最新素材预览</div>
+            <div class="modal_right"></div>
+            <div class="modal_close"><span id="residualTime"> </span> <span onclick="closelay()" class="close">关闭</span></div>
+        </div>
+        <div class="modal-main">
+        </div>
+    </div>
+    <div class="top">
+        <span class="span_tit">编前选题</span>
+        <span class="current_time" style="font-size: 22px; margin-left: 1575px; line-height: 40px;"></span>
+    </div>
+    <div class="main">
+        <!-- <div class="main_left">
+        </div> -->
+        <div class="main_left_con">
+                <!--div模拟select下拉框new start-->
+                <!-- <div class="drop_down selected" id="selected_js">
+                    <div class="tag_select" value=""><span class="val"></span><div class="arrow_btn"><span class="dot-bottom"></span></div></div>
+                    <ul class="tag_options" style="display: none;">
+                        <li class="tag_option_li" value="2017-01-19">2017-01-19</li>
+                        <li class="tag_option_li" value="2017-01-18">2017-01-18</li>
+                        <li class="tag_option_li" value="2017-01-17">2017-01-17</li>
+                        <li class="tag_option_li" value="2017-01-16">2017-01-16</li>
+                        <li class="tag_option_li" value="2017-01-15">2017-01-15</li>
+                        <li class="tag_option_li" value="2017-01-14">2017-01-14</li>
+                        <li class="tag_option_li" value="2017-01-13">2017-01-13</li>
+                    </ul>
+                </div> -->
+                <!--div模拟select下拉框new end-->
+            <div class="wrapper" id="wrapper3">
+                <!-- <div class="scroller" id="scroller3">
+                    <div class="main_left">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="main_middle" id="main_middle">
+            <div class="main_middle_top">
+                <div class="main_top_children" id="main_top_BT">报题详情</div>
+                <div class="main_top_children" id="main_top_GJ">稿件</div>
+                <div class="main_top_children" id="main_top_SC">素材流<span id="SC_counts">(0)</span></div>
+            </div>
+            <!--报题详情-->
+            <div class="main_middle_main" id="main_middle_BTXQ">
+                <div class="middle_title">
+                    <div>
+                        <div style="width: 100px;height:30px;float:left;"><img src="" style="display:none" id="main_img"></div><span class="pl100" id="main_title"></span></div>
+                </div>
+                <div class="middle_content">
+                    <!-- <div class="middle_text" id="middle_text">
+                    </div> -->
+                    <div class="middle_text">
+                        <div class="wrapper" id="wrapper1">
+                            <div class="scroller" id="scroller1">
+                                <div id="middle_text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text_mark">
+                    </div>
+                </div>
+            </div>
+            <!--报题详情-->
+            <!--稿件详情-->
+            <div class="main_middle_main" id="main_middle_GJXQ" style="display: none;">
+                <div class="middle_title">
+                    <div style="text-align:center;position: relative;left: 10px;font-weight: bold;">
+                        <!-- <div style="width: 100px;height:30px;float:left;"><img style="display:none" src="" id="GJXQ_img"></div> --><span id="GJXQ_title"></span></div>
+                </div>
+                <div class="middle_content">
+                    <!-- <div class="middle_text" id="GJXQ_text">
+                    </div> -->
+                    <div class="middle_text">
+                        <div class="wrapper" id="wrapper2">
+                            <div class="scroller" id="scroller2">
+                                <div id="GJXQ_text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text_mark">
+                    </div>
+                </div>
+            </div>
+            <!--稿件详情-->
+            <!--素材流-->
+            <div class="middle_main_SC_con" id="middle_main_SC_con">
+                <div class="wrapper" id="wrapper4">
+                    <div class="scroller" id="scroller4">
+                        <!-- <div class="middle_main_SC" id="middle_main_SC" style="display: none;"> -->
+                            <!--中轴线-->
+                            <!--<div id="SC_axis"></div>
+
+                    <!--素材绘制-->
+                            <!-- <div id="SC_main"> -->
+                                <!--视频素材-->
+                                <!--视频素材-->
+                                <!--图片素材-->
+                                <!--图片素材-->
+                                <!--音频素材-->
+                                <!--音频素材-->
+                                <!--文本素材-->
+                                <!--文本素材-->
+                           <!--  </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <!--素材流-->
+        </div>
+        <div class="main_right">
+            <div class="task_track">
+                <div class="task_top">
+                    <div class="task_l"></div>
+                    <div class="task_t">任务追踪</div>
+                    <div class="task_r"></div>
+                </div>
+                <div id="task_main" class="task_main">
+                    <div id="track_none">暂无任务</div>
+                    <div class="Mmain">
+                        <div class="MList">
+                            <div id="MR4" class="Dmone">
+                                <img id="R4" src="bqh/rwzz4_03.jpg" />
+                                <p class="rp1"><span class="create_name"></span>已完成
+                                    <br>任务发送</p>
+                                <p class="rp2"><span class="task_got"></span>已完成
+                                    <br>任务读取</p>
+                                <p class="rp3"><span class="task_got"></span>已完成
+                                    <br>任务接收</p>
+                                <p class="rp4"><span class="task_got"></span>已完成
+                                    <br>素材回传</p>
+                            </div>
+                            <div id="MR3" class="Dmone">
+                                <img id="R3" src="bqh/rwzz3_03.jpg" />
+                                <p class="rp1"><span class="create_name"></span>已完成
+                                    <br>任务发送</p>
+                                <p class="rp2"><span class="task_got"></span>已完成
+                                    <br>任务读取</p>
+                                <p class="rp3"><span class="task_got"></span>已完成
+                                    <br>任务接收</p>
+                            </div>
+                            <div id="MR2" class="Dmone">
+                                <img id="R2" src="bqh/rwzz2_03.jpg" />
+                                <p class="rp1"><span class="create_name"></span>已完成
+                                    <br>任务发送</p>
+                                <p class="rp2"><span class="task_got"></span>已完成
+                                    <br>任务读取</p>
+                            </div>
+                            <div id="MR1" class="Dmone">
+                                <img id="R1" src="bqh/rwzz1_03.jpg" />
+                                <p class="rp1"><span class="create_name"></span>已完成
+                                    <br>任务发送</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="report_track">
+                <div class="task_top">
+                    <div class="task_l"></div>
+                    <div class="task_t">稿件追踪</div>
+                    <div class="task_r"></div>
+                </div>
+                <div id="report_main" class="task_main">
+                    <div class="Gmain">
+                        <div class="metalog" style="margin-top: 95px; height: 50px;">
+                            <p class="metalog-p" style="margin-top: 19px">撰写中</p>
+                            <p class="metalog-detail"><span class="metalog-span"></span>正在撰写稿件</p>
+                            <img src="bqh/sb_zb.jpg" style="height: 53px; width: 400px; " class=" metalog-start">
+                        </div>
+                        <div class="metalog">
+                            <p class="metalog-p">共享前审批</p>
+                            <p class="metalog-detail1"><span class="metalog-span"></span>正在进行共享前审批</p>
+                            <img src="bqh/GJ_WD_03.jpg" class="metalog-img metalog-process">
+                        </div>
+                        <div class="metalog">
+                            <p class="metalog-p">已共享</p>
+                            <p class="metalog-detail2"><span class="metalog-span"></span>已共享</p>
+                            <img src="bqh/GJ_WD_03.jpg" class=" metalog-img metalog-process">
+                        </div>
+                        <div class="metalog">
+                            <p class="metalog-p">已取用</p>
+                            <!--<p class="metalog-detail"><span class="metalog-span"></span>已取用</p>-->
+                            <!--<img src="bqh/QY_NO.png" class="metalog-img metalog-process">-->
+                            <div id="QY_NO">
+                                <div id="QY_line"></div>
+                                <div id="QY_circle"></div>
+                                <div id="QY_modal">
+                                    <div id="QY_BZ">报纸</div>
+                                    <div id="QY_WZ">网站</div>
+                                    <div id="QY_KHD">客户端</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metalog">
+                            <p class="metalog-p">已发</p>
+                            <!--<p class="metalog-detail"><span class="metalog-span"></span>签发稿件</p>-->
+                            <!--<img src="bqh/JS_NO.png" class="metalog-img metalog-process">-->
+                            <div id="JS_NO">
+                                <div id="JS_line"></div>
+                                <div id="JS_circle"><span>结束</span></div>
+                                <div id="JS_modal">
+                                    <div id="JS_BZ">报纸</div>
+                                    <div id="JS_WZ">网站</div>
+                                    <div id="JS_KHD">客户端</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="lib/iscroll.js"></script>
+    <script type="text/javascript" src="js/scroll.js?v=1.1"></script>
+    <script type="text/javascript" src="js/select.js?v=1.1"></script>
+    <script type="text/javascript" src="js/editmiddle/editmiddle.js?v=1.1"></script>
+    <script src="js/new.js"></script>
+    <script type="text/javascript" src="../util/resize/resize.js?v=1.1"></script>
+    
+    <script type="text/javascript">
+        $(function(){
+            $('#main_top_BT').addClass('hover');
+            $('#middle_main_SC_con').css('display', 'none');
+            $('.main_top_children').click(function(event) {
+                var thisid=$(this).attr('id');
+                console.log(thisid);
+               switch(thisid) {
+                   case 'main_top_BT':
+                       $('#main_top_BT').addClass('hover');
+                       $('#main_top_GJ').removeClass('hover');
+                       $('#main_top_SC').removeClass('hover');
+                       $('#main_middle_BTXQ').css('display', 'block');
+                       $('#main_middle_GJXQ').css('display', 'none');
+                       $('#middle_main_SC_con').css('display', 'none');
+                       break;
+                   case 'main_top_GJ':
+                        $('#main_top_BT').removeClass('hover');
+                       $('#main_top_GJ').addClass('hover');
+                       $('#main_top_SC').removeClass('hover');
+                       $('#main_middle_BTXQ').css('display', 'none');
+                       $('#main_middle_GJXQ').css('display', 'block');
+                       $('#middle_main_SC_con').css('display', 'none');
+                       break;
+                   case 'main_top_SC':
+                        $('#main_top_BT').removeClass('hover');
+                       $('#main_top_GJ').removeClass('hover');
+                       $('#main_top_SC').addClass('hover');
+                       $('#main_middle_BTXQ').css('display', 'none');
+                       $('#main_middle_GJXQ').css('display', 'none');
+                       $('#middle_main_SC_con').css('display', 'block');
+                       break;
+               }
+            });
+        });
+    /*TRS.my_select({
+        param: $("#selected_js") //选择器
+    });*/
+    //选中事件
+    /*function do_check(obj) {
+        $(obj).parent().prev().find("span.val").text($(obj).text());
+        $(obj).parent().hide();
+        //do others...
+        console.log($(obj).parent().prev().text() + "------" + $(obj).text() + "=====" + $(obj).attr("value"));
+    }*/
+    </script>
+</body>
+
+</html>

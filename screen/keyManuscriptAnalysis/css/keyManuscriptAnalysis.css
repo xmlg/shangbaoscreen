@@ -1,0 +1,314 @@
+/*.top div.searchDiv {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background: none;
+    width: 1160px;
+    font-size: 70px;
+    line-height: 90px;
+}
+
+.top div.searchDiv input {
+    width: 800px;
+    height: 90px;
+    margin-top: 0px;
+    position: absolute;
+    font-size: 70px;
+    line-height: 90px;
+    background: none;
+    color: #fff;
+    border: 0;
+}*/
+
+.keyManuscriptAnalysis_main .text-l {
+    text-align: left;
+}
+
+.keyManuscriptAnalysis_main .clear {
+    clear: both;
+}
+
+.keyManuscriptAnalysis_main .white {
+    color: #fff;
+}
+
+.keyManuscriptAnalysis_main .left {
+    float: left;
+    width: 3840px;
+    height: 3122px;
+}
+
+.keyManuscriptAnalysis_main .right {
+    float: right;
+    width: 1920px;
+}
+
+.keyManuscriptAnalysis_main .detail_center {
+    width: 3839px;
+    float: left;
+    margin-left: 50px;
+}
+
+.keyManuscriptAnalysis_main .detail_centerTitle {
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    background: url("../images/bqxt_centerAndRight_1.png") no-repeat center center;
+    margin-top: 30px;
+}
+
+.keyManuscriptAnalysis_main .detail_centerTitle span {
+    color: #48dfff;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details {
+    margin: 95px 90px 0 95px;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details .details_content-title {
+    text-align: center;
+    color: #fff;
+    margin: 30px 0;
+    font-weight: normal;
+    line-height: 95px;
+    padding-left: 75px;
+    padding-right: 75px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-size: 63px;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details .details_content-info {
+    text-align: center;
+    color: #fff;
+    margin: 30px 0;
+    font-weight: normal;
+    line-height: 95px;
+    padding-left: 75px;
+    padding-right: 75px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-size: 63px;
+}
+
+.keyManuscriptAnalysis_main .ml60 {
+    margin-left: 60px;
+}
+
+.keyManuscriptAnalysis_main .detail_center .detail_center-main {
+    height: 2840px;
+    overflow: hidden;
+    position: relative;
+    cursor: -webkit-grab;
+    font-size: 63px;
+    background: url("../images/detail-bg.png") no-repeat center center;
+    background-size: 100% 100%;
+    margin-top: 40px;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details_content {
+    width: 3710px;
+    height: 2675px;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details_text {
+    height: 2410px;
+    overflow: hidden;
+    position: relative;
+    cursor: -webkit-grab;
+}
+
+.keyManuscriptAnalysis_main .detail_center .details p {
+    line-height: 95px;
+    color: #fff;
+    margin: 0;
+}
+
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden:active {
+    cursor: -webkit-grabbing !important;
+}
+
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children {
+    width: 100%;
+    font-size: 63px;
+    color: white;
+}
+
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children p a {
+    color: white;
+    text-decoration: none
+}
+
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children ul li {
+    list-style-type: none;
+}
+
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children h1,
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children h2,
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children h3,
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children h4,
+.keyManuscriptAnalysis_main .detail_center .bqxt_details_hidden_children h5 {
+    font-size: 63px;
+    font-weight: normal;
+}
+
+.keyManuscriptAnalysis_main .right_centerTitle {
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    background: url("../images/bqxt_centerAndRight_1.png") no-repeat center center;
+    margin-top: 20px;
+}
+
+.keyManuscriptAnalysis_main .right_centerTitle span {
+    color: #48dfff;
+}
+
+.keyManuscriptAnalysis_main .bqxt_right {
+    width: 1863px;
+    float: left;
+    margin-left: 30px;
+    padding-left: 40px;
+}
+
+.keyManuscriptAnalysis_main .bqxt_right .bqxt_rightTop {
+    width: 1849px;
+    height: 836px;
+    margin: 50px 0 45px 0;
+    overflow: hidden;
+    background: url("../images/bqxt_centerAndRight_5.png") no-repeat center center;
+    position: relative;
+}
+
+.keyManuscriptAnalysis_main .analysisTitle {
+    width: 100%;
+    height: 125px;
+    background: url("../images/title-bg.png") no-repeat center center;
+    background-size: 95%;
+    margin-top: 50px;
+    color: #48dfff;
+    line-height: 125px;
+    padding-left: 100px;
+}
+
+.keyManuscriptAnalysis_main .right .spreadIndexCon {
+    height: 1030px;
+}
+
+.keyManuscriptAnalysis_main .right .foreignMedium_list {
+    height: 260px;
+}
+
+.keyManuscriptAnalysis_main .right .foreignMedium_list ul li {
+    width: 870px;
+    float: left;
+    line-height: 120px;
+    list-style-type: none;
+    color: #48dfff;
+    font-size: 63px;
+    margin-left: 10px;
+}
+
+.keyManuscriptAnalysis_main .right .foreignMedium_list ul li span {
+    width: 400px;
+    display: inline-block;
+}
+
+.keyManuscriptAnalysis_main .right .list_table {
+    margin: 28px 0 0 45px;
+    overflow: hidden;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table {
+    font-size: 63px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table thead tr th {
+    color: #48dfff;
+    line-height: 160px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td {
+    color: #fff;
+    line-height: 140px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table thead tr th.col-time,
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td.col-time {
+    width: 620px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table thead tr th.col-name,
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td.col-name {
+    width: 575px;
+    height: 140px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table thead tr th.col-chnl,
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td.col-chnl {
+    width: 505px;
+    height: 140px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td.col-name div{
+    width: 575px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 140px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table table tbody tr td.col-chnl div{
+    width: 505px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 140px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table .dot {
+    /* width: 100%; */
+    margin-left: 775px;
+    height: 90px;
+    vertical-align: middle;
+    line-height: 90px;
+    margin-top: 10px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table .dot a {
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: #005760;
+    float: left;
+    margin-right: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999;
+    position: relative;
+}
+
+.keyManuscriptAnalysis_main .right .list_table .dot a.active {
+    background: #00D6F0;
+}
+
+.keyManuscriptAnalysis_main .right .list_table .table_items {
+    height: 740px;
+    overflow: hidden;
+    width: 2000px;
+}
+
+.keyManuscriptAnalysis_main .right .list_table .table_items .table_item {
+    float: left;
+    width: 1770px;
+    margin-right: 30px;
+    height: 740px;
+}

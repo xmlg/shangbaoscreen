@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="checkPasswordApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/checkPassword.css">
+</head>
+
+<body class="check_password" ng-controller="checkPasswordCtrl">
+    <div class="check_password_back"></div>
+    <div class="check_password_modal" ng-if="status.showModal">
+        <div class="check_password_header">
+            <div class="check_password_title" ng-bind="data.title"></div>
+            <img src="images/checkPassword.png" ng-click="cancel()">
+        </div>
+        <div class="check_password_main">
+            <div class="check_password_info">
+                <div class="password_info" ng-if="!status.invalidUrl">
+                    <div class="view_password" ng-bind="data.showPassword" ng-click="data.showPassword=data.showPassword=='查看密码'?'隐藏密码':'查看密码'"></div>
+                    <div class="input_password">
+                        <input type="password" name="password" ng-model="data.password" autocomplete="new-password" ng-if="data.showPassword=='查看密码'">
+                        <input type="text" name="password" ng-model="data.password" autocomplete="new-password" ng-if="data.showPassword=='隐藏密码'">
+                    </div>
+                    <div class="error_info" ng-if="status.passwordError">密码输入错误</div>
+                </div>
+                <div class="url_info" ng-if="status.invalidUrl">您分享的链接已失效</div>
+            </div>
+            <div class="check_password_btn">
+                <button class="confirm_btn" ng-click="confirm()">确定</button>
+                <button class="cancel_btn" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery-2.1.0.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="util/resize.js"></script>
+    <script type="text/javascript" src="js/checkPassword.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+
+    body{
+        
+         background: url(img/295593.png)repeat;
+        
+
+
+        -webkit-animation: animate-cloud 40s linear infinite;
+        -moz-animation: animate-cloud 40s linear infinite;
+        -ms-animation: animate-cloud 40s linear infinite;
+        -o-animation: animate-cloud 40s linear infinite;
+
+        animation: animate-cloud 40s linear infinite;
+
+    }
+
+    /*动画*/
+
+    @-webkit-keyframes animate-cloud {
+        0%{
+            background-position: 0% 80%;
+        }
+        30% {
+             background-position: 20% 18%;
+         }
+        60% {
+            background-position: 40% 40%;
+        }
+        80% {
+            background-position: 40% 20%;
+        }
+        100% {
+            background-position: 100% 60%;
+        }
+    }
+    @-moz-keyframes animate-cloud {
+        0%{
+            background-position: 0% 80%;
+        }
+        30% {
+            background-position: 20% 18%;
+        }
+        60% {
+            background-position: 40% 40%;
+        }
+        80% {
+            background-position: 40% 20%;
+        }
+        100% {
+            background-position: 100% 60%;
+        }
+    }
+    @-ms-keyframes animate-cloud {
+        0%{
+            background-position: 0% 80%;
+        }
+        30% {
+            background-position: 20% 18%;
+        }
+        60% {
+            background-position: 40% 40%;
+        }
+        80% {
+            background-position: 40% 20%;
+        }
+        100% {
+            background-position: 100% 60%;
+        }
+    }
+    @-o-keyframes animate-cloud {
+        0%{
+            background-position: 0% 80%;
+        }
+        30% {
+            background-position: 20% 18%;
+        }
+        60% {
+            background-position: 40% 40%;
+        }
+        80% {
+            background-position: 40% 20%;
+        }
+        100% {
+            background-position: 100% 60%;
+        }
+    }
+
+    iframe{margin-bottom:15px; padding:0;min-height: 230px;
+        /*border-color: rgb(80,124,149);
+        -webkit-border-radius: 6px;
+
+        -moz-border-radius: 6px;
+
+        border-radius: 6px;*/
+		background: url(images/bk1.png)no-repeat;
+        background-size: 100% 100%;
+        background-clip: padding-box;
+        border: none;
+    }
+    .top{
+        color:rgb(184,231,250);font-weight:900;
+    }
+    input{background-color: rgb(6,22,38);color:rgb(184,231,250);border: none;}
+
+    .main span{margin: 20px;}
+
+/*弹出框样式*/
+    .window{
+        background:url(img/bgimg2.jpg);
+        background-size:100%;
+        border: 1px solid #0d7a91;
+        width:40%;
+        position:absolute;
+        padding:2px;
+        margin:0px;
+        height:40%;
+        overflow:hidden;
+        display: none;
+
+    }
+    .content{
+        text-align: center;
+        width:100%;
+   
+        font-size:14px;
+        overflow:hidden;
+    }
+    .window .content iframe{
+        border: 0;
+    }
+    .title{
+        height:16px;
+        font-size:14px;
+        background-color: rgba(3,0,61,0.4);
+    }
+    .title img{
+        float:right;
+    }
+</style>
+</head>
+<body>
+
+<div class="top" style="">
+<div style="width: 100%;height:20px">
+ <span style="float:left">
+
+    <!--<font style="margin-left: 5px;font-size: 12px;"> 原创稿件影响力分析</font>-->
+</span>
+<span style="float:right;">
+
+    <font style="font-size: 12px;">
+        <input  type="date" value="2016-11-04"/></font>
+</span>
+  </div>
+    <p style="width: 100%;margin-top: 15px;text-align:center;height: 30px;">
+    <img src="images/xhs_logo.png" height="30" style=""/>
+    <font style="font-size: 30px;line-height: 30px;margin-bottom: 5px;font-family:'黑体';"> 原创稿件影响力分析</font>
+    </p>
+
+
+</div>
+<div class="main">
+
+<span style="height:570px;width:30%;float:left">
+     <iframe width="100%"  style=""
+             src="./zhexiantu1030.html" > </iframe>
+    <iframe width="100%" frameborder="0" style="background: url(images/bk3.png)no-repeat;
+    background-size: 100% 100%;
+    background-clip: padding-box;
+    border: none;"
+            src="./trans-leftDown2_echarts2.html" > </iframe>
+    <iframe width="100%" frameborder="0" style="background: url(images/bk3.png)no-repeat;
+    background-size: 100% 100%;
+    background-clip: padding-box;
+    border: none;"
+            src="./trans-leftDown.html" > </iframe>
+
+</span>
+
+<span style="height:570px;width:400px;float:left">
+    <iframe id="trans-center" width="100%" frameborder="0"
+            src="./trans-center.html" > </iframe>
+    <iframe width="100%" height="400px" frameborder="0" style="margin-top: 50px;border: 0px; background: rgba(0,0,0,0);   "
+            src="./webglearth2/globe.html" > </iframe>
+</span>
+
+<span  style="height:570px;width:30%;float:left;">
+<iframe width="100%"  frameborder="0"
+        src="./trans-right.html" > </iframe>
+
+<iframe width="100%" frameborder="0" style="background: url(images/bk4.png)no-repeat;
+    background-size: 100% 100%;
+    background-clip: padding-box;
+    border: none;"
+        src="./trans-rightDown.html" > </iframe>
+		<iframe width="100%" frameborder="0" style="background: url(images/bk4.png)no-repeat;
+    background-size: 100% 100%;
+    background-clip: padding-box;
+    border: none;"
+        src="./phone_3/phone_3.html" > </iframe>
+
+</span>
+
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+    var windowHeight;
+    var windowWidth;
+    var popWidth;
+    var popHeight;
+    function init(){
+        windowHeight=$(window).height();
+        windowWidth=$(window).width();
+        popHeight=$(".window").height();
+        popWidth=$(".window").width();
+    }
+    function closeWindow(){
+        $(".title img").click(function(){
+            $(this).parent().parent().hide("slow");
+        });
+    }
+    function popCenterWindow(){
+        init();
+        var popY=(windowHeight-popHeight)/2;
+        var popX=(windowWidth-popWidth)/2;
+        $("#center").css("top",popY).css("left",popX).slideToggle("slow");
+        closeWindow();
+    }
+    setTimeout(top_click, 5000);
+        function top_click(){
+            $("#trans-center").contents().find(".td2").click(function(){
+                var id=$(this).attr("id");
+            //	console.log(id);
+            //    window.open('trans-leftDown_web.html?guid='+id);
+              //  window.open('trans-right2.html?guid='+id);
+                //var url="trans-right2.html?guid="+id;
+               // $(".trans-right2").attr("src",url);
+               $(".trans-leftDown_web").attr("src","trans-leftDown_web.html?guid="+id);
+                popCenterWindow();
+            });
+    }
+
+
+
+</script>
+
+<div class="window" id="center">
+    <div id="title" class="title"><img src="images/5-140FG95151-51.png"  /></div>
+    <div class="content">
+        <iframe class="trans-leftDown_web" width="100%" frameborder="0"
+                src="" > </iframe>
+       <!-- <iframe class="trans-right2" width="100%" frameborder="0"
+                src="" > </iframe>
+				-->
+    </div>
+</div>
+
+</body>
+</html>

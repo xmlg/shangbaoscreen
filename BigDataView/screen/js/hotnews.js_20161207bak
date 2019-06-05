@@ -1,0 +1,272 @@
+/**
+ * Created by wyq on 2016-11-24.
+ */
+
+var MTdata={serviceid:'hotpointcluster', typeid:"widget",modelid:'hotpointnews',
+    field:"",loadtime:"",user_id:"admin",department:140};
+var WMdata={serviceid:'hotsearch', typeid:"widget",modelid:'content',
+   datetime:"",channel:"",user_id:"admin",department:140};
+/**
+ * 初始化
+ */
+function init(){
+    /*WMdata.datetime=getNowFormatDate(true);
+    WMdata.channel="国内";
+    getDate(WMdata);*/
+    MTdata.field="zyzxfield_004";
+    MTdata.loadtime=getNowFormatDate(false);
+    getDate(MTdata);
+}
+$(document).ready(function(){
+    setInterval(showNext,10000);
+    var bar_length=$(".bar").length;
+    var nowCount=2;
+    /**
+     * 循环切换
+     */
+    function showNext(){
+        // console.log( $(".bar_active"));
+        $(".bar:nth-child("+nowCount+")").click();
+        if(nowCount<bar_length){
+            nowCount++;
+        }else{
+            nowCount=1;
+        }
+    }
+});
+
+
+
+/**
+ * 点击不同分类
+ */
+$(".bar").click(function(){
+    $(".bar_active").removeClass("bar_active");
+    $(this).addClass("bar_active");
+    MTdata.field=$(this).attr("id");
+    MTdata.loadtime=getNowFormatDate(false);
+    getDate(MTdata);
+   /* if($(this).attr("id")=="zyzxfield_002"){
+        MTdata.loadtime=getNowFormatDate(false);
+        getDate(MTdata);
+    }else{
+        WMdata.datetime=getNowFormatDate(true);
+        WMdata.channel=$(this).attr("id");
+        getDate(WMdata);
+    }*/
+
+});
+/**
+ * 获取内容
+ */
+function getDate(data){
+
+    $.ajax({
+        type: "GET",
+        url: "/wcm/bigdata.do",
+        data:data,
+        dataType: "json",
+        success: function(_data){
+			//console.log(data)
+            if(data.serviceid=="hotsearch"){
+                _data=_data.CONTENT;
+            }
+            setContentHtml(_data);
+        }
+    });
+}
+/**
+ *获取当前时间  形如2016-11-24+14
+ **/
+ function getNowFormatDate(isWM) {
+    var date = new Date();
+    var seperator1 = "-";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = year + seperator1 + month + seperator1 + strDate
+            + "+" + date.getHours();
+    if(isWM){
+        return year + seperator1 + month + seperator1 + strDate;
+    }
+    return currentdate;
+}
+
+
+/**
+ *content内容加载
+ */
+function setContentHtml(item){
+    $(".content").html("");
+    var hotNum=randomText(item);
+    var str="";
+    hotNum.forEach(function(data,index,array){
+        str+="<div class='hot_head_module_1'>";
+        data.forEach(function(_data,_index,_array){
+            str+=" <div class='hot_head_li_"+_data.size+" "+_data.CLASS+"'>";
+            str+="<ul><li class='effect'>";
+            str+="<a target='_blank'>"+_data.STRVALUE+"</a>";
+            str+="</li></ul>";
+            str+="</div>"
+        });
+        str+="</div>"
+    });
+    $(".content").html(str);
+}
+/**
+ * 去除字符串左右两端的空格
+ */
+String.prototype.trim=function(){
+    return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+/**
+ *  Module 随机动画排列
+ *
+ * Description
+ */
+function animation(){
+    var oldArrClass = [];
+    var newArrClass = [];
+    for (var i = 0; i < 20; i++) {
+        oldArrClass.push('anim-' + i);
+    }
+    for (var n= 0; n < 20; n++) {
+        var random = Math.floor(Math.random() * oldArrClass.length);
+        newArrClass.push(oldArrClass[random]); //
+        oldArrClass.splice(random, 1);
+    }
+    //    console.log(newArrClass)
+    return newArrClass;
+}
+
+
+/**
+ * [NUMSTRVALUE description]  不同分辨率下 截取不同长度
+ * @param {[type]} STRVALUE [description]
+ */
+function NUMSTRVALUE(STRVALUE) {
+    if (window.screen.width <= '1366') {
+        STRVALUE = STRVALUE.substring(0,15);
+    } else if (window.screen.width <= '1680' && window.screen.width > '1366') {
+        STRVALUE = STRVALUE.substring(0,18);
+    } else if (window.screen.width > '1680') {
+        STRVALUE = STRVALUE.substring(0,20);
+    }
+    return STRVALUE;
+}
+/***
+ *生成随机区域块内容
+ */
+function randomText(params){
+    //   params=[{"STRVALUE":"中拉友好关系驶入新航程","ID":"43562"},{"STRVALUE":"枪未响\" 或将一两周内公告","ID":"43563"},{"STRVALUE":"白银操作建议","ID":"43564"},{"STRVALUE":"西昌卫星发射中心发射破百","ID":"43567"},{"STRVALUE":"北极异常升温让科学家不解","ID":"43568"},{"STRVALUE":"军事情报保护协定","ID":"43569"},{"STRVALUE":"习近平出席中拉媒体领袖峰会开幕式","ID":"43570"},{"STRVALUE":"香港黄金大劫案","ID":"43571"},{"STRVALUE":"上厕所没带纸","ID":"43572"},{"STRVALUE":"自由贸易账户","ID":"43574"},{"STRVALUE":"城市生活垃圾产生量","ID":"43578"},{"STRVALUE":"着火信号系虚报乘客已安","ID":"43579"},{"STRVALUE":"丰田酷路泽","ID":"43580"},{"STRVALUE":"恒大二次举牌万科A 总持股达１０％","ID":"43581"},{"STRVALUE":"组工部门要自觉走在前列","ID":"43582"},{"STRVALUE":"疑因学习压力过大","ID":"43584"},{"STRVALUE":"“百日新政”","ID":"43585"},{"STRVALUE":"“世芳扯铃”成笑柄","ID":"42852"},{"STRVALUE":"特朗普“百日新政”","ID":"42862"},{"STRVALUE":"叫花鸡敲开泥巴只剩纸","ID":"42868"}];
+    //    console.log(params)
+    var headLine = params;
+    var newArrary = [];
+    var randomAni=animation();
+
+    /**
+     * 初始化数组
+     */
+    var generArray = [
+        [{    size: "4"}],
+        [{    size: "2"}, {   size: "2"}],
+        [{    size: "1"}, {   size: "1"}, {    size: "1"}, {    size: "1"}],
+        [{    size: "4"}],
+        [{    size: "2"}, {   size: "1"}, {    size: "1"}],
+        [{    size: "1"}, {   size: "1"}, {    size: "2"}],
+        // [{    size: "3"}, {   size: "1"}, {    size: "1"}],
+        // [{    size: "3"}, {   size: "1"}, {    size: "1"}],
+    ];
+
+    for (var i = 0; i < 6; i++) {
+        var random = Math.floor(Math.random() * generArray.length);
+        newArrary.push(generArray[random]);
+        generArray.splice(random, 1);
+    }
+    var initNum = 0;
+
+
+    newArrary.forEach(function(data, index, array) {
+        data.forEach(function(_data, _index, _array) {
+            if (initNum <= headLine.length - 1) {
+                // newArrary[index][_index].STRVALUE = headLine[initNum].STRVALUE.substr(0,20);
+                newArrary[index][_index].STRVALUE = headLine[initNum].STRVALUE;
+                newArrary[index][_index].ID=headLine[initNum].ID;
+                newArrary[index][_index].CLASS=randomAni[initNum];
+                newArrary[index][_index].ir_sid=headLine[initNum].ir_sid;
+                initNum++;
+            }
+
+        });
+    });
+    var hotNums = newArrary;
+    return hotNums;
+
+}
+
+
+//领域
+var fieldJsons = [{
+    name: '政治',
+    value: 'zyzxfield_001'
+}, {
+    name: '财经',
+    value: 'zyzxfield_002'
+},{
+    name: '司法',
+    value: 'zyzxfield_003'
+}, {
+    name: '军事',
+    value: 'zyzxfield_004'
+}, {
+    name: '社会',
+    value: 'zyzxfield_005'
+}, {
+    name: '地产',
+    value: 'zyzxfield_006'
+}, {
+    name: '科技',
+    value: 'zyzxfield_007'
+}, {
+    name: '人文',
+    value: 'zyzxfield_008'
+}, {
+    name: '体育',
+    value: 'zyzxfield_009'
+}, {
+    name: '教育',
+    value: 'zyzxfield_010'
+}, {
+    name: '生活',
+    value: 'zyzxfield_011'
+}, {
+    name: '健康',
+    value: 'zyzxfield_012'
+}, {
+    name: '汽车',
+    value: 'zyzxfield_013'
+}, {
+    name: '美食',
+    value: 'zyzxfield_014'
+}, {
+    name: '旅游',
+    value: 'zyzxfield_015'
+}, {
+    name: '游戏',
+    value: 'zyzxfield_016'
+}, {
+    name: '动漫',
+    value: 'zyzxfield_017'
+}, {
+    name: '电商',
+    value: 'zyzxfield_018'
+}, {
+    name: '娱乐',
+    value: 'zyzxfield_019'
+}];

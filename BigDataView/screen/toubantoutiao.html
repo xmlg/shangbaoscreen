@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<script src="../screen/js/angular.js"></script>
+<style>
+.baoliao_neiy{ width:96%; margin:20px auto; }
+.baoliao_neiy .tit{ height:75px; line-height:75px; color:#fff;background: linear-gradient(70deg,#218ba3, #0c141e); font-size:40px; text-indent:40px;}
+.baoliao_neiy .baoliaocont{ margin:30px 100px; border-left:10px solid #008d8d;}
+.baoliao_neiy .baoliaocont .cont{ margin:0 0 40px 115px; position:relative; color:#fff; font-size:18px;}
+.baoliao_neiy .baoliaocont .cont span{ position:absolute; left:-175px;  top:50%; margin-top:-24px; height:48px; width:105px; color:#010100; font-size:16px; background:#14c3d1; display:block; line-height:48px; text-align:center; border-radius:10px;}
+.baoliao_neiy .baoliaocont .cont p{ background:#0e2836; padding:20px;}
+.baoliao_neiy .baoliaocont .cont h1{ font-size:18px; font-weight:normal;}
+	.baoliao_neiy .kehuduancont{margin:30px 50px; padding:0 0 0 80px; position:relative; color:#fff; font-size:18px;}
+.baoliao_neiy .kehuduancont span{ width:50px; height:50px; position:absolute; left:0px; top:50%; margin-top:-15px;}
+.baoliao_neiy .kehuduancont span img{ width:100%;}
+.baoliao_neiy .kehuduancont h1{ font-size:18px; font-weight:normal;}
+.baoliao_neiy .kehuduancont p{ padding:20px; border:1px solid #42d5ff; background:#226078;}
+
+.baoliao_neiy .toubantt ul{ margin:30px 0 0 0;}
+.baoliao_neiy .toubantt ul li{ height:30px; line-height:30px; margin:0 0 10px 0;font-size:18px; padding:0 0 0 250px; position:relative;}
+.baoliao_neiy .toubantt ul li strong{ width:250px; position:absolute; left:0px; top:0px; height:30px; text-align:right;}
+.baoliao_neiy .toubantt ul li strong b{background:#16e1f3; display:inline-block; height:30px;}
+.baoliao_neiy .toubantt ul li span{ width:80%; float:left; color:#fff; margin:0 5%;}
+.baoliao_neiy .toubantt ul li em{ color:#fff701; float:left; width:10%;}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="baoliao_neiy">
+    	<div class="tit">头版头条</div>
+        <div class="toubantt">
+        	<!--<ul>
+            	<li><strong></strong><span>纸版头条</span><em>转载数</em></li>
+            	<li ng-repeat="item in zblist"><strong><b style="width:{{item.len}}%"></b></strong><span ng-bind="item.content"></span><em ng-bind="item.num"></em></li>
+            </ul>-->
+        	<ul>
+            	<li><strong></strong><span>网媒头条</span><em>生命力</em></li>
+            	<li ng-repeat="item in wmlist"><strong><b style="width:{{item.len}}%"></b></strong><span ng-bind="item.TITLE"></span><em ng-bind="item.VITALITYVALUE"></em></li>
+            </ul>
+        </div>
+</div>
+
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope,$http) {
+		//纸板头条
+	    $http.get('../screen/js/kehuduan.json').then(function(data){
+	    	console.log(data);
+	    	$scope.zblist=data.data;
+	    });
+	    //网媒头条
+	    $http.get('/wcm/bigdata.do?isOnline=0&modelid=getTodayNetworkMedias&page_no=0&page_size=8&serviceid=networkmedianew&typeid=widget').then(function(data){
+	    	console.log(data);
+			var datalist = data.data.PAGEITEMS;
+			var totalnum = 0;
+			 for(var i in datalist){
+                 totalnum=totalnum+datalist[i].VITALITYVALUE; 
+                }
+			for(var i in datalist){
+			datalist[i].len=datalist[i].VITALITYVALUE / totalnum *100;
+			 
+			}
+	    	$scope.wmlist=datalist;
+	    });
+
+
+
+
+
+
+
+	});
+
+
+
+</script>
+
+
+
+</body>
+</html>

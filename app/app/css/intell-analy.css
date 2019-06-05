@@ -1,0 +1,182 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+table {
+    font-size: 14px;
+}
+
+body {
+    color: white;
+    overflow:hidden;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Arial";
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 200%;
+    height: 100%;
+    transform: translateX(0%);
+    transition: transform 2s;
+}
+
+.container.shift {
+    transform: translateX(-50%);
+}
+
+.page-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.page-container.page1 {
+    background-image: url('../images/bg1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-container.page2 {
+    /*background-image: url('../images/page2.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-color: rgb(14, 20, 29);
+    color: rgb(119, 255, 255);
+}
+
+.page-content-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    font-weight: normal;
+}
+
+.hot-news .hot-news-block {
+    position: relative;
+    float: left;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.hot-news .hot-news-block.left {
+    width: 600px;
+    /*background: lightblue;*/
+}
+
+.hot-news .hot-news-block.center {
+    width: 1000px;
+    /*background: lightgray;*/
+}
+
+.hot-news .hot-news-block.right {
+    width: 320px;
+    /*background: yellow;*/
+}
+
+.propagation .page-title {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    /*background-image: url('../images/title.png');*/
+    background-repeat: no-repeat;
+    background-size: 1421px;
+    background-position: center;
+    text-align: center;
+    font-size: 45px;
+    /*line-height: 180px;*/
+}
+
+.propagation .propagation-block {
+    position: relative;
+    float: left;
+    height: 900px;
+}
+
+.propagation .propagation-block.left {
+    /*background-color: lightgray;*/
+    width: 1170px;
+}
+
+.propagation .propagation-block.right {
+    /*background-color: yellow;*/
+    width: 750px;
+}
+.propagation .propagation-block.left  .rose{
+    width: 100%;
+    height: 100%;
+    /*background: #0D141E;*/
+    position: absolute;
+    top:-100px;
+    /*opacity: 0;*/
+    /*background: url(../images/outer-circle.png) no-repeat;*/
+}
+.propagation .propagation-block.left .rose #rose_content{
+    width: 100%;
+    height: 100%;
+}
+.propagation .propagation-block.left .rose .inner-circle{
+    width: 288px;
+    height: 288px;
+    position: absolute;
+    top: 398px;
+    left: 407px;
+    background: url(../images/inner-circle.png) no-repeat;
+    border-image: 100px;
+    background-size: 288px;
+    z-index: 3;
+    border: 0.3px #27F2EE solid;
+    border-radius: 200px;
+}
+.propagation .propagation-block.left .rose .inner-shadow{
+   position: absolute;
+    top: 279px;
+    left: 238px;
+    width: 547px;
+    height: 523px;
+    background: url(../images/shadow1.png) no-repeat;
+    z-index: 2;
+    background-size: 612px;
+}
+.propagation .propagation-block.left .rose .outer-circle{
+    width: 750px;
+    height: 750px;
+    position: absolute;
+    top: 165px;
+    left: 174px;
+    border-radius: 800px;
+    border: 0.3px #27F2EE solid;
+    z-index: 1;
+}

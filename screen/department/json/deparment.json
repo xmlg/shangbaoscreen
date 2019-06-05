@@ -1,0 +1,33 @@
+{
+    "Records": [{
+        "department": "政治新闻部",
+        "avgIndex": "2613.12"
+    },{
+        "department": "经济新闻部",
+        "avgIndex": "1512.32"
+    },{
+        "department": "文化新闻部",
+        "avgIndex": "1831.24"
+    },{
+        "department": "理论评论部",
+        "avgIndex": "1762.28"
+    },{
+        "department": "编辑中心",
+        "avgIndex": "1681.91"
+    },{
+        "department": "服务专刊部",
+        "avgIndex": "2167.56"
+    },{
+        "department": "社会与生态新闻部",
+        "avgIndex": "2001.41"
+    },{
+        "department": "图片中心",
+        "avgIndex": "2071.11"
+    },{
+        "department": "总编办",
+        "avgIndex": "1979.21"
+    },{
+        "department": "编委",
+        "avgIndex": "2122.56"
+    }]
+}

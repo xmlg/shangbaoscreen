@@ -1,0 +1,232 @@
+[
+  {
+    "AREANAME": "北京市",
+    "INDEX": "1",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+
+  {
+    "AREANAME": "浙江省",
+    "INDEX": "2",
+    "AREA": "001020",
+    "HOTNUM": "7282",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "广东省",
+    "INDEX": "3",
+    "AREA": "001013",
+    "HOTNUM": "5951",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "上海市",
+    "INDEX": "4",
+    "AREA": "001001",
+    "HOTNUM": "5584",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "江苏省",
+    "INDEX": "5",
+    "AREA": "001016",
+    "HOTNUM": "4543",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "山东省",
+    "INDEX": "6",
+    "AREA": "001011",
+    "HOTNUM": "3587",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "四川省",
+    "INDEX": "7",
+    "AREA": "001007",
+    "HOTNUM": "3376",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "河北省",
+    "INDEX": "8",
+    "AREA": "001018",
+    "HOTNUM": "2626",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "湖南省",
+    "INDEX": "9",
+    "AREA": "001023",
+    "HOTNUM": "2476",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "河南省",
+    "INDEX": "10",
+    "AREA": "001019",
+    "HOTNUM": "2370",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "天津市",
+    "INDEX": "11",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "黑龙江省",
+    "INDEX": "12",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "吉林省",
+    "INDEX": "13",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "辽宁省",
+    "INDEX": "14",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "内蒙古自治区",
+    "INDEX": "15",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "山西省",
+    "INDEX": "16",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "陕西省",
+    "INDEX": "17",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "甘肃省",
+    "INDEX": "18",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "宁夏回族自治区",
+    "INDEX": "19",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "青海省",
+    "INDEX": "20",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "新疆维吾尔自治区",
+    "INDEX": "21",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+  "AREANAME": "安徽省",
+  "INDEX": "22",
+  "AREA": "001004",
+  "HOTNUM": "12198",
+  "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "江西省",
+    "INDEX": "23",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "湖北省",
+    "INDEX": "24",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "四川省",
+    "INDEX": "25",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "福建省",
+    "INDEX": "26",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "台湾",
+    "INDEX": "27",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "海南省",
+    "INDEX": "28",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "广西壮族自治区",
+    "INDEX": "29",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "云南省",
+    "INDEX": "30",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+  {
+    "AREANAME": "中国西藏自治区",
+    "INDEX": "31",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  },
+
+  {
+    "AREANAME": "香港特别行政区",
+    "INDEX": "32",
+    "AREA": "001004",
+    "HOTNUM": "12198",
+    "LOADDATE": "2016-10-20"
+  }
+
+
+
+
+]

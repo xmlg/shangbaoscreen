@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>影响力系统</title>
+    <link rel="stylesheet" href="./newScreen/css/normalize.css">
+    <link rel="stylesheet" href="./newScreen/css/screenMap.css">
+    <link rel="stylesheet" href="./newScreen/css/flipclock.css">
+    <script src="./newScreen/lib/jquery.min.js"></script>
+    <script src="./lib/d3.min.js"></script>
+
+</head>
+<body onkeydown="KeyDown();">
+<!--搜索栏-->
+<div class="search">
+    <div class="searchTop">
+      
+        <span>
+            <span class="time-choose recentyTime" data-time="1" id="returnAll">24小时</span>
+            <span class="time-choose recentyTime" data-time="7">近7天</span>
+            <span class="time-choose recentyTime" data-time="30">近30天</span>
+
+
+        </span>
+    </div>
+</div>
+<!--搜索栏end-->
+
+<!--背景地图层start-->
+<!--<div class="screenMap worldMap" style="display: none;">-->
+    <!--<iframe class="ifrMap" id="worldIfr" src="./newScreen/map/world.html" frameborder="0"></iframe>-->
+<!--</div>-->
+<div class="screenMap chinaMap" >
+    <iframe class="ifrMap" id="chinaIfr" src="./newScreen/map/flashmap.html" frameborder="0" ></iframe>
+</div>
+<!--<div class="screenMap hotInfo" style="display: none;">-->
+    <!--<iframe class="ifrMap"  src="http://111.203.35.59/cas/ce/article/main.do?method=show&mpId=-1" frameborder="0"></iframe>-->
+<!--</div>-->
+<!--背景地图层end-->
+<!--图表层start-->
+<div class="titleTop" style="display: none;">
+    <img src="./newScreen/images/top_title.png" alt="">
+</div>
+<!--左一-->
+<div class="trans_left trans_window">
+    <i class="trans_exit" data-type="1"></i>
+    <i class="trans_max" data-type="1"></i>
+    <!--<div class="top_img">-->
+        <!--<img src="./newScreen/images/header_top.png" alt="" width="272">-->
+    <!--</div>-->
+    <div class="trans_chart" >
+        <iframe class="newTransIfr"  id="trans-center" src="./newScreen/trans-center.html" frameborder="0" scrolling="no" ></iframe>
+    </div>
+</div>
+<!--右上-->
+<div class="trans_right trans_window">
+    <i class="trans_exit" data-type="2"></i>
+    <i class="trans_max"  data-type="2"></i>
+    <!--<div class="top_img">-->
+        <!--<img src="./newScreen/images/header_top.png" alt="" width="272">-->
+    <!--</div>-->
+    <div class="trans_chart trans_chartR">
+        <iframe class="newTransIfr"  src="./newScreen/trans-right.html" frameborder="0" scrolling="no" ></iframe>
+    </div>
+</div>
+<!--右下-->
+<!--<div class="trans_rightDown trans_window">-->
+    <!--<i class="trans_exit" data-type="3"></i>-->
+    <!--<i class="trans_max" data-type="3"></i>-->
+    <!--&lt;!&ndash;<div class="top_img">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="./newScreen/images/header_top.png" alt="" width="150">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div class="trans_chart">-->
+        <!--<iframe class="newTransIfr"  src="./newScreen/trans-leftDown2_echarts2.html" frameborder="0" scrolling="no" ></iframe>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--两个细缆图start-->
+<div class="trans_detail_L trans_alert_window">
+    <i class="trans_exit exit_D" data-type="5"></i>
+    <!--<div class="turnImg turnLeft"></div>-->
+    <!--<div class="top_imgD">-->
+        <!--<img src="./newScreen/images/header_top.png" alt="" width="300">-->
+    <!--</div>-->
+    <div class="trans_chart" >
+        <!--<i class="trans_max" data-type="1"></i>-->
+        <iframe class="newTransIfr" id="detail_L" src="./newScreen/force.html" frameborder="0" scrolling="no" ></iframe>
+    </div>
+</div>
+
+<!--<div class="trans_detail_R trans_alert_window">-->
+    <!--<i class="trans_exit exit_D" data-type="6"></i>-->
+    <!--&lt;!&ndash;<div class="turnImg turnRight"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="top_imgD">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="./newScreen/images/header_top.png" alt="" width="300">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div class="trans_chart" >-->
+        <!--&lt;!&ndash;<i class="trans_max" data-type="1"></i>&ndash;&gt;-->
+        <!--<iframe class="newTransIfr" id="detail_R" src="./newScreen/trans-leftDown_web.html" frameborder="0"></iframe>-->
+    <!--</div>-->
+<!--</div>-->
+<!--两个细缆图end-->
+<!--图放大时背景start-->
+<div class="background_img" style="display: none"></div>
+<!--图放大时背景end-->
+<!--图标按钮-->
+<div class="trans_button">
+    <i class="transL"  data-img="1" data-visi="1"></i>
+
+    <!--<i class="transR"  data-img="2" data-visi="2"></i>
+    <i class="transRD" data-img="3" data-visi="3"></i>-->
+</div>
+
+<!--右上按钮-->
+<!--<div class="trans_map"  >
+    <i class="topR1"  data-map="1" style="display: none;"></i>
+    <i class="topR4"  data-map="4" style="display:none;"></i>
+    <!--<i class="topR2"  data-map="2" data-msg="1">-->
+        <!--<s class="topR2_title"></s>-->
+
+    </i>
+    <i class="topR3"  data-map="3" data-msg="1" style="display:none;"></i>
+
+    <div class="eventsMsgs">
+        <s class="triangle" disabled="true"></s>
+        <ul>
+
+
+        </ul>
+    </div>
+
+    <div class="infoMsgs">
+            <s class="triangle" disabled="true"></s>
+            <ul>
+                <li class="choose">国内网站</li>
+                <li>海外网站</li>
+                <li>微博</li>
+                <li>微信</li>
+                <li>电子报</li>
+                <li>APP</li>
+
+            </ul>
+    </div>
+</div>-->
+<!--PC路径-->
+<!--<div class="goPC"><a target="_blank" href="/dist/index.html#/plan/InfluenceList?infVal=1&menutype=influ"></a></div>-->
+<!--省份影响力-->
+<!-- <div class="province">
+    <h2>稿件影响力排行TOP10</h2>
+    <h3 class="pro_img"><img src="./newScreen/images/header_title.png" width="200" alt=""></h3>
+    <ul>
+
+    </ul>
+</div> -->
+<!--事件稿件信息-->
+<div class="eventsInfos">
+    <h2>事件信息</h2>
+    <h3 class="pro_img"><img src="./newScreen/images/header_title.png" width="200" alt=""></h3>
+    <div class="abs">
+
+    </div>
+    <br>
+    <div class="xhsCount">新华社稿件数: <i></i> 篇 <span>查看</span></div>
+    <div class="allCount">全网稿件数: <i></i> 篇</div>
+</div>
+
+<!--事件稿件列表-->
+<div class="event-lists">
+    <i class="trans_exit exit_D" data-type="7"></i>
+    <h2>事件稿件列表</h2>
+    <h3 class="pro_img"><img src="./newScreen/images/header_title.png" width="453" alt=""></h3>
+    <ul class="lists">
+        <!--<li class="item item-title" style="text-align: center;">-->
+            <!--<span class="title">标题</span>-->
+            <!--<span class="author">作者</span>-->
+            <!--<span class="pubTime">发布时间</span>-->
+        <!--</li>-->
+
+    </ul>
+</div>
+<!--图表层end-->
+<script type="text/javascript" src="./newScreen/js/queue.v1.js"></script>
+<script type="text/javascript" src="./newScreen/js/cardnumber.js"></script>
+<script type="text/javascript" src="./newScreen/lib/jquery.nicescroll.min.js"></script>
+<script src="./newScreen/js/newScreen.js"></script>
+
+<script>
+    function KeyDown(){
+        if (event.keyCode == 13){
+            $("#searchSubmit").trigger("click");
+        }
+    }
+</script>
+</body>
+</html>

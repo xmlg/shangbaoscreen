@@ -1,0 +1,320 @@
+body{
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: auto;
+    background: url(../images/jianbaobg.png);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+   -o-background-size: cover;
+  }
+  @font-face { 
+  font-family: Quartz Regular; 
+  src: url('../images/Quartz Regular.ttf'); 
+   }
+.tit{
+   text-align: center;
+   margin-top:20px;
+} 
+.tit img{
+   width: 30%;
+
+} 
+.date{
+   font-size: 16px;
+  font-family: Quartz Regular;
+  color: rgb(29, 241, 249);
+}
+.left{
+  background: url("../images/leftbg.png") no-repeat;
+/*  background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment:fixed;*/
+    background-size: 100% 100%;
+ /*   -webkit-background-size: cover;
+   -o-background-size: cover;*/
+  position: absolute;
+  left: 3%;
+  top: 10%;
+  width: 46%;
+  height: 86%;
+}
+.right {
+  background: url("../images/rightbg.png") no-repeat;
+/*  background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment:fixed;*/
+    background-size: 100% 100%;
+/*    -webkit-background-size: cover;
+   -o-background-size: cover;*/
+  position: absolute;
+  left: 52%;
+  top: 10%;
+  width: 46%;
+  height: 86%;
+}
+.l-tit{
+    margin: 1% 10%;
+    font-weight: 600;
+    color: #ffff;
+    font-family: "Microsoft YaHei";
+}
+.r-tit{
+    width: 30%;
+    margin: 1% 69%;
+    font-weight: 600;
+    color: #ffff;
+    font-family: "Microsoft YaHei";
+}
+.yc-total{
+    background: url("../images/l-bk.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: 3%;
+    margin-left: 30px;
+    width: 40%;
+    height: 8%;
+    float: left;
+}
+.gj-total{
+    background: url("../images/l-bk.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: 3%;
+    margin-right: 30px;
+    width: 40%;
+    height: 8%;
+    float: right;
+}
+.r-name{
+  float: left;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  color: rgb(29, 241, 249);
+  width: 50%;
+  margin-top: 3.5%;
+  text-align: center;
+}
+.r-num{
+  float: right;
+  font-size: 20px;
+  line-height: 2;
+  font-family: Quartz Regular;
+  color: rgb(255, 255, 255);
+  width: 50%;
+  text-align: center;
+}
+#chartyc{
+  width: 100%;height:100%;margin:0 auto;
+}
+#chartgj{
+  width: 100%;height:100%;margin:0 auto;
+}
+.yc-prop{
+  float: left;
+  width: 50%;
+  height: 30%;
+}
+.gj-prop{
+  float: right;
+  width: 50%;
+  height: 30%;
+}
+.left-bar{
+  height: 54%;
+}
+#chartbar1{
+  width: 100%;height:69%;margin:0 auto;float: left;
+}
+.char-name{
+  width: 80%;
+  margin-left: 10%;
+}
+.char-name>div{
+  height: 35px;
+  background: url("../images/sitebg.png") no-repeat center;
+  background-size: 80% 100%;
+  float: left;
+  width: 20%;
+  line-height: 35px;
+  color: rgb(29, 241, 249);
+  text-align: center;
+}
+.select{
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #a2a39c;
+    bottom: 2.5%;
+    margin-left: 4%;
+    position: absolute;
+}
+.select>div{
+
+}
+.yc-total-r{
+    background: url(../images/r-bk.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 3%;
+    margin-left: 30px;
+    width: 47%;
+    height: 8%;
+    float: left;
+}
+.r-name-r{
+  float: left;
+  font-size: 15px;
+  font-family: "Microsoft YaHei";
+  color: rgb(29, 241, 249);
+  width: 14%;
+  margin:0 8%;
+  text-align: center;
+}
+.qd-type{
+  height: 58%;
+  width: 100%;
+  border-bottom-style: ridge;
+  border-bottom-width: thin;
+  width: 98%;
+  margin-left: 1%;
+/*  float: left;
+*/}
+.zzps{
+  height: 86%;
+  width: 16%;
+  margin-top: 2%;
+  margin-left: 4%;
+  float: left;
+  background: url("../images/zzbg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.zzcs{
+  height: 86%;
+  width: 16%;
+  margin-left: 4%;
+  margin-top: 2%;
+  float: left;
+  background: url("../images/zzbg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.val1{
+   height: 7%;
+   text-align: center;
+   font-size: 16px;
+  font-family: "Microsoft YaHei";
+  color: rgb(29, 241, 249);
+}
+.val2{
+  height: 12%;
+    text-align: center;
+    line-height: 1.3;
+    font-size: 14px;
+  font-family: Quartz Regular;
+  color: rgb(255, 255, 255);
+}
+.val3{
+  height: 9.24%;
+    text-align: center;
+      line-height: 100%;
+    font-size: 14px;
+  font-family: Quartz Regular;
+  color: rgb(255, 255, 255);
+}
+.source:before{
+ content: '';
+    position: fixed;
+    background: #ffd300;
+    /* width: 43%; */
+    width: 45px;
+    height: 1px;
+    right: 13.5%;
+}
+.val3.edit2{
+  margin-top: 2px;
+}
+.num{
+    font-size: 16px;
+    color: red;
+    font-style: italic;
+}
+.bestnews{
+  margin-left: 2%;color:#ffffff;font-size: 14px;margin-right: 2%;
+}
+.radio{display:none}
+.radioInput{background-color:#fff;border:2px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:10px;margin-right:10px;margin-top:-2px;vertical-align:middle;width:10px;line-height:0}
+.radio:checked + .radioInput:after{background-color:#00f1f2;border-radius:100%;content:"";display:inline-block;height:10px;margin-left:0;margin-top:0;width:10px}
+.checkbox.radioInput,.radio:checked + .checkbox.radioInput:after{border-radius:0}
+.radio:checked + .radioInput{border:2px solid #00f1f2;}
+
+.radio1{display:none}
+.radioInput1{background-color:#fff;border:2px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:10px;margin-right:10px;margin-top:-2px;vertical-align:middle;width:10px;line-height:0}
+.radio1:checked + .radioInput1:after{background-color:#2e4b97;border-radius:100%;content:"";display:inline-block;height: 13px;margin-left: -1px;margin-top: -1px;width: 13px;}
+.radio1:checked + .radioInput1{border:2px solid #2e4b97;}
+
+@media screen and (min-width: 1920px) {
+    .r-name-r{
+      margin:1% 8%;
+      font-size: 24px;
+    }
+    .l-tit{
+      font-size: 35px;
+      margin: 0.7% 10%;
+    }
+    .r-tit{
+      font-size: 35px;
+      width: 40%;
+    margin: 0.7% 56%;
+    }
+    .r-name{
+      line-height: 2;
+      font-size: 24px;
+    }
+    .r-num{
+      line-height: 2.5;
+    }
+    .val1{
+       font-size: 18px;
+       line-height: 1.9;
+    }
+    .val2{
+       font-size: 20px;
+       line-height: 1.5;
+    }
+    .val3{
+      font-size: 20px;
+      line-height: 130%;
+      height: 9.24%;
+    }
+    .char-name{
+      margin-top:29.5%;
+    }
+    .left-bar{
+      height: 59%;
+    }
+    .val3.edit1{
+  margin-top: 2px;
+} 
+
+   .char-name>div{
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+   }
+   .date{
+     font-size: 26px;
+   }
+   .tit img{
+     width: 40%;
+   }
+   .num{
+     font-size: 26px;
+   }
+   .bestnews{
+    font-size: 24px;
+   }
+   .r-num{
+    font-size: 30px;
+   }
+}

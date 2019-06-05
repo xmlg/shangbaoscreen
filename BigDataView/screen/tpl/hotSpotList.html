@@ -1,0 +1,40 @@
+<style>
+
+
+</style>
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/laytpl/laytpl.js"></script>
+
+
+<div>
+     
+            <table >
+              <thead>
+                <tr>
+                  <th>政策标题</th>
+                  <th>发布事件</th>
+                </tr> 
+              </thead>
+              <tbody>
+                <tr>
+                  <td>贤心</td>
+                  <td>2016-11-29</td>
+                </tr>   
+              </tbody>
+            </table>
+</div>
+
+<script>
+    //获取URL参数值
+function GetQueryString(name)
+{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+alert(GetQueryString(clusterid));
+
+
+</script>
+

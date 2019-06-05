@@ -1,0 +1,276 @@
+timeline-hours/* entities and concepts static */
+
+.article-entity-static {
+	color: #00A6A0;
+	display: inline;
+}
+
+.company-entity-static {
+	color: #00648D;
+	display: inline;
+}
+
+.organization-entity-static {
+	color: #00B0DA;
+	display: inline;
+}
+
+.person-entity-static {
+	color: #82D1F5;
+	display: inline;
+}
+
+.location-entity-static {
+	color: #8CC63F;
+	display: inline;
+}
+
+.concept-entity-static {
+	color: #9855D4;
+	display: inline;
+}
+
+.flintstone-entity-static {
+	color: #868695;
+	display: inline;
+}
+
+.category-link {
+	color: #BE9B00;
+	display: inline;
+}
+
+/* landing area */
+
+#landing-area {
+	font-family: 'Merriweather', serif;
+	position: absolute; 
+	z-index: 7;
+	width: 100%;
+	height: 100%;
+	/*
+	background-color: #FFFAF0;
+	background: url(../images/backgrounds/beige-paper-texture.jpg) no-repeat center center fixed;
+	*/
+	background: -webkit-linear-gradient(#152935, #010205); 
+    background: -o-linear-gradient(#152935, #010205); 
+    background: -moz-linear-gradient(#152935, #010205); 
+    background: linear-gradient(#152935, #010205);
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	display: none;
+  	visibility: hidden;
+  	overflow-x: hidden;
+  	overflow-y: hidden;
+
+  	/* http://jsfiddle.net/s4gc7vk3/ */
+}
+
+/* trending queries */
+
+#landing-area #landing-sub-area-one {
+	position: relative;
+	float: left;
+	width: 50%;
+	min-width: 540px;
+	height: 100%;
+	min-height: 300px;
+	overflow: hidden;
+}
+
+#landing-area #landing-sub-area-one #landing-nav-right {
+	position: absolute;
+	right: 2vh;
+	top: 37.5%;
+	width: 0; 
+	height: 0; 
+	border-top: 6vh solid transparent;
+	border-bottom: 6vh solid transparent;	
+	border-left: 6vh solid #FFFFFF;
+	opacity: 0.3;
+	cursor: pointer;
+	z-index: 999999;
+}
+
+#landing-area #landing-sub-area-one #landing-nav-right:hover {
+	opacity: 0.5;
+}
+
+#landing-area #landing-sub-area-one #landing-nav-right:active{
+	opacity: 0.8;
+}
+
+/* landing sub area two */
+
+#landing-area #landing-sub-area-two {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#landing-area #landing-sub-area-two #landing-nav-left {
+	position: absolute;
+	left: 2vh;
+	top: 37.5%;
+	width: 0; 
+	height: 0; 
+	border-top: 6vh solid transparent;
+	border-bottom: 6vh solid transparent;	
+	border-right: 6vh solid #FFFFFF;
+	opacity: 0.3;
+	cursor: pointer;
+	z-index: 999999;
+}
+
+#landing-area #landing-sub-area-two #landing-nav-left:hover {
+	opacity: 0.5;
+}
+
+#landing-area #landing-sub-area-two #landing-nav-left:active{
+	opacity: 0.8;
+}
+
+/* powered by watson */
+
+#powered-by-watson {
+	font-size: 1.5vh;
+	/* color: #777777; */
+	color: #FF5003;
+	background-color: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	padding: 0.5vh;
+	z-index: 99999;
+}
+
+#powered-by-watson a {
+	color: #FF5003;
+	text-decoration: none;
+}
+
+#powered-by-watson a:link {
+	color: #FF5003;
+}
+
+#powered-by-watson a:hover {
+	color: #FF7832;
+}
+
+#powered-by-watson a:active {
+	color: #E0E0E0;
+}
+
+/* river stats */
+
+#river-stats {
+	font-size: 1.5vh;
+	color: #EOEOEO;
+	background-color: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	padding: 0.5vh;
+	z-index: 99999;
+}
+
+/* landing sub-area icon */
+
+#landing-sub-area-icon-container {
+	position: fixed;
+	top: 50px;
+	right: 0px;
+	margin-top: 0.5vw;
+	margin-right: 0.5vw;
+	z-index: 8;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-one-icon-active{
+	position: relative;
+	width: 3vw;
+	height: auto;
+	display: inline;
+	opacity: 0.9;
+	cursor: pointer;
+	display: inline;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-one-icon-active:hover{
+	opacity: 1.0;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-one-icon-inactive{
+	position: relative;
+	width: 3vw;
+	height: auto;
+	display: inline;
+	opacity: 0.9;
+	cursor: pointer;
+	display: none;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-one-icon-inactive:hover{
+	opacity: 1.0;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-two-icon-active{
+	position: relative;
+	width: 3vw;
+	height: auto;
+	display: inline;
+	opacity: 0.9;
+	cursor: pointer;
+	display: none;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-two-icon-active:hover{
+	opacity: 1.0;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-two-icon-inactive{
+	position: relative;
+	width: 3vw;
+	height: auto;
+	display: inline;
+	opacity: 0.9;
+	cursor: pointer;
+	display: inline;
+}
+
+#landing-sub-area-icon-container #landing-sub-area-two-icon-inactive:hover{
+	opacity: 1.0;
+}
+
+/* landing sub area info */
+
+#landing-sub-area-info-container{
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	text-align: center;
+	padding-top: 12%;
+	display: none;
+}
+
+#landing-sub-area-info-container #sub-area-description-header{
+	font-weight: bold;
+	font-size: 2vw;
+	line-height: 4vw;
+	color: #C7C7C7;
+	display: block;
+}
+
+#landing-sub-area-info-container .sub-area-description-body-line{
+	font-size: 1vw;
+	line-height: 1.5vw;
+	color: #AEAEAE;
+	display: block;
+}
+

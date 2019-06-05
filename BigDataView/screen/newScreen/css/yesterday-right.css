@@ -1,0 +1,323 @@
+﻿/*@font-face {*/
+	/*font-family: 'FangZhengLangTing';*/
+	/*src: url('../font/FZLTHJW.TTF') format('truetype');*/
+/*}*/
+html{
+	background: none!important;
+}
+body {
+	font-family: "Microsoft Yahei";
+}
+
+body {
+	/*background-image: url(ui/原创稿件排行-传播贡献分布.png);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+	
+}
+/*@font-face {*/
+	/*font-family: 'YouYuan';*/
+	/*src: url('../font/幼圆.TTF') format('truetype');*/
+/*}*/
+h1.top {
+	position: absolute;
+	text-align: center;
+	font-family: "Microsoft Yahei";
+	font-size: 74px;
+	font-weight: bolder;
+	/*background-repeat: no-repeat;*/
+	width: 100%;
+	top: -26px;
+	left: 8px;
+	/*letter-spacing: -1.7px;*/
+	padding-left: 15px;
+	color: #73fdff;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(100, 249, 254, 1)), to(rgba(255, 255, 255, 1)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.top_img{
+	text-align: center;
+	position: absolute;
+	width:100%;
+	top: 107px;
+}
+div.main-left {
+	position: absolute;
+	top: 89px;
+	left: 14px;
+	width: 924px;
+	height: 434px;
+	background-image: url(../img/grad-bg-2.png);
+	background-size: 100% 100%;
+}
+
+div.main-right {
+	position: absolute;
+	top: 135px;
+	right: 17px;
+	width: 94%;
+	height: 982px;
+	/*background-image: url(../img/grad-bg.png);*/
+	/*background-size: 100% 100%;*/
+}
+
+.list-header {
+	margin-top: 16px;
+	height: 50px;
+	/*background-color: #11425F;*/
+}
+
+.list-header .th1,
+.list-header .th2,
+.list-header .th3,
+.list-header .th4 {
+	float: left;
+	text-align: center;
+	height: 100%;
+	line-height: 51px;
+	font-size: 23px;
+	color: #10B3E0;
+}
+
+.list-header .th1 {
+	width: 150px;
+	padding-right: 53px;
+}
+
+.list-header .th2 {
+	width: 464px;
+	padding-right: 91px;
+}
+
+.list-header .th3 {
+	width: 96px;
+}
+
+.list-header .th4 {
+	width: 210px;
+	padding-left: 32px;
+}
+
+.list-item {
+	height: 36px;
+	color: white;
+}
+
+.list-item:nth-child(even) {
+	background-color: #0D5668;
+}
+
+.list-item .td1,
+.list-item .td2,
+.list-item .td3,
+.list-item .td4 {
+	float: left;
+	line-height: 40px;
+	font-size: 20px;
+	height: 100%;
+}
+
+.list-item .td1 {
+	padding-left: 42px;
+	width: 150px;
+}
+
+.list-item .td2 {
+	padding-right: 90px;
+	width: 464px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .td3 {
+	width: 96px;
+	text-align: center;
+}
+
+.list-item .td4 {
+	width: 210px;
+	padding-left: 28px;
+	text-align: center;
+}
+
+.main-right h2 {
+	color: #E0F035;
+	margin: 55px 0px 0px 37px;
+	font-weight: 100;
+	font-size: 60px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.author-information,
+.media-information {
+	position: absolute;
+	left: 80px;
+	top: 104px;
+	color: #27A6C7;
+	font-size: 47px;
+	line-height: 40px;
+}
+.author-information div{
+	margin-top: 50px;
+}
+.media-information div{
+	margin-top: 50px;
+}
+.media-information {
+	left: 1055px;
+	letter-spacing: -1.5px;
+}
+
+.radar-map {
+	position: absolute;
+	width: 513px;
+	height:485px;
+	top: 290px;
+	left: 51px;
+}
+
+.radar-map svg {
+	width: 100%;
+	height: 100%;
+}
+
+svg.relation-map {
+	position: absolute;
+	top: -56px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.media-distribution {
+	font-size: 44px;
+	line-height: 28px;
+	margin-top: 5px;
+}
+
+.media-distribution .point-0 {
+	font-size: 36px;
+	line-height: 11px;
+	display: inline-block;
+	height: 17px;
+	position: relative;
+	top: 6px;
+	width: 18px;
+	left: -7px;
+}
+
+.media-distribution .point-1 {
+	font-size: 28px;
+	line-height: 11px;
+	display: inline-block;
+	height: 17px;
+	position: relative;
+	top: 3px;
+	width: 15px;
+	left: -5px;
+}
+
+.media-distribution .point-2 {}
+
+.media-distribution .text {}
+
+.media-distribution .value {
+    font-size: 35px;
+    line-height: 22px;
+    margin-left: 5px;
+}
+
+.exponent {
+	width: 337px;
+	height: 60px;
+	line-height: 60px;
+	color: #0ECAC9;
+	position: absolute;
+	font-size: 15px;
+}
+
+.exponent.exponent-1 {
+	top: 13px;
+	left: 343px;
+}
+
+.exponent.exponent-2 {
+	top:526px;
+	left: 392px;
+}
+
+.exponent.exponent-3 {
+	top: 255px;
+	left: -107px;
+}
+
+.exponent .text {
+	float: left;
+	height: 100%;
+}
+
+.exponent .value {
+	float: left;
+	height: 100%;
+	background-image: url(../img/icon-ring.png);
+	background-size: 100% 100%;
+	width: 62px;
+	margin-left: 4px;
+	margin-top: -2px;
+	text-align: center;
+}
+
+.exponent .value .numerical {
+	font-size: 19px;
+	line-height: 10px;
+}
+
+.exponent .value .unit {
+	font-size: 13px;
+	line-height: 68px;
+}
+
+.core-list {
+	position: absolute;
+	top: 385px;
+	right: 43px;
+	/*background-image: url(../img/list-bg.png);
+	background-size: 100% 100%;*/
+	width: 250px;
+	height: 485px;
+	color: #248AB0;
+	overflow: hidden;
+}
+
+.core-list .core-list-header {
+	background-color: rgba(5,57,94,0.4);
+	background-size: 100% 100%;
+	height: 70px;
+	margin-top: 0px;
+	font-size: 38px;
+	font-weight: 900;
+	line-height: 70px;
+	text-align: center;
+}
+
+.core-list .core-list-body {
+	background-image: url(../img/grad-bg.png);
+	background-size: 100% 100%;
+	margin-top: 10px;
+	height: 415px;
+	padding: 10px;
+	font-size: 30px;
+	overflow: hidden;
+}
+.core-list-body .item{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+	font-size: 48px;
+}

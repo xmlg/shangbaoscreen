@@ -1,0 +1,29 @@
+{
+    "totoalcount": 110,
+    "data": [
+        {
+            "name": "编辑部",
+            "value": 102
+        },
+        {
+            "name": "文案部",
+            "value": 94
+        },
+        {
+            "name": "采编部",
+            "value": 91
+        },
+        {
+            "name": "收集部",
+            "value": 87
+        },
+        {
+            "name": "宣传部",
+            "value": 83
+        },
+        {
+            "name": "服务部",
+            "value": 80
+        }
+    ]
+}

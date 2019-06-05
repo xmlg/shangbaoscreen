@@ -1,0 +1,1219 @@
+
+<!-- Copyright IBM Corp. 2015
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!-- INDEX WITH LANDING AREA -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--<title>Crystal+ News Explorer</title> -->
+		<title>新闻线索</title>
+		<meta charset="utf-8">
+		<!--
+        <base href="http://news-explorer.mybluemix.net/``">
+        -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+				<!--favicon-->
+		<!--<link rel="icon" type="image/ico" href="/images/favicon/icona.ico"/>-->
+
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="images/foreign/openSans.css" />
+		<link rel='stylesheet' type='text/css' href='images/foreign/Merriweather.css'>
+		<link rel='stylesheet' type='text/css' href='images/foreign/styles-darker.css'>
+		<link rel='stylesheet' type='text/css' href='images/foreign/landingManagerForMultiple.css'>
+		<link rel='stylesheet' type='text/css' href='images/foreign/landingTrendingQueriesForMultiple.css'>
+		<link rel='stylesheet' type='text/css' href='images/foreign/landingPantaRheiForMultiple.css'>
+		<link rel='stylesheet' type='text/css' href="images/foreign/jquery-ui.css">
+		<link rel="stylesheet" href="./lib/layui/css/layui.css">
+		<style>
+			.ico {
+                position:fixed;
+                left: 30px;
+                top: 140px;
+                padding: 3px;
+                background: #294867;
+                border: 0px;
+                z-index: 1000;
+                cursor:pointer;
+            }
+			.layui-layer-title{
+			background-color: #104059 !important;
+			color: #4bfdff !important;
+		}
+		.layui-table{
+			margin: 0!important;
+		}
+		.layuititle{
+			width: 480px;
+			color: #2496fc;
+			line-height: 30px!important;  
+		}
+		.NEWCONTENT{
+			color: #2496fc;
+			font-size: 26px;  
+		}
+		.layuibtn{
+			width: 70px;
+		}
+
+		.layui-layer-content{
+			background-color: #0e141d!important; 
+		}
+		.layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+			background-color: #0e3045!important;
+		}
+		.layui-table tr:hover, .layui-table[lay-even] tr:nth-child(odd) {
+			background-color: #0e141d!important;
+		}
+		.layui-layer-title {
+			border-bottom-width: 0px!important;
+		}
+		
+	</style>
+
+		<!-- <link href='css/styles-lighter.css' rel='stylesheet' type='text/css'> -->
+		<!-- <link href='css/font.css' rel='stylesheet' type='text/css'> -->
+
+	</head>
+	<body>
+			<div class="ico"><a href="/dist/static/BigDataView/index/index.html" target="_blank"><img src="newScreen/images/goPC.png" width="35" height="35" /></a></div>
+		<!-- load indicator nearly full-screen -->
+		<!--
+		<div id="watson-logo-container-big">
+			<img id="watson-logo-gif-big" class="pulse" src="images/loaders/loading-indicator-concise-transparent-b.gif" />
+		</div>
+		-->
+		<div class="toggleLanguage"  style="display:none;cursor:pointer;color:#fff;position:fixed;z-index:10; top:200px;left:20px; ">
+			<img src="images/foreign/trending-landing-icon-inactive.png" />
+		</div>
+		<!--
+		<div class="china_menu menu_body"  style="cursor:pointer;color:#fff;position:fixed;z-index:101; top:120px;left:20px;overflow:hidden;">
+			 <div class="menu_ul_Img" style="overflow:hidden"><img src="images/foreign/chn.png" /></div>
+			<ul class="menu_ul" >
+				<li class="china view"><span>视图展示</span></li>
+				<li class="china list"><span>列表展示</span><i></i></li>
+			</ul>
+		</div>
+		<div class="abroad_menu menu_body"  style="cursor:pointer;color:#fff;position:fixed;z-index:101; top:200px;left:20px; overflow:hidden;">
+			 <div class="menu_ul_Img" style="overflow:hidden"><img src="images/foreign/en.png" /></div>
+			<ul class="menu_ul" >
+				<li class="abroad view"><span>视图展示</span></li>
+				<li class="abroad list"><span>列表展示</span><i></i></li>
+			</ul>
+		</div>
+		<div class="weibo_menu menu_body"  style="cursor:pointer;color:#fff;position:fixed;z-index:101; top:280px;left:20px;overflow:hidden; ">
+			 <div class="menu_ul_Img" style="overflow:hidden"><img src="images/foreign/blog.png" /></div>
+			<ul class="menu_ul" >
+				<li class="weibo view"><span>视图展示</span></li>
+				<li class="weibo list"><span>列表展示</span><i></i></li>
+			</ul>
+		</div>
+	-->
+
+		<div class="showWords"  style="cursor:pointer;color:#fff;position:fixed;z-index:101; top:360px;left:20px;display:none;">
+			<img src="images/foreign/keyimg.png" />
+		</div>
+		<!-- landing -->
+		<div id="landing-area">
+			<!-- landing sub area one -->
+			<div id="landing-sub-area-one">
+
+				<!-- nav right -->
+				<div id="landing-nav-right" class="landing-nav-triangle" onclick="scrollLanding('right')"></div>
+			</div>
+			<!-- landing sub-area two -->
+			<div id="landing-sub-area-two">
+				<div id="ticker">
+
+				</div>
+				<!-- nav left -->
+			</div>
+			<!-- logo -->
+			<div id="landing-sub-area-icon-container" style="display:none;">
+				
+			</div>
+			<!-- landing info -->
+			<div id="landing-sub-area-info-container">
+			</div>
+		</div>
+
+		<!-- tutorial -->
+
+		<div id="tutorial-area">
+			<div style="position: absolute; right: 50px; top: 20px; font-size: 2vh; font-weight: bold; color: #7D7373; cursor: pointer; font-family: 'Open Sans', san-serif;" onclick="viewTutorial(false)">
+				close x
+			</div>
+			<span style="font-size: 4vh; text-align: left; color: #504646; line-height: 6vh; display: block; width: 90%;">Presenting a New Way of Understanding the News</span>
+			<hr style="border: 0; border-bottom: 1px dashed #B8AEAE;">
+			<div style="overflow-y: auto; overflow-x: hidden; height: 80%; padding-top: 2%">
+				<div id="video-container" style="float: right; width: 66%; height: 96%;">
+								</div>
+				<div style="width: 31%; padding: 0 3% 0 0; float: left;">
+				
+					<span style="text-align: left; font-size: 2vh; line-height: 3.0vh;">
+					<i style="color: #504646;">Where do you turn to make sense of today's latest events? Newspapers, radio, Twitter?</i>
+					<br />
+					<br />
+					</span>
+					
+					
+				</div>
+			</div>
+			<hr style="border: 0; border-bottom: 1px dashed #B8AEAE;">
+		</div>
+
+		<div id="find-panel">
+			<input id="find-field" type="textarea" placeholder="find within investigation">
+		</div>
+
+		<!-- header -->
+
+		<header style="display:none;">
+			<!-- <div id="threejs-logo-container"></div> -->
+			<div id="service-logo-container">
+			
+			</div>
+			<div id="search-area">
+				<form id="investigate-form">
+					<!-- <span class="powered-by-watson-text" style="color: #EEE; font-size: 14px; line-height: 40px;">Powered By <b>IBM Watson</b>&trade;</span> -->
+					<span class="recent-news-about-text" style="color: #EEE; font-size: 14px; line-height: 40px; padding-left: 10px; cursor: default;" for="search-field">recent news about</span>
+					<input id="search-field" type="text" value="" placeholder="a subject" tabindex="1">
+					<span style="color: #EEE; font-size: 14px; line-height: 40px; cursor: default;" id="as">as</span>
+					<select id="selected-entity-type" name="selected-entity-type">
+						<option value="unconstrained" selected="selected">any type</option>
+						<option value="person">a person</option>
+						<option value="company">a company</option>
+						<option value="organization">an organization</option>
+						<!-- <option value="location">a location</option> -->
+					</select>
+					<input id="search-button" type="button" value="investigate">
+				</form>
+			</div>
+			<div id="settings-nav">
+				<a onclick='showSettingsArea(true)'>advanced [ + ]</a>
+			</div>
+			
+			
+	
+		</header>
+		<!-- connections area -->
+		<div id='settings-area' style="display:none;">
+            <div>
+                <form id='sub-investigate-form'>
+                	<span style='color: #EEE; font-size: 14px; line-height: 40px; cursor: default;'>related to </span>
+                	<input id='target-field' type='text' value='' placeholder='second subject' tabindex='2'>
+                	<span style='color: #EEE; font-size: 14px; line-height: 40px; margin-right: 3px; cursor: default;' id='as-target'>as</span>
+                	<select id='target-entity-type' name='target-entity-type'>
+                		<option value='unconstrained' selected='selected'>any type</option>
+                		<option value='person'>a person</option>
+                		<option value='company'>a company</option>
+                		<option value='organization'>an organization</option>
+               		</select>
+                	
+                	<input id='show-context' class='network-checkbox' style='margin-left: 4px' type='checkbox' name='show-secondary-connections' value='#' checked>
+                	<span style='color: #AEAEAE; font-size: 14px; line-height: 40px;' id='show-context-label'>show context</span>
+                </form>
+            </div>
+        </div>
+
+
+		<!-- visualizations area -->
+		<div id="visualizations-area" style="display: none">
+			<!-- entity details -->
+			<div id="entity-details-area">
+				<div class="section-header-area">
+					<h2 id="details-header">Details</h2>
+					<span class="section-header-details" id="details-header-details">
+						<span id="details-article-count"></span> articles loaded
+					</span>
+
+				</div>
+				<div id="entity-details">
+					<img id="entity-image"/>
+					<span id="entity-type"></span>
+					<p id="entity-name"></p>
+					<p id="entity-description">
+					</p>
+				</div>
+				<!-- <hr> -->
+				<div id="accordion-container">
+					<div id="details-accordion">
+					  <h3></h3>
+					  <div class="entity-body">
+					  	<span class="topic"></span>
+					  	<span class="timestamp"></span>
+					    <p></p>
+					    <span class="entities-linked">
+					    	<span class="label">companies linked:</span>
+					    	<span class="company-entity"></span>
+					    </span>
+					    <span class="entities-linked">
+					    	<span class="label">organizations linked:</span>
+					    	<span class="organization-entity"></span>
+					    </span>
+					    <span class="entities-linked">
+					    	<span class="label">people linked:</span>
+					    	<span class="person-entity"></span>
+					    </span>
+					    <span class="entities-linked">
+					    	<span class="label">locations linked:</span>
+					    	<span class="location-entity"></span>
+					    </span>
+					    <span class="entities-linked">
+					    	<span class="label">concepts linked:</span>
+					    	<span class="concept"></span>
+					    </span>
+					    <span class="more-info">
+					    	<a href="#">more info...</a>
+					    </span>
+					  </div>
+					  <h3></h3>
+					  <div class="entity-body">
+					    <p></p>
+					  </div>
+					  <h3></h3>
+					  <div class="entity-body">
+					    <p></p>
+					  </div>
+					  <h3></h3>
+					  <div class="entity-body">
+					    <p></p>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<!-- news network area -->
+			<div id="news-network-area">
+				<div class="section-header-area">
+					<h2>News Network</h2>
+
+				</div>
+				<div id="news-network-graph">
+					<!-- new network graph to go here -->
+					<div id="query-stats-container">
+						<b>investigation stats:</b>
+						<br>
+						articles: <span id="article-count" class="article-entity"></span>
+						<br>
+						companies: <span id="company-count" class="company-entity"></span>
+						<br>
+						organizations: <span id="organization-count" class="organization-entity"></span>
+						<br>
+						people: <span id="person-count" class="person-entity"></span>
+					</div>
+					<!-- <div id="entity-chain-container">
+						<b>entity chain:</b> "Apple watch features..." > Apple
+					</div> -->
+					<div id="zoom-buttons-container">
+
+					</div>
+				</div>
+			</div>
+			<!-- locations and concepts column -->
+			<div id="location-and-concepts-column">
+				<div class="section-header-area">
+					<h2>Locations</h2>
+					<span class="section-header-details">
+						<!-- total from query: --><span id="total-locations"></span>
+						found, view in
+						<input type="radio" id="locations-view-map" name="locations_view" value="map" onclick="showLocationList(false);"> map
+						<input type="radio" id="locations-view-list" name="locations_view" value="list" onclick="showLocationList(true);"> list
+					</span>
+					<!-- <img class="expand-icon" src="images/ui/fullscreen.png" /> -->
+				</div>
+				<div id="location-globe">
+					<div id="location-entities">
+						<ul id="locations-list">
+							<li>
+								<span class="location-entity"></span>
+							</li>
+							<li>
+								<span class="location-entity"></span>
+							</li>
+							<li>
+								<span class="location-entity"></span>
+							</li>
+							<li>
+								<span class="location-entity"></span>
+							</li>
+							<li>
+								<span class="location-entity"></span>
+							</li>
+						</ul>
+						<div id="zoom-buttons-container-map">
+
+						</div>
+					</div>
+					<!-- globe location graph to go here-->
+				</div>
+				<div class="section-header-area">
+					<span id="concept" class="cloudTab">Topics</span>
+					<span  id="person" class="cloudTab">People</span>
+					<span id="company" class="cloudTab">Companies</span>
+					<span id="organization" class="cloudTab">Organizations</span>
+					<!-- <span class="section-header-details" id="concept-count">
+						total from query:
+					</span>  -->
+					<!-- <img class="expand-icon" src="images/ui/fullscreen.png" /> -->
+				</div>
+				<div id="concept-cloud">
+					<!-- concept cloud goes here-->
+				</div>
+			</div>
+			<!-- timeline -->
+			<div id="timeline-area">
+				<div class="section-header-area">
+					<h2>Timeline</h2>
+					<span class="section-header-details">
+						<!-- navigate via
+						<select>
+							<option value="company">scrubber</option>
+							<option value="all">range selector</option>
+						</select>
+						by
+						<select>
+							<option value="company">articles published</option>
+							<option value="all">trending topics</option>
+						</select> -->
+						news articles across
+						<span id="timeline-days"></span> days,
+						<span id="timeline-hours"></span> hrs,
+						<span id="timeline-minutes"></span> min,
+						<span id="timeline-seconds"></span> sec up to the current date:
+						<span id="current-time-and-date" style="font-weight: bold;"></span> <!-- |  each cell represents one article,  opacity expresses connectedness to other entities. -->
+						<!-- <a onclick="advanceTimeline()" style="cursor:pointer; font-weight:bold;">ADVANCE</a> -->
+					</span>
+					<!--
+					<span class="powered-by-watson-text" style="color: #3C4646; font-size: 1.5vh; line-height: 4vh; position: absolute; right: 1%;">Powered By <b>IBM Watson</b>&trade;</span>
+					-->
+					<!-- <a href="#">
+						<img class="expand-icon" src="images/ui/fullscreen.png" />
+					</a> -->
+				</div>
+				<div id="timeline">
+					<!-- timeline goes here -->
+				</div>
+			</div>
+		</div>
+
+		<!-- prompt -->
+		<div id="prompt" style="display:none;"></div>
+
+		<div class="news_list_box" style="display:none">
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <ul class="news_list_title">
+                <img class="news_list_title_img" src="images/foreign/news_list_03.png" alt="">
+                <li>标题</li>
+				 <li class="weibo_people">爆料博主</li>
+                <!--<li>敏感度 <img src="images/foreign/news_list_06.png"" alt=""></li>-->
+                <li class="pubtime desc">发布时间 <img src="images/foreign/news_list_08.png" alt=""></li>
+             </ul>
+
+             <ul class="news_list_center">
+
+
+				<!--
+             	<li class="news_list_center_li">
+             	  <span class="news_list_center_num">2</span>
+             		<ul class="news_list_center_ul">
+             			<li>阿圭罗还有很多机会 能达到人类7岁的推理能力</li>
+             			<li>123</li>
+             			<li>2017-02-06&nbsp;17:48:00</li>
+             		</ul>
+             	</li>-->
+
+
+             </ul>
+             <div class="news_list_page">
+                 <a href=""><img src="images/foreign/news_list_14.png" alt=""></a>
+                 <a href="" class="news_list_page_a news_list_page_active">1</a>
+                 <a href="" class="news_list_page_a" >2</a>
+                 <a href=""  class="news_list_page_a">3</a>
+                 <a href=""><img src="images/foreign/news_list_16.png" alt=""></a>
+             </div>
+		</div>
+
+		<!--  CVPlatform -->
+		<script type='text/javascript' src="images/foreign/CVPlatformWithDeps.min.js"></script>
+
+		<!-- underscore -->
+		<script src="images/foreign/underscore.js"></script>
+
+		<script src="images/foreign/jquery-1.11.3.min.js"></script>
+
+
+		<script src="images/foreign/jquery-ui.min.js"></script>
+		<script src="images/foreign/jquery.md5.js"></script>
+		<script src="images/foreign/topojson.js"></script>
+		<script src="images/foreign/datamaps.world.min.js"></script>
+		<script src="images/foreign/franc.min.js"></script>
+
+	<script src="images/foreign/runningnews.js"> </script>
+	<script src="images/foreign/menuUtil.js"></script>
+	<script src="../server.js"></script>
+	 <!-- <script src="dist/all.js"></script> -->
+	 <!--弹窗-->
+	<script src="./lib/layer/layer.js"></script>
+	<script src="./lib/laytpl/laytpl.js"></script>
+	<script src="./lib/layui/layui.js"></script>
+	<script type="text/html" id="newHotTpl">
+		<table class="layui-table" lay-even lay-skin="nob" >
+		
+				<tbody>
+				 {{# for(var i = 0, len = d.length; i < len; i++){ }}
+				  <tr>
+					<td class="layuititle"> {{ d[i].title }}</td>
+					<td class="layuibtn"> 
+						<button class='"layui-btn layui-btn-small layui-btn-warm'>
+								<i index='{{ d[i].guid }}' class="layui-icon" style="color: #fff;cursor:pointer;">&#xe60a;</i>
+						</button>    
+					</td>
+				  </tr>   
+				  {{# } }}
+				</tbody>
+		 </table>
+	
+	</script>
+	<script type="text/html" id="NEWCONTENTTPL">
+		<div class="NEWCONTENTTPL">  
+		  <div class="NEWCONTENT">
+		  {{d}}
+		  </div>
+		 </div>  
+	  </script>
+
+ 		<!-- 3D logo -->
+ 		<!-- <script src="js/threejsLogo.js"></script> -->
+
+		<!-- tracking -->
+		<script type='text/javascript'>
+		  // standard google analytics tracking code
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-65118401-1', 'auto');
+		  ga('send', 'pageview');
+
+	   	</script>
+
+	   	<!-- detect internet explorer -->
+
+	  <script language="javascript">
+
+		   function msieversion()
+		   {
+		      var ua = window.navigator.userAgent
+		      var msie = ua.indexOf ( "MSIE " )
+
+		      if ( msie > 0 )      // If Internet Explorer, return version number
+		         return parseInt (ua.substring (msie+5, ua.indexOf (".", msie )))
+		      else                 // If another browser, return 0
+		         return 0
+
+		   }
+
+		   //show prompt if internet explorer is detected
+		   if(msieversion() != 0) {
+//		   	  console.log("Internet Explorer Detected -- Not Supported");
+		   	  $("#prompt").css("visibility", "visible");
+			  $("#prompt").empty();
+			  $("#prompt").html("<span>Internet Explorer is not currently supported<br/>Please launch in a different browser.</span>");
+			  showWatsonLoadIndicator(false);
+			  queryingInProgress = false;
+		   }
+
+
+   	  </script>
+
+	  <script>
+		var useRestServer = true; //set to false if you want to go directly to alchemy api instead of our server
+		var restServerURL = "http://news-explorer.mybluemix.net";//document.location.origin; //"http://newsexplorer.stage1.mybluemix.net";   //set to the url for the REST server if it is something other than the web server.  (useful if trying to run locally) or to document.location.orgin if running REST services on the same server that serves the web content
+		var lastQueryResults = null;
+
+		var eventBroker, selection, active, network, cloud, timeline, details, locations;
+		$(window).on("load", function() {
+			if (msieversion() == 0) {	// if internet exploer is detected, do not loat any data
+
+			    eventBroker = new CV.Events();
+			    selectionManager = new CV.Selection({events: eventBroker});
+
+			 	network 	= new Network("#news-network-graph", eventBroker, selectionManager);
+				timeline    = new Timeline(eventBroker, selectionManager);
+				details 	= new Details(eventBroker, selectionManager);
+				locations 	= new Locations(eventBroker, selectionManager);
+				cloud   	= new ConceptCloud(eventBroker, selectionManager);
+
+				$('#search-button').click(function(event){
+					useWgl = !event.altKey;
+					var advanced = showingSettingsArea; // $("#settings-area").is(":visible");
+					var subject = $("#search-field").val();
+					var type = $("#selected-entity-type").val();
+					var view = landingAreaVisible && landingAreaNumSet == 2 ? 2 : null;
+					var target = null;
+					var targetType = null;
+
+					if (advanced) {
+						target = $("#target-field").val();
+						targetType = $("#target-entity-type").val();
+
+						if (categoryRecognized(target, targetType)) {
+							pushState(subject, type, target, targetType, view);
+							loadData(7, true);
+						}
+						else {
+							pushState(subject, type, target, targetType, view);
+							loadConnections(30, false);
+						}
+						rewriteTweet();
+					}
+					else {
+						pushState(subject, type, target, targetType, view);
+						loadData(7, true);
+						rewriteTweet();
+					}
+
+
+				});
+
+				$("#search-field").keypress(function(event) {
+		            if (event.keyCode == 13) {
+		                event.preventDefault();
+		                $("#search-button").click();
+
+		            }
+		        });
+				var url_china="http://111.203.35.59/wcm/bigdata.do?modelid=getHotIncrement&serviceid=hotpointcluster&typeid=widget&user_id=admin&department=admin&page_no=-1";
+				var url_abroad="http://111.203.35.59/wcm/bigdata.do?modelid=overseasMedia1&serviceid=overseas&typeid=widget&user_id=admin&department=admin&page_no=-1";
+				var url_weibo="http://111.203.35.59/wcm/bigdata.do?modelid=getHotIncrement&serviceid=hotpointcluster&typeid=widget&user_id=admin&department=admin&type=1&page_no=-1";
+
+//				var url1="images/foreign/news_c20_n100_d7.json";
+//				var url2="images/foreign/news_c20_n100_d7_2.json";
+//"images/foreign/test.json"
+				load(url_china);
+				$(".toggleLanguage").addClass("china");
+				//切换语言
+				$(".toggleLanguage").click(function(){
+					var url="";
+					if($(this).hasClass("china")){
+						$(this).removeClass("china");
+						$(this).addClass("weibo");
+						url=url_weibo;
+					}else if($(this).hasClass("weibo")){
+						$(this).removeClass("weibo");
+						$(this).addClass("abroad");
+						url=url_abroad;
+					}else if($(this).hasClass("abroad")){
+						$(this).removeClass("abroad");
+						$(this).addClass("china");
+						url=url_china;
+					}
+
+					load(url);
+
+				});
+				//每隔  10分钟切换一次    10*60*1000
+				var int=setInterval(function(){
+					$(".toggleLanguage").click();
+				},600000);
+				//每隔  30分钟刷新页面
+				setInterval(function(){
+					location.reload();
+				},1800000);
+				$(".china_menu").click(function(){
+					$(".toggleLanguage").removeClass("abroad").removeClass("china").removeClass("weibo");
+					$(".toggleLanguage").addClass("china");
+					$(".headline_word").attr("src","headline_wordv2.html?type=china");
+					//$(".showWords").show();
+					load(url_china);
+				});
+				$(".abroad_menu").click(function(){
+					$(".toggleLanguage").removeClass("abroad").removeClass("china").removeClass("weibo");
+					$(".toggleLanguage").addClass("abroad");
+					$(".headline_word").attr("src","headline_wordv2.html?type=abroad");
+					//$(".showWords").show();
+					load(url_abroad);
+				});
+				$(".weibo_menu").click(function(){
+					$(".toggleLanguage").removeClass("abroad").removeClass("china").removeClass("weibo");
+					$(".toggleLanguage").addClass("weibo");
+					//$(".showWords").hide();
+					$("#words").slideUp();
+					load(url_weibo);
+				});
+
+				// orient globe element after page has loaded
+				// orientGlobe();
+				$(".showWords").click(function(){
+					if($(".toggleLanguage").hasClass("weibo")) return;
+					$("#words").slideToggle();
+					if($(".toggleLanguage").hasClass("china")){
+						$(".headline_word").attr("src","headline_wordv2.html?type=china");
+//						$(".headline_word").contents().find("#toggle").click();
+					}else if($(".toggleLanguage").hasClass("abroad")){
+						$(".headline_word").attr("src","headline_wordv2.html?type=abroad");
+//						$(".headline_word").contents().find("#toggle").click();
+					}
+
+				});
+				$(".exit").click(function(){
+					$("#words").slideUp();
+				});
+				$(window).on("resize", function() {
+						network.resize();
+						timeline.resize();
+						locations.resize();
+						cloud.resize(); // cloud must follow locations because it computes it size based on locations' size
+						// add timeline resize function here
+				});
+
+					window.onpopstate = function(e){
+						load();
+					};
+			}
+
+		});
+
+function load(url) {
+//	console.log("load in "+ url);
+	var params = getParameters();
+
+	//viewTutorial(params.length == 0);
+
+	var showLandingView = false;
+	var landingView = params["view"];
+	if (landingView != null && landingView <= 2) {
+		showLandingView = true;
+		landingAreaNumSet = landingView;
+
+		if (landingView == 2) {
+			showWatsonLoadIndicator(false);
+			pr_launchPantaRhei();
+		}
+	}
+
+	if (params.length == 0) {
+		showLandingView = true;
+		landingAreaNumSet = 1;
+	}
+
+	viewLanding(showLandingView);
+
+	var target = params["target"];
+
+	var connection = target != null && target !== "";
+	var categorized = params["category"] != null && params["category"] !== "";
+
+	if (!showLandingView) {
+		showSettingsArea(connection || categorized);
+	}
+
+	loadParameters(false); // load parameters after show Settings area because it destroys the field data
+
+	if (connection) {
+		loadConnections(30, false);
+	}
+	else {
+		loadData(url,7, true);
+	}
+}
+
+	var isCategoryQuery = false;
+
+function loadParameters(updateURL) {
+
+	if (pushState == null) {
+		pushState = true;
+	}
+
+	isCategoryQuery = false;
+	var params = getParameters();
+	var query = params["query"];
+	var type = params["type"];
+	var target = params["target"];
+	var targetType = params["targetType"];
+	var categoryConstraint = params["category"];
+	var queryEnabled = false;
+
+	if (query == null || query == "") {
+		query = "Current%20Events";
+		type = "unconstrained";
+	}
+
+	var lcQuery = query.toLowerCase();
+	if((lcQuery == "current%20events")||
+           (lcQuery == "art%20and%20entertainment")||
+           (lcQuery == "business%20and%20industrial")||
+           (lcQuery == "education")||
+           (lcQuery == "finance")||
+           (lcQuery == "health%20and%20fitness")||
+           (lcQuery == "law%2c%20government%20and%20politics")||
+           (lcQuery == "religion%20and%20spirituality")||
+           (lcQuery == "science")||
+           (lcQuery == "sports")||
+           (lcQuery == "technology%20and%20computing")){
+		type = "unconstrained";
+		isCategoryQuery = true;
+       }
+	else if (type == null || type == "") {
+		type = "";
+	}
+
+	if (target == null || target == "") {
+		target = "";
+		targetType = "";
+	}
+
+	if (targetType == null || targetType == "") {
+		targetType = "";
+	}
+
+	if (categoryConstraint == null || categoryConstraint == "") {
+		categoryConstraint = "";
+	}
+
+	if (query != null && query != "") { // <-- add these to prevent default query
+		if (updateURL) {
+			pushState(query, type, target, targetType);
+		}
+	}
+
+	showSettingsArea(target != "" || categoryConstraint != "");
+
+	$("#search-field").val(decodeURIComponent(query));
+	$("#selected-entity-type").val(decodeURIComponent(type));
+
+	$("#target-field").val(decodeURIComponent(target));
+	$("#target-entity-type").val(decodeURIComponent(targetType));
+
+	if (target == "") {
+		$("#target-field").val(decodeURIComponent(categoryConstraint));
+	}
+
+	displayCategory(isCategoryQuery);
+	displayTargetCategory(categoryConstraint != "");
+
+}
+
+var legalParameterTypes = ["query", "type", "target", "targetType", "category", "view"];
+
+function getParameters() {
+	var vars = [], hash;
+    var q = document.URL.split('?')[1];
+    if(q != undefined && q.length > 0){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+            hash = q[i].split('=');
+            if (_.contains(legalParameterTypes, hash[0])) {
+            	 vars.push(hash[1]);
+           		 vars[hash[0]] = hash[1];
+           	}
+		}
+	}
+
+	return vars
+}
+
+	function loadData(url,duration, titleOnly) {
+//		console.log("loadDate in url:"+url)
+		var subject = encodeURIComponent($("#search-field").val());
+		var type = $("#selected-entity-type").val();
+	//	var duration = "";//$("#past-days").val();
+
+		var categoryConstraint = encodeURIComponent($("#target-field").val());
+
+		if (categoryConstraint.length === 0) {
+			categoryConstraint = null;
+		}
+
+		//!!!viewLanding(false);
+		$("#search-field").blur();
+
+		//hide find field after any query
+		viewFindMenu(false);
+
+		loadAlchemyData(url,subject, type, categoryConstraint, duration, titleOnly, 100);
+
+	}
+
+	function loadConnections(duration, titleOnly) {
+		var subject = encodeURIComponent($("#search-field").val());
+		var type = $("#selected-entity-type").val();
+		var target = encodeURIComponent($("#target-field").val());
+		var targetType = $("#target-entity-type").val();
+		selectionManager.clear();
+
+		//	var duration = "";//$("#past-days").val();
+
+		//hide find field after any query
+		viewFindMenu(false);
+
+		loadAlchemyConnections(subject, type, target, targetType, duration, titleOnly, 100);
+	}
+
+
+	function displayData(subject, type, target, targetType, categoryConstraint, data) {
+
+		registerParameters(subject, type, target, targetType, categoryConstraint);
+
+		distributeData(data);
+	}
+
+	// Given a set of parameters, set the parameters properly in the settings area and in the url
+
+	function registerParameters(subject, type, target, targetType, categoryConstraint, data) {
+
+		showSettingsArea(false);
+
+		$("#search-field").val(decodeURIComponent(subject));
+		$("#selected-entity-type").val(decodeURIComponent(type));
+
+		displayCategory(categoryRecognized(subject, type));
+
+		if (categoryConstraint != null) {
+			showSettingsArea(true);
+			displayTargetCategory(true);
+			$("#target-field").val(decodeURIComponent(categoryConstraint));
+
+			//set into category mode for target
+		}
+		else if (target != null) {
+			showSettingsArea(true);
+			displayTargetCategory(false);
+
+			$("#target-field").val(decodeURIComponent(target));
+
+			if (targetType != null) {
+				$("#target-entity-type").val(decodeURIComponent(targetType));
+			}
+		}
+
+		selectionManager.clear();
+		viewLanding(false);
+
+		setSubjectEnityTypeDropdownColor(type);
+
+		if (target == null && categoryConstraint != null) {
+			target = decodeURIComponent(categoryConstraint);
+		}
+
+		pushState(subject, type, target, targetType);
+	}
+
+	function newsQuery(subject, type, duration, titleOnly) {
+
+		showSettingsArea(false);
+
+		displayCategory(categoryRecognized(subject, type));
+
+		viewLanding(false);
+
+		setSubjectEnityTypeDropdownColor(type);
+
+		pushState(subject, type);
+
+		executeQuery(subject, type, duration, titleOnly);
+
+		rewriteTweet();
+	}
+
+	function newsConnectionQuery(subjectName, subjectType, targetName, targetType) {
+
+		showSettingsArea(true);
+		displayCategory(false);
+		viewLanding(false);
+
+		setSubjectEnityTypeDropdownColor(subjectType);
+		setTargetEnityTypeDropdownColor(targetType);
+
+		pushState(subjectName, subjectType, targetName, targetType);
+
+		$("#search-field").val(decodeURIComponent(subjectName));
+		$("#selected-entity-type").val(subjectType);
+		$("#target-field").val(decodeURIComponent(targetName));
+		$("#target-entity-type").val(targetType);
+
+		loadConnections(30, false);
+
+		rewriteTweet();
+	}
+
+	function executeQuery(subject, type, duration, titleOnly) {
+			if (duration == undefined) {
+				duration = 7;
+			}
+
+			if (titleOnly == undefined) {
+				titleOnly = true;
+			}
+
+			$("#search-field").val(decodeURIComponent(subject));
+			$("#selected-entity-type").val(type);
+
+			loadData(duration, titleOnly);
+	}
+
+	
+
+	// Set up the URL with the given parameters
+	function pushState(subject, type, target, targetType, view) {
+		var url = document.location.origin + "/?query=" + encodeURIComponent(subject);
+
+		if (type != null && type != "") {
+			url += "&type=" + type;
+		}
+
+		if(target != null && target != "") {
+
+			if (categoryRecognized(target, targetType != null && targetType.length > 0 ? targetType : "unconstrained")) {
+				url += "&category=" + encodeURIComponent(target);
+			}
+			else {
+				url += "&target=" + encodeURIComponent(target);
+
+				if (targetType != null && targetType != "") {
+					url += "&targetType=" + targetType;
+				}
+			}
+		}
+
+		if (view != null) {
+			url += "&view=" + view;
+		}
+
+		window.history.pushState({}, "", url);
+	}
+
+	function loadAlchemyData(url1,argument, type, categoryConstraint, days, titleOnly, num) {
+	// network.clear();
+//		console.log("loadAlchemyData in");
+	   	showWatsonLoadIndicator(true);
+	    queryingInProgress = true;
+		$("#prompt").css("visibility", "hidden");
+		$("#prompt").empty();
+
+		argument = argument.trim();
+		if (argument.toLowerCase() === "all") {
+			argument = "";
+		}
+
+		if (type === "unconstrained") {
+			type = null;
+		}
+
+		if (days === "") {
+			days = 7;
+		}
+
+		//re-adjust details div heights for new searches
+		//console.log("loadAlchemyData:url= "+url1);
+		// url1="images/foreign/news_c20_n100_d7_2.json";
+
+
+
+		getAlchemyNewsData(url1,argument, type,  days, titleOnly, num, null, function (data, status) {
+//			console.log("after getAlchemyNewsData  html..")
+			var articleCount = 0;
+
+			_.each(data.nodes, function(node) {if (node.type === "article") articleCount++;});
+
+//			console.log(articleCount + " articles returned");
+			if (status != "success" || articleCount < num) {
+				if (status === "success") {
+					/*if (days <= 7){ // try increasing to a longer duration
+						executeQuery(argument, type, 30, titleOnly);
+						return;
+					}
+					else if (titleOnly) { //  go for a body search instead of a title search
+						executeQuery(argument, type, 30, false);
+						return;
+					}
+					if (type != null) { // Try  again without constraints on the argument type
+						executeQuery(argument, "unconstrained", days, false);
+						return;
+					}*/
+				}
+
+				if (data.nodes.length === 0) {
+					if (status === "success") {
+						status = "no results found";
+					}
+					$("#prompt").css("visibility", "visible");
+					$("#prompt").empty();
+					if (argument != null && argument.length > 0) {
+						$("#prompt").html("<span>Query '" + decodeURIComponent(argument) + "' returned no results.<br>Please try a different query for news about a <br>company, person, or organization.<br>"+ status + "</span>");
+					}
+					else {
+						$("#prompt").html("<span>Your query did not include a subject.<br>Please try a different query for news about a <br>company, person, or organization.<br>"+ status + "</span>");
+					}
+
+					if(landingAreaVisible && landingAreaNumSet == 2) {
+						$("#prompt").css({"left": $("#landing-area").width() * 0.5});
+					}
+					else {
+						$("#prompt").css({"left": 0});
+					}
+
+					showWatsonLoadIndicator(false);
+
+				}
+				else { // We have some results to show
+					$("#prompt").css("visibility", "hidden");
+					$("#prompt").empty();
+				}
+			}
+			else {
+				$("#prompt").css("visibility", "hidden");
+				$("#prompt").empty();
+			}
+
+			var entity = findNode(decodeURIComponent(argument), data.nodes);
+			var categoryQuery = categoryRecognized(argument, type);
+			if (!categoryQuery && entity != null) {
+				entity.persistentLabel = true;
+			}
+
+			distributeData(data);
+
+			if (entity != null && entity.type !== "concept" && !categoryQuery) {
+				network.enableRecenter();
+				network.autoSelected(entity.id.toString());
+				selectionManager.set(entity.id.toString());
+			}
+			else {
+				selectionManager.clear();
+			}
+		}, false, categoryConstraint);
+
+	}
+
+		/**
+		 *
+		 * @param data
+		 * @param status
+		 */
+
+
+	function loadAlchemyConnections(entity1, type1,entity2, type2, days, titleOnly, num) {
+		network.clear();
+	    showWatsonLoadIndicator(true);
+	    queryingInProgress = true;
+	    $("#prompt").css("visibility", "hidden");
+		$("#prompt").empty();
+
+		if (type1 === "unconstrained") {
+			type1 = null;
+		}
+
+		if (type2 === "unconstrained") {
+			type2 = null;
+		}
+
+		getAlchemyConnections(entity1, type1,  entity2, type2, days, titleOnly, num, function(data, status) {
+
+				if (status === "success") {
+
+					if (data.nodes.length === 0) {
+						if (status === "success") {
+							status = "no results found";
+					    }
+						$("#prompt").css("visibility", "visible");
+						$("#prompt").empty();
+						if (entity1 != null && entity1.length > 0 && entity2 != null && entity2.length > 0) {
+							$("#prompt").html("<span>No connection found<br>"+ status + "</span>");
+						}
+						else {
+							$("#prompt").html("<span>Your query did not include two subjects.<br>Please try specifying two subjects to find a connection in the news.<br>"+ status + "</span>");
+						}
+					}
+					else { // We have some results to show
+						$("#prompt").css("visibility", "hidden");
+						$("#prompt").empty();
+						distributeData(data);
+						network.enableRecenter();
+					}
+
+				}
+				else {
+					$("#prompt").css("visibility", "visible");
+					$("#prompt").html("<span>" + status + "</span>");
+
+					if (data.nodes.length > 0) {
+						distributeData(data);
+						network.enableRecenter();
+					}
+				}
+
+	//		showWatsonLoadIndicator(false);
+			});
+		}
+
+		function distributeData(data) {
+		    lastQueryResults = data;
+				$("#entity-details").css("height", "0");
+				$("#accordion-container").css("height", "100%");
+				$("#details-accordion").css("height", "100%'");
+				$("#visualizations-area").css("visibility", "visible");
+
+				selectionManager.clear();
+//				network.force.stop();
+
+				network.onRenderComplete(function() {
+							showWatsonLoadIndicator(false);
+			 				queryingInProgress = false;
+			 				var selectedId = null;
+							var selection = this.selectionManager.get();
+
+							if (selection.length !== 0) {
+								var selectedId = selection[0];
+								selectionManager.clear();
+								selectionManager.set(selectedId);
+							}
+					});
+
+				 network.data(data);
+			  	 timeline.data(data);
+			  	 details.data(data);
+			  	 locations.data(data);
+				 cloud.data(data); // cloud must follow locations because it computes its size based on location's size
+
+
+			 	pr_data(data);
+
+			 	if (landingAreaVisible && landingAreaNumSet == 2) {
+			 		//  this is being done to reset the scroll position after a popState
+					$("html, body").scrollLeft($( "#landing-area" ).width() * 0.5)
+					pr_startPantaRhei();
+			 	}
+
+			 	showWatsonLoadIndicator(false);
+		}
+
+	  </script>
+
+	<div id='words' >
+<div class="exit"></div>
+<iframe id="headline_word" class="headline_word" name="headline_word" src="" frameborder="0" scrolling="no" width="480px" height="450px">
+
+
+</iframe>
+
+	</div>
+</body>
+</html>

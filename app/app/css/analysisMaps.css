@@ -1,0 +1,227 @@
+/*map开始*/
+
+.page1 .hot-news .left .chinaMaps {
+    width: 100%;
+    height: 70%;
+    background-image: url(../images/leftbg.png);
+    background-repeat: no-repeat;
+}
+
+.page1 .hot-news .left .chinaMaps {
+    width: 100%;
+    height: 70%;
+    background-image: url(../images/leftbg.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.page1 .hot-news .left .frontPage {
+    width: 100%;
+    height: 30%;
+    background-image: url(../images/leftbottom.png);
+    background-size: 96% 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 24px 36px;
+}
+
+.page1 .hot-news .center {
+    position: relative;
+    background-image: url(../images/contentbg.png);
+    background-repeat: no-repeat;
+    background-position: 64% 80%;
+}
+
+.page1 .hot-news .left .chinaMaps .title {
+    float: left;
+    margin-top: 42px;
+    font-size: 26px;
+    color: #B7FFFE;
+    text-align: center;
+    width: 600px;
+}
+
+.page1 .hot-news .left .chinaMaps .MapChart {
+    float: left;
+    width: 600px;
+    height: 408px;
+    margin-top: 10px;
+    padding: 0 16px;
+    background-image: url(../images/chinaMapPIc.png)!important;
+    background-repeat: no-repeat!important;
+    background-position: 49% 53%!important;
+    background-size: 79% 89%!important;
+}
+
+.page1 .hot-news .left .chinaMaps .hotNewList {
+    float: left;
+    width: 600px;
+    height: 210px;
+    padding: 0 34px;
+}
+
+.page1 .hot-news .left .chinaMaps .hotNewList .listTitle{
+    width: 100%;
+    height: 40px;
+}
+.page1 .hot-news .left .chinaMaps .hotNewList .areaName{
+    float: left;
+    color: #47A1E0;
+    font-size: 18px;
+    line-height: 40px;
+}
+.page1 .hot-news .left .chinaMaps .hotNewList .hotName{
+    float: right;
+    color: #47A1E0;
+    font-size: 18px;
+    line-height: 40px;
+}
+.page1 .hot-news .left .chinaMaps .hotNewList li{
+    font-size: 18px;
+    color: #47A1E0;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+/*.page1 .hot-news .left .chinaMaps .hotNewList li:hover{
+    color: #F09368!important;
+}*/
+
+.page1 .hot-news .left .chinaMaps .hotNewList .newcontent{
+    clear: both;
+    float: left;
+    width: 460px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.page1 .hot-news .left .chinaMaps .hotNewList .newHotNum{
+    float: right;
+    display: block;
+}
+
+.page1 .hot-news .center .title {
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    background-image: url(../images/contentTitle.png);
+    background-repeat: no-repeat;
+    background-position: 11% 32%;
+    top: 100px;
+    left: 100px;
+    color: #00CCFD;
+    font-size: 26px;
+    padding: 32px 0 0 195px;
+}
+
+.page1 .hot-news .center .MapContent {
+    width: 1000px;
+    height: 70%;
+    padding: 100px 120px 0 120px;
+}
+
+.page1 .hot-news .center .MapContent .mapChongQing {
+    width: 100%;
+    height: 100%;
+    /*background-image: url(../images/chongQingPic.png)!important;*/
+    background-repeat: no-repeat!important;
+    background-position: 50% 37%!important;
+    background-size: 79% 103%!important;
+}
+.page1 .hot-news .center .promptBox{
+    display: none;
+    width: 400px;
+    height: 174px;
+    position: absolute;
+    /*background-color: red;*/
+    z-index: 100;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+.page1 .hot-news .center .promptBox .tips {
+    display: block;
+    width: 400px;
+    height: 60px;
+    font-size: 16px;
+    background-image: url(../images/tips.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 60px;
+}
+.page1 .hot-news .center .promptBox .wideAngle{
+    width: 300px;
+    height: 116px;
+    background-image: url(../images/anguleTop.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    /*background-size: 100% 100%;*/
+    margin-left: 50px;
+}
+.page1 .hot-news .center .chongQingNewList{
+    height: 310px;
+    padding: 0 40px;
+}
+.page1 .hot-news .center .chongQingNewList ul{
+    width: 100%;
+    height: 100%;
+}
+.page1 .hot-news .center .chongQingNewList ul li{
+    width: 430px;
+    height: 50px;
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.page1 .hot-news .center .chongQingNewList ul li .titleDiv{
+    width: 320px;
+    height: 50px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.page1 .hot-news .center .chongQingNewList ul li .newList{
+    width: 380px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 18px;
+    font-size: 16px;
+    background-image: url(../images/libg.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: #47A1E0;
+    float: left;
+}
+/*.page1 .hot-news .center .chongQingNewList ul li:hover .newList{
+    color: #D59379;
+}*/
+.page1 .hot-news .center .chongQingNewList ul li .circles-text{
+    color: #47A1E0;
+}
+/*.page1 .hot-news .center .chongQingNewList ul li:hover .circles-text{
+    color: #D59379;
+}*/
+.page1 .hot-news .center .chongQingNewList ul li .circles-valueStroke{
+    stroke-dasharray: 2;
+}
+.page1 .hot-news .center .chongQingNewList ul li .circle{
+    width: 44px;
+    height: 44;
+   /* border-radius: 50%;
+    border: 2px solid #19354A;*/
+    float: left;
+    margin-left: -2px;
+    margin-top: 3px;
+}
+
+
+/*map结束*/
+
+

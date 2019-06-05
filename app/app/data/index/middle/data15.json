@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "title": "宁夏大学吴教授采访",
+            "iwo": true,
+            "share": false,
+            "fetch": true,
+            "yifa": true
+        },
+        {
+            "title": "交警执法调查",
+            "iwo": true,
+            "share": true,
+            "fetch": true,
+            "yifa": true
+        }
+    ]
+}

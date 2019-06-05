@@ -1,0 +1,19 @@
+{
+    "SENTIMENTS": [
+        {
+        "AREA": "亚洲",
+        "FEELNUM": 100,
+        "TITLE": "深圳通二维码上线 接入全国交通一卡通系统",
+        "SOURCE": "中国经济网",
+        "TIME": "07:49:00"
+    }, {
+        "AREA": "欧洲",
+        "FEELNUM": 90,
+        "TITLE": "每套房都有“身份证”！深圳首创《社会管理要素统一地址规范》",
+        "SOURCE": "南方网",
+        "TIME": "09:03:00"
+    }],
+    "POSITIVENUM": 20,
+    "NEUTRALNUM": 30,
+    "NEGATIVENUM": 40
+}

@@ -1,0 +1,20 @@
+{
+    "totoalcount": 110,
+    "data": [
+    {
+        "name": "新闻稿",
+        "value": 100
+    },
+    {
+        "name": "图片稿",
+        "value": 99
+    },
+    {
+        "name": "图片素材",
+        "value": 88
+    },
+    {
+        "name": "视频素材",
+        "value": 77
+    }]
+}

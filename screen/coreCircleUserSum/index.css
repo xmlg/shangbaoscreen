@@ -1,0 +1,174 @@
+ * {
+     box-sizing: border-box;
+ }
+ 
+ html {
+     width: 100%;
+     height: 100%;
+     background-color: #ffffff;
+ }
+ 
+ body {
+     margin: 0 auto;
+     background-color: #0d141d;
+     font-family: simhei;
+     width: 1920px;
+     overflow: hidden;
+     height: 1080px;
+ }
+ 
+ .coreCircleUserSum {
+     height: 100%;
+     width: 100%;
+     background-image: url(images/border.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     font-size: 72px;
+     color: #fff800;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_top {
+     height: 350px;
+     padding-top: 75px;
+     text-align: center;
+     /*width: 0px;*/
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_top .corecircle_title img.title_left {
+     position: absolute;
+     left: 130px;
+     top: 90px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_top .corecircle_title img.title_right {
+     position: absolute;
+     right: 130px;
+     top: 90px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_top .corecircle_count {
+     margin-top: 80px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_bottom {
+     height: 680px;
+     padding-top: 40px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_bottom .coreCircleUserSum_left {
+     height: 100%;
+     float: left;
+     width: 1305px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_bottom .coreCircleUserSum_right {
+     height: 100%;
+     float: left;
+     width: 500px;
+     background-image: url(images/curtime_back.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     text-align: center;
+     margin-right: 10px;
+     margin-left: 50px;
+     /*width: 0px;*/
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .realtime_traffic {
+     height: 330px;
+     background-image: url(images/interview_back.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     text-align: center;
+     /*width: 0px;*/
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .realtime_title,
+ .coreCircleUserSum .coreCircleUserSum_left .website_title,
+ .coreCircleUserSum .coreCircleUserSum_left .client_title,
+ .coreCircleUserSum .coreCircleUserSum_right .currtime_title {
+     padding-top: 50px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .realtime_count,
+ .coreCircleUserSum .coreCircleUserSum_left .website_count,
+ .coreCircleUserSum .coreCircleUserSum_left .client_count {
+     padding-top: 50px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_right .currtime_clock {
+     padding-top: 40px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_right .currtime_date {
+     padding-top: 100px;
+     font-size: 60px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_right .currtime_time {
+     font-size: 60px;
+     padding-top: 50px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .traffic_type {
+     margin-top: 10px;
+     height: 300px;
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .traffic_type .website_traffic {
+     height: 100%;
+     float: left;
+     width: 640px;
+     margin-right: 10px;
+     background-image: url(images/client_back.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     text-align: center;
+     /*width: 0px;*/
+ }
+ 
+ .coreCircleUserSum .coreCircleUserSum_left .traffic_type .client_traffic {
+     height: 100%;
+     float: left;
+     width: 655px;
+     background-image: url(images/website_back.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     text-align: center;
+     /*width: 0px;*/
+ }
+ .coreCircleUserSum .coreCircleUserSum_modal {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     background-color: rgba(0,0,0,0.7);
+ }
+
+ .coreCircleUserSum .coreCircleUserSum_modal .coreCircleUserSum_popup {
+     width: 1670px;
+     height: 650px;
+     background-image: url(images/error_popup.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     position: absolute;
+     left: 5%;
+     bottom: 20%;
+ }
+
+ .coreCircleUserSum .coreCircleUserSum_popup .error_hint {
+     color: #4cd6fd;
+     font-size: 72px;
+     position: absolute;
+     top: 270px;
+     left: 290px;
+ }
+
+ .coreCircleUserSum .coreCircleUserSum_right .currtime_title p{
+     margin-top: 50px;
+     margin-bottom: 120px;
+ }
+ .coreCircleUserSum .coreCircleUserSum_top #currtime_time{
+     font-size: 190px;
+ }

@@ -1,0 +1,53 @@
+<g id="accessStatis" opacity="0">
+    <image x="20" xlink:href="svg/bigborder_03.png" />
+    <image x="45" y="40" xlink:href="svg/bg1_03.png" />
+    <image x="35" y="32" xlink:href="svg/theborder.png" />
+    <text id="yesterdayTrafficTotal" x="155" y="65" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="21">
+        
+    </text>
+    <text x="110" y="85" fill="#05a0cd" font-family="SimHei" font-size="18">
+        昨日访问量
+    </text>
+    <text x="250" y="10" fill="#7dcbe1" font-family="SimHei" font-size="18">
+        昨日访问占比
+    </text>
+    <image x="20" y="150" xlink:href="svg/bigborder_03.png" />
+    <image x="35" y="190" xlink:href="svg/bg2.png" />
+    <image x="225" y="190" xlink:href="svg/bg2.png" />
+    <image x="415" y="190" xlink:href="svg/bg2.png" />
+    <text transform="translate(259, 158)" fill="#7dcbe1" font-family="SimHei" font-size="18">
+        集团用户数
+    </text>
+    <text id="totalUser" x="300" y="181" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="21">
+    </text>
+    <text x="50" y="220" fill="#13b5e4" font-family="SimHei" font-size="15">
+        客户端：
+    </text>
+    <text id="clientUser" x="145" y="220" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+    <text x="50" y="245" fill="#13b5e4" font-family="SimHei" font-size="15">
+        新增：
+    </text>
+    <text id="clientUserAdd" x="145" y="245" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+    <text x="240" y="220" fill="#13b5e4" font-family="SimHei" font-size="15">
+        微信：
+    </text>
+    <text id="wechatUser" x="335" y="220" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+    <text x="240" y="245" fill="#13b5e4" font-family="SimHei" font-size="15">
+        新增：
+    </text>
+    <text id="wechatUserAdd" x="335" y="245" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+    <text x="430" y="220" fill="#13b5e4" font-family="SimHei" font-size="15">
+        微博：
+    </text>
+    <text id="weiboUser" x="525" y="220" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+    <text x="430" y="245" fill="#13b5e4" font-family="SimHei" font-size="15">
+        新增：
+    </text>
+    <text id="weiboUserAdd" x="525" y="245" fill="white" style="text-anchor: middle" font-family="SimHei" font-size="15">
+    </text>
+</g>

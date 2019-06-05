@@ -1,0 +1,26 @@
+﻿html,body{
+			width: 1920px;
+			height: 1080px;
+			margin: 0;
+			padding: 0;
+		}
+		#top{
+			color:white;
+			font-size: 45px;
+			font: "微软雅黑";
+			line-height: 80px;
+			width: 100%;
+			height: 80px;
+			text-align: center;
+			background-image: url(../img/zjzx_app.jpg);
+			background-size: 100% 100%;
+		}
+		#content{
+			width: 100%;
+			height: 1000px;
+		}
+		#frame{
+			width: 100%;
+			height: 100%;
+			border: 1;
+		}

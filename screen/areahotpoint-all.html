@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>全国热点新闻</title>
+		<link rel="stylesheet" href="lib/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/areahotpoint-all.css" />
+	</head>
+
+	<body>
+		<div class="header">
+			全国热点新闻
+			<span id="timer" style="float: right;padding-right: 15px;font-size: 52px;letter-spacing: 5px;"></span>
+		</div>
+		<div class="left">
+			<img src="img/south1.png" class="south-1">
+			<img src="img/south2.png" class="south-2">
+			<svg id="svg0">
+				<defs>
+					<filter id="glow">
+						<feColorMatrix type="matrix"
+							values="1 0 0 0 0
+              						0 1 0 0 0
+              						0 0 1 0 0
+              						0 0 0 1 0 ">
+              			</feColorMatrix>
+    					<feGaussianBlur stdDeviation="5" result="coloredBlur">
+    					</feGaussianBlur>
+    					<feMerge>
+    						<feMergeNode in="coloredBlur"></feMergeNode>
+    						<feMergeNode in="sourceGraphic"></feMergeNode>
+    					</feMerge>
+					</filter>
+				</defs>
+			</svg>
+		</div>
+		<div class="right">
+			<div class="up">
+				<div class="list-header-1">
+					<div class="col1" style="float: left;">新闻</div>
+					<div class="col2" style="margin-left: 473px;">热度</div>
+				</div>
+
+				<img src="img/underline.png" class="underline1">
+				<img src="img/underline.png" class="underline2">
+
+				<ol id="list1" class="list1">
+				</ol>
+			</div>
+		</div>
+		<script src="lib/jquery.js"></script>
+		<script src="js/resize.js"></script>
+		<script src="lib/d3.min.js"></script>
+
+		<script src="js/config.js"></script>
+		<script src="js/TimedTask.js"></script>
+
+		<script src="js/areahotpoint/d3-dynamic-symbol.js"></script>
+		<script src="js/areahotpoint/bessel.js"></script>
+		<script src="js/areahotpoint/areahotpoint-all.js"></script>
+	</body>
+
+</html>

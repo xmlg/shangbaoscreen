@@ -1,0 +1,97 @@
+{
+  "PlanTaskLogs":[
+    {
+      "TASKLOGID":"222",
+      "CRUSER":"admin",
+      "OPERUSER":"系统管理员",
+      "OPERSTATUS":"10",
+      "TASKUSER":"潘何方正",
+      "TASKID":"134",
+      "OPERTIME":"2016-08-01 17:32:18",
+      "CRTIME":"2016-08-01 17:32:18"
+    },
+    {
+      "TASKLOGID":"223",
+      "CRUSER":"phfz",
+      "OPERUSER":"潘何方正",
+      "OPERSTATUS":"1",
+      "TASKUSER":"潘何方正",
+      "TASKID":"134",
+      "OPERTIME":"2016-08-01 17:32:45",
+      "CRTIME":"2016-08-01 17:32:45"
+    }
+  ],
+  "Materials":[
+    {
+      "MATERIALAPPFILE":"山西省金融办人士证实，山西省确定由省金融办牵头在近期筹组CDS，为省内优质企业特别是煤炭企业增信并扩大债券融资。",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"bmp",
+      "MATERIALAPPENDIXID":"117",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"1",
+      "CRTIME":"2016-08-01 17:32:58"
+    },
+    {
+      "MATERIALAPPFILE":"861",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"jpg",
+      "MATERIALAPPENDIXID":"118",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"4",
+      "CRTIME":"2016-08-01 17:32:58"
+    }, {
+      "MATERIALAPPFILE":"860",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"bmp",
+      "MATERIALAPPENDIXID":"117",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"3",
+      "MATERIALDESC":"张国荣--《沉默是金》阿斯捷点解啊都很费劲啊的说法阿萨德哈苏德哈斯阿萨德哈",
+      "CRTIME":"2016-08-01 17:32:58"
+    },
+    {
+      "MATERIALAPPFILE":"img/11111.jpg",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"jpg",
+      "MATERIALAPPENDIXID":"118",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"2",
+      "CRTIME":"2016-08-01 17:32:58"
+    },
+    {
+      "MATERIALAPPFILE":"山西省金融办人士证实，山西省确定由省金融办牵头在近期筹组CDS，为省内优质企业特别是煤炭企业增信并扩大债券融资。",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"bmp",
+      "MATERIALAPPENDIXID":"117",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"1",
+      "CRTIME":"2016-08-01 17:32:58"
+    },
+    {
+      "MATERIALAPPFILE":"img/11111.jpg",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"jpg",
+      "MATERIALAPPENDIXID":"118",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"2",
+      "CRTIME":"2016-08-01 17:32:58"
+    }, {
+      "MATERIALAPPFILE":"861",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"bmp",
+      "MATERIALAPPENDIXID":"117",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"3",
+      "CRTIME":"2016-08-01 17:32:58"
+    },
+    {
+      "MATERIALAPPFILE":"img/11111.jpg",
+      "CRUSER":"phfz",
+      "MATERIALEXT":"jpg",
+      "MATERIALAPPENDIXID":"118",
+      "MATERIALID":"38",
+      "MATERIALTYPE":"2",
+      "CRTIME":"2016-08-01 17:32:58"
+    }
+  ]
+}

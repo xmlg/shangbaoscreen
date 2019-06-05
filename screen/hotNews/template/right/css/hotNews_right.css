@@ -1,0 +1,115 @@
+.hotNews_right {
+    width: 1920px;
+    height: 3240px;
+    background-image: url(../images/hotNews_right.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: "黑体";
+}
+
+.hotNews_right .hotNews_right_info {
+    padding-top: 250px;
+    font-size: 72px;
+    color: #21b6da;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.hotNews_right .hotNews_right_info .hotNews_right_left {
+    position: absolute;
+    width: 30%;
+    left: 20px;
+    top: 250px;
+}
+
+.hotNews_right .hotNews_right_info .hotNews_right_right {
+    position: absolute;
+    width: 30%;
+    right: 20px;
+    top: 250px;
+}
+
+.hotNews_right .hotNews_right_body {
+    margin: 185px 132px 0px;
+    width: 1690px;
+    height: 86%;
+    color: #ffffff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.hotNews_right .hotNews_right_body .hotNews_right_titile {
+    font-size: 72px;
+    text-align: center;
+    margin-top: 8px;
+    font-weight: bold;
+    padding-right: 65px;
+}
+
+.hotNews_right .hotNews_right_body .hotNews_right_adds {
+    font-size: 60px;
+    margin-top: 60px;
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hotNews_right .hotNews_right_body .hotNews_right_adds .hotNews_right_resource {
+    margin-right: 20px;
+    /*width: 1150px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 30px;*/
+}
+
+/*.hotNews_right .hotNews_right_body .hotNews_right_adds .hotNews_right_date {
+    float: right;
+    margin-right: 108px;
+}*/
+
+.hotNews_right .hotNews_right_body .hotNews_right_content {
+    font-size: 60px;
+    line-height: 84px;
+    margin: 60px -3px 0px 30px;
+    height: 77%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    padding-right: 77px;
+    padding-bottom: 230px;
+}
+
+.hotNews_right .hotNews_right_body .hotNews_right_content.ps-container .ps-scrollbar-y {
+    background-color: #13B5E4;
+}
+
+.hotNews_right .hotNews_right_body .shadow1 {
+    height: 84px;
+    width: 100%;
+    position: relative;
+    bottom: 250px;
+    background-color: #0F232E;
+    opacity: 0.2;
+}
+
+.hotNews_right .hotNews_right_body .shadow2 {
+    height: 84px;
+    width: 100%;
+    position: relative;
+    bottom: 250px;
+    background-color: #0F232E;
+    opacity: 0.5;
+}
+
+.hotNews_right .hotNews_right_body .shadow3 {
+    height: 84px;
+    width: 100%;
+    position: relative;
+    bottom: 250px;
+    background-color: #0F232E;
+    opacity: 0.8;
+}

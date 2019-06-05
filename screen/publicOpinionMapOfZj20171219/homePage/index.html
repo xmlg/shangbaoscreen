@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="homePageModule" style="background: white">
+
+	<head>
+		<title>浙江舆情地图-首页</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/animation.css">
+		<link rel="stylesheet" type="text/css" href="../css/ng-animation.css">
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body ng-controller="homePageCtrl">
+		<div class="m-cont">
+			<div class="m-title">浙江舆情地图<i class="m-rightcolor"></i></div>
+			<!-- 左边内容 start -->
+			<div class="m-leftcont">
+				<!-- 最新话题 start -->
+				<div class="m-news">
+					<div class="m-subtitbox">
+						<div class="m-subtitle"><i class="ico-left"></i><span class="m-txt">最新话题</span><i class="ico-right"></i></div>
+						<a href="../news/news.html?area=001020" class="m-more">更多</a>
+					</div>
+					<div class="m-subcontact">
+						<div class="m-lefttab">
+							<div ng-click="selectArea(item)" ng-class="{'z-cur':configInfo.area.dictNum==item.dictNum}" ng-bind="item.dictName" class="m-list slide-down" ng-repeat="item in status.areaList"></div>
+						</div>
+						<div class="m-rightlistbox">
+							<div class="m-list slide-down" ng-class="{'z-cur':status.selectedNewTopic==item}" ng-click="newTopicArticle(item)" ng-repeat="item in data.newTopicList">
+								<!--z-cur-->
+								<div class="m-num"><span ng-bind="$index+1"></span>.</div>
+								<div class="m-txt" ng-bind="'【'+(item.TYPE | type )+'】'+item.DOCTITLE"></div>
+								<div class="m-name" ng-bind="item.SOURCESITE"></div>
+								<div class="m-date"><span ng-bind="item.DOCPUBTIME.split(' ')[0].substring(2,item.DOCPUBTIME.split(' ')[0].length)"></span>
+									<p ng-bind="item.DOCPUBTIME.split(' ')[1]"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 最新话题 end -->
+				<!-- 突发新闻 start -->
+				<div class="m-burstnews">
+					<div class="m-subtitbox">
+						<div class="m-subtitle"><i class="ico-left"></i><span class="m-txt">突发新闻</span><i class="ico-right"></i></div>
+						<a href="../outburstNews/outburstnews.html" class="m-more" class="m-more">更多</a>
+					</div>
+					<div class="m-contact">
+						<div ng-if="!data.emergency" class="m-nonew"><i><img src="images/img-burstnews.png" alt="" /></i><span class="m-txt">暂无数据</span></div>
+						<div class="m-new" ng-if="data.emergency" ng-click="selectEmergency(item)" ng-repeat="item in data.emergency">
+							<i class="ico-tab" ng-bind="item.FIELD"></i>
+							<div class="m-txt"><span ng-bind="'【'"></span><span ng-bind="item.TYPE | type"></span><span ng-bind="'】'"></span><span ng-bind="item.DOCTITLE"></span></div>
+							<div class="m-name name" ng-bind="item.SOURCESITE"></div>
+							<div class="m-date">
+								<span ng-bind="item.DOCPUBTIME | time1"></span>
+								<span ng-bind="item.DOCPUBTIME | time2"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 突发新闻 end -->
+				<!-- 最热话题 start -->
+				<div class="m-hotnews">
+					<div class="m-subtitbox">
+						<div class="m-subtitle"><i class="ico-left"></i><span class="m-txt">浙江最热话题</span><i class="ico-right"></i></div>
+						<a>更多</a>
+					</div>
+					<div class="hotnews-background">
+						<div ng-if="data.hottestTopicList.length > 0" class="m-contact" scroll-bar auto-scroll-config="status.hotPlayConfig">
+						<div class="hotnews">
+							<div class="m-list" ng-repeat="item in data.hottestTopicList">
+								<div class="m-num"><span ng-bind="$index+1"></span>.</div>
+								<div class="m-txt" ng-bind="item.TITLE"></div>
+								<div class="m-number" ng-bind="item.WEIGHTEDNUMS"></div>
+								<div class="m-linebox"><i style="width:{{(item.WEIGHTEDNUMS/data.hottestTopicList[0].WEIGHTEDNUMS)*100}}%"></i></div>
+							</div>
+						</div>
+					</div>
+					</div>
+					
+				</div>
+				<!-- 最热话题 end -->
+			</div>
+			<!-- 左边内容 end -->
+			<!-- 右边内容 start -->
+			<div class="m-rightcont">
+				<!-- 舆情地图 start-->
+				<div class="m-mapbox">
+					<div class="c_map"></div>
+					<div class="m-mappoint"><img src="images/map-point.png" alt="" /></div>
+				</div>
+				<!-- 舆情地图 end-->
+				<!-- 突发文本信息 start-->
+				<!-- 突发文本信息 end-->
+			</div>
+			<!-- 右边内容 end -->
+		</div>
+		<script type="text/javascript" src="../lib/jquery.min.js"></script>                                                                                                                                                                                                         
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../utils/resize.js"></script>
+		<script type="text/javascript" src="../lib/angular.js"></script>
+		<script type="text/javascript" src="../js/angular-animate.min.js"></script>
+		<script type="text/javascript" src="homePage.js"></script>
+		<script type="text/javascript" src="service/homePageService.js"></script>
+		<script type="text/javascript" src="../js/httpService.js"></script>
+		<script type="text/javascript" src="modalDialog/modalDialogService.js"></script>
+		<script type="text/javascript" src="modalDialog/setting/setting.js"></script>
+		<script type="text/javascript" src="modalDialog/newTopicPopup/newTopicPopup.js">
+		</script>
+		<script type="text/javascript" src="modalDialog/newTopicModal/newTopicModal.js"></script>
+		<script type="text/javascript" src="modalDialog/emergencyPopup/emergencyPopup.js"></script>
+		<script type="text/javascript" src="modalDialog/emergencyModal/emergencyModal.js"></script>
+		<script type="text/javascript" src="directive/scrollBar.js"></script>
+		<script type="text/javascript " src="../js/core/map/echarts.js "></script>
+		<script type="text/javascript " src="../js/core/map/zhejiang.js "></script>
+	</body>
+
+</html>

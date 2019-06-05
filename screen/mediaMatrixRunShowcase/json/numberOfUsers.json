@@ -1,0 +1,18 @@
+{
+    "website": {
+        "number": 1400,
+        "increment": 200
+    },
+    "client": {
+        "number": 1201,
+        "increment": 300
+    },
+    "wechat": {
+        "number": 900,
+        "netIncrement": 100
+    },
+    "weibo": {
+        "number": 500,
+        "netIncrement": 100
+    }
+}

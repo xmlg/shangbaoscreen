@@ -1,0 +1,289 @@
+.trafficScale {
+    width: 100%;
+    height: 50%;
+    padding-top: 22px;
+}
+
+.trafficScale div.header_parent {
+    width: 0px;
+    overflow: hidden;
+    margin-left: 16px;
+}
+
+.trafficScale div.header {
+    width: 2440px;
+    height: 80px;
+    float: right;
+    background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 80px;
+    padding-left: 45px;
+}
+
+.trafficScale div.mainModule_org {
+    width: 1240px;
+    float: left;
+    position: relative;
+}
+
+.trafficScale div.mainModule_right_org {
+    width: 1240px;
+    float: left;
+}
+
+.trafficScale div.mainModule_right_parent {
+    width: 0px;
+    float: left;
+    overflow: hidden;
+}
+
+.trafficScale div.mainModule_parent {
+    width: 0px;
+    float: right;
+    overflow: hidden;
+}
+
+.trafficScale div.mainModule {
+    width: 1240px;
+    height: 967px;
+    float: left;
+    margin: 15px 0 0 5px;
+    background: url('../images/traffic_03.png') no-repeat;
+    padding-left: 30px;
+}
+
+.trafficScale .realTime {}
+
+.trafficScale .yesterday {}
+
+.trafficScale .mainModule>div.title {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 55px auto 0 auto;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    color: #42D6FF;
+}
+
+.trafficScale .realTime>div.title {
+    background: url('../images/traffic_01.png') no-repeat;
+    width: 1124px;
+}
+
+.trafficScale .yesterday>div.title {
+    background: url('../images/traffic_02.png') 15px 0 no-repeat;
+    width: 1069px;
+}
+
+.trafficScale .realTime>div.content {
+    height: 460px;
+    line-height: 460px;
+    font-size: 160px;
+    font-weight: bold;
+    color: #11F7EC;
+    text-align: center;
+    text-shadow: 0 0 20px #11F7EC;
+    margin-top: 60px;
+}
+
+.trafficScale .realTime>div.footer>div {
+    float: left;
+    height: 256px;
+}
+
+.trafficScale .realTime>div.footer>div.footerLeft {
+    width: 523px;
+    background: url('../images/traffic_04.png') no-repeat;
+    margin-left: 40px;
+}
+
+.trafficScale .realTime>div.footer>div.footerRight {
+    width: 566px;
+    background: url('../images/traffic_05.png') no-repeat;
+    margin-left: 30px;
+}
+
+.trafficScale .realTime>div.footer>div>h3 {
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 60px;
+    color: #4cd6fd;
+    margin: 50px 0 0 30px;
+}
+
+.trafficScale .realTime>div.footer>div>p {
+    font-size: 72px;
+    letter-spacing: -1px;
+    font-weight: 900;
+    color: #11F7EC;
+    margin: 20px 0 0 30px;
+}
+
+.trafficScale .yesterday>div.content {
+    height: 150px;
+    line-height: 150px;
+    font-size: 109px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #11F7EC;
+    text-align: center;
+    margin-top: 45px;
+    text-shadow: 0 0 20px #11F7EC;
+}
+
+.trafficScale .yesterday>div.footer>div {
+    float: left;
+    margin-left: 80px;
+}
+
+.trafficScale .yesterday>div.footer>div>div {
+    /*background: url('../images/traffic_06.png') 0 0 no-repeat;*/
+    height: 470px;
+    width: 470px;
+}
+
+.trafficScale .yesterday>div.footer>div>p {
+    color: #4cd6fd;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    margin: 0 0 0 30px;
+}
+
+.trafficScale .ringchart-num>p:nth-child(2) {
+    color: #4cd6fd;
+}
+.productUsageScale-content>div.footer-fw{
+    overflow: hidden;
+}
+
+.productUsageScale-content>div.footer-fw>div.footerLeft {
+    width: 523px;
+    background: url('../images/traffic_04.png') no-repeat;
+    margin-left: 120px;
+}
+.productUsageScale-content>div.footer-fw>div>h3 {
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 60px;
+    color: #4cd6fd;
+    margin: 50px 0 0 30px;
+}
+.productUsageScale-content>div.footer-fw>div>p {
+    font-size: 72px;
+    letter-spacing: -1px;
+    font-weight: 900;
+    color: #11F7EC;
+    margin: 20px 0 0 30px;
+}
+
+.productUsageScale-content>div.footer-fw>div.footerRight {
+    width: 566px;
+    background: url(../images/traffic_05.png) no-repeat;
+    margin-left: 30px;
+}
+
+.productUsageScale-content>div.footer-fw>div {
+    float: left;
+    height: 256px;
+}
+
+.productUsageScale-content>div.footer-fw>div {
+    float: left;
+    height: 256px;
+}
+
+.productUsageScale-content >#yesterdayTrafficTotal {
+    height: 150px;
+    line-height: 150px;
+    font-size: 109px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #11F7EC;
+    text-align: center;
+    margin-top: 45px;
+    text-shadow: 0 0 20px #11F7EC;
+}
+
+.productUsageScale-content>div.footer>div{
+    float: left;
+    margin-left: 140px;
+}
+
+.productUsageScale-content>div.footer>div>div {
+    /* background: url(../images/traffic_06.png) 0 0 no-repeat; */
+    height: 470px;
+    width: 470px;
+}
+
+.mainModule>ul li {
+    float: left;
+    width: 330px;
+    height: 270px;
+    margin: 110px 147px 0px 108px;
+    position: relative;
+    background: url(../images/numberOfUsers_pic2.png) no-repeat center center;
+    background-size: 330px 270px;
+}
+
+.mainModule .numberOfUsers_B_col1, .mainModule .numberOfUsers_B_col2{
+    height: 115px;
+    line-height: 115px;
+    width: 100%;
+    text-align: center;
+}
+
+.mainModule .numberOfUsers_B_col1 span, .mainModule .numberOfUsers_B_col1 p {
+    display: inline-block;
+    font-size: 55px;
+    color: #4cd6fd;
+    margin-left: 20px;
+}
+
+.mainModule .numberOfUsers_B_col1 span, .mainModule .numberOfUsers_B_col1 p {
+    display: inline-block;
+    font-size: 55px;
+    color: #4cd6fd;
+    margin-left: 20px;
+}
+
+.mainModule .numberOfUsers_B_col2 span, .mainModule .numberOfUsers_B_col2 p {
+    display: inline-block;
+    font-size: 52px;
+    color: #11F7EC;
+}
+
+.mainModule .circle{
+    position: relative;
+    background: #11F7EC;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    left: 280px;
+    top: -618px;
+    background: url("../images/circle.png") no-repeat center;
+    background-size: 350px ;
+}
+.mainModule .circle>p{
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+    /*background: #0d3d49;*/
+    /*width: 280px;*/
+    /*margin-left: -140px;*/
+    /*margin-top: -140px;*/
+    /*height: 280px;*/
+    /*border-radius: 50%;*/
+    line-height: 350px;
+    text-align: center;
+    color: #11F7EC;
+    font-size: 50px;
+}

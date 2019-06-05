@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<script src="../lib/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../images/global20171207.css"/>
+<link rel="stylesheet" type="text/css" href="../css/mycss.css"/>
+</head>
+<body>
+<div class="baoye_neiy">
+  <div class="tit">实时数据采集动态</div>
+  <div class="rdzz_rightList zc_zxxx">
+        	<h1 class="nei_tit wid2 xinhuashe">最新数据来源：新华社</h1>
+            <ul class="listUl">
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg11"></span><a href="" target="_blank">1全国首例！全国首例全国首例全国首例全国首例全国首例全国首例全国首例</a></li>
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg12"></span>中国</li>
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg13"></span>全国首例！全国首例全国首例全国首例全国首例全国首例全国首例全国首例</li>
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg1"></span>全国首例！全国首例全国首例全国首例全国首例全国首例全国首例全国首例</li>
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg13"></span>全国首例！全国首例全国首例全国首例全国首例全国首例全国首例全国首例</li>
+            	<li><strong>2017.12.06</strong><em>深圳政府在线</em><span class="bg12"></span>全国首例！全国首例全国首例全国首例全国首例全国首例全国首例全国首例</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+</div>
+<script>
+    $(function(){
+        var url = "/isearch/front/search.jhtml"
+        loadData();
+        function loadData(){
+            $.ajax({
+                type:"get",
+                url:url,
+                data:{
+                    code:"551b1ff558194a0eb61d171ef40f3085",
+                    pageSize:10,
+                    searchWord:"",
+                    type:"27,30"
+                },
+                success:function(res){
+                    console.log(res)
+                    if(res.page.content.length > 0){
+                        $('.listUl li').remove();
+                        var data = res.page.content;
+                        // data.sort(function(a,b){
+                        //     var tag=sortDate(a.HOTPOINTNUM,b.HOTPOINTNUM);
+                        //     return tag;
+                        // })
+                        var leng = data.length < 10 ? data.length : 10;
+                        for(var i=0;i<leng;i++){
+                            var li=$("<li><strong>"+dateFormatter(data[i].date)+"</strong><em>"+data[i].source+"</em><span class='bg"+(i+1)+"'></span><a href='' target='_blank'>"+data[i].title+"</a></li>");
+                            $(".listUl").append(li);
+                        }
+                    $('.listUlNone').css('display','none');
+                }
+                }
+            })
+        }
+    })
+
+    function sortDate(a,b){
+        return b-a
+    }
+    function dateFormatter(t){
+        var d=new Date(parseInt(t));
+        var year=d.getFullYear();
+        var day=d.getDate();
+        var month=+d.getMonth()+1;
+        var hour=d.getHours();
+        var minute=d.getMinutes();
+        var second=d.getSeconds();
+        var misec=d.getMilliseconds();
+        var f=year+"-"+formate(month)+"-"+formate(day)+" "+formate(hour)+":"+formate(minute)+":"+formate(second)+":"+formate(misec);
+        return f;
+        // var div=document.getElementById("test");
+        // div.innerHTML=f;
+    //window.setTimeout(init,1);
+    }
+    function formate(d){
+        return d>9?d:'0'+d;
+    }
+</script>
+</body>
+</html>

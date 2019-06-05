@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="width: 1050px;height: 300px;"></div>
+<script src="lib/dist/echarts-all.js"></script>
+<script src="../webscreen/js/echart_macarons_theam.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/dist/config.js"></script>
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    var id=getQueryString("id");
+var params1={
+    "modelid":"relationHots",
+    "serviceid":"hotpointevent",
+    "typeid":"widget",
+    "clusterid":id
+};
+$.ajax({
+    type: "GET",
+    url: "/wcm/bigdata.do",
+    data:params1,
+    dataType: "json",
+    success: function(data){
+        var relationHots=[];
+        if(data!=null&&data.length>0){
+            data.forEach(function(array,index,array2){
+                var date = stringToDate(array.time);
+                var evolution=[{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":2
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":8
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":10
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":11
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":10
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":5
+                },{
+                    "time":formatDate(getHourLatterDate(date,1),"yyyy-MM-dd HH:mm:ss"),
+                    "value":2
+                }
+
+                ];
+                if(array.title.length>14){
+                    array.title=array.title.substring(0,14)+"\n"+array.title.substring(14);
+                }
+                var item={
+                    "name":array.title,
+                    "weight":array.count,
+                    "id":array.clusterId,
+                    "evolution":evolution
+                };
+                relationHots.push(item);
+            });
+        }
+        var myChart = echarts.init(document.getElementById('main'),"macarons");
+
+
+        var option = {
+            title : {
+                text: '',
+                subtext: ''
+            },
+            tooltip : {
+                trigger: 'item',
+                enterable: true,
+                show:false
+            },
+            legend: {
+                data:['', '']
+            },
+            xAxis : [
+                {
+                    type : 'time',
+                    boundaryGap: [0.05,0.1]
+                }
+            ],
+            series : [
+                {
+                    "name": "",
+                    "type": "eventRiver",
+                    "weight": 123,
+                    "data":relationHots, //[{"name":"外媒称周立波在美国被捕","weight":"74","evolution":[{"time":"2017-01-21 11:02:11","value":10},{"time":"2017-01-21 12:02:11","value":30},{"time":"2017-01-21 13:02:11","value":40},{"time":"2017-01-21 14:02:11","value":34},{"time":"2017-01-21 15:02:11","value":38},{"time":"2017-01-21 16:02:11","value":15},{"time":"2017-01-21 17:02:11","value":5}]},{"name":"周立波涉嫌“非法持有枪支和毒品”被美国法院传讯（组图）","weight":"6","evolution":[{"time":"2017-01-21 16:47:42","value":10},{"time":"2017-01-21 17:47:42","value":30},{"time":"2017-01-21 18:47:42","value":40},{"time":"2017-01-21 19:47:42","value":34},{"time":"2017-01-21 20:47:42","value":38},{"time":"2017-01-21 21:47:42","value":15},{"time":"2017-01-21 22:47:42","value":5}]},{"name":"周立波涉嫌“非法持有枪支和毒品”被美国法院传讯","weight":"5","evolution":[{"time":"2017-01-21 11:03:16","value":10},{"time":"2017-01-21 12:03:16","value":30},{"time":"2017-01-21 13:03:16","value":40},{"time":"2017-01-21 14:03:16","value":34},{"time":"2017-01-21 15:03:16","value":38},{"time":"2017-01-21 16:03:16","value":15},{"time":"2017-01-21 17:03:16","value":5}]},{"name":"周立波涉“非法持有枪支和毒品”被美法院传讯","weight":"125","evolution":[{"time":"2017-01-21 16:46:34","value":10},{"time":"2017-01-21 17:46:34","value":30},{"time":"2017-01-21 18:46:34","value":40},{"time":"2017-01-21 19:46:34","value":34},{"time":"2017-01-21 20:46:34","value":38},{"time":"2017-01-21 21:46:34","value":15},{"time":"2017-01-21 22:46:34","value":5}]}]
+                    itemStyle:{
+                        normal:{
+                            label:{
+                                textStyle:{
+                                    color:'black'
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+        };
+
+        function eConsole(param) {console.log(param)
+            if(param.type=="click"){
+                var clusterId=param.data.id;
+                window.open("/dist/index.html#/plan/hotpointcluster?menutype=hot&guids="+clusterId,"_blank")
+             //   console.log(clusterId);
+            }
+
+        }
+        function eConsoleHover(param) {//console.log(param)
+            if(param.type=="hover"){
+
+                //   console.log(clusterId);
+            }
+
+        }
+       // console.log(JSON.stringify(option.series));
+
+        myChart.on(ecConfig.EVENT.CLICK, eConsole);
+        myChart.on(ecConfig.EVENT.HOVER, eConsoleHover);
+        myChart.setOption(option);
+        if(relationHots.length==0){
+
+        }else{
+
+        }
+    }
+});
+
+
+
+function getHourLatterDate(date,hour){
+    date.setHours(date.getHours()+hour);
+    return date;
+}
+/**
+ * 字符串转时间（yyyy-MM-dd HH:mm:ss）
+ * result （分钟）
+ */
+/*'yyyy-MM-dd HH:mm:ss'格式的字符串转日期*/
+function stringToDate(str){
+    var tempStrs = str.split(" ");
+    var dateStrs = tempStrs[0].split("/");
+    var year = parseInt(dateStrs[0], 10);
+    var month = parseInt(dateStrs[1], 10) - 1;
+    var day = parseInt(dateStrs[2], 10);
+    var timeStrs = tempStrs[1].split(":");
+    var hour = parseInt(timeStrs [0], 10);
+    var minute = parseInt(timeStrs[1], 10);
+    var second = parseInt(timeStrs[2], 10);
+    var date = new Date(year, month, day, hour, minute, second);
+    //  console.log(date)
+    return date;
+}
+
+/**
+      * 格式化日期
+      * @param date 日期
+      * @param format 格式化样式,例如yyyy-MM-dd HH:mm:ss E
+      * @return 格式化后的金额
+      */
+function formatDate(date, format) {
+    var v = "";
+    if (typeof date == "string" || typeof date != "object") {
+        return;
+    }
+    var year  = date.getFullYear();
+    var month  = date.getMonth()+1;
+    var day   = date.getDate();
+    var hour  = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    var weekDay = date.getDay();
+    var ms   = date.getMilliseconds();
+    var weekDayString = "";
+
+    if (weekDay == 1) {
+        weekDayString = "星期一";
+    } else if (weekDay == 2) {
+        weekDayString = "星期二";
+    } else if (weekDay == 3) {
+        weekDayString = "星期三";
+    } else if (weekDay == 4) {
+        weekDayString = "星期四";
+    } else if (weekDay == 5) {
+        weekDayString = "星期五";
+    } else if (weekDay == 6) {
+        weekDayString = "星期六";
+    } else if (weekDay == 7) {
+        weekDayString = "星期日";
+    }
+
+    v = format;
+    //Year
+    v = v.replace(/yyyy/g, year);
+    v = v.replace(/YYYY/g, year);
+    v = v.replace(/yy/g, (year+"").substring(2,4));
+    v = v.replace(/YY/g, (year+"").substring(2,4));
+
+    //Month
+    var monthStr = ("0"+month);
+    v = v.replace(/MM/g, monthStr.substring(monthStr.length-2));
+
+    //Day
+    var dayStr = ("0"+day);
+    v = v.replace(/dd/g, dayStr.substring(dayStr.length-2));
+
+    //hour
+    var hourStr = ("0"+hour);
+    v = v.replace(/HH/g, hourStr.substring(hourStr.length-2));
+    v = v.replace(/hh/g, hourStr.substring(hourStr.length-2));
+
+    //minute
+    var minuteStr = ("0"+minute);
+    v = v.replace(/mm/g, minuteStr.substring(minuteStr.length-2));
+
+    //Millisecond
+    v = v.replace(/sss/g, ms);
+    v = v.replace(/SSS/g, ms);
+
+    //second
+    var secondStr = ("0"+second);
+    v = v.replace(/ss/g, secondStr.substring(secondStr.length-2));
+    v = v.replace(/SS/g, secondStr.substring(secondStr.length-2));
+
+    //weekDay
+    v = v.replace(/E/g, weekDayString);
+    return v;
+}
+
+</script>
+</body>
+</html>

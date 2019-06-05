@@ -1,0 +1,2550 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+    font-family: simhei;
+    /*background: rgb(14, 20, 29);*/
+    background: #0d141d;
+    overflow: hidden;
+}
+
+.bor {
+    border: 4px #2BD3FF solid;
+    border-radius: 16.6px;
+    height: 1074px;
+    width: 1914px;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+}
+
+.top {
+    height: 30px;
+    width: 1880px;
+    background: rgb(22, 126, 138);
+    float: left;
+    color: white;
+    margin: 10px 20px;
+}
+
+.top .span_tit {
+    font-size: 24px;
+    line-height: 30px;
+    margin-left: 20px;
+    display: block;
+}
+
+.main {
+    float: left;
+    width: 1880px;
+    height: 1000px;
+    position: relative;
+}
+
+.main_left_con {
+    position: relative;
+    width: 630px;
+    height: 981px;
+    float: left;
+}
+
+.main_left_con .wrapper {
+    position: absolute;
+    z-index: 1;
+    /*top: 40px;*/
+    /*top: 68px;*/
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.main_left {
+    float: left;
+    width: 595px;
+    margin-left: 30px;
+}
+
+.main_middle {
+    float: left;
+    width: 595px;
+    height: 1000px;
+    /*background: cadetblue;*/
+    margin-left: 12px;
+}
+
+.main_right {
+    float: left;
+    width: 600px;
+    height: 1000px;
+    /*background: cadetblue;*/
+    margin-left: 30px;
+}
+
+.main_right .task_track {
+    margin-top: 20px;
+    height: 300px;
+    width: 600px;
+    float: left;
+}
+
+.main_right .task_track .task_top {
+    height: 50px;
+    width: 600px;
+    float: left;
+}
+
+.task_top .task_l {
+    margin-left: 30px;
+    width: 180px;
+    height: 30px;
+    float: left;
+    background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;
+}
+
+.task_top .task_t {
+    float: left;
+    width: 190px;
+    height: 30px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(41, 138, 161);
+}
+
+.task_top .task_r {
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;
+    float: left;
+}
+
+.main_right .report_track {
+    height: 670px;
+    width: 600px;
+    float: left;
+}
+
+#track_none {
+    color: rgb(41, 138, 161);
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    margin-top: 135px;
+    margin-left: 230px;
+}
+
+
+/*右侧*/
+
+.deparment {
+    width: 600px;
+    /* height: 300px;*/
+    float: left;
+    margin-top: 20px;
+}
+
+.Mdeparment {
+    width: 600px;
+    height: 300px;
+    float: left;
+    margin-top: 20px;
+}
+
+.Rdeparment {
+    width: 600px;
+    height: 800px;
+    float: left;
+    margin-top: 20px;
+}
+
+.RTop {
+    width: 600px;
+    height: 30px;
+    float: left;
+}
+
+.MTop {
+    width: 600px;
+    height: 30px;
+    float: left;
+}
+
+.DTop {
+    width: 600px;
+    height: 30px;
+    float: left;
+}
+
+.Mleft {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;
+    margin-left: 50px;
+}
+
+.Rleft {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;
+    margin-left: 50px;
+}
+
+.DTop .Tleft {
+    float: left;
+    /*width: 180px;*/
+    height: 30px;
+    /*background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;*/
+    margin-left: 30px;
+}
+
+.Mname {
+    float: left;
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    padding-left: 23px;
+    line-height: 30px;
+    color: rgb(41, 138, 161);
+}
+
+.Rname {
+    float: left;
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    padding-left: 23px;
+    line-height: 30px;
+    color: rgb(41, 138, 161);
+}
+
+.Dname {
+    float: left;
+    min-width: 170px;
+    height: 30px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(41, 138, 161);
+    margin: 0px 10px;
+}
+
+.Dreport_img {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.Rright {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;
+}
+
+.Mright {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;
+}
+
+.DTop .Tright {
+    float: left;
+    /*width: 180px;*/
+    height: 30px;
+    /*background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;*/
+}
+
+.Mmain {
+    margin-top: -15px;
+    float: left;
+    width: 560px;
+    height: 250px;
+    /*background-image: url(../bqh/middle-bg-md.png);
+
+    background-size: 100% 100%;*/
+    margin-left: 25px;
+}
+
+.Rmain {
+    margin-top: 10px;
+    float: left;
+    width: 560px;
+    height: 888px;
+    /*background-image: url(../bqh/middle-bg-md.png);
+
+    background-size: 100% 100%;*/
+    margin-left: 25px;
+}
+
+.Dmain {
+    margin-top: 10px;
+    float: left;
+    width: 560px;
+    overflow: hidden;
+    /* height: 261px;*/
+    margin-top: 30px;
+    background-image: url(../bqh/newEDITTING.png);
+    background-size: 100% 100%;
+    margin-left: 25px;
+}
+
+.aaaaa {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.Dmain .aaaaa:nth-child(first) {
+    margin-top: 24px;
+}
+
+.Dmain .aaaaa:nth-child(odd) .Dreport {
+    /*background-color: rgba(14, 57, 64, 0.2);*/
+}
+
+.Dmain .aaaaa:nth-child(even) .Dreport {
+    /*background-color: rgb(14, 57, 64);*/
+}
+
+.gjzz {
+    width: 600px;
+    height: 600px;
+    float: left;
+    margin-top: 20px;
+}
+
+.GTop {
+    width: 600px;
+    height: 30px;
+    float: left;
+}
+
+.Gleft {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;
+    margin-left: 50px;
+}
+
+.Gname {
+    float: left;
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    padding-left: 23px;
+    line-height: 30px;
+    color: rgb(41, 138, 161);
+}
+
+.Gright {
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;
+}
+
+.Gmain {
+    margin-top: 10px;
+    float: left;
+    width: 560px;
+    height: 569px;
+    background-image: url(../bqh/gjzz_03.jpg);
+    background-size: 100% 100%;
+    margin-left: 25px;
+}
+
+.metalog {
+    width: 600px;
+    height: 55px;
+    margin-top: -5px;
+}
+
+.metalog-p {
+    float: left;
+    font-size: 20px;
+    margin-top: 50px;
+    width: 165px;
+    color: white;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.metalog img {
+    float: left;
+    width: 400px;
+    height: 85px;
+    margin-left: -5px;
+}
+
+#R4 {
+    margin-top: 55px;
+    width: 570PX;
+    height: 130PX;
+}
+
+#R3 {
+    margin-top: 55px;
+    width: 430PX;
+    height: 130PX;
+}
+
+#R2 {
+    margin-top: 55px;
+    width: 280PX;
+    height: 130PX;
+}
+
+#R1 {
+    margin-top: 55px;
+    width: 130PX;
+    height: 130PX;
+}
+
+#MR0 {
+    margin-left: 240px;
+    margin-top: 100px;
+    font-size: 20px;
+    color: rgb(41, 138, 161);
+}
+
+.rp1 {
+    position: absolute;
+    left: 1325px;
+    top: 191px;
+    color: white;
+    /* height: auto; */
+    width: 86px;
+    font-size: 20px;
+    /* text-overflow: ellipsis; */
+    height: 92px;
+    overflow: hidden;
+}
+
+.rp2 {
+    position: absolute;
+    left: 1470px;
+    top: 191px;
+    color: white;
+    /* height: auto; */
+    width: 86px;
+    font-size: 20px;
+    /* text-overflow: ellipsis; */
+    height: 92px;
+    overflow: hidden;
+}
+
+.rp3 {
+    position: absolute;
+    left: 1610px;
+    top: 191px;
+    color: white;
+    /* height: auto; */
+    width: 86px;
+    font-size: 20px;
+    /* text-overflow: ellipsis; */
+    height: 92px;
+    overflow: hidden;
+}
+
+.rp4 {
+    position: absolute;
+    left: 1752px;
+    top: 191px;
+    color: white;
+    /* height: auto; */
+    width: 86px;
+    font-size: 20px;
+    /* text-overflow: ellipsis; */
+    height: 92px;
+    overflow: hidden;
+}
+
+.Dreport {
+    width: 440px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    margin: 10px 50px;
+    margin-left: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.Dmone {
+    display: none;
+}
+
+.Rmain_back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.back_m {
+    position: absolute;
+    left: 1567px;
+    top: 139px;
+    width: 5px;
+    height: 890px;
+    background: rgb(24, 225, 243);
+}
+
+.video_class {
+    width: 450px;
+    height: 160px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.source_circle {
+    margin-top: 82px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.video_line {
+    margin-top: 93px;
+    float: left;
+    width: 80px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.video_source {
+    width: 170px;
+    height: 120px;
+    float: left;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    margin-top: 35px;
+}
+
+.video_video {
+    width: 150px;
+    height: 124px;
+    margin-top: 0px;
+    margin-left: 10px;
+    /*background-image: url(../bqh/emotion_03.jpg);
+
+    background-size: 100% 100%;*/
+}
+
+.video_player {
+    position: absolute;
+    top: 73px;
+    width: 40px;
+    height: 40px;
+    left: 62px;
+    background: red;
+    z-index: 999;
+}
+
+.report_author {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 79px;
+    text-align: left;
+}
+
+.video_time {
+    color: white;
+    margin-top: -34px;
+    text-align: right;
+    width: 165px;
+    font-size: 25px;
+    line-height: 35px;
+    height: 35px;
+}
+
+
+/*暂无回传素材*/
+
+.report_back {
+    width: 89%;
+    height: 500px;
+    margin-top: 290px;
+    margin-left: 125px;
+}
+
+.none_back {
+    width: 60%;
+    height: 50px;
+    background-image: url(../bqh/none_back.jpg);
+    background-size: 100% 100%;
+}
+
+.none_text {
+    font-size: 40px;
+    color: rgb(41, 138, 161);
+    margin-top: 20px;
+    letter-spacing: 12px;
+}
+
+
+/*视频css*/
+
+.video_class1 {
+    width: 450px;
+    height: 160px;
+    margin-top: 50px;
+    margin-left: 92px
+}
+
+.source_circle1 {
+    margin-top: 82px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.video_line1 {
+    margin-top: 93px;
+    float: left;
+    width: 80px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.video_source1 {
+    width: 170px;
+    height: 120px;
+    float: left;
+    margin-top: 35px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+}
+
+.video_video1 {
+    width: 150px;
+    height: 124px;
+    margin-left: 10px;
+}
+
+.video_player1 {
+    position: absolute;
+    top: 74px;
+    width: 40px;
+    height: 40px;
+    left: 341px;
+    background: red;
+    z-index: 999;
+}
+
+.report_author1 {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 79px;
+    text-align: right;
+}
+
+.video_time1 {
+    color: white;
+    margin-top: -34px;
+    width: 165px;
+    font-size: 25px;
+    line-height: 35px;
+    height: 35px;
+}
+
+
+/*图片css样式*/
+
+.img_class {
+    width: 450px;
+    height: 160px;
+    margin-left: 12px margin-top: 50px;
+}
+
+.img_circle {
+    margin-top: 82px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.img_line {
+    margin-top: 93px;
+    float: left;
+    width: 80px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.img_source {
+    width: 170px;
+    height: 120px;
+    float: left;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    margin-top: 35px;
+}
+
+.img_video {
+    width: 174px;
+    height: 111px;
+    margin-top: 6px;
+    margin-left: -5px;
+    /*background-image: url(../bqh/emotion_03.jpg);
+
+    background-size: 100% 100%;*/
+}
+
+.img_player {
+    position: absolute;
+    top: 73px;
+    width: 40px;
+    height: 40px;
+    left: 62px;
+    background: red;
+    z-index: 999;
+}
+
+.img_author {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 79px;
+    text-align: left;
+}
+
+.img_time {
+    color: white;
+    text-align: right;
+    margin-top: -34px;
+    width: 165px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.img_class1 {
+    width: 450px;
+    height: 160px;
+    margin-top: 50px;
+    margin-left: 92px;
+}
+
+.img_circle1 {
+    margin-top: 82px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.img_line1 {
+    margin-top: 93px;
+    float: left;
+    width: 80px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.img_source1 {
+    width: 170px;
+    height: 120px;
+    float: left;
+    margin-top: 35px;
+    background: sandybrown;
+}
+
+.img_video1 {
+    width: 170px;
+    height: 120px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+}
+
+.img_author1 {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 79px;
+    text-align: right;
+}
+
+.img_time1 {
+    color: white;
+    margin-top: -34px;
+    width: 165px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.img_sou {
+    margin-top: 0px;
+    margin-left: 10px;
+    width: 155px;
+    height: 110px;
+}
+
+.img_sou1 {
+    margin-top: 5px;
+    margin-left: 7px;
+    width: 155px;
+    height: 110px;
+}
+
+
+/*文字css样式*/
+
+.text_class {
+    width: 525px;
+    height: 150px;
+    color: white;
+    margin-top: 50px;
+    margin-left: 92px;
+}
+
+.text_report {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 109px;
+    text-align: right;
+}
+
+.text_circle {
+    margin-top: 117px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.text_line {
+    margin-top: 128px;
+    float: left;
+    width: 45px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.text_time {
+    color: white;
+    width: 250px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.text_content {
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    padding: 10px;
+    font-size: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 227px;
+    height: 105px;
+}
+
+.text_source {
+    width: 270px;
+    height: 105px;
+    float: left;
+    margin-top: 40px;
+}
+
+.text_class1 {
+    width: 525px;
+    height: 150px;
+    color: white;
+    margin-top: 50px;
+    margin-left: -54px;
+}
+
+.text_report1 {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 79px;
+    text-align: left;
+}
+
+.text_circle1 {
+    margin-top: 117px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.text_line1 {
+    margin-top: 127px;
+    float: left;
+    width: 45px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.text_time1 {
+    color: white;
+    width: 250px;
+    margin-left: 146px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.text_content1 {
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    padding: 10px;
+    margin-left: 56px;
+    font-size: 20px;
+    width: 217px;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 105px;
+}
+
+.text_source1 {
+    width: 270px;
+    height: 105px;
+    float: left;
+    margin-top: 40px;
+}
+
+
+/*音频样式*/
+
+.autio_class {
+    width: 525px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 92px;
+    color: white;
+}
+
+.autio_source {
+    width: 270px;
+    height: 85px;
+    float: left;
+    margin-top: 40px;
+}
+
+.autio_player {
+    float: left;
+    width: 60px;
+    height: 105%;
+    border-right: 2px solid black;
+}
+
+.autio_autio {
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    padding: 10px;
+    font-size: 22px;
+    width: 227px;
+    height: 85px;
+}
+
+.autio_time {
+    color: white;
+    width: 165px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.autio_line {
+    margin-top: 117px;
+    float: left;
+    width: 45px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.autio_circle {
+    margin-top: 107px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.autio_report {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 98px;
+    text-align: right;
+}
+
+.autio_class1 {
+    width: 525px;
+    height: 150px;
+    margin-left: -53px;
+    margin-top: 50px;
+    color: white;
+}
+
+.audio_control {
+    width: 200px;
+    height: 30px;
+    background: white;
+}
+
+.autio_source1 {
+    width: 270px;
+    height: 85px;
+    float: left;
+    margin-top: 40px;
+}
+
+.autio_player1 {
+    float: left;
+    width: 60px;
+    height: 105%;
+    border-right: 2px solid black;
+}
+
+.autio_autio1 {
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    padding: 10px;
+    font-size: 22px;
+    margin-left: 55px;
+    width: 227px;
+    height: 85px;
+}
+
+.autio_time1 {
+    color: white;
+    width: 248px;
+    margin-left: 130px;
+    font-size: 18px;
+    line-height: 35px;
+    height: 35px;
+}
+
+.autio_line1 {
+    margin-top: 118px;
+    float: left;
+    width: 45px;
+    height: 4px;
+    background: rgb(115, 224, 255);
+}
+
+.autio_circle1 {
+    margin-top: 108px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(115, 224, 255);
+}
+
+.autio_report1 {
+    color: white;
+    width: 170px;
+    height: 35px;
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 102px;
+    text-align: left;
+}
+
+.textsou_details {
+    background-image: url(../bqh/text_details_03.png);
+    background-size: 100% 100%;
+    color: white;
+    font-size: 22px;
+    padding-top: 3%;
+    padding-left: 3%;
+    width: 100%;
+    height: 100%;
+}
+
+.text_details {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 3%;
+    width: 96%;
+    height: 95%;
+}
+
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.db {
+    display: block;
+}
+
+.weixinAudio {
+    line-height: 1.5;
+}
+
+.audio_area {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin: 0px 1px 0px 0;
+    font-size: 0;
+    position: relative;
+    font-weight: 400;
+    text-decoration: none;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+.audio_wrp {
+    /*border: 1px solid #ebebeb;*/
+    overflow: hidden;
+    padding: 12px 20px 12px 12px;
+}
+
+.audio_play_area {
+    float: left;
+    margin: 9px 22px 10px 5px;
+    font-size: 0;
+    width: 18px;
+    height: 25px;
+}
+
+.playing .audio_play_area .icon_audio_default {
+    display: block;
+}
+
+.audio_play_area .icon_audio_default {
+    background: transparent url(../bqh/iconloop.png) no-repeat 0 0;
+    width: 18px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-background-size: 54px 25px;
+    background-size: 54px 25px;
+    background-position: -36px center;
+}
+
+.audio_play_area .icon_audio_playing {
+    background: transparent url(../bqh/iconloop.png) no-repeat 0 0;
+    width: 18px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-background-size: 54px 25px;
+    background-size: 54px 25px;
+    -webkit-animation: audio_playing 1s infinite;
+    background-position: 0px center;
+    display: none;
+}
+
+.audio_area .pic_audio_default {
+    display: none;
+    width: 18px;
+}
+
+.tips_global {
+    color: #8c8c8c;
+}
+
+.audio_area .audio_length {
+    float: right;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-left: 1em;
+}
+
+.audio_info_area {
+    overflow: hidden;
+}
+
+.audio_area .audio_title {
+    font-weight: 400;
+    font-size: 17px;
+    margin-top: -2px;
+    margin-bottom: -3px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.audio_area .audio_source {
+    font-size: 14px;
+}
+
+.audio_area .progress_bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #0cbb08;
+    height: 2px;
+}
+
+.playing .audio_play_area .icon_audio_default {
+    display: none;
+}
+
+.playing .audio_play_area .icon_audio_playing {
+    display: inline-block;
+}
+
+@-webkit-keyframes audio_playing {
+    30% {
+        background-position: 0px center;
+    }
+    31% {
+        background-position: -18px center;
+    }
+    61% {
+        background-position: -18px center;
+    }
+    61.5% {
+        background-position: -36px center;
+    }
+    100% {
+        background-position: -36px center;
+    }
+}
+
+.audio_b {
+    width: 0;
+    height: 0;
+}
+
+#audio_a {
+    width: 206px;
+    height: 65px;
+    background-color: #FCFCFC;
+}
+
+.audio_c {
+    width: 0%;
+    height: 3px;
+    float: left;
+    background-color: #0CBB08;
+}
+
+.audio_logo {
+    float: left;
+    background: aquamarine;
+    width: 45px;
+    height: 62px;
+}
+
+.audio_content {
+    float: left;
+    background: blanchedalmond;
+    width: 160px;
+    height: 62px;
+}
+
+
+/*中间*/
+
+.main_middle_top {
+    width: 628px;
+    height: 80px;
+    float: left;
+}
+
+.main_top_children {
+    width: 200px;
+    float: left;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    /*color: white;*/
+    line-height: 50px;
+    /*background-image: url(../bqh/tab_two_03.jpg);*/
+    background-size: 100% 100%;
+    /*cursor: pointer;*/
+    color: grey;
+    cursor: not-allowed;
+    background-image: url("../bqh/tab_two_03-1.jpg");
+}
+
+#main_top_BT {
+    /*background-image: url(../bqh/tab_one_03.jpg);*/
+}
+
+#main_top_BT {}
+
+.main_middle_main {
+    width: 628px;
+    height: 900px;
+    float: left;
+    background-image: url(../bqh/text_details_03.png);
+    background-size: 100% 100%;
+}
+
+.middle_title {
+    margin-top: 40px;
+    margin-left: 0px;
+    /*height: 40px;*/
+    text-align: left;
+    width: 600px;
+    color: white;
+    font-size: 20px;
+    float: left;
+    /*font-weight: bold;*/
+}
+
+.middle_title span {
+    /*padding-left: 35px;*/
+    display: block;
+}
+
+.middle_title span.pl100 {
+   /* padding-left: 100px;*/
+}
+
+.middle_title img {
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin: 0px 0px 0px 50px;
+    display: block;
+}
+
+.middle_content {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.middle_content .middle_text {
+    padding: 0px 35px;
+    overflow: hidden;
+    width: 630px;
+    height: 720px;
+}
+
+.text_mark {
+    position: absolute;
+    left: 20px;
+    top: 650px;
+    width: 92%;
+    height: 15%;
+    background: -webkit-linear-gradient( rgba(28, 72, 90, 0.8), rgba(14, 20, 29, 0));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient( rgba(28, 72, 90, 0.8), rgba(14, 20, 29, 0));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient( rgba(28, 72, 90, 0.8), rgba(14, 20, 29, 0));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient( rgba(15, 35, 46, 0), rgba(15, 35, 46, 1));
+    /* 标准的语法 */
+}
+
+
+/*素材流
+
+*/
+
+.middle_main_SC_con {
+    width: 645px;
+    height: 900px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.middle_main_SC_con .wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.middle_main_SC {
+    /* width: 628px; */
+    /* height: 900px; */
+    /* float: left; */
+    position: relative;
+    /* overflow: hidden; */
+}
+
+#SC_axis {
+    position: absolute;
+    top: 17px;
+    left: 298px;
+    background-color: rgb(115, 224, 225);
+    width: 3px;
+    height: 100000px;
+}
+
+
+/*视频素材左侧*/
+
+.SC_video_left {
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.video_left_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+    cursor: pointer;
+}
+
+.video_left_line {
+    margin-top: 100px;
+    width: 77px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.video_left_circle {
+    margin-top: 89px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(115, 224, 225);
+}
+
+.video_left_name {
+    /* width: 85px; */
+    height: auto;
+    margin-left: 10px;
+    margin-top: 87px;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+}
+
+.video_left_date {
+    color: white;
+    font-size: 22px;
+    float: left;
+    text-align: right;
+    width: 100%;
+    height: 30px;
+    cursor: auto;
+}
+
+.video_left_source {
+    width: 210px;
+    float: left;
+    height: 160px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    cursor: auto;
+}
+
+.video_left_video {
+    margin-top: 10px;
+    width: 210px;
+    height: 142px;
+}
+
+
+/*视频素材右侧*/
+
+.SC_video_right {
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.video_right_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.video_right_line {
+    margin-top: 100px;
+    width: 77px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.video_right_circle {
+    margin-top: 89px;
+    width: 25px;
+    height: 25px;
+    float: left;
+    border-radius: 50%;
+    background-color: rgb(115, 224, 225);
+}
+
+.video_right_name {
+    width: 136px;
+    margin-top: 87px;
+    height: auto;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: -45px;
+}
+
+.video_right_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    cursor: auto;
+}
+
+.video_right_source {
+    width: 210px;
+    float: left;
+    height: 160px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    cursor: auto;
+}
+
+.video_right_video {
+    margin-top: 10px;
+    width: 210px;
+    height: 142px;
+    cursor: pointer;
+}
+
+
+/*图片素材左侧*/
+
+.SC_picture_left {
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.picture_left_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+    position: relative;
+}
+
+.picture_left_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+    cursor: pointer;
+}
+
+.picture_left_line {
+    margin-top: 100px;
+    width: 85px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.picture_left_circle {
+    margin-top: 89px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(115, 224, 225);
+}
+
+.picture_left_name {
+    /* width: 85px; */
+    height: auto;
+    margin-left: -34px;
+    margin-top: 87px;
+    text-align: left;
+    float: left;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 45px;
+}
+
+.picture_left_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: right;
+    width: 100%;
+    height: 30px;
+    cursor: auto;
+}
+
+.picture_left_source {
+    width: 210px;
+    float: left;
+    height: 160px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    cursor: auto;
+}
+
+.picture_left_video {
+    margin-left: 7px;
+    margin-top: 10px;
+    width: 195px;
+    height: 142px;
+}
+
+
+/*图片素材右*/
+
+.SC_picture_right {
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.picture_right_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.picture_right_line {
+    margin-top: 100px;
+    width: 77px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.picture_right_circle {
+    margin-top: 89px;
+    width: 25px;
+    height: 25px;
+    float: left;
+    border-radius: 50%;
+    background-color: rgb(115, 224, 225);
+}
+
+.picture_right_name {
+    width: 136px;
+    margin-top: 87px;
+    height: auto;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: -45px;
+}
+
+.picture_right_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    cursor: auto;
+}
+
+.picture_right_source {
+    width: 210px;
+    float: left;
+    height: 160px;
+    background-image: url(../bqh/emotion_03.jpg);
+    background-size: 100% 100%;
+    cursor: auto;
+}
+
+.picture_right_video {
+    margin-top: 10px;
+    width: 210px;
+    height: 142px;
+    cursor: pointer;
+}
+
+
+/*音频素材左*/
+
+.SC_audio_left {
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.audio_left_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.audio_left_line {
+    margin-top: 77px;
+    width: 47px;
+    margin-left: 29px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.audio_left_circle {
+    margin-top: 67px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(115, 224, 225);
+}
+
+.audio_left_name {
+    /* width: 85px; */
+    height: auto;
+    margin-left: 10px;
+    margin-top: 66px;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+}
+
+.audio_left_date {
+    color: white;
+    font-size: 22px;
+    float: left;
+    text-align: right;
+    width: 100%;
+    height: 30px;
+}
+
+.audio_left_source {
+    width: 240px;
+    float: left;
+    height: 100px;
+    background-image: url(../bqh/GJ_audio_03.jpg);
+    background-size: 100% 100%;
+}
+
+.audio_left_video1 {
+    margin-left: 7px;
+    margin-top: 10px;
+    width: 195px;
+    height: 142px;
+}
+
+.audio_d {
+    float: left;
+    width: 280px;
+    height: 75px;
+    margin-top: 10px;
+}
+
+.play_logo {
+    width: 55px;
+    height: 50px;
+    float: left;
+}
+
+.play_logo img {
+    width: 30px;
+    height: 30px;
+    margin: 20px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.audio_text {
+    width: 150px;
+    height: 80px;
+    float: left;
+    color: white;
+    top: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+}
+
+.audio_progress {
+    margin-left: 10px;
+    float: left;
+    width: 0;
+    height: 2px;
+    background: rgb(115, 224, 225);
+}
+
+
+/*音频素材右*/
+
+.SC_audio_right {
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.audio_right_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.audio_right_video1 {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.audio_right_line {
+    margin-top: 83px;
+    width: 77px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.audio_right_circle {
+    margin-top: 71px;
+    width: 25px;
+    height: 25px;
+    float: left;
+    border-radius: 50%;
+    background-color: rgb(115, 224, 225);
+}
+
+.audio_right_name {
+    width: 136px;
+    margin-top: 69px;
+    height: auto;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: -45px;
+}
+
+.audio_right_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: left;
+    width: 100%;
+    height: 30px;
+}
+
+.audio_right_source {
+    width: 240px;
+    float: left;
+    height: 100px;
+    background-image: url(../bqh/GJ_audio_03.jpg);
+    background-size: 100% 100%;
+}
+
+.audio_right_audio {
+    float: left;
+    margin-top: 10px;
+    width: 210px;
+    height: 90px;
+}
+
+
+/*文本素材左*/
+
+.SC_text_left {
+    margin-top: 40px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.text_left_video {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.text_left_line {
+    margin-top: 80px;
+    margin-left: 22px;
+    width: 56px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.text_left_circle {
+    margin-top: 68px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(115, 224, 225);
+}
+
+.text_left_name {
+    /* width: 85px; */
+    height: auto;
+    margin-left: 10px;
+    margin-top: 67px;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+}
+
+.text_left_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: right;
+    width: 100%;
+    height: 30px;
+}
+
+.text_left_source {
+    width: 235px;
+    float: left;
+    height: 100px;
+    background-image: url(../bqh/GJ_text_03.jpg);
+    background-size: 100% 100%;
+}
+
+.text_left_text {
+    margin-left: 7px;
+    margin-top: 0px;
+    width: 220px;
+    height: 98px;
+    padding: 5px;
+    font-size: 20px;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*文本素材右侧*/
+
+.SC_text_right {
+    margin-left: 150px;
+    margin-top: 40px;
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+
+.text_right_audio {
+    width: 210px;
+    height: 200px;
+    float: left;
+}
+
+.text_right_line {
+    margin-top: 80px;
+    width: 56px;
+    height: 3px;
+    background-color: rgb(115, 224, 225);
+    float: left;
+}
+
+.text_right_circle {
+    margin-top: 68px;
+    width: 25px;
+    height: 25px;
+    float: left;
+    border-radius: 50%;
+    background-color: rgb(115, 224, 225);
+}
+
+.text_right_name {
+    width: 136px;
+    margin-top: 67px;
+    height: auto;
+    text-align: right;
+    float: left;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: -45px;
+}
+
+.text_right_date {
+    color: white;
+    font-size: 20px;
+    float: left;
+    text-align: left;
+    width: 100%;
+    height: 30px;
+}
+
+.text_right_source {
+    width: 235px;
+    float: left;
+    height: 100px;
+    background-image: url(../bqh/GJ_text_03.jpg);
+    background-size: 100% 100%;
+}
+
+.text_right_text {
+    margin-top: 3px;
+    margin-left: 7px;
+    width: 220px;
+    height: 90px;
+    padding: 5px;
+    font-size: 20px;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*模态框*/
+
+
+/* 定义模态对话框外面的覆盖层样式 */
+
+#modal_video {
+    width: 1830px;
+    height: 960px;
+    margin-left: 45px;
+    float: left;
+    background-color: rgb(14, 20, 29);
+}
+
+#text_l {
+    width: 180px;
+    height: 500px;
+    float: left;
+    text-align: right;
+}
+
+#text_name {
+    display: block;
+    margin-top: 77%;
+    font-size: 40px;
+}
+
+#text_r {
+    width: 1020px;
+    height: 500px;
+    float: left;
+    font-size: 20px;
+}
+
+#text_curTime {
+    font-size: 30px;
+    text-align: left;
+    width: 100%;
+    height: 45px;
+    margin-left: 25px;
+    float: left;
+}
+
+#text_text {
+    font-size: 25px;
+    width: 1020px;
+    padding: 20px 20px 20px 40px;
+    height: 250;
+    overflow: hidden;
+    background-image: url(../bqh/text_talk_03.jpg);
+    background-size: 100% 100%;
+    float: left;
+}
+
+#main_text {
+    color: rgb(115, 224, 225);
+    width: 1200px;
+    height: 500px;
+    margin-left: 315px;
+    margin-top: 245px;
+}
+
+.modal-top {
+    height: 80px;
+    width: 1920px;
+    float: left;
+    color: rgb(24, 225, 243);
+    font-size: 57px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: simsun;
+}
+
+.modal-top .modal_left {
+    margin-top: 16px;
+    width: 300px;
+    height: 50px;
+    background-image: url(../bqh/bqhright_03.jpg);
+    background-size: 100% 100%;
+    float: left;
+    margin-left: 435px;
+}
+
+.modal-top .modal_right {
+    margin-top: 16px;
+    width: 300px;
+    height: 50px;
+    background-image: url(../bqh/bqhleft_03.jpg);
+    background-size: 100% 100%;
+    float: left;
+}
+
+.modal-top .modal_title {
+    text-align: center;
+    width: 430px;
+    height: 80px;
+    line-height: 80px;
+    float: left;
+}
+
+.modal-top .modal_close {
+    width: 415px;
+    height: 80px;
+    line-height: 80px;
+    text-align: right;
+    float: left;
+}
+
+.modal-top .modal_close .close {
+    cursor: pointer;
+}
+
+#modal-overlay {
+    visibility: hidden;
+    position: absolute;
+    /* 使用绝对定位或固定定位  */
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1000;
+    background-color: rgb(14, 21, 31);
+    opacity: 1;
+    /* 背景半透明 */
+}
+
+
+/* 模态框样式 */
+
+.modal-data {
+    width: 1000px;
+    height: 600px;
+    margin: 100px auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 15px;
+    text-align: center;
+}
+
+.metalog-detail {
+    display: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 180px;
+    top: 473px;
+}
+
+.metalog-detail1 {
+    display: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 120px;
+    top: 557px;
+}
+
+.metalog-detail2 {
+    display: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 258px;
+    top: 642px;
+}
+
+#modal_text {
+    width: 1000px;
+    height: 600px;
+    margin-left: 452px;
+    margin-top: 185px;
+}
+
+#modaltext_message {
+    float: left;
+    width: 1000px;
+    height: 40px;
+    color: rgb(115, 224, 225);
+    font-size: 35px;
+}
+
+#modaltext_name {
+    float: left;
+    /* width: 100px; */
+    margin: 0 50px 0 25px;
+}
+
+#modaltext_time {
+    float: left;
+    /* width: 500px; */
+}
+
+#modaltext_text {
+    text-align: left;
+    width: 1000px;
+    height: 560px;
+    background-image: url(../bqh/text_details_03.png);
+    background-size: 100% 100%;
+    color: white;
+    font-size: 24px;
+    padding: 40px 30px 0px 30px;
+    overflow: hidden;
+}
+
+#modal_aiduo {
+    margin-left: 595px;
+    margin-top: 380px;
+    width: 650px;
+    background-image: url(../bqh/GJ_audio_03.jpg);
+    background-size: 100% 100%;
+    height: 145px;
+}
+
+#modal_audio_source {
+    width: 423px;
+    height: 120px;
+    left: 94px;
+    position: relative;
+    z-index: 9999
+}
+
+#modal_aiduo_player {
+    float: left;
+    width: 145px;
+    height: 145px;
+}
+
+#modal_audio_content {
+    float: left;
+    width: 330px;
+    height: 150px;
+    color: white;
+    font-size: 44px;
+    top: -100px;
+    position: relative;
+}
+
+#modal_picture_video {
+    width: 1830px;
+    height: 960px;
+    margin-left: 45px;
+    float: left;
+    background-color: rgb(14, 20, 29);
+    position: relative;
+}
+
+#QY_NO {
+    width: 400px;
+    float: left;
+    margin-top: 35px;
+    margin-left: -5px;
+}
+
+#QY_circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(24, 81, 98);
+    background-image: url(../bqh/QY_CIRCLE_03.jpg);
+    background-size: 100% 100%;
+    /*background-image: url(../bqh/QY_CIRCLE2_03.jpg);*/
+    float: left;
+    position: relative;
+}
+
+#QY_modal {
+    width: 300px;
+    height: 50px;
+    float: left;
+    font-size: 20px;
+}
+
+#QY_BZ {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: -10px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#QY_WZ {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: 4px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#QY_KHD {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: 4px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#QY_line {
+    position: absolute;
+    height: 40px;
+    width: 4px;
+    background: #167E8B;
+    right: 400px;
+    top: 675px;
+}
+
+#JS_line {
+    position: absolute;
+    height: 40px;
+    width: 4px;
+    background: #167E8B;
+    right: 400px;
+    top: 760px;
+}
+
+#JS_NO {
+    width: 400px;
+    float: left;
+    margin-top: 35px;
+    margin-left: -5px;
+}
+
+#JS_circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(19, 172, 185);
+    background: rgb(24, 81, 98);
+    float: left;
+    position: relative;
+    padding-left: 3px;
+    font-size: 20px;
+    padding-top: 11px;
+    font-weight: bold;
+    color: #167E8B;
+}
+
+#JS_circle span {
+    position: absolute;
+    white-space: nowrap;
+    left: 2px;
+}
+
+#JS_modal {
+    width: 300px;
+    height: 50px;
+    float: left;
+    font-size: 20px;
+}
+
+#JS_BZ {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: -10px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#JS_WZ {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: 4px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#JS_KHD {
+    float: left;
+    width: 98px;
+    height: 35px;
+    margin-top: 8px;
+    background: rgb(22, 126, 139);
+    margin-left: 4px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.main_left_con .selected {
+    float: left;
+    border-radius: 0;
+    border: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 28px;
+    line-height: 28px;
+    min-width: 111px;
+    background: #005B66;
+    width: 560px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-left: 55px;
+    margin-top: 1px;
+}
+
+.main_left_con .selected .tag_select {
+    text-align: left;
+    padding-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    background: none;
+}
+
+.main_left_con .selected ul.tag_options {
+    z-index: 1000;
+    position: absolute;
+    list-style-type: none;
+    width: 560px;
+    background: none;
+    cursor: pointer;
+    list-style-image: none;
+    padding-left: 0px;
+    overflow: hidden;
+    border: 0;
+    margin-left: -20px;
+    margin-top: 0px;
+}
+
+.main_left_con .selected ul.tag_options li {
+    text-align: left;
+    padding-bottom: 0px;
+    line-height: 50px;
+    padding: 0 10px;
+    display: block;
+    height: 50px;
+    padding-left: 30px;
+    margin-top: 1px;
+    background: rgb(22, 126, 138);
+}
+
+.arrow_btn {
+    height: 50px;
+    width: 50px;
+    float: right;
+    background: rgb(22, 126, 138);
+    padding: 16px 0 0 19px;
+}
+
+.arrow_btn .dot-bottom {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #fff;
+}
+
+.main_left_con .selected ul.tag_options li.curr {
+    /*background: #dbdcde;*/
+    background: url("../bqh/curr_dot.png") no-repeat 97% center #dbdcde;
+    color: rgb(22, 126, 138);
+    background-size: 3%;
+}
+
+
+/*.main_left_con .selected ul.tag_options li.curr span {
+    width: 15px;
+    height: 15px;
+    display: block;
+    float: right;
+    background: rgb(22, 126, 138);
+    margin: 18px 8px;
+    border-radius: 10px;
+}
+*/

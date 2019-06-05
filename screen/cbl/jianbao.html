@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>深圳报业集团所属媒体稿件传播力简报</title>
+    <link rel="stylesheet" type="text/css" href="./css/jianbao.css">
+    <script src="./lib/jquery-3.3.1.min.js"></script>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/echarts.min.js"></script>
+    <script src="./js/jianbao.js"></script>
+</head>
+<body ng-controller="jianbaoController">
+<div class="tit">
+  <img src="./images/title.png">
+  <div class="date">{{startTimeShow}}--{{endTimeShow}}</div>
+</div>
+<div class="left">
+  <div class="l-tit">集团稿件总数情况</div>
+  <div class="yc-total">
+   <div class="r-name">本周原创总数</div>
+    <div class="r-num">{{gjycTotal | toThousands}}<font ng-style="{color:(gjycTotal<lastgjycTotal)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="gjycTotal>=lastgjycTotal">+{{gjycTotal-lastgjycTotal | toThousands}}</font><font ng-if="gjycTotal<lastgjycTotal">-{{lastgjycTotal-gjycTotal | toThousands}}</font>)</font></div> 
+    <div class="yc-prop"></div>
+  </div>
+  <div class="gj-total">
+    <div class="r-name">本周稿件总数</div>
+    <div class="r-num">{{gjTotal | toThousands}}<font  ng-style="{color:(gjTotal<lastgjTotal)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="gjTotal>=lastgjTotal">+{{gjTotal-lastgjTotal | toThousands}}</font><font ng-if="gjTotal<lastgjTotal">-{{lastgjTotal-gjTotal | toThousands}}</font>)</font></div>
+  </div>
+    <div class="yc-prop">
+     <div id="chartyc" ></div>
+  </div>
+  <div class="gj-prop">
+     <div id="chartgj" ></div>
+  </div>
+  <div class="left-bar">
+    <div id="chartbar1"></div>
+    <div class="char-name">
+      <div >数字报</div>
+      <div >网站</div>
+      <div >APP</div>
+      <div >微博</div>
+      <div>微信</div>
+    </div>
+  </div>
+   <div class="select">
+    <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+  <label class="box" style="width: 15%;float: left;" >
+    <input class="radio" type="checkbox" name="radio1" checked ng-click="changegj(1)" ">
+    <span class="radioInput" style="margin-right: 8px;"></span>稿件总数
+</label>
+<label class="box" style="width: 15%;float: left;" >
+    <input class="radio1" type="checkbox" name="radio1" checked ng-click="changegj(2)">
+    <span class="radioInput1" ></span>原创稿件
+</label>
+    <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+  </div>
+</div>
+<div class="right">
+  <div class="r-tit">各渠道稿件原创情况</div>
+  <div class="yc-total-r">
+       <div class="r-name-r">原创总数</div>
+        <div class="r-num" style="width: 68%;">{{gjycTotal | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(gjycTotal<lastgjycTotal)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="gjycTotal>=lastgjycTotal">+{{gjycTotal-lastgjycTotal | toThousands}}</font><font ng-if="gjycTotal<lastgjycTotal">-{{lastgjycTotal-gjycTotal | toThousands}}</font>)</font></div> 
+      </div>
+   <div class="qd-type">   
+     <div id="chartpapertype" style="width: 50%;height:80%;margin:0 auto;float: left;"></div>
+     <div id="chartothertype" style="width: 50%;height:80%;margin:0 auto;float: right;"></div>
+  </div>
+  <div class="bestnews" style="height: 32%;" >
+    <table style="height: 100%;">
+      <tr><td><font style="color: rgb(29, 241, 249);">传播最好的新闻：</font>来自 <font class="num">{{bestNews.siteName}}</font> 发布的《{{bestNews.title}}》，该稿件共被转载 <font class="num">{{bestNews.reprints}}</font> 次，有 <font class="num">{{detailZZMT.total}}</font> 家媒体转载该稿件， 其中包括核心媒体头条（<font ng-repeat="val in detailZZMT.top">{{val}}<font ng-if="($index+1)<detailZZMT.top.length">，</font></font></font>）<font class="num">{{detailZZMT.top.length}}</font> 家、核心媒体（<font ng-repeat="val in detailZZMT.core">{{val}}<font ng-if="($index+1)<detailZZMT.core.length">，</font></font>） <font class="num">{{detailZZMT.core.length}}</font> 家、一级媒体 <font class="num">{{detailZZMT.one.length}}</font> 家、二级媒体 <font class="num">{{detailZZMT.two.length}}</font> 家。</td></tr>
+      <tr><td><font style="color: rgb(29, 241, 249);">转载篇数最多的媒体：</font>{{psTop[1].siteName}} <font class="num">{{psTop[1].ps}}</font>，{{psTop[2].siteName}} <font class="num">{{psTop[2].ps}}</font>，{{psTop[3].siteName}} <font class="num">{{psTop[3].ps}}</font></td></tr>
+      <tr><td><font style="color: rgb(29, 241, 249);">转载次数最多的媒体：</font>{{zsTop[1].siteName}} <font class="num">{{zsTop[1].zs}}</font>，{{zsTop[2].siteName}} <font class="num">{{zsTop[2].zs}}</font>，{{zsTop[3].siteName}} <font class="num">{{zsTop[3].zs}}</font></td></tr>
+    </table>
+  </div>
+  <!-- <div class="bestnews">
+    <div style="margin-top: 1.5%;min-height: 60px;"><font style="color: rgb(29, 241, 249);">传播最好的新闻：</font>来自 <font class="num">{{bestNews.siteName}}</font> 发布的《{{bestNews.title}}》，该稿件共被转载 <font class="num">{{bestNews.reprints}}</font> 次，有 <font class="num">{{detailZZMT.total}}</font> 家媒体转载该稿件， 其中包括核心媒体头条（<font ng-repeat="val in detailZZMT.top">{{val}}<font ng-if="($index+1)<detailZZMT.top.length">，</font></font></font>）<font class="num">{{detailZZMT.top.length}}</font> 家、核心媒体（<font ng-repeat="val in detailZZMT.core">{{val}}<font ng-if="($index+1)<detailZZMT.core.length">，</font></font>） <font class="num">{{detailZZMT.core.length}}</font> 家、一级媒体 <font class="num">{{detailZZMT.one.length}}</font> 家、二级媒体 <font class="num">{{detailZZMT.two.length}}</font> 家。</div>
+    <div style="margin-top: 1.5%;"><font style="color: rgb(29, 241, 249);">转载篇数最多的媒体：</font>{{psTop[1].siteName}} <font class="num">{{psTop[1].ps}}</font>，{{psTop[2].siteName}} <font class="num">{{psTop[2].ps}}</font>，{{psTop[3].siteName}} <font class="num">{{psTop[3].ps}}</font></div>
+    <div style="margin-top: 1.5%;"><font style="color: rgb(29, 241, 249);">转载次数最多的媒体：</font>{{zsTop[1].siteName}} <font class="num">{{zsTop[1].zs}}</font>，{{zsTop[2].siteName}} <font class="num">{{zsTop[2].zs}}</font>，{{zsTop[3].siteName}} <font class="num">{{zsTop[3].zs}}</font></div>
+  </div> -->
+ <!--  <div class="zzps">
+    <div class="val1">
+      转载篇数
+    </div>
+    <div class="val2">
+     {{ycReprintsThisWeek.total.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.total.ps<ycReprintsLastWeek.total.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.total.ps>=ycReprintsLastWeek.total.ps">+{{ycReprintsThisWeek.total.ps-ycReprintsLastWeek.total.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.total.ps<ycReprintsLastWeek.total.ps">-{{ycReprintsLastWeek.total.ps-ycReprintsThisWeek.total.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+      {{ycReprintsThisWeek.tqb.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.tqb.ps<ycReprintsLastWeek.tqb.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.tqb.ps>=ycReprintsLastWeek.tqb.ps">+{{ycReprintsThisWeek.tqb.ps-ycReprintsLastWeek.tqb.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.tqb.ps<ycReprintsLastWeek.tqb.ps">-{{ycReprintsLastWeek.tqb.ps-ycReprintsThisWeek.tqb.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.sb.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.sb.ps<ycReprintsLastWeek.sb.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.sb.ps>=ycReprintsLastWeek.sb.ps">+{{ycReprintsThisWeek.sb.ps-ycReprintsLastWeek.sb.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.sb.ps<ycReprintsLastWeek.sb.ps">-{{ycReprintsLastWeek.sb.ps-ycReprintsThisWeek.sb.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.wb.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.wb.ps<ycReprintsLastWeek.wb.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.wb.ps>=ycReprintsLastWeek.wb.ps">+{{ycReprintsThisWeek.wb.ps-ycReprintsLastWeek.wb.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.wb.ps<ycReprintsLastWeek.wb.ps">-{{ycReprintsLastWeek.wb.ps-ycReprintsThisWeek.wb.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.jb.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.jb.ps<ycReprintsLastWeek.jb.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.jb.ps>=ycReprintsLastWeek.jb.ps">+{{ycReprintsThisWeek.jb.ps-ycReprintsLastWeek.jb.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.jb.ps<ycReprintsLastWeek.jb.ps">-{{ycReprintsLastWeek.jb.ps-ycReprintsThisWeek.jb.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+    {{ycReprintsThisWeek.barb.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.barb.ps<ycReprintsLastWeek.barb.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.barb.ps>=ycReprintsLastWeek.barb.ps">+{{ycReprintsThisWeek.barb.ps-ycReprintsLastWeek.barb.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.barb.ps<ycReprintsLastWeek.barb.ps">-{{ycReprintsLastWeek.barb.ps-ycReprintsThisWeek.barb.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.news.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.news.ps<ycReprintsLastWeek.news.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.news.ps>=ycReprintsLastWeek.news.ps">+{{ycReprintsThisWeek.news.ps-ycReprintsLastWeek.news.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.news.ps<ycReprintsLastWeek.news.ps">-{{ycReprintsLastWeek.news.ps-ycReprintsThisWeek.news.ps | toThousands}}</font>)</font>
+    </div>
+    
+    <div class="val3 ">
+     {{ycReprintsThisWeek.dt.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.dt.ps<ycReprintsLastWeek.dt.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.dt.ps>=ycReprintsLastWeek.dt.ps">+{{ycReprintsThisWeek.dt.ps-ycReprintsLastWeek.dt.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.dt.ps<ycReprintsLastWeek.dt.ps">-{{ycReprintsLastWeek.dt.ps-ycReprintsThisWeek.dt.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.dc.ps | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.dc.ps<ycReprintsLastWeek.dc.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.dc.ps>=ycReprintsLastWeek.dc.ps">+{{ycReprintsThisWeek.dc.ps-ycReprintsLastWeek.dc.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.dc.ps<ycReprintsLastWeek.dc.ps">-{{ycReprintsLastWeek.dc.ps-ycReprintsThisWeek.dc.ps | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.jz.ps | toThousands}}<font ng-if="ycReprintsThisWeek.jz.zs!='-'&&lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.jz.ps<ycReprintsLastWeek.jz.ps)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.jz.ps>=ycReprintsLastWeek.jz.ps">+{{ycReprintsThisWeek.jz.ps-ycReprintsLastWeek.jz.ps | toThousands}}</font><font ng-if="ycReprintsThisWeek.jz.ps<ycReprintsLastWeek.jz.ps">-{{ycReprintsLastWeek.jz.ps-ycReprintsThisWeek.jz.ps | toThousands}}</font>)</font>
+    </div>
+  </div>
+  <div class="zzcs">
+     <div class="val1">
+      转载次数
+    </div>
+    <div class="val2">
+     {{ycReprintsThisWeek.total.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.total.zs<ycReprintsLastWeek.total.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.total.zs>=ycReprintsLastWeek.total.zs">+{{ycReprintsThisWeek.total.zs-ycReprintsLastWeek.total.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.total.zs<ycReprintsLastWeek.total.zs">-{{ycReprintsLastWeek.total.zs-ycReprintsThisWeek.total.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.tqb.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.tqb.zs<ycReprintsLastWeek.tqb.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.tqb.zs>=ycReprintsLastWeek.tqb.zs">+{{ycReprintsThisWeek.tqb.zs-ycReprintsLastWeek.tqb.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.tqb.zs<ycReprintsLastWeek.tqb.zs">-{{ycReprintsLastWeek.tqb.zs-ycReprintsThisWeek.tqb.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+    {{ycReprintsThisWeek.sb.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.sb.zs<ycReprintsLastWeek.sb.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.sb.zs>=ycReprintsLastWeek.sb.zs">+{{ycReprintsThisWeek.sb.zs-ycReprintsLastWeek.sb.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.sb.zs<ycReprintsLastWeek.sb.zs">-{{ycReprintsLastWeek.sb.zs-ycReprintsThisWeek.sb.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.wb.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.wb.zs<ycReprintsLastWeek.wb.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.wb.zs>=ycReprintsLastWeek.wb.zs">+{{ycReprintsThisWeek.wb.zs-ycReprintsLastWeek.wb.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.wb.zs<ycReprintsLastWeek.wb.zs">-{{ycReprintsLastWeek.wb.zs-ycReprintsThisWeek.wb.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.jb.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.jb.zs<ycReprintsLastWeek.jb.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.jb.zs>=ycReprintsLastWeek.jb.zs">+{{ycReprintsThisWeek.jb.zs-ycReprintsLastWeek.jb.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.jb.zs<ycReprintsLastWeek.jb.zs">-{{ycReprintsLastWeek.jb.zs-ycReprintsThisWeek.jb.zs | toThousands}}</font>)</font>
+    </div>
+     <div class="val3">
+     {{ycReprintsThisWeek.barb.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.barb.zs<ycReprintsLastWeek.barb.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.barb.zs>=ycReprintsLastWeek.barb.zs">+{{ycReprintsThisWeek.barb.zs-ycReprintsLastWeek.barb.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.barb.zs<ycReprintsLastWeek.barb.zs">-{{ycReprintsLastWeek.barb.zs-ycReprintsThisWeek.barb.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.news.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.news.zs<ycReprintsLastWeek.news.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.news.zs>=ycReprintsLastWeek.news.zs">+{{ycReprintsThisWeek.news.zs-ycReprintsLastWeek.news.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.news.zs<ycReprintsLastWeek.news.zs">-{{ycReprintsLastWeek.news.zs-ycReprintsThisWeek.news.zs | toThousands}}</font>)</font>
+    </div>
+   
+   <div class="val3">
+     {{ycReprintsThisWeek.dt.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.dt.zs<ycReprintsLastWeek.dt.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.dt.zs>=ycReprintsLastWeek.dt.zs">+{{ycReprintsThisWeek.dt.zs-ycReprintsLastWeek.dt.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.dt.zs<ycReprintsLastWeek.dt.zs">-{{ycReprintsLastWeek.dt.zs-ycReprintsThisWeek.dt.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.dc.zs | toThousands}}<font ng-if="lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.dc.zs<ycReprintsLastWeek.dc.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.dc.zs>=ycReprintsLastWeek.dc.zs">+{{ycReprintsThisWeek.dc.zs-ycReprintsLastWeek.dc.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.dc.zs<ycReprintsLastWeek.dc.zs">-{{ycReprintsLastWeek.dc.zs-ycReprintsThisWeek.dc.zs | toThousands}}</font>)</font>
+    </div>
+    <div class="val3">
+     {{ycReprintsThisWeek.jz.zs | toThousands}}<font ng-if="ycReprintsThisWeek.jz.zs!='-'&&lastWeekChecked" ng-style="{color:(ycReprintsThisWeek.jz.zs<ycReprintsLastWeek.jz.zs)?'rgb(29, 241, 249)':'red'}" >(<font ng-if="ycReprintsThisWeek.jz.zs>=ycReprintsLastWeek.jz.zs">+{{ycReprintsThisWeek.jz.zs-ycReprintsLastWeek.jz.zs | toThousands}}</font><font ng-if="ycReprintsThisWeek.jz.zs<ycReprintsLastWeek.jz.zs">-{{ycReprintsLastWeek.jz.zs-ycReprintsThisWeek.jz.zs | toThousands}}</font>)</font>
+    </div>
+  </div>
+   <div class="select">
+    <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+  <label class="box" style="width: 15%;float: left;">
+    <input class="radio" type="checkbox" name="radio2" checked  ng-click="changeDate(1)">
+    <span class="radioInput"></span>本周数据
+  </label>
+  <label class="box" style="width: 15%;float: left;" >
+      <input class="radio1" type="checkbox" name="radio2" checked ng-click="changeDate(2)">
+      <span class="radioInput1"></span>上周数据
+  </label>
+    <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+  </div> -->
+</div>
+</body>
+<script type="text/javascript">
+   
+</script>
+</html>

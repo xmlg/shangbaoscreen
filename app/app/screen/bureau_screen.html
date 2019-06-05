@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="../lib/echarts/dist/echarts.js"></script>
+    <script src="js/jquery.page.js"></script>
+    <script type="text/javascript" src="js/laydate.dev.js"></script>
+    <link rel="stylesheet" href="css/stars.css">
+    <link rel="stylesheet" href="css/bureau_screen.css">
+</head>
+<body>
+<div class="stars"></div>
+<div class="logoLeft">
+    <img src="images/regionalHotDist01_01.png" alt="">
+</div>
+<div class="logoRight">
+    <div class="rightTopTerritory">
+        <span>北京</span>
+        <a class="territoryjiantou"><i></i></a>
+        <ul>
+            <li name="beijing" class="active">北京</li>
+            <li name="jingjinji">京津冀</li>
+            <li name="tianjin">天津</li>
+            <li name="zhejiang">浙江</li>
+            <li name="henan">河南</li>
+        </ul>
+    </div>
+    <!--<div class="daysBtn">
+        <a class="active" name="country_1">1日</a>
+        <a name="country_3">3日</a>
+        <a name="country_7">7日</a>
+    </div>-->
+    <input class="logoRightIn"  type="text" id="J-xl" ><!-- placeholder="2017-06-23" -->
+</div>
+<div class="topBox"></div>
+
+
+
+<div class="center">
+    <div id="map"></div>
+    <div class="list">
+        <div class="listTitle">
+            <div class="listTitleL">
+                <img src="images/bureauList_03.png" alt="">
+                北京热点
+            </div>
+            <div class="listTitleR">
+                <img src="images/bureauList_05.png" alt="">
+                热度
+            </div>
+        </div>
+        <ul class="listUl">
+        </ul>
+        <div class="listUlNone">暂无相关数据</div>
+        <div class="tcdPageCode"></div>
+    </div>
+</div>
+<script>
+
+    var nameArr={'beijing':'001004',
+        'jingjinji':'001035001',
+        'tianjin':'001008',
+        'zhejiang':'001020',
+        'henan':'001019'};
+    var nameNum='001004',
+            placeName='beijing';
+    var jiantouA=1,
+            time=laydate.now(),
+            cluster_name='country_1';
+
+    //下拉小箭头点击事件
+    $('.territoryjiantou').click(function(event){
+        if(jiantouA==1){
+            jiantouA=2;
+            $('.territoryjiantou i').css('transform','rotate(180deg)');
+            $('.rightTopTerritory ul').slideDown()
+        }else{
+            jiantouA=1;
+            $('.territoryjiantou i').css('transform','rotate(0deg)');
+            $('.rightTopTerritory ul').slideUp()
+        }
+        event.stopPropagation();
+    });
+
+    //下拉菜单点击
+    $('.rightTopTerritory ul li').click(function(event){
+        $('.rightTopTerritory span').html($(this).html());
+        $(this).addClass('active').siblings('li').removeClass('active');
+        jiantouA=1;
+        $('.territoryjiantou i').css('transform','rotate(0deg)');
+        $('.rightTopTerritory ul').slideUp();
+        placeName=$(this).attr('name');
+        nameNum=nameArr[placeName];
+        Map(placeName,time);
+        listData1(0,nameArr[placeName],time,cluster_name);
+        $('.listTitleL').html(' <img src="images/bureauList_03.png" alt="">'+$(this).html()+'热点');
+        event.stopPropagation();
+    });
+    $('body').click(function(){
+        jiantouA=1;
+        $('.territoryjiantou i').css('transform','rotate(0deg)');
+        $('.rightTopTerritory ul').slideUp()
+    });
+
+
+
+    //列表数据
+    var pageCount1,
+        current1,
+        startpage=0;
+
+    listData1(startpage,nameNum,time,cluster_name);
+    function listData1(startpage,nameNum,time,cluster_name){
+        var url="/wcm/bigdata.do?area="+nameNum+"&cluster_name="+cluster_name+"&field=000&loaddate="+time+"&modelid=hotnewslist&pagesize=8&serviceid=areahotpoint&startpage="+startpage+"&subjectarea=0&typeid=widget";
+        var html= $.ajax({
+            type:"get",
+            url:url,
+            async: false,
+        }).responseText;
+        html=eval("("+html+")");
+        $('.listUl li').remove();
+        if(html.PAGEITEMS.length>0){
+            $('.tcdPageCode').css('display','block');
+            $('.listUlNone').css('display','none');
+        }else{
+        	$('.tcdPageCode').css('display','none');
+        	$('.listUlNone').css('display','block');
+        }
+        if(html.PAGEITEMS!=undefined){
+            for(var i=0;i<html.PAGEITEMS.length;i++){
+                var li=$("<li><a target='_blank' href='/dist/#/plan/hotpointcluster?guids="+html.PAGEITEMS[i].CLUSTERID+"&menutype=hot&method=areahotpointevent'  title='"+html.PAGEITEMS[i].SHORTTITLE+"'>"+html.PAGEITEMS[i].SHORTTITLE+"</a><span>"+html.PAGEITEMS[i].CLUSTERNUMS+"</span></li>");
+
+                $(".listUl").append(li);
+
+            }
+            pageCount1=html.TOTALPAGECOUNT
+            current1=html.PAGEINDEX+1
+
+           $('.tcdPageCode').pager({pagenumber: current1, pagecount: pageCount1, buttonClickCallback: function(p){
+			        	listData1(p-1,nameNum,time,cluster_name);
+			        } })
+
+        }
+    }
+
+
+    function keysrt(key,desc) {
+        return function(a,b){
+            return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+        }
+    }
+
+    // 1日 3日 7日 点击事件
+    $('.daysBtn a').click(function(event){
+        $(this).addClass('active').siblings('a').removeClass('active');
+        cluster_name=$(this).attr('name');
+        listData(startpage,nameNum,time,cluster_name);
+        event.stopPropagation();
+    });
+            
+
+    //地图
+
+    function Map(name,time){
+
+        option = {
+            title: {
+                /* text: '北京',*/
+                left: 'center',
+                textStyle: {
+                    color: '#fff',
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                /*formatter: value,*/
+            },
+            visualMap: {
+                min: 0,
+                max: 400,
+                text:['热度高','热度低'],
+                textStyle: {
+                    color: '#fff',
+                },
+                realtime: false,
+                calculable: true,
+                inRange: {
+                    color: ['#0ed7e0','#5ee496','#78e87d','#c9f632', '#ffff00']
+                }
+            },
+            series: [
+                {
+                    type: 'map',
+                    mapType: name,
+                    label: {
+                        emphasis: {
+                            textStyle: {
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#389BB7',
+                            areaColor: '#fff',
+                        },
+                        emphasis: {
+                            areaColor: '#fac027',
+                            borderWidth: 0
+                        }
+                    },
+                    animation: false,
+                    data:[]
+                    // animationDurationUpdate: 1000,
+                    // animationEasingUpdate: 'quinticInOut'
+                }
+            ]
+        };
+        if(nameNum=='001035001'){
+           nameNum='001035001001'
+        }
+        var url="/wcm/bigdata.do?modelid=hotpoint&serviceid=areahotpoint&loaddate="+time+"&area="+nameNum;
+        var data= $.ajax({
+            type:"get",
+            url:url,
+            async: false
+
+        }).responseText;
+        data=eval("("+data+")");
+        if(data.length>0){
+            var tempData=[];
+            for(var i=0;i<data.length;i++){
+                tempData.push({'name':data[i].AREANAME,'value':data[i].HOTPOINTNUM,'area':data[i].AREA})
+            }
+
+            $.get('../lib/echarts/src/util/mapData/geoJson/' + name + '.json', function (geoJson) {
+                var myChart = echarts.init(document.getElementById("map"));
+                echarts.registerMap(name, geoJson);
+
+                /*tempData.sort(keysrt('value',true))*/
+                tempData.sort(function(a,b){
+                    var tag=sortDate(a.value,b.value);
+                    return tag;
+                });
+                option.series[0].data=tempData;
+                option.visualMap.max=tempData[0].value;
+                 myChart.on('click', function (params) {
+                 	
+                 	 nameNum=params.data.area;
+                 	 var areaName2=params.data.name;
+                 	 $('.listTitleL').html(' <img src="images/bureauList_03.png" alt="">'+$('.rightTopTerritory span').html()+areaName2+'热点');
+                   listData1(0,nameNum,time,cluster_name);
+                  })
+                myChart.setOption(option);
+
+            });
+        }
+    }
+
+    Map(placeName,time);
+
+    function sortDate(a,b){
+        return b-a
+    }
+
+    laydate({
+        elem: '#J-xl',max:laydate.now()
+    });
+    //设置input 默 认时间
+    $('#J-xl').attr('value',laydate.now());
+
+
+    function getData(time,cluster_name){
+        Map(placeName,time);
+        listData1(startpage,nameNum,time,cluster_name)
+
+    }
+
+</script>
+</body>
+</html>

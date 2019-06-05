@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>中央厨房</title>
+    <link rel="stylesheet" type="text/css" href="app/plugIn/ringChart.css">
+    <link rel="stylesheet" type="text/css" href="app/plugIn/dashBoard.css">
+    <link rel="stylesheet" type="text/css" href="css/centerLogo.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+    <div class="centerLogo"></div>
+    <div class="big-border"></div>
+    <!--<div id="Stats-output"></div>-->
+    <div class="galaxyText">率先发展走在前列“一带一路”的浙江使命</div>
+    <img class="leftButtom" src="img/b.png" style="position: absolute;width: 707px;top: 596px;left: 21px;z-index: 100;opacity: 0;">
+    <svg id="svg">
+        <defs>
+            <filter id="filter3000" inkscape:label="Glow" inkscape:menu="Shadows and Glows" inkscape:menu-tooltip="Glow of object's own color at the edges" color-interpolation-filters="sRGB">
+                <feGaussianBlur id="feGaussianBlur3002" stdDeviation="5" result="result91" />
+                <feComposite id="feComposite3004" in2="result91" in="SourceGraphic" operator="over" />
+            </filter>
+            <filter id="filter5790" inkscape:label="Fancy blur" inkscape:menu="Blurs" inkscape:menu-tooltip="Smooth colorized contour which allows desaturation and hue rotation" color-interpolation-filters="sRGB">
+                <feGaussianBlur id="feGaussianBlur5792" stdDeviation="1.5" result="result1" />
+                <feComposite id="feComposite5794" in2="result1" operator="arithmetic" k2="2" in="result1" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="pcRing">
+    </div>
+    <div id="mobileRing">
+    </div>
+    <div id="dashBoard"></div>
+    <div class="wrapper">
+        <video>
+            <source src="video/video.ogg" type="video/ogg">
+        </video>
+    </div>
+    <script src="lib/d3.js"></script>
+    <script src="lib/jquery-2.1.3.js"></script>
+    <script src="lib/countUp.js"></script>
+    <script src="lib/snap.svg.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="lib/state-machine.js"></script>
+    <script src="lib/require.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/stats.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/resize.js"></script>
+    <script type="text/javascript">
+    var stats = new Stats();
+
+    stats.setMode(0); // 0: fps, 1: ms
+
+
+
+    stats.domElement.style.position = 'absolute';
+
+    stats.domElement.style.left = '430px';
+
+    stats.domElement.style.top = '0px';
+
+    stats.domElement.style.zIndex = 10000;
+
+    //stats.domElement.style.display = 'none'
+
+
+
+    //document.getElementById("Stats-output").appendChild(stats.domElement);
+
+
+
+    function render() {
+
+        stats.update();
+
+        requestAnimationFrame(render);
+
+    }
+
+
+
+    requestAnimationFrame(render);
+    </script>
+    <script type="text/javascript">
+    $('video').on('timeupdate', function() {
+
+        var video = this;
+
+        if (video.currentTime > 9) {
+
+            video.pause();
+
+            video.currentTime = 3;
+
+            video.play();
+
+            window.setTimeout(function(d, i) {
+
+                video.play();
+
+            }, 30 * 1000);
+
+        }
+
+    })
+    </script>
+</body>
+
+</html>

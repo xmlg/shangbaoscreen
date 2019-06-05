@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/stars.css">
+	<link rel="stylesheet" href="css/disaster.css">
+</head>
+<body class='laydate_body'>
+	<div class="stars"></div>
+	<div class="logoRight">
+		<div class="rightTopTerritory">
+			<span></span>
+			<a class="territoryjiantou"><i></i></a>
+			<ul>
+				<li data-name='地震'>地震预警</li>
+				<li data-name='台风'>台风预警</li>
+				<li data-name='暴雨'>暴雨预警</li>
+				<li data-name='暴雪'>暴雪预警</li>
+				<li data-name='寒潮'>寒潮预警</li>
+				<li data-name='大风'>大风预警</li>
+				<li data-name='沙尘暴'>沙尘暴预警</li>
+				<li data-name='高温'>高温预警</li>
+				<li data-name='干旱'>干旱预警</li>
+				<li data-name='雷电'>雷电预警</li>
+				<li data-name='冰雹'>冰雹预警</li>
+				<li data-name='霜冻'>霜冻预警</li>
+				<li data-name='大雾'>大雾预警</li>
+				<li data-name='霾'>霾预警</li>
+				<li data-name='海啸'>海啸预警</li>
+				<li data-name='滑坡'>滑坡预警</li>
+				<li data-name='森林火险'>森林火险预警</li>
+			</ul>
+		</div>
+		<input class="logoRightIn"  type="text" id="J-xl" >
+	</div>
+	<div class="topBox"></div>
+
+	
+	<button id="btn">返回</button>
+    <div class="center">
+   		<div id="map"></div>
+   		<div id="Province"></div>
+    </div>
+	
+	<script src="lib/jquery.min.js"></script>
+	<script src="../lib/echarts/dist/echarts.js"></script>
+	<script type="text/javascript" src="js/laydate.dev1.js"></script>
+	<script src="../lib/echarts/dist/china.js"></script>
+	<script>
+	   var nameArr={},
+	   nameValArr=[],
+	   nameKeyArr=[];
+	   var nameNum,
+	   placeName;
+	   var jiantouA=1,
+	   time=laydate.now(),
+	   cluster_name='country_1';
+
+
+	    //下拉小箭头点击事件
+	    $('.territoryjiantou').click(function(event){
+	    	if(jiantouA==1){
+	    		jiantouA=2;
+	    		$('.territoryjiantou i').css('transform','rotate(180deg)');
+	    		$('.rightTopTerritory ul').slideDown()
+	    	}else{
+	    		jiantouA=1;
+	    		$('.territoryjiantou i').css('transform','rotate(0deg)');
+	    		$('.rightTopTerritory ul').slideUp()
+	    	}
+	    	event.stopPropagation();
+	    });
+
+	    initList();
+	    function initList(){
+	    	var txt = $(".rightTopTerritory ul li").eq(0).text();
+	    	var dataName = $(".rightTopTerritory ul li").eq(0).attr('data-name');
+	    	$(".rightTopTerritory span").html(txt).attr('data-name',dataName);
+	    	var spanName = $(".rightTopTerritory span").attr('data-name');
+	    	$(".rightTopTerritory ul li").eq(0).addClass('active');
+	    	if(spanName == '地震'){
+	    		Map(dataName,laydate.now());
+	    	}
+	    }
+    	$('.rightTopTerritory ul').on("click",'li',function(event){
+    		$('#map').show();
+    		$('#Province').hide();
+    		$('#btn').hide();
+	    	var placeNames=$(this).attr('data-name');
+	    	var inpTime = $('#J-xl').attr('value');
+	    	$('.rightTopTerritory span').attr('data-name',placeNames);
+	    	if(placeNames == '地震'){
+	    		Map(placeNames,inpTime);
+	        }else{
+	        	Maps(placeNames,inpTime);
+	        }
+	        $('.rightTopTerritory span').html($(this).html());
+	        $(this).addClass('active').siblings('li').removeClass('active');
+	        jiantouA=1;
+	        $('.territoryjiantou i').css('transform','rotate(0deg)');
+	        $('.rightTopTerritory ul').slideUp();
+	        
+	        event.stopPropagation();
+	    });
+	    $('body').click(function(){
+	    	jiantouA=1;
+	    	$('.territoryjiantou i').css('transform','rotate(0deg)');
+	    	$('.rightTopTerritory ul').slideUp()
+	    });
+
+	    $('#btn').on('click',function(){
+    		$('#Province').hide();
+    		window.location.reload();
+	    	/*var spanText = $(".rightTopTerritory span").attr('data-name');
+	    	var inpTimes = $('#J-xl').attr('value');
+	    	$('#map').show();
+    		$('#Province').hide();
+	    	if(spanText == '地震'){
+	    		Map(spanText,inpTimes);
+	        }else{
+	        	Maps(spanText,inpTimes);
+	        }
+	        $(this).hide();*/
+	    })
+
+	    
+	    function Map(dataName,times){/* 地震地图 */
+			var dataDzSm,dataDzMi,dataDzBi;
+			var data1DzSm,data1DzMi,data1DzBi;
+			var data2DzSm,data2DzMi,data2DzBi;
+
+			function substr(str){
+				var strs;
+				if(str){
+					strs = str.substring(0,str.length-1);
+				}
+				return strs;
+			}
+
+			function convertData(datas) {
+				var res = [];
+			    // console.log(datas)
+			    for(var i=0; i<datas.length; i++){
+			    	var arrs = [];
+			    	var dataCont = datas[i].CONTENT.substr(0,17).trim();
+			    	var geoCoord = substr(datas[i].LONGITUDE)+","+substr(datas[i].LATITUDE)+","+Number(datas[i].RATE)+","+datas[i].SID+","+dataCont;
+			    	var geoCoords = geoCoord.split(',');
+			    	if(geoCoords){
+			    		res.push({
+			    			name: datas[i].HAPPEN_PLACE,
+			    			value: geoCoords
+			    		});
+			    	}
+			    }
+			   // console.log(res)
+			   return res;
+			};
+
+			function randomValue() {
+				return Math.round(Math.random()*1000);
+			}
+			var url = "";
+			var tim;
+			
+			if(times){
+				url = '/wcm/bigdata.do?area=&before_date='+times+'&firstmenu=地震&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster';
+			}/*else{
+				tim = laydate.now();
+				// alert(tim)
+				url = '/wcm/bigdata.do?area=&before_date='+tim+'&firstmenu=地震&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster';
+			}*/
+			
+			$.ajax({
+				url:url,
+				async:false,
+				dataType:'json',
+				success:function(res){
+					console.log(res)
+					var resPag = res.PAGEITEMS;
+					var dzSm=[],dzMi=[],dzBi=[]; // 级别>0 且 <3的 级别>0 且 <3的 级别>0 且 <3的 24小时内
+					var dz1Sm=[],dz1Mi=[],dz1Bi=[]; // 级别>0 且 <3的 级别>0 且 <3的 级别>0 且 <3的 1礼拜内
+					var dz2Sm=[],dz2Mi=[],dz2Bi=[]; // 级别>0 且 <3的 级别>0 且 <3的 级别>0 且 <3的 1月内
+					// console.log(res.PAGEITEMS); // URLTIME 86400000 604800 2592000
+					for(var i=0; i<resPag.length; i++){
+						if(resPag[i].RATE>0 && resPag[i].RATE<3 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 86400000){
+							dzSm.push(resPag[i]);
+						}else if(resPag[i].RATE>=3 && resPag[i].RATE<5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 86400000){
+							// alert(new Date(tim).getTime()-new Date(resPag[i].URLTIME).getTime())
+							dzMi.push(resPag[i]);
+						}else if(resPag[i].RATE>=5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 86400000){
+							dzBi.push(resPag[i]);
+						}else if(resPag[i].RATE>0 && resPag[i].RATE<3 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 604800000){
+							dz1Sm.push(resPag[i]);
+						}else if(resPag[i].RATE>=3 && resPag[i].RATE<5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 604800000){
+							dz1Mi.push(resPag[i]);
+						}else if(resPag[i].RATE>=5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 604800000){
+							dz1Bi.push(resPag[i]);
+						}else if(resPag[i].RATE>0 && resPag[i].RATE<3 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 2592000000){
+							dz2Sm.push(resPag[i]);
+						}else if(resPag[i].RATE>=3 && resPag[i].RATE<5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 2592000000){
+							dz2Mi.push(resPag[i]);
+						}else if(resPag[i].RATE<=5 && (new Date()).getTime()-(new Date(resPag[i].URLTIME)).getTime()<= 2592000000){
+							dz2Bi.push(resPag[i]);
+						}
+					}
+					dataDzSm = dzSm;
+					dataDzMi = dzMi;
+					dataDzBi = dzBi;
+					data1DzSm = dz1Sm;
+					data1DzMi = dz1Mi;
+					data1DzBi = dz1Bi;
+					data2DzSm = dz2Sm;
+					data2DzMi = dz2Mi;
+					data2DzBi = dz2Bi;
+				},
+				error:function(err){
+					console.log(err)
+				}
+			})
+
+			option = {
+				tooltip: {
+		            trigger: 'item',
+		            formatter: function(params) {
+		                var res = params.name+'<br/>'+"纬度："+params.value[1]+'<br/>'+"经度："+params.value[0]+'<br/>'+"级别："+params.value[2]+'<br/>'+params.value[4]+"...";
+		                return res;
+		            }
+		        },
+			    geo: {
+			    	type:"map",
+			    	map: 'china',
+			    	roam: true,  /* 滑轮缩放 */
+			    	label: {
+			    		normal: {
+			    			show: true,
+			    			textStyle: {
+			    				color: 'rgba(0,0,0,0.4)'
+			    			}
+			    		}
+			    	},
+			    	itemStyle: {
+			    		normal:{
+			    			borderColor: 'rgba(0, 0, 0, 0.2)',
+			    			label:{show:true},
+			    			areaColor: '#f6efa6',/* 默认地图颜色 */
+			    		},
+			    		emphasis:{
+			    			areaColor: null,
+			    			shadowOffsetX: 0,
+			    			shadowOffsetY: 0,
+			    			shadowBlur: 20,
+			    			borderWidth: 0,
+			    			shadowColor: 'rgba(0, 0, 0, 0.5)'
+			    		}
+			    	}
+			    },
+			    series : [
+				    {
+				    	type: 'scatter',
+				    	map:'china',
+				    	coordinateSystem: 'geo',
+				    	data: convertData(dataDzSm),
+				    	symbolSize: 10,
+				    	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r1.png',
+				    	symbolRotate: 35,
+				    	label: {
+				    		normal: {
+				    			formatter: '{b}',
+				    			position: 'right',
+				    			show: true
+				    		},
+				    		emphasis: {
+				    			show: true
+				    		}
+				    	},
+				    	itemStyle: {
+				    		normal: {
+	                            borderWidth: .5,//区域边框宽度
+	                            borderColor: '#009fe8',//区域边框颜色
+	                            areaColor:"#000",//区域颜色
+	                        },
+	                    }
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(dataDzMi),
+	                	symbolSize: 20,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r2.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(dataDzBi),
+	                	symbolSize: 30,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r3.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data1DzSm),
+	                	symbolSize: 10,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o1.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data1DzMi),
+	                	symbolSize: 20,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o2.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data1DzBi),
+	                	symbolSize: 30,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o3.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data2DzSm),
+	                	symbolSize: 10,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y1.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data2DzMi),
+	                	symbolSize: 20,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y2.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(data2DzBi),
+	                	symbolSize: 30,
+	                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y3.png',
+	                	symbolRotate: 35,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: true
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	name: 'categoryA',
+	                	type: 'map',
+	                	geoIndex: 0,
+				            // tooltip: {show: false},
+				        data:[]
+				    }
+			    ]
+		    };
+
+		    $.get('js/china.json', function (chinaJson) {
+			    	echarts.registerMap('china', chinaJson);
+			    	var myChart = echarts.init(document.getElementById('map'));
+			    	myChart.setOption(option);
+			    	
+			    	myChart.on('click', function (params) {// 点击(地震地图)省时，显示省地图
+					    console.log(params);
+					    var diQuDzSm,diQuDzMi,diQuDzBi;
+						var diQu1DzSm,diQu1DzMi,diQu1DzBi;
+						var diQu2DzSm,diQu2DzMi,diQu2DzBi;
+
+					    var str = '',strName = '',strNum;
+					    var china_map_dict=[
+	                    // { "dictName": "全国", "dictNum": "001", "diQu":"quanguo"},
+		                    { "dictName": "北京", "dictNum": "001004", "diQu":"beijing"},
+		                    { "dictName": "天津", "dictNum": "001008", "diQu":"tianjin"},
+		                    { "dictName": "河北", "dictNum": "001018", "diQu":"hebei" },
+		                    { "dictName": "山西", "dictNum": "001012", "diQu":"shanxi1" },
+		                    { "dictName": "内蒙古", "dictNum": "001003", "diQu":"neimenggu" },
+		                    { "dictName": "辽宁", "dictNum": "001029", "diQu":"liaoning" },
+		                    { "dictName": "吉林", "dictNum": "001006", "diQu":"jilin" },
+		                    { "dictName": "黑龙江", "dictNum": "001034", "diQu":"heilongjiang" },
+		                    { "dictName": "上海", "dictNum": "001001", "diQu":"shanghai" },
+		                    { "dictName": "江苏", "dictNum": "001016", "diQu":"jiangsu" },
+		                    { "dictName": "浙江", "dictNum": "001020", "diQu":"zhejiang" },
+		                    { "dictName": "安徽", "dictNum": "001010", "diQu":"anhui" },
+		                    { "dictName": "福建", "dictNum": "001026", "diQu":"fujian" },
+		                    { "dictName": "江西", "dictNum": "001017", "diQu":"jiangxi" },
+		                    { "dictName": "山东", "dictNum": "001011", "diQu":"shandong" },
+		                    { "dictName": "河南", "dictNum": "001019", "diQu":"henan" },
+		                    { "dictName": "湖北", "dictNum": "001022", "diQu":"hubei" },
+		                    { "dictName": "湖南", "dictNum": "001023", "diQu":"hunan" },
+		                    { "dictName": "广东", "dictNum": "001013", "diQu":"guangdong" },
+		                    { "dictName": "广西", "dictNum": "001014", "diQu":"guangxi" },
+		                    { "dictName": "海南", "dictNum": "001021" , "diQu":"hainan"},
+		                    { "dictName": "重庆", "dictNum": "001030", "diQu":"chongqing" },
+		                    { "dictName": "四川", "dictNum": "001007", "diQu":"sichuan" },
+		                    { "dictName": "贵州", "dictNum": "001028", "diQu":"guizhou" },
+		                    { "dictName": "云南", "dictNum": "001002", "diQu":"yunnan" },
+		                    { "dictName": "西藏", "dictNum": "001027", "diQu":"xizang" },	
+		                    { "dictName": "陕西", "dictNum": "001031", "diQu":"shanxi2" },
+		                    { "dictName": "甘肃", "dictNum": "001025", "diQu":"gansu" },
+		                    { "dictName": "青海", "dictNum": "001032", "diQu":"qinghai" },
+		                    { "dictName": "宁夏", "dictNum": "001009", "diQu":"ningxia" },
+		                    { "dictName": "新疆", "dictNum": "001015" , "diQu":"xinjiang"},
+		                    { "dictName": "香港", "dictNum": "001033", "diQu":"xianggang" },
+		                    { "dictName": "澳门", "dictNum": "001024", "diQu":"aomen" },
+		                    { "dictName": "台湾", "dictNum": "001005", "diQu":"taiwan" }
+	                	];
+	                for(var i=0; i<china_map_dict.length; i++){
+	                	if(china_map_dict[i].dictName == params.name){
+	                		str = china_map_dict[i].diQu;
+	                		strName = china_map_dict[i].dictName;
+	                		strNum = china_map_dict[i].dictNum;
+	                		$.ajax({
+	                			url:'/wcm/bigdata.do?area='+strNum+'&before_date='+times+'&firstmenu=地震&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster',
+	                			async:false,
+								dataType:'json',
+								success:function(res){
+									console.log(res);
+									var resPags = res.PAGEITEMS;
+									var dqDzSm=[],dqDzMi=[],dqDzBi=[];
+									var dqDz1Sm=[],dqDz1Mi=[],dqDz1Bi=[];
+									var dqDz2Sm=[],dqDz2Mi=[],dqDz2Bi=[];
+									for(var i=0; i<resPags.length; i++){
+										if(resPags[i].RATE>=5){
+											console.log(resPags[i])
+										}
+										if(resPags[i].RATE>0 && resPags[i].RATE<3 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 86400000){
+											dqDzSm.push(resPags[i]);
+										}else if(resPags[i].RATE>=3 && resPags[i].RATE<5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 86400000){
+											// alert(new Date(tim).getTime()-new Date(resPags[i].URLTIME).getTime())
+											dqDzMi.push(resPags[i]);
+										}else if(resPags[i].RATE>=5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 86400000){
+											dqDzBi.push(resPags[i]);
+										}else if(resPags[i].RATE>0 && resPags[i].RATE<3 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 604800000){
+											dqDz1Sm.push(resPags[i]);
+										}else if(resPags[i].RATE>=3 && resPags[i].RATE<5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 604800000){
+											dqDz1Mi.push(resPags[i]);
+										}else if(resPags[i].RATE>=5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 604800000){
+											dqDz1Bi.push(resPags[i]);
+										}else if(resPags[i].RATE>0 && resPags[i].RATE<3 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 2592000000){
+											console.log(resPags[i].URLTIME)
+											dqDz2Sm.push(resPags[i]);
+										}else if(resPags[i].RATE>=3 && resPags[i].RATE<5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 2592000000){
+											dqDz2Mi.push(resPags[i]);
+										}else if(resPags[i].RATE>=5 && (new Date()).getTime()-(new Date(resPags[i].URLTIME)).getTime()<= 2592000000){
+											dqDz2Bi.push(resPags[i]);
+										}
+									}
+									diQuDzSm = dqDzSm;
+									diQuDzMi = dqDzMi;
+									diQuDzBi = dqDzBi;
+									diQu1DzSm = dqDz1Sm;
+									diQu1DzMi = dqDz1Mi;
+									diQu1DzBi = dqDz1Bi;
+									diQu2DzSm = dqDz2Sm;
+									diQu2DzMi = dqDz2Mi;
+									diQu2DzBi = dqDz2Bi;
+									// console.log(diQuDzSm,diQuDzMi,diQuDzBi,diQu1DzSm,diQu1DzMi,diQu1DzBi,diQu2DzSm,diQu2DzMi,diQu2DzBi)
+								}
+	                		})
+	                	}
+
+	                }
+
+				    if(params.componentType == 'series'){
+						console.log(params.value[3])
+						window.open('/dist/index.html#/rewarningdetail?s_id='+params.value[3]+'&menutype=news');
+					}
+
+				    $.get('../lib/echarts/src/util/mapData/geoJson/'+str+'.json',function(geoJson){
+				    	$("#map").hide();
+				    	$("#Province").show();
+				    	$("#btn").show();
+				    	var ProChart = echarts.init(document.getElementById("Province"));
+            			echarts.registerMap(name, geoJson);
+            			ProChart.setOption(option = {
+				            title: {
+				                text: strName,
+				                left: 'center',
+				                textStyle: {
+				                    color: '#fff'
+				                }
+				            },
+				            tooltip: {
+					            trigger: 'item',
+					            formatter: function(params) {
+					                var res = params.name+'<br/>'+"纬度："+params.value[1]+'<br/>'+"经度："+params.value[0]+'<br/>'+"级别："+params.value[2]+'<br/>'+params.value[4]+"...";
+					                return res;
+					            }
+					        },
+				            geo:{
+			                    type: 'map',
+			                    mapType: str,
+			                    roam: true,
+			                    label: {
+			                        emphasis: {
+			                            textStyle: {
+			                                color: '#f00'
+			                            }
+			                        }
+			                    },
+			                    itemStyle: {
+			                        normal: {
+			                            borderColor: '#389BB7',
+			                            areaColor: '#88cff9'
+			                        },
+			                        emphasis: {
+			                            areaColor: '#99d1f4',
+			                            borderWidth: 0
+			                        }
+			                    },
+			                    animation: true,
+			                    animationDurationUpdate: 1000,
+			                    animationEasingUpdate: 'quinticInOut'
+			                },
+				            series: [				                
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQuDzSm),
+				                	symbolSize: 10,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r1.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQuDzMi),
+				                	symbolSize: 20,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r2.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQuDzBi),
+				                	symbolSize: 30,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r3.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu1DzSm),
+				                	symbolSize: 10,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o1.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu1DzMi),
+				                	symbolSize: 20,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o2.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu1DzBi),
+				                	symbolSize: 30,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/o3.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu2DzSm),
+				                	symbolSize: 10,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y1.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu2DzMi),
+				                	symbolSize: 20,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y2.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                },
+				                {
+				                	type: 'scatter',
+				                	map:str,
+				                	coordinateSystem: 'geo',
+				                	data: convertData(diQu2DzBi),
+				                	symbolSize: 30,
+				                	symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/y3.png',
+				                	symbolRotate: 0,
+				                	label: {
+				                		normal: {
+				                			formatter: '{b}',
+				                			position: 'right',
+				                			show: true
+				                		},
+				                		emphasis: {
+				                			show: true
+				                		}
+				                	},
+				                	itemStyle: {
+				                		normal: {
+				                			color: '#F06C00'
+				                		}
+				                	}
+				                }
+				            ]
+				        });
+
+						ProChart.on('click',function(event){
+							if(event.componentType == 'series'){
+								/*console.log(event.value[3])*/
+								window.open('/dist/index.html#/rewarningdetail?s_id='+event.value[3]+'&menutype=news');
+							}
+						})
+				    })/* ajax请求结束 */
+				});
+
+		    });
+		}/* 地震地图方法结束 */
+
+		function Maps(dataName,times){/* 其他灾害地图 方法开始 */
+				var ajaxUrl = '',mapImg1 = '',mapImg2 = '',mapImg3 = '',mapImg4 = '';// 用于存放ajax路径和动态存放图片
+				var dataBlue,dataYell,dataOra,dataRed;
+				var obj1 = {
+					'台风':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/taifengBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/taifengYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/taifengOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/taifengRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'暴雨':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/baoyuBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoyuYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoyuOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoyuRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'暴雪':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/baoxueBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoxueYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoxueOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/baoxueRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'寒潮':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/hanchaoBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/hanchaoYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/hanchaoOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/hanchaoRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'大风':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/dafengBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dafengYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dafengOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dafengRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'沙尘暴':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/shachenbaoBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shachenbaoYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shachenbaoOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shachenbaoRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'高温':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/gaowenBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/gaowenYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/gaowenOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/gaowenRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'干旱':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/ganhanBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/ganhanYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/ganhanOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/ganhanRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'雷电':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/leidianBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/leidianYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/leidianOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/leidianRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'冰雹':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/bingbaoBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/bingbaoYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/bingbaoOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/bingbaoRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'霜冻':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/shuangdongBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shuangdongYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shuangdongOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/shuangdongRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'大雾':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/dawuBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dawuYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dawuOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/dawuRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'霾':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/maiBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/maiYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/maiOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/maiRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'海啸':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/haixiaoBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/haixiaoYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/haixiaoOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/haixiaoRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'滑坡':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/huapoBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/huapoYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/huapoOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/huapoRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					],
+					'森林火险':[
+					{
+						imgUrl:['image://..//planningCenter/cueSelectedTopic/timeCue/images/senlinhuoxianBlue.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/senlinhuoxianYellow.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/senlinhuoxianOrange.png','image://..//planningCenter/cueSelectedTopic/timeCue/images/senlinhuoxianRed.png'],
+						Urls:'/wcm/bigdata.do?area=&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster'
+					}
+					]
+				}
+				function substr(str){// 如果经纬度有度数才使用
+					var strs;
+					if(str){
+						strs = str.substring(0,str.length-1);
+					}
+					return strs;
+				}
+
+				function convertData(datas) {// echarts固定方法
+					var res = [];
+					for(var i=0; i<datas.length; i++){
+						var arrs = [];
+						var dataCont = datas[i].CONTENT.substr(0,17).trim();
+			    		var geoCoord = substr(datas[i].LONGITUDE)+","+substr(datas[i].LATITUDE)+","+datas[i].RATE+","+datas[i].SID+","+dataCont;
+						var geoCoords = geoCoord.split(',');
+
+						if(geoCoords){
+							res.push({
+								name: datas[i].HAPPEN_PLACE,
+								value: geoCoords
+							});
+						}
+					}
+				   return res;
+				};
+
+			for(key in obj1){
+				if(key == dataName){
+					ajaxUrl = obj1[key][0].Urls;
+					mapImg1 = obj1[key][0].imgUrl[0];
+					mapImg2 = obj1[key][0].imgUrl[1];
+					mapImg3 = obj1[key][0].imgUrl[2];
+					mapImg4 = obj1[key][0].imgUrl[3];
+	    			$.ajax({
+	    				url:ajaxUrl,
+	    				async:false,
+	    				dataType:'json',
+	    				success:function(res){
+	    					var resPag = res.PAGEITEMS;
+	    					var zhBlue=[],zhYell=[],zhOra=[],zhRed=[];
+							for(var i=0; i<resPag.length; i++){
+								if(resPag[i].RATE == '蓝色'){
+									zhBlue.push(resPag[i]);
+								}else if(resPag[i].RATE == '黄色'){
+									zhYell.push(resPag[i]);
+								}else if(resPag[i].RATE == '橙色'){
+									zhOra.push(resPag[i]);
+								}else if(resPag[i].RATE == '红色'){
+									zhRed.push(resPag[i]);
+								}
+							}
+							dataBlue = zhBlue;
+							dataYell = zhYell;
+							dataOra = zhOra;
+							dataRed = zhRed;
+						},
+						error:(error) => {
+							console.log(error);
+						}
+					})
+
+	    		}	
+	    	}
+	    	
+	    	option = {
+	    		tooltip: {
+		            trigger: 'item',
+		            formatter: function(params) {
+		                var res = params.name+'<br/>'+"纬度："+params.value[1]+'<br/>'+"经度："+params.value[0]+'<br/>'+"级别："+params.value[2]+'<br/>'+params.value[4]+"...";
+		                return res;
+		            }
+		        },
+	    		geo: { /* 统一配置 */
+	    			map: 'china',
+	    			roam: true,
+	    			label: {
+	    				normal: {
+	    					show: true,
+	    					textStyle: {
+	    						color: 'rgba(0,0,0,0.4)'
+	    					}
+	    				}
+	    			},
+	    			itemStyle: {
+	    				normal:{
+	    					borderColor: 'rgba(0, 0, 0, 0.2)',
+	    					areaColor: '#f6efa6', /* 地图默认颜色 */
+	    					label:{show:true}
+	    				},
+	    				emphasis:{
+	    					areaColor: null,
+	    					shadowOffsetX: 0,
+	    					shadowOffsetY: 0,
+	    					shadowBlur: 20,
+	    					borderWidth: 0,
+	    					shadowColor: 'rgba(0, 0, 0, 0.5)'
+	    				}
+	    			}
+	    		},
+	    		series : [
+		    		{
+		    			type: 'scatter',
+		    			map:'china',
+		    			coordinateSystem: 'geo',
+		    			data: convertData(dataBlue),
+		    			symbolSize: 30,
+				           // symbol: 'image://..//planningCenter/cueSelectedTopic/timeCue/images/r1.png',mapImg1
+				           symbol: mapImg1,
+				           symbolRotate: 0,
+				           label: {
+				           	normal: {
+				           		formatter: '{b}',
+				           		position: 'right',
+				           		show: false
+				           	},
+				           	emphasis: {
+				           		show: true
+				           	}
+				           },
+				           itemStyle: {
+				           	normal: {
+	                            borderWidth: .5,//区域边框宽度
+	                            borderColor: '#009fe8',//区域边框颜色
+	                            areaColor:"#000",//区域颜色
+	                        },
+	                    }
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(dataYell),
+	                	symbolSize: 30,
+	                	symbol: mapImg2,
+	                	symbolRotate: 0,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: false
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(dataOra),
+	                	symbolSize: 30,
+	                	symbol: mapImg3,
+	                	symbolRotate: 0,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: false
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	type: 'scatter',
+	                	map:'china',
+	                	coordinateSystem: 'geo',
+	                	data: convertData(dataRed),
+	                	symbolSize: 30,
+	                	symbol: mapImg4,
+	                	symbolRotate: 0,
+	                	label: {
+	                		normal: {
+	                			formatter: '{b}',
+	                			position: 'right',
+	                			show: false
+	                		},
+	                		emphasis: {
+	                			show: true
+	                		}
+	                	},
+	                	itemStyle: {
+	                		normal: {
+	                			color: '#F06C00'
+	                		}
+	                	}
+	                },
+	                {
+	                	name: 'categoryA',
+	                	type: 'map',
+	                	geoIndex: 0,
+				            // tooltip: {show: false},
+				            data:[]
+				    }
+			    ]
+			    };
+
+			    $.get('js/china.json', function (chinaJson) {
+			    	echarts.registerMap('china', chinaJson);
+			    	var myChart = echarts.init(document.getElementById('map'));
+			    	myChart.setOption(option);
+
+			    	myChart.on('click',function(params){
+			    		console.log(params);
+			    		var str = '',strName = '',strNum;
+			    		var data1Blue,data1Yell,data1Ora,data1Red;
+			    		var china_map_dict=[
+		                   	// { "dictName": "全国", "dictNum": "001", "diQu":"quanguo"},
+		                    { "dictName": "北京", "dictNum": "001004", "diQu":"beijing"},
+		                    { "dictName": "天津", "dictNum": "001008", "diQu":"tianjin"},
+		                    { "dictName": "河北", "dictNum": "001018", "diQu":"hebei" },
+		                    { "dictName": "山西", "dictNum": "001012", "diQu":"shanxi1" },
+		                    { "dictName": "内蒙古", "dictNum": "001003", "diQu":"neimenggu" },
+		                    { "dictName": "辽宁", "dictNum": "001029", "diQu":"liaoning" },
+		                    { "dictName": "吉林", "dictNum": "001006", "diQu":"jilin" },
+		                    { "dictName": "黑龙江", "dictNum": "001034", "diQu":"heilongjiang" },
+		                    { "dictName": "上海", "dictNum": "001001", "diQu":"shanghai" },
+		                    { "dictName": "江苏", "dictNum": "001016", "diQu":"jiangsu" },
+		                    { "dictName": "浙江", "dictNum": "001020", "diQu":"zhejiang" },
+		                    { "dictName": "安徽", "dictNum": "001010", "diQu":"anhui" },
+		                    { "dictName": "福建", "dictNum": "001026", "diQu":"fujian" },
+		                    { "dictName": "江西", "dictNum": "001017", "diQu":"jiangxi" },
+		                    { "dictName": "山东", "dictNum": "001011", "diQu":"shandong" },
+		                    { "dictName": "河南", "dictNum": "001019", "diQu":"henan" },
+		                    { "dictName": "湖北", "dictNum": "001022", "diQu":"hubei" },
+		                    { "dictName": "湖南", "dictNum": "001023", "diQu":"hunan" },
+		                    { "dictName": "广东", "dictNum": "001013", "diQu":"guangdong" },
+		                    { "dictName": "广西", "dictNum": "001014", "diQu":"guangxi" },
+		                    { "dictName": "海南", "dictNum": "001021" , "diQu":"hainan"},
+		                    { "dictName": "重庆", "dictNum": "001030", "diQu":"chongqing" },
+		                    { "dictName": "四川", "dictNum": "001007", "diQu":"sichuan" },
+		                    { "dictName": "贵州", "dictNum": "001028", "diQu":"guizhou" },
+		                    { "dictName": "云南", "dictNum": "001002", "diQu":"yunnan" },
+		                    { "dictName": "西藏", "dictNum": "001027", "diQu":"xizang" },
+		                    { "dictName": "陕西", "dictNum": "001031", "diQu":"shanxi2" },
+		                    { "dictName": "甘肃", "dictNum": "001025", "diQu":"gansu" },
+		                    { "dictName": "青海", "dictNum": "001032", "diQu":"qinghai" },
+		                    { "dictName": "宁夏", "dictNum": "001009", "diQu":"ningxia" },
+		                    { "dictName": "新疆", "dictNum": "001015" , "diQu":"xinjiang"},
+		                    { "dictName": "香港", "dictNum": "001033", "diQu":"xianggang" },
+		                    { "dictName": "澳门", "dictNum": "001024", "diQu":"aomen" },
+		                    { "dictName": "台湾", "dictNum": "001005", "diQu":"taiwan" },
+		                ];
+
+		                if(params.componentType == 'series'){
+							window.open('/dist/index.html#/rewarningdetail?s_id='+params.value[3]+'&menutype=news');
+						}
+
+		                for(item in china_map_dict){
+		                	// console.log(china_map_dict[item])
+		                	if(params.name == china_map_dict[item].dictName){
+		                		str = china_map_dict[item].diQu;
+		                		strName = china_map_dict[item].dictName;
+		                		strNum = china_map_dict[item].dictNum;
+
+		                		$.ajax({
+		                			url:'/wcm/bigdata.do?area='+strNum+'&before_date='+times+'&firstmenu='+dataName+'&modelid=getnaturaldisaster&page_no=0&page_size=10000&search_date='+laydate.now()+'&secondmenu=all&serviceid=recentdisaster',
+		                			async:false,
+									dataType:'json',
+									success:function(res){
+										console.log(res);
+										var resPags = res.PAGEITEMS;
+				    					var zh1Blue=[],zh1Yell=[],zh1Ora=[],zh1Red=[];
+										for(var i=0; i<resPags.length; i++){
+											if(resPags[i].RATE == '蓝色'){
+												zh1Blue.push(resPags[i]);
+											}else if(resPags[i].RATE == '黄色'){
+												zh1Yell.push(resPags[i]);
+											}else if(resPags[i].RATE == '橙色'){
+												zh1Ora.push(resPags[i]);
+											}else if(resPags[i].RATE == '红色'){
+												zh1Red.push(resPags[i]);
+											}
+										}
+										data1Blue = zh1Blue;
+										data1Yell = zh1Yell;
+										data1Ora = zh1Ora;
+										data1Red = zh1Red;
+										console.log(data1Blue,data1Yell,data1Ora,data1Red)
+									}
+		                		})
+		                	}
+		                }
+
+					    $.get('../lib/echarts/src/util/mapData/geoJson/'+str+'.json',function(geoJson){
+					    	$("#map").hide();
+					    	$("#Province").show();
+					    	$("#btn").show();
+					    	var ProChart = echarts.init(document.getElementById("Province"));
+                			echarts.registerMap(name, geoJson);
+                			ProChart.setOption(option = {
+					            title: {
+					                text: strName,
+					                left: 'center',
+					                textStyle: {
+					                    color: '#fff'
+					                }
+					            },
+					            tooltip: {
+						            trigger: 'item',
+						            formatter: function(params) {
+						                var res = params.name+'<br/>'+"纬度："+params.value[1]+'<br/>'+"经度："+params.value[0]+'<br/>'+"级别："+params.value[2]+'<br/>'+params.value[4]+"...";
+						                return res;
+						            }
+						        },
+					            geo:{
+				                    type: 'map',
+				                    mapType: str,
+				                    roam: true,
+				                    label: {
+				                        emphasis: {
+				                            textStyle: {
+				                                color: '#f00'
+				                            }
+				                        }
+				                    },
+				                    itemStyle: {
+				                        normal: {
+				                            borderColor: '#389BB7',
+				                            areaColor: '#88cff9',
+				                        },
+				                        emphasis: {
+				                            borderWidth: 0,
+				                            areaStyle:{
+						                        color:'red'
+						                    },
+				                        }
+				                    },
+				                    animation: true,
+				                    animationDurationUpdate: 1000,
+				                    animationEasingUpdate: 'quinticInOut'
+				                },
+					            series: [
+					                {
+					                	type: 'scatter',
+					                	map:str,
+					                	coordinateSystem: 'geo',
+					                	data: convertData(data1Blue),
+					                	symbolSize: 20,
+					                	symbol: mapImg1,
+					                	symbolRotate: 0,
+					                	label: {
+					                		normal: {
+					                			formatter: '{b}',
+					                			position: 'right',
+					                			show: true
+					                		},
+					                		emphasis: {
+					                			show: true
+					                		}
+					                	},
+					                	itemStyle: {
+					                		normal: {
+					                			color: '#F06C00'
+					                		}
+					                	}
+					                },
+					                {
+					                	type: 'scatter',
+					                	map:str,
+					                	coordinateSystem: 'geo',
+					                	data: convertData(data1Yell),
+					                	symbolSize: 20,
+					                	symbol: mapImg2,
+					                	symbolRotate: 0,
+					                	label: {
+					                		normal: {
+					                			formatter: '{b}',
+					                			position: 'right',
+					                			show: true
+					                		},
+					                		emphasis: {
+					                			show: true
+					                		}
+					                	},
+					                	itemStyle: {
+					                		normal: {
+					                			color: '#F06C00'
+					                		}
+					                	}
+					                },
+					                {
+					                	type: 'scatter',
+					                	map:str,
+					                	coordinateSystem: 'geo',
+					                	data: convertData(data1Ora),
+					                	symbolSize: 20,
+					                	symbol: mapImg3,
+					                	symbolRotate: 0,
+					                	label: {
+					                		normal: {
+					                			formatter: '{b}',
+					                			position: 'right',
+					                			show: true
+					                		},
+					                		emphasis: {
+					                			show: true
+					                		}
+					                	},
+					                	itemStyle: {
+					                		normal: {
+					                			color: '#F06C00'
+					                		}
+					                	}
+					                },
+					                {
+					                	type: 'scatter',
+					                	map:str,
+					                	coordinateSystem: 'geo',
+					                	data: convertData(data1Red),
+					                	symbolSize: 20,
+					                	symbol: mapImg4,
+					                	symbolRotate: 0,
+					                	label: {
+					                		normal: {
+					                			formatter: '{b}',
+					                			position: 'right',
+					                			show: true
+					                		},
+					                		emphasis: {
+					                			show: true
+					                		}
+					                	},
+					                	itemStyle: {
+					                		normal: {
+					                			color: '#F06C00'
+					                		}
+					                	}
+					                }
+					            ]
+					        });
+
+							ProChart.on('click',function(event){
+								if(event.componentType == 'series'){
+									window.open('/dist/index.html#/rewarningdetail?s_id='+event.value[3]+'&menutype=news');
+								}
+							})
+
+					    })
+			    	})
+			    });
+
+		}/* 其他灾害 方法结束 */
+
+		laydate({
+			elem: '#J-xl',
+			max:laydate.now(),
+	        choose: function(dates){ //选择好日期的回调
+	        	$('#map').show();
+    			$('#Province').hide();
+    			$('#btn').hide();
+        		$('#J-xl').attr('value',dates);
+        		var dataName = $(".rightTopTerritory span").attr('data-name');
+        		if(dataName == '地震'){
+        			Map(dataName,dates);
+	        		// console.log("日期回调-地震---"+dataName)
+	        	}else{
+	        		Maps(dataName,dates);
+	        		// console.log("日期回调-其他---"+dataName)
+	        	}
+
+	        }
+		});
+	    //设置input 默 认时间
+	    $('#J-xl').attr('value',laydate.now());
+    </script>
+
+	</body>
+	</html>

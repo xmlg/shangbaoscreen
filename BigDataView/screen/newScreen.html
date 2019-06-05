@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>热点关注</title>
+    <link rel="stylesheet" href="./newScreen/css/normalize.css">
+    <link rel="stylesheet" href="./newScreen/css/screenMap.css">
+    <link rel="stylesheet" href="./newScreen/css/flipclock.css">
+    <script src="./newScreen/lib/jquery.min.js"></script>
+    <script src="../lib/echarts/dist/echarts.js"></script>
+    <style>
+        body,html{
+            background:-webkit-gradient(linear, 0 0, 0 100%, from(#3565a5), to(#521c98));
+            width: 1920px;
+            height: 1580px;
+        }
+        #pie{
+
+        }
+        .pie{
+            width: 600px;
+        }
+        #bar{
+
+        }
+        .box{
+            border: 1px solid #acacac;
+            border-radius: 10px;
+            box-shadow: 0 0 30px 1px #acacac inset;
+            float: left;
+            margin: 20px 0 0  20px;
+            z-index: 5;
+        }
+        #map{
+            margin: 0 auto;
+        }
+        .map{
+            width: 800px;
+        }
+        .all{
+            width: 1900px;
+        }
+        .search{
+            width: 450px;
+            height: 480px;
+        }
+        .search ol{
+            padding-left: 70px;
+        }
+        .search ol li{
+            color: #fff;
+            font-size: 20px;
+            line-height: 35px;
+        }
+        .header{
+            background: rgba(255,255,255,0.3);
+        }
+        .header h2{
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+            color: #fff;
+            margin: 0;
+        }
+        .time{
+            height: 150px;
+            float: left;
+            width: 450px;
+        }
+
+    </style>
+</head>
+<body>
+<div style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 5">
+    <div class="pie box">
+        <div class="header">
+            <h2>稿件签发情况</h2>
+        </div>
+        <div id="pie" style="height: 600px;width: 600px;margin: 0 auto;">
+
+        </div>
+    </div>
+    <div class="map box">
+        <div class="header">
+            <h2>区域稿件统计</h2>
+        </div>
+        <div id="map" style="height: 600px;width: 600px;">
+
+        </div>
+    </div>
+    <div class="time box">
+        <!--<iframe src="lib/jQueryClock/index.html" frameborder="0" style="width: 400px;height: 150px;"></iframe>-->
+    </div>
+    <div class="search box" >
+        <div class="header">
+            <h2>稿件搜索</h2>
+        </div>
+        <div>
+            <ol>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+                <li>对应稿件对应稿件对应稿件对应稿件</li>
+            </ol>
+        </div>
+    </div>
+    <div class="all box">
+        <div class="header">
+            <h2>稿件统计</h2>
+        </div>
+        <div>
+            <div id="bar" style="height: 600px;width: 600px;">
+
+            </div>
+        </div>
+
+
+    </div>
+    <!--<div class="bar box">-->
+        <!--<div class="header">-->
+            <!--<h2>审签排行</h2>-->
+        <!--</div>-->
+        <!--<div id="bar" style="height: 600px;width: 600px;">-->
+
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<iframe src="./lib/boil/index.html" frameborder="0" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;z-index: 0;"></iframe>
+
+<script type="text/javascript" src="../server.js"></script>
+<script type="text/javascript" src="./newScreen/js/queue.v1.js"></script>
+<script type="text/javascript" src="./newScreen/js/cardnumber.js"></script>
+<script type="text/javascript" src="./newScreen/lib/jquery.nicescroll.min.js"></script>
+<script src="./lib/layer/layer.js"></script>
+<script src="./lib/laytpl/laytpl.js"></script>
+<script src="./lib/layui/layui.js"></script>
+<!--<script src="./newScreen/js/newScreen.js"></script>-->
+
+<script>
+    //中间地图
+    function Map(placeName,times,nameNums){
+        $.ajax({
+            type:"get",
+            url:'../lib/echarts/src/util/mapData/geoJson/421200.json',
+            beforeSend:function(){
+                indexA =layer.load(1, {
+                    shade: [0.4,'#fff'] //0.1透明度的白色背景
+                });
+            },
+            success:function(placeJson){
+                layer.close(indexA);
+                echarts.registerMap(placeName,placeJson); // 注册地图
+                var mapChart = echarts.init(document.getElementById('map'));
+                mapChart.on("click", function (param){
+                    if(typeof(param.data)=="undefined"){
+                        return false;
+                    }
+                    $(".listUlNone").show();
+                    $(".listUl").empty();
+                    if(typeof(param.data.area)=="undefined"){
+                        placeName="china";
+                        nameNum="001";
+                        $(".rightTopTerritory span").html("全国");
+                        $(".listTitleL span").html("全国热点");
+                        listData1(0,nameNum,time,cluster_name);
+                        Map(placeName,time,nameNum);
+                        return false;
+                    }
+                    if(param.data.area.indexOf("001022")!='-1'&&param.data.area!=='001022'){
+                        nameNum=param.data.area;
+                        $(".listTitleL span").html(param.data.name+"热点");
+                    }else{
+                        if (!provinces[param.name]) {
+                            placeName="china";
+                            nameNum="001";
+                            $(".rightTopTerritory span").html("全国");
+                            $(".listTitleL span").html("全国热点");
+                        }else{
+                            placeName=provinces[param.name];
+                            nameNum=provincesCode[param.name];
+                            $(".rightTopTerritory span").html(param.name);
+                            $(".listTitleL span").html(param.name+"热点");
+                        }
+
+                        Map(placeName,time,nameNum);
+                    }
+
+                    listData1(0,nameNum,time,cluster_name);
+                });
+                option = {
+                    title: {
+                        left: 'center',
+                        textStyle: {
+                            color: '#fff',
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                    },
+//                    xAxis: {
+//                        type: 'category',
+//                        data: []
+//                    },
+                    series: [
+                        {
+                            name: '签发',
+                            type: 'map',
+                            mapType: placeName,
+                            label: {
+                                normal: {
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            },
+                            zoom:1.3,
+                            roam:true,
+                            markPoint:{
+//                                symbol:'circle',
+                                symbolSize:20,
+                                effect : {
+                                    show: true,
+                                    shadowBlur : 0
+                                },
+                                animation:true,
+                                itemStyle:{
+                                    normal:{
+                                        label:{show:false},
+                                        color:"yellow",
+//                                        borderColor:"rgba(205,92,87,0.8)"
+                                    }
+                                },
+                                animationDelay: function (idx) {
+                                    console.log(idx);
+                                    return idx * 10;
+                                },
+                                data:[
+                                    {name:"咸安区",value:"320",coord: [114.42257537841797, 29.826317439375856]},
+                                    {name:"赤壁市",value:"220",coord: [113.88008387731554, 29.71512477401024]},
+                                    {name:"通山县",value:"120",coord: [114.6027600000, 29.5663800000]},
+                                    {name:"通城县",value:"80",coord: [113.8170200000, 29.2453500000]},
+                                    {name:"崇阳县",value:"40",coord: [114.0389200000, 29.4553700000]},
+                                    {name:"嘉鱼县",value:"20",coord: [113.9393200000, 29.9705700000]}
+                                    ]
+                            },
+                            itemStyle: {
+                                normal: {
+                                    borderColor: '#389BB7',
+                                    areaColor: 'rgba(128, 128, 128, 0)',
+                                    borderWidth:"4",
+                                    label:{
+                                        textStyle: {
+                                            fontSize:'16',
+                                            color:'#fff'
+                                        }
+                                    },
+                                },
+                                emphasis: {
+                                    areaColor: '#fac027',
+                                    borderWidth: 0,
+                                    label:{
+                                        textStyle: {
+                                            fontSize:'16'
+                                        }
+                                    }
+                                }
+                            },
+                            data:[
+//                                {name:"咸安区"},
+//                                {name:"赤壁市"},
+//                                {name:"通山县"},
+//                                {name:"通城县"},
+//                                {name:"崇阳县"},
+//                                {name:"嘉鱼县"}
+                            ],
+
+                        },
+                    ]
+                };
+                mapChart.setOption(option);
+            }
+        })
+
+
+    }
+               Map('咸宁',null,null);
+
+
+    //左上的饼图
+    var mapChart = echarts.init(document.getElementById('pie'));
+    mapChart.setOption({
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : false,
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                selectedMode: 'single',
+                radius : [0, 90],
+                zoom:1.5,
+                // for funnel
+                x: '20%',
+                width: '40%',
+                funnelAlign: 'right',
+                color:['#6595f0','#fe6cb3','#b959d6','#cd5c57','#faa601','#47dad4','#52b0f6'],
+                max: 1548,
+                itemStyle : {
+                    normal : {
+                        label : {
+                            position : 'inner',
+                            color:"#000",
+                            textStyle:{
+                                fontSize:15
+                            }
+//                            show:false
+                        },
+                        labelLine : {
+                            show : false
+                        }
+                    }
+                },
+                data:[
+                    {value:335, name:'待编'},
+                    {value:679, name:'待审'},
+                    {value:1548, name:'已签发'}
+                ]
+            },
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : [120, 180],
+
+                // for funnel
+                x: '60%',
+                width: '35%',
+                funnelAlign: 'left',
+                color:['#6595f0','#fe6cb3','#b959d6','#cd5c57','#faa601','#47dad4','#52b0f6'],
+                max: 1048,
+                itemStyle:{
+                    normal:{
+                        label:{
+                            show:true,
+                            textStyle:{
+                                color:"#fff",
+                                fontSize:15
+                            }
+                        }
+                    }
+                },
+                data:[
+                    {value:335, name:'咸宁新闻网'},
+                    {value:310, name:'咸宁新闻网新闻频道'},
+                    {value:234, name:'政府英文版'},
+                    {value:135, name:'咸宁市人民政府网'},
+                    {value:1048, name:'咸宁市鸿雁旅行社'},
+                    {value:251, name:'咸宁文艺网'},
+                    {value:147, name:'湖北省无委办咸宁管理处'},
+                    {value:102, name:'群众路线网'}
+                ]
+            }
+        ]
+    });
+
+    //左下的树状图
+
+    var barChart = echarts.init(document.getElementById('bar'));
+
+    barChart.setOption({
+        title:{
+
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['报纸已签稿数量','报纸今日稿数量'],
+            textStyle:{
+                color:"#fff"
+            }
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'网站签发量',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                itemStyle:{
+                    normal:{
+                        color:"#6595f0"
+                    }
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'APP签发量',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                itemStyle:{
+                    normal:{
+                        color:"#b959d6"
+                    }
+                },
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            }
+        ]
+    })
+
+
+</script>
+</body>
+</html>

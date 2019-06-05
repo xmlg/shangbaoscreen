@@ -1,0 +1,62 @@
+body {
+  overflow: hidden;
+  background-color: #0D141E;
+}
+.header {
+  position: absolute;
+  top: 36px;
+  width: 100%;
+  height: 70px;
+  background: -webkit-linear-gradient(left, #0D141E, #386A8D, #0D141E);
+  background: linear-gradient(to right, #0D141E, #386A8D, #0D141E);
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 900;
+  font-size: 47px;
+  font-family: SimHei;
+  line-height: 75px;
+}
+.grid {
+  position: absolute;
+  top: 147px;
+  left: 14px;
+  width: 1892px;
+  height: 862px;
+  color: black;
+}
+.cell {
+  position: absolute;
+  -webkit-perspective: 750;
+}
+.cell .inner {
+  overflow: hidden;
+  height: 100%;
+  border: solid 20px;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-transform: rotateY(0deg);
+}
+.cell span {
+  display: table-cell;
+  width: 1000px;
+  vertical-align: middle;
+  font-size: 34px;
+  font-family: "Microsoft YaHei";
+  line-height: 44px;
+}
+.cell22 span {
+  height: 391px;
+  color: #FFFFFF;
+  font-size: 50px;
+  line-height: 75px;
+}
+.cell21 span {
+  height: 175.5px;
+  color: #FFFFFF;
+  font-size: 45px;
+  line-height: 60px;
+}
+.cell11 span {
+  height: 175.5px;
+  color: #FFFFFF;
+}

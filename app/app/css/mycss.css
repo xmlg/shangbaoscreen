@@ -1,0 +1,12 @@
+/* @media (min-width: 1360px) and (max-width: 1600px){
+    
+} */
+#map{
+    width:69%;
+    float: left;
+    /* margin-top:50px; */
+    min-height:800px
+}
+.xinhuashe{
+    width: 35% !important;
+}

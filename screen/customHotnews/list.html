@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="listModule" ng-controller="listCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="status.mainTitle"></title>
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/ng-animation.css">
+    <link rel="stylesheet" href="css/normalize1.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/hotnews1.css">
+</head>
+
+<body>
+    <div class="header">
+        <span ng-bind="status.mainTitle"></span><span id="timer" style="float: right;padding-right: 15px;font-size: 46px;letter-spacing: 5px;" ng-bind="status.today"></span>
+    </div>
+    <div class="right">
+        <div class="up">
+            <div class="list-header-1">
+                <div class="col1" style="float: left; font-size: 40px;">
+                    <span class="col1-span" style="letter-spacing: 0px;margin-left:407px" ng-bind="status.today"></span>
+                </div>
+                <div class="col2" style="margin-left: 1570px;font-size: 40px;margin-top: 20px;">热度</div>
+            </div>
+            <img src="images/underline.png" class="underline1">
+            <img src="images/underline.png" class="underline2">
+            <ol id="list1" class="list1" autoplay>
+                <li ng-class="{true:'focus',false:''}[item == status.selectedDoc]" ng-repeat="item in data.list">
+                    <div class="mark"></div>
+                    <div class="content">
+                        <div class="content-inner" ng-bind="item.docTitle"></div>
+                    </div>
+                    <div class="bar">
+                        <div class="value" ng-bind="item.weighted_nums"></div>
+                        <div ng-init="getPercent(item)" class="bar-outer" ng-class="{true:'focus2',false:''}[item == status.selectedDoc]">
+                            <div class="bar-inner" style="{{item.percent}}"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="service/httpServer.js"></script>
+    <script type="text/javascript" src="directive/autoplay.js"></script>
+    <script type="text/javascript" src="list.js"></script>
+    <script type="text/javascript" src="lib/resize2.js"></script>
+</body>
+
+</html>

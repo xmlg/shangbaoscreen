@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海外社交媒体</title>
+    <link rel="stylesheet" href="js/bootstrap-3.3.5/css/bootstrap.css">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul.haiwai{
+            list-style: none;
+            padding: 20px;
+        }
+        ul.haiwai .header{
+            color:#999;
+            text-indent: 10px;
+        }
+        ul.haiwai li{
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+<ul class="haiwai">
+</ul>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap-3.3.5/js/bootstrap.js"></script>
+<script>
+    $(function(){
+//        $(".haiwai").append("<li></li>")
+        $.ajax({
+            type: "GET",
+            url: "/xhs/wcm/bigdata.do?base_date="+getNowFormatDate(true)+"&modelid=twitterNew&serviceid=hotWords&subId=439&typeid=widget ",
+            data: {},
+            dataType: "json",
+            success: function(data){
+                data=data.PAGEITEMS;
+                for (var i = 0; i < data.length&&i<20; i++) {
+                    var obj = data[i];
+                    $('.haiwai').append('<li> <p class="header">Author:<span>'+obj.IRAUTHORS+'</span>Time:<span>'+obj.IRURLDATE+'</span> </p> <p class="content">'+obj.IRCONTENT+'</p></li>')
+
+                }
+            }
+        });
+
+        /**
+         *获取当前时间  形如2016-11-24+14
+         **/
+        function getNowFormatDate(isWM) {
+            var date = new Date();
+            var seperator1 = "-";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            var hours=date.getHours();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            if(isWM){
+                return year + seperator1 + month + seperator1 + strDate;
+            }else{
+                if (hours >= 0 && hours <= 9) {
+                    hours = "0" + hours;
+                }
+                var currentdate = year + seperator1 + month + seperator1 + strDate
+                    + "+" + hours;
+
+                return currentdate;
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

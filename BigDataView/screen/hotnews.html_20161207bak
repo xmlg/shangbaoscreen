@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻热点</title>
+    <link rel="stylesheet" type="text/css" href="css/hotnews.css">
+    <script src="lib/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="ico"><a href="http://111.203.35.59" target="_blank"><img src="newScreen/images/goPC.png" width="35" height="35" /></a></div>
+
+<div class="main">
+<div class="nav_bar">
+    <!--<span class="bar " id="国内">
+        国内
+    </span>
+    <span class="bar" id="财经">
+        财经
+    </span>-->
+    <span class="bar bar_active" id="zyzxfield_004">
+        军事
+    </span>
+    <span class="bar" id="zyzxfield_001">
+        政治
+    </span>
+    <span class="bar" id="zyzxfield_007">
+        科技
+    </span>
+
+    <span class="bar" id="zyzxfield_002">
+        财经
+    </span>
+
+</div>
+<div class="content">
+</div>
+</div>
+
+<script src="js/hotnews.js_20161207bak"></script>
+<!--<script src="js/resize.js"></script>-->
+<script>
+//初始化
+    init();
+
+</script>
+
+</body>
+
+</html>

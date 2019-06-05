@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全国热点分布</title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="../lib/echarts/dist/echarts.js"></script>
+    <!-- <script src="newScreen/map/js/chinaMap.js"></script> -->
+    <script src="js/jquery.page.js"></script>
+    <script type="text/javascript" src="js/laydate.dev.js"></script>
+    <!-- <link rel="stylesheet" href="css/stars.css"> -->
+    <!-- <link rel="stylesheet" href="css/bureau_screen.css"> -->
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/global20171207.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <style>
+        .baoye_neiy .rdzz_rightList ul li>.title {
+            width: 70%;
+        }
+        
+        html {
+            overflow-y: hidden;
+        }
+        
+        .baoye_neiy .rdzz_rightList ul li>.source {
+            width: 15%;
+            color: #fff;
+        }
+        
+        .baoye_neiy .rdzz_rightList ul li {
+            font-size: 20px;
+            line-height: 60px;
+            height: 60px;
+            white-space: nowrap;
+            overflow: inherit;
+        }
+        
+        .layui-layer-title {
+            background-color: #178fa8 !important;
+            color: #4bfdff !important;
+            border-bottom-width: 0!important;
+        }
+        
+        .layui-layer-content {
+            background-color: #0e141d !important;
+            overflow: hidden!important;
+        }
+    </style>
+</head>
+
+<!-- <body class="my_china" style="width: 1920px;height: 1080px;box-sizing: border-box;overflow: hiddle;"> -->
+
+<body class="my_china">
+    <div class="baoye_neiy">
+        <div class="tit">全国热点分布</div>
+        <div class="map">
+            <!--<div style="position: absolute;left: 50%;top: 50%;z-index: 100;" class="myFloat"><div class="triangle"></div>我是悬浮窗我是悬浮窗我是悬浮窗</div>-->
+            <div id="map">
+            </div>
+        </div>
+        <div class="rdzz_rightList">
+            <h1>全国热点新闻</h1>
+            <ul class="listUl">
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- <input class="logoRightIn" type="text" id="J-xl"> -->
+    <script src="../server.js"></script>
+    <!--弹窗-->
+    <script src="./lib/layer/layer.js"></script>
+    <script src="./lib/laytpl/laytpl.js"></script>
+    <script src="./lib/layui/layui.js"></script>
+
+
+
+    <script>
+        var mapChart
+            /*初始化默认省份*/
+        var nameNum = '001',
+            placeName = "china";
+        var time = laydate.now();
+        var provinces = {
+            '上海': 'shanghai',
+            '河北': 'hebei',
+            '山西': 'shanxi1',
+            '内蒙古': 'neimenggu',
+            '辽宁': 'liaoning',
+            '吉林': 'jilin',
+            '黑龙江': 'heilongjiang',
+            '江苏': 'jiangsu',
+            '浙江': 'zhejiang',
+            '安徽': 'anhui',
+            '福建': 'fujian',
+            '江西': 'jiangxi',
+            '山东': 'shandong',
+            '河南': 'henan',
+            '湖北': 'hubei',
+            '湖南': 'hunan',
+            '广东': 'guangdong',
+            '广西': 'guangxi',
+            '海南': 'hainan',
+            '四川': 'sichuan',
+            '贵州': 'guizhou',
+            '云南': 'yunnan',
+            '西藏': 'xizang',
+            '陕西': 'shanxi1',
+            '甘肃': 'gansu',
+            '青海': 'qinghai',
+            '宁夏': 'ningxia',
+            '新疆': 'xinjiang',
+            '北京': 'beijing',
+            '天津': 'tianjin',
+            '重庆': 'chongqing',
+            '香港': 'xianggang',
+            '澳门': 'aomen',
+            "台湾": "taiwan",
+            "全国": "china"
+        }
+        var provincesCode = {
+            "全国": "001",
+            '上海': '001001',
+            '河北': '001018',
+            '山西': '001012',
+            '内蒙古': '001003',
+            '辽宁': '001029',
+            '吉林': '001006',
+            '黑龙江': '001034',
+            '江苏': '001016',
+            '浙江': '001020',
+            '安徽': '001010',
+            '福建': '001026',
+            '江西': '001017',
+            '山东': '001011',
+            '河南': '001019',
+            '湖北': '001022',
+            '湖南': '001023',
+            '广东': '001013',
+            '广西': '001014',
+            '海南': '001021',
+            '四川': '001007',
+            '贵州': '001028',
+            '云南': '001002',
+            '西藏': '001027',
+            '陕西': '001031',
+            '甘肃': '001025',
+            '青海': '001032',
+            '宁夏': '001009',
+            '新疆': '001015',
+            '北京': '001004',
+            '天津': '001008',
+            '重庆': '001030',
+            '香港': '001033',
+            '澳门': '001024',
+            "台湾": "001005"
+
+        }
+
+        var positionUrl = "./json/position.json" // 请求悬浮窗定位数据
+            //获取稿件详情--弹框
+            // $(".listUl").delegate("li", "click", function() {
+            //     var _this = this;
+            //     var clusterid = $(_this).attr('data');
+            //     var title = $(_this).attr('index');
+            //     console.log(clusterid);
+            //     var src = "../../screen/ManuscriptDetail/index.html?clusterid=" + clusterid;
+            //     var html = '<iframe scrolling="no" src="../../screen/ManuscriptDetail/index.html?clusterid=' + clusterid + '" frameborder="0" width="100%" height="100%"></iframe>'
+            //     layer.open({
+            //         title: title,
+            //         //            skin: 'layui-layer-lan',
+            //         type: 1,
+            //         skin: 'layui-layer-demo', //样式类名
+            //         //closeBtn: 0, //不显示关闭按钮
+            //         maxmin: true, //开启最大化最小化按钮
+            //         anim: 2,
+            //         scrollbar: false,
+            //         area: ['1347px', '800px'],
+            //         shadeClose: false, //开启遮罩关闭
+            //         content: html
+            //     });
+
+        // });
+        //查看稿件
+        $("body").delegate('.layui-icon', 'click', function() {
+            var _this = this;
+            var zbguid = $(_this).attr('index');
+            var data = bigDataUrl + XNbigUrl + '?modelid=hotPonitEventDetail&serviceid=hotpointevent1&typeid=widget&zbguid=' + zbguid;
+            $.ajax({
+                type: "get",
+                url: data,
+                beforeSend: function() {
+                    indexB = layer.load(1, {
+                        shade: [0.4, '#fff'] //0.1透明度的白色背景
+                    });
+
+                },
+                success: function(htmls) {
+                    layer.close(indexB);
+                    if (htmls.DATA.ISSUCCESS == 'false') {
+                        layer.msg('暂无文章');
+                        return false;
+                    }
+                    var $NEWCONTENTTPL = $("#NEWCONTENTTPL").html();
+                    laytpl($NEWCONTENTTPL).render(htmls.DATA.CONTENT.replace(/[\r\n]+/gi, "<br>"), function(html) {
+                        layer.open({
+                            title: htmls.DATA.TITLE,
+                            skin: 'layui-layer-lan',
+                            type: 1,
+                            skin: 'layui-layer-demo', //样式类名
+                            //closeBtn: 0, //不显示关闭按钮
+                            maxmin: true, //开启最大化最小化按钮
+                            anim: 2,
+                            area: ['650px', '600px'],
+                            shadeClose: false, //开启遮罩关闭
+                            content: html
+                        });
+                    })
+                }
+            })
+        })
+
+
+        //获取右侧热点新闻列表数据
+        function listData1(nameNum) {
+            var data = '/bigScreen/hotspot/area?areaCode=' + nameNum;
+            $.ajax({
+                type: "get",
+                url: data,
+                dataType: 'json',
+                beforeSend: function() {
+                    // indexB = layer.load(1, {
+                    // shade: [0.4, '#fff'] //0.1透明度的白色背景
+                    // });
+                },
+                success: function(res) {
+                    //layer.close(indexB)
+                    console.log(res);
+                    $('.listUl li').remove();
+                    if (res.length != 0) {
+                        for (var i = 0; i < res.length; i++) {
+                            var source = res[i].tippingMedia ? res[i].tippingMedia : "";
+                            var li = $("<li index='" + res[i].title + "'  title='" + res[i].title + "' data='" + res[i].CLUSTERID + "'><a target='_blank' style='color: #FFFFFF'   href='javascript:void(0);' style='float: left;'>" + res[i].title + "</a><span style='width: 100px;overflow: hidden;display: inline-block; float: left;' >" + source + "&nbsp;</span><span style='display: inline-block;float: left;margin-left: 10px;'>" + res[i].reportNum + "</span></li>");
+                            $(".listUl").append(li);
+                        }
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+        //echarts地图配置
+        function echartsMap(Data, maxDta) {
+            var Data = Data;
+            option = {
+                title: {
+                    left: 'center',
+                    textStyle: {
+                        color: '#fff',
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                },
+                visualMap: {
+                    min: 10,
+                    // max: 400,
+                    max: maxDta,
+                    text: ['热度高', '热度低'],
+                    textStyle: {
+                        color: '#fff',
+                    },
+                    realtime: false,
+                    calculable: true,
+                    inRange: {
+                        color: ['#0ed7e0', '#5ee496', '#78e87d', '#c9f632', '#ffff00']
+                    }
+                },
+
+
+                series: [{
+                    name: ' ',
+                    type: 'map',
+                    mapType: placeName,
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#389BB7',
+                            areaColor: '#86dde0',
+                            label: {
+                                textStyle: {
+                                    fontSize: '16',
+                                    color: '#F6754D'
+                                }
+                            },
+                        },
+                        emphasis: {
+                            areaColor: '#fac027',
+                            borderWidth: 0
+                        }
+                    },
+                    animation: false,
+                    data: Data,
+
+                }]
+            };
+            return option;
+        }
+
+        function Map(placeName) {
+            $.ajax({
+                type: "get",
+                url: '../lib/echarts/src/util/mapData/geoJson/' + placeName + '.json',
+                beforeSend: function() {
+                    indexA = layer.load(1, {
+                        shade: [0.4, '#fff'] //0.1透明度的白色背景
+                    });
+                },
+                success: function(placeJson) {
+                    layer.close(indexA);
+                    echarts.registerMap(placeName, placeJson); // 注册地图
+                    mapChart = echarts.init(document.getElementById('map'));
+                    //获取热度值
+                    getHoht();
+                }
+            })
+        }
+        Map(placeName);
+        listData1(nameNum);
+        //获取热度值
+        function getHoht() {
+            $.ajax({
+                type: "get",
+                url: '/bigScreen/areaHeatValue',
+                async: false,
+                data: {},
+                success: function(data) {
+                    if (data.length > 0) {
+                        tempData = [];
+                        for (var i = 0; i < data.length; i++) {
+                            var AREANAME = data[i].areaName;
+                            if (nameNum == '001004') {
+                                AREANAME = AREANAME.replace(/密云县/, "密云区");
+                                AREANAME = AREANAME.replace(/延庆县/, "延庆区");
+                            } else {
+                                AREANAME = AREANAME.replace(/省/, "");
+                                AREANAME = AREANAME.replace(/市/, "");
+                                AREANAME = AREANAME.replace(/自治区/, "");
+                                AREANAME = AREANAME.replace(/回族/, "");
+                                AREANAME = AREANAME.replace(/壮族/, "");
+                                AREANAME = AREANAME.replace(/维吾尔/, "");
+                                AREANAME = AREANAME.replace(/特别行政区/, "");
+                            }
+                            tempData.push({
+                                "name": AREANAME,
+                                "value": data[i].heatValue,
+                                "area": data[i].areaCode,
+                            })
+                        }
+                        //以热度进行排序，高->低
+                        tempData.sort(function(a, b) {
+                            var tag = sortDate(a.value, b.value);
+                            return tag;
+                        });
+                        console.log(tempData, '地图数据')
+                        mapChart.on("click", function(param) {
+                            if (typeof(param.data) == "undefined") {
+                                return false;
+                            }
+                            $(".listUl").empty();
+                            if (typeof(param.data.name) == "undefined") {
+                                placeName = "china";
+                                $(".rdzz_rightList>h1").html("全国热点新闻")
+                                nameNum = "001";
+                            } else {
+                                nameNum = provincesCode[param.name];
+                                console.log(provincesCode)
+                                $(".rdzz_rightList>h1").html(param.name + "热点");
+                            }
+                            listData1(nameNum);
+                        });
+
+                        var echartsMapInit = echartsMap(tempData, tempData[0].value);
+                        mapChart.setOption(echartsMapInit);
+
+                    }
+                }
+            });
+        }
+
+        //
+        function setListUlData(data) {
+            $('.listUl li').remove();
+            var leng = data.length < 10 ? data.length : 10;
+            for (var i = 0; i < leng; i++) {
+                var li = $("<li index='" + data[i].name + "' data='" + data[i].CLUSTERID + "' title='" + data[i].name + "'><span class='dot bg" + (i + 1) + "'></span><a class='title' target='_blank' style='color: #FFFFFF' href='javascript:void(0);' >" + data[i].title + "</a><a href='javascript:void(0);' class='source'>&nbsp;&nbsp;" + data[i].name + "</a>&nbsp;&nbsp;" + data[i].value + "</li>");
+                $(".listUl").append(li);
+            }
+        }
+
+        function sortDate(a, b) {
+            return b - a
+        }
+
+        laydate({
+            elem: '#J-xl',
+            max: laydate.now()
+        });
+        //设置input 默 认时间
+        $('#J-xl').attr('value', laydate.now());
+    </script>
+    <!-- <script src="js/map/resize.js"></script> -->
+</body>
+
+</html>

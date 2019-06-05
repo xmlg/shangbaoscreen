@@ -1,0 +1,122 @@
+﻿@font-face {
+	font-family: 'FangZhengLangTing';
+	src: url('../font/FZLTHJW.TTF') format('truetype');
+}
+
+body {
+	font-family: 'FangZhengLangTing';
+}
+
+body {
+	/*background-image: url(../ui/部门传播力排行榜TOP10psd.jpg);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+	
+}
+
+h1 {
+	margin: 104px 0px 0px 26px;
+	text-align: center;
+	letter-spacing: 2px;
+	color: #00FCFE;
+	font-size: 46px;
+	font-weight: 500;
+	background-image: url(../img/title-bg.png);
+	background-size: 97% 100%;
+	background-position: 59px -3px;
+	background-repeat: no-repeat;
+}
+
+svg {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	left:16%;
+}
+.list-wrapper-par{
+	background-image: url(../img/department_bg.jpg);
+	background-size: 100% 100%;
+	height: 750px;
+	width: 688px;
+	top: 200px;
+	position: absolute;
+	left: 1200px;
+	padding: 40px;
+}
+.list-wrapper {
+	
+	z-index: 2;
+	position: relative;
+	background-image: url(../img/de.png);
+	background-size: 100% 100%;
+	width: 667px;
+	height: 703px;
+	
+}
+
+.list-header {
+	/*background-color: rgb(10, 74, 90);*/
+	height: 75px;
+	/*background-color: #0A4A5A;*/
+}
+
+.list-header .th1,
+.list-header .th2,
+.list-header .th3 {
+	float: left;
+	text-align: center;
+	height: 100%;
+	line-height: 75px;
+	font-size: 40px;
+	color: #10B3E0;
+}
+
+.list-header .th1 {
+	width: 170px;
+}
+
+.list-header .th2 {
+	width: 282px;
+	text-align: left;
+}
+
+.list-header .th3 {
+	width: 215px;
+	text-align: left;
+	letter-spacing: -1px;
+}
+
+.list-item {
+	height: 59px;
+	
+}
+
+.list-item .td1,
+.list-item .td2,
+.list-item .td3 {
+	float: left;
+	text-align: center;
+	line-height: 87px;
+	font-size: 40px;
+	color: #ffffff;
+	height: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .td1 {
+	width: 170px;
+}
+
+.list-item .td2 {
+	width: 282px;
+	text-align: left;
+}
+
+.list-item .td3 {
+	width: 215px;
+	text-align: center;
+}

@@ -1,0 +1,196 @@
+﻿.center {
+    width: 1920px;
+    height: 3200px;
+    position: relative;
+}
+
+.center .header {
+    position: absolute;
+    margin: 20px 20px 0 30px;
+    padding-left: 28px;
+    width: 1797px;
+    height: 90px;
+    background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 90px;
+    color: white;
+    /*
+    font-family: simhei;*/
+}
+
+.center .up {
+    padding-top: 58px;
+    height: 100%;
+}
+
+.center img.underline1 {
+    position: absolute;
+    top: 260px;
+    left: 316px;
+    width: 415px;
+    height: 6px;
+}
+
+.center img.underline2 {
+    position: absolute;
+    top: 260px;
+    left: 1510px;
+    width: 310px;
+    height: 6px;
+}
+
+.center .list-header-1 {
+    margin-top: 139px;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    font-size: 41px;
+    /*
+    font-family: SimHei;*/
+}
+
+.center .list-header-1 .col1 {
+    float: left;
+    font-size: 60px;
+    position: relative;
+    bottom: 20px;
+}
+
+.center .list-header-1 .col1 .col1-span {
+    letter-spacing: 0px;
+    margin-left: 385px;
+}
+
+.center .list-header-1 .col2 {
+    margin-left: 1610px;
+    font-size: 60px;
+    margin-top: 20px;
+    position: relative;
+    bottom: 20px;
+}
+
+.center .list_con {
+    height: 3200px;
+    overflow-y: hidden;
+    margin-top: 33px;
+    margin-left: 62px;
+    padding: 0;
+    /* padding-left: 25px; */
+}
+
+.center ol.list1 {
+    /* margin-top: 55px; */
+    /* margin-left: 62px; */
+    padding: 0;
+    /* height: 700px; */
+    /* overflow-y: hidden; */
+    padding-left: 25px;
+    position: relative;
+}
+
+.center ol.list1 li {
+    cursor: pointer;
+    position: relative;
+    height: 280px;
+    color: #45DDFF;
+    list-style: none;
+    font-weight: 900;
+    font-size: 80px;
+    /*
+    font-family: SimHei;*/
+    line-height: 280px;
+}
+
+.center ol.list1 li.focus {
+    color: white;
+}
+
+.center ol.list1 li.focus .mark {
+    top: 100px;
+    left: -30px;
+    width: 84px;
+    height: 84px;
+    background-image: url("../images/mark-white.png");
+    background-size: 100% 100%;
+}
+
+.center ol.list1 li.focus .bar-inner {
+    background-color: white !important;
+}
+
+.center ol.list1 li .mark,
+.center ol.list1 li .content,
+.center ol.list1 li .bar {
+    float: left;
+    height: 100%;
+}
+
+.center ol.list1 li .mark {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.center ol.list1 li .content {
+    margin-left: 46px;
+    width: 1348px;
+    line-height: 280px;
+    letter-spacing: 0.2px;
+}
+
+.center ol.list1 li .content .content-inner {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.center ol.list1 li .bar {
+    margin-left: 50px;
+    width: 280px;
+}
+
+.center ol.list1 li .bar .value {
+    float: left;
+    padding-right: 7px;
+    width: 50px;
+    height: 100%;
+    text-align: right;
+    letter-spacing: 1.1px;
+    font-size: 60px;
+    line-height: 165px;
+    font-weight: normal;
+    position: relative;
+    left: -36px;
+}
+
+.center ol.list1 li .bar .bar-outer {
+    margin-top: 120px;
+    width: 180px;
+    height: 60px;
+    background-color: #266D85;
+    text-align: center;
+    line-height: 280px;
+    margin-left: 95px;
+}
+
+.center ol.list1 li .bar .bar-outer .bar-inner {
+    height: 100%;
+    background-color: #43D5FF;
+}
+
+.center .focus2 {
+    background: #6e7176!important;
+}
+
+.page {
+    margin-left: 750px;
+    position: relative;
+    bottom: 20px;
+}
+
+.page img {
+    margin-left: 50px;
+}

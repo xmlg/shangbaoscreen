@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>深圳报业集团所属媒体稿件传播力简报</title>
+    <link rel="stylesheet" type="text/css" href="./css/zzdetail.css">
+    <script src="./lib/jquery-3.3.1.min.js"></script>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/echarts.min.js"></script>
+    <script src="./js/top.js"></script>
+</head>
+<body ng-controller="zzdetailController">
+<div class="modal-header">
+    <h2 class="modal-title">外部转载详情</h2>
+</div>
+<div class="modal-body">
+    <p>发稿时间：{{detailData.PUBTIME | toformat}}</p>
+    <p>影响力指数：<font>{{detailData.CEIINDEX}}</font></p>
+    <p>该稿件共被转载 <font>{{detailData.REPRINTS}}</font> 次， 其中包括核心媒体头条 <font>{{detailData.TOPREPRINTS}}</font> 次、 核心媒体 <font>{{detailData.COREREPRINTS}}</font> 次、 一级媒体 <font>{{detailData.LV1REPTINTS}}</font> 次、 二级媒体 <font>{{detailData.LV2REPTINTS}}</font> 次。</p>
+    <p>有 <font>{{detailZZMT.total}}</font> 家媒体转载该稿件， 其中包括核心媒体头条（<font ng-repeat="val in detailZZMT.top">{{val}}<font ng-if="($index+1)<detailZZMT.top.length">，</font></font></font>）<font>{{detailZZMT.top.length}}</font> 家、核心媒体（<font ng-repeat="val in detailZZMT.core">{{val}}<font ng-if="($index+1)<detailZZMT.core.length">，</font></font>） <font>{{detailZZMT.core.length}}</font> 家、 一级媒体 <font>{{detailZZMT.one.length}}</font> 家、 二级媒体 <font>{{detailZZMT.two.length}}</font> 家。</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">退出</button>
+</div>
+</body>
+<script type="text/javascript">
+   
+</script>
+</html>

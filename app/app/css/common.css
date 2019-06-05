@@ -1,0 +1,132 @@
+@charset "UTF-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+ul,ol{list-style:none;}
+a{text-decoration:none;color: #333333}
+/*a:hover{color: #07aaee;}*/
+img{border:0;vertical-align:middle;}
+input,button{vertical-align:middle;outline:none;border:none;}
+textarea{outline:none;border:none;resize:none;}
+input, textarea {box-sizing: content-box;outline: none;background: 0 0;font-family: "Microsoft YaHei"}
+.gjjs-search input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+.gjjs-search input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#fff;
+}
+.gjjs-search input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#fff;
+}
+.gjjs-search input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#fff;
+}
+
+.rt{float:right;}
+.lf{float: left;}
+body{color: #000;font-family: "Microsoft YaHei"}
+/*清除浮动*/
+.clearfix{*zoom:1;} /* 针对IE7 hack，触发IE7的haslayout，以清除浮动 */
+.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
+.clearfix:after{clear:both;}
+table tr td,table{border-collapse:collapse;}
+/*通用样式*/
+
+.marginTop-20{
+    margin-top: 20px;
+}
+.marginTop-10{
+    margin-top: 10px;
+}
+
+
+/*banner 基本样式*/
+/*/!*banner*!/*/
+/*.banner{*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.banner-img{*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.banner-img a,.banner-img img{*/
+    /*display: block;*/
+/*}*/
+/*.banner-img a{*/
+    /*position: absolute;*/
+    /*left: 0px;*/
+    /*top: 0px;*/
+/*}*/
+/*.banner-tools{*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*background: rgb(0,0,0);*/
+    /*background: rgba(0,0,0,.5);*/
+    /*left: 0px;*/
+    /*bottom: 0px;*/
+/*}*/
+/*.banner-text p,.banner-text p a{*/
+    /*color: #ffffff;*/
+/*}*/
+/*.banner-text p:hover,.banner-text p:hover a{*/
+    /*color: #0397ed;*/
+/*}*/
+/*.banner-text p{*/
+    /*overflow: visible;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    /*text-indent: 15px;*/
+/*}*/
+/*.banner-num{*/
+    /*position: absolute;*/
+/*}*/
+/*.banner-num span{*/
+    /*display: block;*/
+    /*float: left;*/
+/*}*/
+/*.tabContent{*/
+    /*overflow: hidden;*/
+/*}*/
+.wz-flo-box li a:hover img{
+    animation:myfirst 0.5s;
+    -moz-animation:myfirst 0.5s; /* Firefox */
+    -webkit-animation:myfirst 0.5s; /* Safari and Chrome */
+    -o-animation:myfirst 0.5s; /* Opera */
+}
+@keyframes myfirst
+{
+0%   {transform: rotate(10deg);}
+20%  {transform: rotate(-10deg);}
+40%  {transform: rotate(10deg);}
+60% {transform: rotate(-10deg);}
+80% {transform: rotate(10deg);}
+100% {transform: rotate(0deg);}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {transform: rotate(10deg);}
+20%  {transform: rotate(-10deg);}
+40%  {transform: rotate(10deg);}
+60% {transform: rotate(-10deg);}
+80% {transform: rotate(5deg);}
+100% {transform: rotate(0deg);}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+0%   {transform: rotate(10deg);}
+20%  {transform: rotate(-10deg);}
+40%  {transform: rotate(10deg);}
+60% {transform: rotate(-10deg);}
+80% {transform: rotate(5deg);}
+100% {transform: rotate(0deg);}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+0%   {transform: rotate(10deg);}
+20%  {transform: rotate(-10deg);}
+40%  {transform: rotate(10deg);}
+60% {transform: rotate(-10deg);}
+80% {transform: rotate(5deg);}
+100% {transform: rotate(0deg);}
+}

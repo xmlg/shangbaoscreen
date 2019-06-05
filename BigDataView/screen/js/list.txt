@@ -1,0 +1,8 @@
+{"TASKS":[],"REPORTS":[{"CRUSER":"admin","REPORTTYPE":"1","SELECTEDTIME":"2016-10-09 10:27:57","STATUS"
+:"0","EDITTIME":"","GNAME":"test07","CRTIME":"2016-10-09 10:27:27","KEYWORDS":[{"name":"重阳节"},{"name"
+:"茱萸"},{"name":"老人"}],"SORT":"1","CONTENT":"<p>九月九日忆山东兄弟<\/p>","TOPICID":"403","ISTASK":"0","STATEMENT"
+:"重阳节","SELECTEDCONTENT":"","FLAG":"0","REPORTID":"473","GRAPHIC":"0"},{"CRUSER":"lg","REPORTTYPE":"1"
+,"SELECTEDTIME":"2016-10-09 16:34:18","STATUS":"0","EDITTIME":"","GNAME":"集团党委会、集团公司董事会","CRTIME":"2016-10-09
+ 16:32:23","KEYWORDS":[{"name":"萨德"},{"name":"日本"},{"name":"韩国"},{"name":"反对"}],"SORT":"1","CONTENT"
+:"<p>李杲的报题111<\/p>","TOPICID":"405","ISTASK":"0","STATEMENT":"李杲的选题111","SELECTEDCONTENT":"","FLAG":"0"
+,"REPORTID":"482","GRAPHIC":"0"}]}

@@ -1,0 +1,430 @@
+﻿* {
+
+	box-sizing: border-box;
+
+}
+
+
+
+html {
+
+	width: 100%;
+
+	height: 100%;
+
+	background-color: #ffffff;
+
+	overflow: auto;
+
+}
+
+
+
+body {
+
+	background-image: url(../img/ZYCFBG.png);
+
+	background-size: 1921px 1080px;
+
+	background-position: -1px 0px;
+
+	position: relative;
+
+	overflow: hidden;
+
+	margin: 0px;
+
+	width: 1920px;
+
+	height: 1080px;
+
+	overflow: hidden;
+
+}
+
+
+
+svg {
+
+	width: 100%;
+
+	height: 100%;
+
+	position: absolute;
+
+	z-index: 100;
+
+}
+
+
+
+.scaleplate {
+
+	background-color: rgba(255, 255, 0, 0.5);
+
+	position: absolute;
+
+}
+
+
+
+@font-face {
+
+	font-family: 'FZLTHK_ZJRB--GBK1-0';
+
+	src: url('font/FZLTHJW.TTF') format('truetype');
+
+}
+
+
+
+@font-face {
+
+	font-family: 'FZLTHK--GBK1-0';
+
+	src: url('font/FZLTHK.TTF') format('truetype');
+
+}
+
+
+
+.wrapper {
+
+	position: absolute;
+
+	width: 1925px;
+
+	overflow: hidden;
+
+	height: 1080px;
+
+	top: 0px;
+
+	left: -1px;
+
+	z-index: 10;
+
+	opacity: 1;
+
+}
+
+
+
+.wrapper video {
+
+	width: 100%;
+
+	position: absolute;
+
+	left: 0px;
+
+	top: 0px;
+
+	z-index: 1;
+
+}
+
+
+
+
+
+/* Tip */
+
+
+
+.Tip .pl1 {
+
+	animation-name: tippl1;
+
+	animation-timing-function: linear;
+
+	animation-duration: 3s;
+
+	animation-iteration-count: infinite;
+
+}
+
+
+
+.Tip .pl2 {
+
+	animation-name: tippl2;
+
+	animation-timing-function: linear;
+
+	animation-duration: 3s;
+
+	animation-iteration-count: infinite;
+
+}
+
+
+
+@keyframes tippl1 {
+
+	0% {
+
+		transform: translate(1px, 1px);
+
+	}
+
+	50% {
+
+		transform: translate(0px, 0px);
+
+	}
+
+	100% {
+
+		transform: translate(1px, 1px);
+
+	}
+
+}
+
+
+
+@keyframes tippl2 {
+
+	0% {
+
+		transform: translate(-1px, -1px);
+
+	}
+
+	50% {
+
+		transform: translate(0px, 0px);
+
+	}
+
+	100% {
+
+		transform: translate(-1px, -1px);
+
+	}
+
+}
+
+
+
+
+
+/*OriginalDetail*/
+
+
+
+.OriginalDetail .c3 {
+
+	animation-name: OriginalDetailC3;
+
+	animation-timing-function: linear;
+
+	animation-delay: 1;
+
+	animation-duration: 5s;
+
+	animation-iteration-count: infinite;
+
+}
+
+
+
+.OriginalDetail .c2 {
+
+	animation-name: OriginalDetailC3;
+
+	animation-timing-function: linear;
+
+	animation-duration: 5s;
+
+	animation-iteration-count: infinite;
+
+}
+
+
+
+@keyframes OriginalDetailC3 {
+
+	0% {
+
+		stroke-opacity: 1;
+
+		stroke-width: 1;
+
+		stroke-dashoffset: 0;
+
+		transform: scale(1);
+
+	}
+
+	50% {
+
+		stroke-opacity: 0.5;
+
+		stroke-width: 1.5;
+
+		stroke-dashoffset: 5;
+
+		transform: scale(1.05);
+
+	}
+
+	100% {
+
+		stroke-opacity: 1;
+
+		stroke-width: 1;
+
+		stroke-dashoffset: 0;
+
+		transform: scale(1);
+
+	}
+
+}
+
+
+
+
+
+/*Galaxy*/
+
+
+
+.star-border,
+
+.star-border-halo {
+
+	animation-name: starBorder;
+
+	animation-timing-function: linear;
+
+	animation-delay: 1;
+
+	animation-duration: 36s;
+
+	animation-iteration-count: infinite;
+
+}
+
+
+
+@keyframes starBorder {
+
+	0% {
+
+		transform: scale(1) rotate(0deg);
+
+	}
+
+	50% {
+
+		transform: scale(1.05) rotate(180deg);
+
+	}
+
+	100% {
+
+		transform: scale(1) rotate(360deg);
+
+	}
+
+}
+
+#divlist1{
+
+	background-image: url(../img/zycf_title.jpg);
+
+	background-size: 100% 100%;
+
+	overflow: hidden; /*自动隐藏文字*/
+
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+
+    white-space: nowrap;/*强制不换行*/
+
+}
+
+#Alldiv{
+
+	opacity: 0;
+
+}
+
+.divList{
+
+	float:left,
+
+	margin-left:115px,
+
+	width:55%,
+
+	font-size:20px,
+
+	margin-top:5px,
+
+	height:30px,
+
+	color:white;
+
+	font-family: simhei;
+
+}
+
+.divList:first-child{
+
+	margin-top:17px,
+
+}
+
+/*.imga{
+
+margin-left:-50px;
+
+}
+
+.CJ{
+
+	margin-left:-50px;
+
+};*/
+
+/*.rwjl{
+
+	margin-left:30px;
+
+}*/
+
+/*.CG{
+
+margin-left:-50px;
+
+}
+
+.GX{
+
+margin-left:-50px;
+
+}
+
+.GXQ{
+
+margin-left:-50px;
+
+}
+
+.DS{
+
+margin-left:-50px;
+
+}
+
+.YQ{
+
+margin-left:-50px;
+
+}*/
+
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="lib/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/tarnsLeft.css" />
+    <link rel="stylesheet" href="css/editmeeting.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/resize.js"></script>
+    <title>稿件影响力渠道覆盖</title>
+    <style>
+        html{
+            background: none;
+        }
+        .hotarea{
+            top: 45px;
+        }
+        /*@font-face {*/
+            /*font-family: 'YouYuan';*/
+            /*src: url('font/幼圆.TTF') format('truetype');*/
+        /*}*/
+        /*h1{*/
+            /*font-family: 'YouYuan';*/
+            /*font-weight: bolder;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<h1 class="top">稿件影响力渠道覆盖</h1>
+<h2 class="top_img"><img src="images/header_title.png" width="531" alt=""></h2>
+<div class="rightcontent hotcurve">
+    <div class="reportheader" style="margin-top: 10px">
+
+
+    </div>
+    <div class="hotarea">
+        <div id="main" style="width:1680px;height:780px;position: absolute;left: 74px;top: 140px;"></div>
+
+        <div class="legend">
+        </div>
+    </div>
+</div>
+<!--<div id="main" class="content" ></div>-->
+
+<script src="lib/dist/echarts.js"></script>
+<script src="js/macarons.js"></script>
+
+<script>
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'lib/dist'
+        }
+    });
+
+   // var url = 'js/json/mianjitu.json';
+   var url='/cas/casData/screenJson?type=exMediaType';
+    $.getJSON(url,function(result){
+
+
+        var lists =result;
+
+		var serirs=new Array();
+		for(var i=0;i<lists.content.length;i++){	
+			var obj={};
+			obj.name=lists.content[i].name;
+			obj.type='line';
+			obj.stack=lists.yType;
+			obj.itemStyle={},obj.itemStyle.normal={},
+//			obj.itemStyle.normal.areaStyle={};
+//			obj.itemStyle.normal.areaStyle.type='default';
+			obj.data=lists.content[i].value;
+			serirs.push(obj)
+		}
+//console.log(serirs);
+        require(
+                [
+                    'echarts',
+                    'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+                ],
+        function (ec) {
+            var myChart = ec.init(document.getElementById('main'),theme);
+            var option = {
+
+            legend: {
+                //            data:['网媒','微博','电子报','微信','APP'],
+                data:lists.totalTrans,
+                textStyle:{color: 'auto',fontSize:"47",fontWeight:"bolder"},
+                show:true,
+                orient:"vertical",
+                x:"right",
+                y:"center",
+                itemGap:80,
+                padding:30
+				  
+            },
+            toolbox: {
+
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+
+//                data : ['10/21','10/22','10/23','10/24','10/25','10/26','10/27']
+                    data: lists.xType,
+                    nameTextStyle:{
+                        fontSize:'40'
+                    }
+                }
+            ],
+
+            yAxis : [
+                {
+                    type : 'value'
+
+                }
+            ],
+
+            series :serirs /*[
+                {
+                    name:lists.content[0].name,
+                    type:'line',
+//                stack: '总量',
+                    stack: lists.yType,
+                    itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                    data:lists.content[0].value
+                }
+			
+            ]*/
+        };
+
+
+
+        myChart.setOption(option);
+        }
+        );
+    });
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
+

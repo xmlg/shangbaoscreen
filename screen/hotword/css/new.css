@@ -1,0 +1,52 @@
+.hotWordVSBox {
+    position: absolute;
+    width: 350px;
+    left: 50%;
+    margin-left: -175px;
+    top: 50%;
+    margin-top: -43px;
+}
+.hotWordVSBox .hotWordVSBottom {
+    position: relative;
+    text-align: center;
+}
+.hotWordVSBox .hotWordVSBZ {
+    padding: 0px 10px;
+    background: url(../images/eventTraceHotWordzz_05.png) repeat-x;
+    height: 58px;
+    line-height: 54px;
+    position: relative;
+    display: inline-block;
+}
+.hotWordVSBox .hotWordVSBZ .hotWordiL {
+    position: absolute;
+    top: 0px;
+    left: -24px;
+    width: 24px;
+    height: 58px;
+    background: url(../images/eventTraceHotWordzz_03.png);
+}
+.hotWordVSBox .hotWordVSBZ .hotWordiR {
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    width: 25px;
+    height: 58px;
+    background: url(../images/eventTraceHotWordzz_07.png);
+}
+.hotWordVSBox .hotWordVSBZ span {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+.hotWordVSBox .hotWordVSBZ span {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+.hotWordVSBox .hotWordVSBe {
+    position: absolute;
+    left: 50%;
+    margin-left: -62px;
+    top: -20px;
+}

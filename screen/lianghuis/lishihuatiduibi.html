@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史话题对比</title>
+    <link rel="stylesheet" href="js/bootstrap-3.3.5/css/bootstrap.css">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        table{
+            width: 100%;
+        }
+        table tr th{
+            width: 16%;
+            text-align: center;
+            background: #01407b;
+            color: #fff;
+            border-width: 0;
+        }
+        table tr td{
+            width: 16%;
+            text-align: center;
+            /*background: #01407b;*/
+            color: #000;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            border-width: 0;
+        }
+        h1{
+            color: rgb(1, 64, 123);
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>历史热门话题对比</h1>
+<table class="myTable table-striped">
+    <tr>
+        <th>排名</th>
+        <th>标题</th>
+        <th>上榜时间</th>
+        <th>2017年热度值</th>
+        <th>2018年热度值</th>
+    </tr>
+</table>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap-3.3.5/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        console.log(getNowFormatDate(true));
+        $.ajax({
+            type: "GET",
+            url: "/xhs/wcm/bigdata.do?modelid=autocomparehotpoint&serviceid=hotpointevent1&typeid=widget&%20field=zyzxfield_021&"+getNowFormatDate(true)+"2015&similarnum=20 ",
+            data: {},
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+                for (var i = 0; i < data.length&&i<20; i++) {
+
+                    var obj = data[i];
+                    $(".myTable").append("<tr><td>"+(i+1)+"</td><td>"+obj.title+"</td><td>"+obj.loadtime+"</td><td >"+obj.clusternum17+"</td><td>"+obj.clusternum18+"</td></tr>")
+                }
+            }
+        });
+
+        /**
+         *获取当前时间  形如2016-11-24+14
+         **/
+        function getNowFormatDate(isWM) {
+            var date = new Date();
+            var seperator1 = "-";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            var hours=date.getHours();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            if(isWM){
+                return year + seperator1 + month + seperator1 + strDate;
+            }else{
+                if (hours >= 0 && hours <= 9) {
+                    hours = "0" + hours;
+                }
+                var currentdate = year + seperator1 + month + seperator1 + strDate
+                    + "+" + hours;
+
+                return currentdate;
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

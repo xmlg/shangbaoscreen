@@ -1,0 +1,319 @@
+﻿@font-face {
+	font-family: 'FangZhengLangTing';
+	src: url('../font/FZLTHJW.TTF') format('truetype');
+}
+
+body {
+	font-family: 'FangZhengLangTing';
+}
+
+body {
+	/*background-image: url(ui/原创稿件排行-传播贡献分布.png);*/
+	background-size: 100% 100%;
+	border: 0.0001px solid rgba(255, 255, 255, 0);
+	background-color: #0D141E;
+}
+
+h1 {
+	position: absolute;
+	text-align: center;
+	color: #00FCFE;
+	font-size: 25px;
+	font-weight: 500;
+	background-repeat: no-repeat;
+	width: 99%;
+	top: 5px;
+	font-size: 40px;
+	letter-spacing: -0.7px;
+	padding-left: 15px;
+}
+
+h1.left {
+	background-image: url(../img/title-bg-2.png);
+	background-size: 100% 85%;
+	background-position: 0px 0px;
+}
+
+h1.right {
+	background-image: url(../img/title-bg-3.png);
+	background-size: 100% 85%;
+	background-position: 0px 0px;
+}
+
+div.main-left {
+	position: absolute;
+	top: 47px;
+	left: 14px;
+	width: 98%;
+	height: 86%;
+	background-image: url(../img/grad-bg-2.png);
+	background-size: 100% 100%;
+}
+
+div.main-right {
+	position: absolute;
+	top: 105px;
+	right: 17px;
+	width: 924px;
+	height: 440px;
+	background-image: url(../img/grad-bg.png);
+	background-size: 100% 100%;
+}
+
+.list-header {
+	margin-top: 34px;
+	height:100px;
+	/*background-color: #11425F;*/
+}
+
+.list-header .th1,
+.list-header .th2,
+.list-header .th3,
+.list-header .th4 {
+	float: left;
+	text-align: center;
+	height: 100%;
+	line-height: 135px;
+	font-size: 46px;
+	color: #10B3E0;
+	margin-left:222px;
+}
+
+.list-header .th1 {
+	width: 150px;
+	padding-right: 53px;
+	margin-left: 73px;
+}
+
+.list-header .th2 {
+	width: 464px;
+	padding-right: 33px;
+	margin-left: 225px;
+}
+
+.list-header .th3 {
+	width: 186px;
+	margin-left:350px;
+}
+
+.list-header .th4 {
+	width: 210px;
+	
+	margin-left: 177px;
+}
+
+.list-item {
+	height: 90px;
+	color: white;
+}
+
+.list-item:nth-child(even) {
+	background-color: #0D5668;
+}
+
+.list-item .td1,
+.list-item .td2,
+.list-item .td3,
+.list-item .td4 {
+	float: left;
+	line-height: 90px;
+	font-size: 40px;
+	height: 100%;
+	margin-left: 161px;
+}
+
+.list-item .td1 {
+	padding-left: 42px;
+	width: 150px;
+	margin-left:50px
+	
+}
+
+.list-item .td2 {
+	padding-right: 90px;
+	width: 752px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .td3 {
+	width: 96px;
+	text-align: center;
+}
+
+.list-item .td4 {
+	width: 210px;
+	padding-left: 162px;
+	text-align: center;
+}
+
+.main-right h2 {
+	color: #E0F035;
+	margin: 16px 0px 0px 37px;
+	font-weight: 100;
+}
+
+.author-information,
+.media-information {
+	position: absolute;
+	left: 40px;
+	top: 50px;
+	color: #27A6C7;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.media-information {
+	left: 473px;
+	letter-spacing: -1.5px;
+}
+
+.radar-map {
+	position: absolute;
+	width: 440px;
+	height: 330px;
+	top: 104px;
+}
+
+.radar-map svg {
+	width: 100%;
+	height: 100%;
+}
+
+svg.relation-map {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.media-distribution {
+	font-size: 17px;
+	line-height: 28px;
+	margin-top: 5px;
+}
+
+.media-distribution .point-0 {
+	font-size: 36px;
+	line-height: 11px;
+	display: inline-block;
+	height: 17px;
+	position: relative;
+	top: 6px;
+	width: 18px;
+	left: -7px;
+}
+
+.media-distribution .point-1 {
+	font-size: 28px;
+	line-height: 11px;
+	display: inline-block;
+	height: 17px;
+	position: relative;
+	top: 3px;
+	width: 15px;
+	left: -5px;
+}
+
+.media-distribution .point-2 {}
+
+.media-distribution .text {}
+
+.media-distribution .value {
+    font-size: 20px;
+    line-height: 22px;
+    margin-left: 5px;
+}
+
+.exponent {
+	width: 135px;
+	height: 60px;
+	line-height: 60px;
+	color: #2A9295;
+	position: absolute;
+	font-size: 15px;
+}
+
+.exponent.exponent-1 {
+	top: 2px;
+	left: 249px;
+}
+
+.exponent.exponent-2 {
+	top: 260px;
+	left: 307px;
+}
+
+.exponent.exponent-3 {
+	top: 255px;
+	left: 17px;
+}
+
+.exponent .text {
+	float: left;
+	height: 100%;
+}
+
+.exponent .value {
+	float: left;
+	height: 100%;
+	background-image: url(../img/icon-ring.png);
+	background-size: 100% 100%;
+	width: 62px;
+	margin-left: 4px;
+	text-align: center;
+}
+
+.exponent .value .numerical {
+	font-size: 19px;
+	line-height: 10px;
+}
+
+.exponent .value .unit {
+	font-size: 13px;
+	line-height: 68px;
+}
+
+.core-list {
+	position: absolute;
+	top: 126px;
+	right: 5px;
+	/*background-image: url(../img/list-bg.png);
+	background-size: 100% 100%;*/
+	width: 135px;
+	height: 280px;
+	color: #248AB0;
+	overflow: hidden;
+}
+
+.core-list .core-list-header {
+	background-image: url(../img/cbl_2.jpg);
+	background-size: 100% 100%;
+	height: 30px;
+	margin-top: 0px;
+	font-size: 18px;
+	font-weight: 900;
+	line-height: 30px;
+	
+	text-align: center;
+}
+
+.core-list .core-list-body {
+	background-image: url(../img/cbl_2.jpg);
+	background-size: 100% 100%;
+	margin-top: 10px;
+	height: 250px;
+	padding: 10px;
+	overflow: hidden;
+}
+.core-list-body .item{
+	height: 25px;
+	line-height: 25px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+}

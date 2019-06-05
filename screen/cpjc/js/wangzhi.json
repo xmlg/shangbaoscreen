@@ -1,0 +1,12 @@
+﻿{
+	"item": [
+		{
+			"name": "深圳新闻网",
+			"address": "http://www.sznews.com/"
+		},  {
+			"name": "深圳数字报",
+			"address": "http://sztqb.sznews.com"
+		}
+	],
+	"imgs": []
+}

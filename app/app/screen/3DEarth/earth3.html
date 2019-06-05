@@ -1,0 +1,321 @@
+<html>
+  <head>
+    <meta charset=utf-8>
+    <!-- <script type='text/javascript' src='d3.v3.min.js'></script> -->
+    <script type='text/javascript' src='d3.v3.min.js'></script>
+    <script src="queue.v1.js"></script>
+  <script type='text/javascript' src='topojson.v1.js'></script>
+  <script type='text/javascript' src='planetaryjs.js'></script>
+   <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        #myCanvas
+        {
+            background-color:#161a3c;
+            overflow:hidden;
+        }
+    </style>
+  </head>
+  <body>
+<canvas id='rotatingGlobe' width='400' height='400'
+  style='width: 400px; height: 400px; cursor: move;position:absolute'></canvas>
+<!--
+  <canvas id="myCanvas"  width='600' height='600'></canvas>
+-->
+<script>
+(function() {
+  var globe = planetaryjs.planet();
+
+
+  globe.width = 400;
+  globe.height = 400;
+
+
+  //globe.loadPlugin(autorotate(10));
+  globe.loadPlugin(planetaryjs.plugins.earth({
+    // topojson: { file:   'world-110m-withlakes.json' },
+    topojson: { file:   'newWorld.json' },
+    oceans:   { fill:   '#00bfff' },
+    land:     { fill:   '#339966' },
+    borders:  { stroke: '#008000' }
+  }));
+
+globe.loadPlugin(planetaryjs.plugins.countries({
+  topojson: { file:   'world-country-names.tsv' },
+  colorRange:  { begin: "red",end:"#000000" }
+}));
+
+globe.loadPlugin(planetaryjs.plugins.countries({
+  topojson: { file:   'world-country-names.tsv' },
+  colorRange:  { begin: "red",end:"#000000" }
+}));
+
+  globe.loadPlugin(lakes({
+    fill: 'blue'
+  }));
+
+    globe.loadPlugin(china({
+    file:   'newFChina.json'
+    }));
+  globe.loadPlugin(planetaryjs.plugins.pings({color: 'yellow', ttl: 5000, angle: 10}));
+  globe.loadPlugin(planetaryjs.plugins.zoom({
+    scaleExtent: [100, 200]
+  }));
+  globe.loadPlugin(planetaryjs.plugins.drag({
+    onDragStart: function() {
+    },
+    onDragEnd: function() {
+    }
+  }));
+  globe.projection.scale(175).translate([globe.width/2,globe.height/2]).rotate([0, -10, 0]);
+
+  var colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
+  var points = null;
+  queue().defer(d3.json,"cities.json").defer(d3.json,"events.json").defer(d3.json, "capitals.json").await(function(error,data1,data2,points){
+      if(error)throw error;
+      data1.forEach(function(item,index){
+        item.TITLE = data2[item.AREA].TITLE;
+      });
+
+      data1.forEach(function(item,index){
+          points.contents.forEach(function(_item,_index){
+                if(_item.province == item.AREANAME){
+                    item.latitude = _item.latitude;
+                    item.longitude = _item.longitude;
+                }
+            });
+      });
+      points = data1;
+      setInterval(function(){
+        if(points){
+              var color = colors[Math.floor(Math.random() * colors.length)];
+              var random = Math.ceil(Math.random()*(points.length));
+              points[random]&&globe.plugins.pings.add(points[random]["longitude"], points[random]["latitude"], { color: color, ttl: 2000, angle: Math.random() * 10 });
+        }
+      },1000);
+  });
+
+
+
+  var canvas = document.getElementById('rotatingGlobe');
+  // Draw that globe!
+  globe.draw(canvas);
+
+
+
+  function autorotate(degPerSec,points) {
+    return function(planet) {
+      var lastTick = null;
+      var paused = false;
+      planet.plugins.autorotate = {
+        pause:  function() { paused = true;  },
+        resume: function() { paused = false; }
+      };
+
+      planet.onDraw(function() {
+        if (paused || !lastTick) {
+          lastTick = new Date();
+        } else {
+          var now = new Date();
+          var delta = now - lastTick;
+          var rotation = planet.projection.rotate();
+          rotation[0] += degPerSec * delta / 1000;
+          if (rotation[0] >= 180) rotation[0] -= 360;
+          planet.projection.rotate(rotation);
+          lastTick = now;
+        }
+
+
+      });
+    };
+  };
+
+  function lakes(options) {
+    options = options || {};
+    var lakes = null;
+
+    return function(planet) {
+      planet.onInit(function() {
+        var world = planet.plugins.topojson.world;
+        lakes = topojson.feature(world, world.objects.ne_110m_lakes);
+      });
+
+      planet.onDraw(function(path) {
+        planet.withSavedContext(function(context) {
+          context.beginPath();
+          // planet.path.context(context)(lakes);
+          path?path(lakes):planet.path.context(context)(lakes);
+          context.fillStyle = options.fill || 'black';
+          context.fill();
+
+        });
+      });
+    };
+  };
+
+
+
+  function china(options) {
+    options = options || {};
+    var CHINA = null;
+
+    return function(planet) {
+      planet.onInit(function() {
+
+          queue()
+                .defer(d3.json, options.file||"china.json")
+                //.defer(d3.tsv, "world-country-names.tsv")
+                .await(function(error, chinaData){
+                   if (error) throw error;
+                  CHINA =   planet.plugins.topojson.chinaData = chinaData;
+      //            console.log(CHINA);
+                });
+
+
+      });
+
+      planet.onDraw(function(path) {
+        planet.withSavedContext(function(context) {
+          context.beginPath();
+          // planet.path.context(context)(lakes);
+          path?path(CHINA):planet.path.context(context)(CHINA);
+          context.fillStyle = 'black';
+          context.fill();
+
+        });
+      });
+    };
+  };
+
+
+
+
+
+
+})();
+
+</script>
+<script type="text/javascript">
+        var canvasPage3 = document.getElementById("myCanvas");
+        var ctx = canvasPage3.getContext("2d");
+        var zhongX = 800;
+        var zhongY = 385;
+        function randomNum(x,y)
+        {
+            return Math.floor(Math.random() * (y - x + 1) + x);
+        }
+
+        function randomColor() {
+            return "rgb(" + randomNum(0, 255) + "," + randomNum(0, 255) + "," + randomNum(0, 255) + ")";
+        }
+
+        function Ball() {
+            this.r = randomNum(0.1, 3);
+            this.color = "white";
+
+            this.x = randomNum(this.r, canvasPage3.width - this.r);
+            this.y = randomNum(this.r, canvasPage3.height - this.r);
+
+            this.speedX = randomNum(1, 3) * (randomNum(0, 1) ? 1 : -1);
+            this.speedY = randomNum(1, 3) * (randomNum(0, 1) ? 1 : -1);
+        }
+
+        Ball.prototype.move = function () {
+            this.x += this.speedX*0.2;
+            this.y += this.speedY*0.2;
+
+            if(this.x<=this.r)
+            {
+                this.x = this.r;
+                this.speedX *= -1;
+            }
+            if(this.x>=canvasPage3.width -this.r)
+            {
+                this.x = canvasPage3.width - this.r
+                this.speedX *= -1;
+            }
+            //С�������ϱ߽��Ĵ��� ����
+            if (this.y <= this.r) {
+                this.y = this.r;
+                //����
+                this.speedY *= -1;
+            }
+            //С�������±߽��Ĵ��� ����
+            if (this.y >= canvasPage3.height - this.r) {
+                this.y = canvasPage3.height - this.r;
+                //����
+                this.speedY *= -1;
+            }
+        }
+
+        Ball.prototype.draw = function () {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        var balls = [];
+        var arr = [];
+        for (var i = 0; i < 0.0002 * canvasPage3.width * canvasPage3.height; i++) {
+            var ball = new Ball();
+            balls.push(ball);
+        }
+
+        setInterval(function () {
+            arr = [];
+            ctx.clearRect(0, 0, canvasPage3.width, canvasPage3.height);
+            for (var i = 0; i < balls.length; i++) {
+                balls[i].move();
+                balls[i].draw();
+                if (ballAndMouse(balls[i]) < 130) {
+                    ctx.lineWidth = (130 - ballAndMouse(balls[i])) * 1.5 / 130;
+                    ctx.beginPath();
+                    ctx.moveTo(balls[i].x, balls[i].y);
+                    ctx.lineTo(zhongX, zhongY);
+                    ctx.strokeStyle = balls[i].color;
+                    ctx.stroke();
+                }
+            }
+
+
+            for (var i = 0; i < balls.length; i++) {
+                for (var j = 0; j < balls.length; j++) {
+                    if (ballAndBall(balls[i], balls[j]) < 80) {
+                        ctx.lineWidth = (80 - ballAndBall(balls[i], balls[j])) * 0.6 / 80;
+                        ctx.globalAlpha = (130 - ballAndBall(balls[i], balls[j])) * 1 / 80;
+                        ctx.beginPath();
+                        ctx.moveTo(balls[i].x, balls[i].y);
+                        ctx.lineTo(balls[j].x, balls[j].y);
+                        ctx.strokeStyle = balls[i].color;
+                        ctx.stroke();
+                    }
+                }
+            }
+            ctx.globalAlpha = 1.0;
+
+        }, 30);
+
+        canvasPage3.onmousemove = function (event) {
+            event = event || window.event;
+            zhongX = event.offsetX;
+            zhongY = event.offsetY;
+        }
+
+        function ballAndMouse(obj) {
+            var disX = Math.abs(zhongX - obj.x);
+            var disY = Math.abs(zhongY - obj.y);
+            return Math.sqrt(disX * disX + disY * disY);
+        }
+        function ballAndBall(obj1, obj2) {
+            var disX = Math.abs(obj1.x - obj2.x);
+            var disY = Math.abs(obj1.y - obj2.y);
+            return Math.sqrt(disX * disX + disY * disY);
+        }
+
+    </script>
+  </body>
+</html>

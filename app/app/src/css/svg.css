@@ -1,0 +1,281 @@
+body {
+    background-color: #040c21;
+    overflow: hidden;
+/*    background-image: url("../images/bg.jpg");
+    background-size:1920px 1080px;*/
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sum {
+    font-size: 20.22px;
+    stroke: none;
+    fill: #1df1f9
+}
+
+.quartzTypeface {
+    font-family: Quartz;
+    fill: white;
+    font-size: 45px;
+    text-anchor: end;
+    stroke: none;
+}
+
+
+
+
+/*左上*/
+
+.today_num {
+    font-size: 13.14px;
+    stroke: none;
+    fill: #1df1f9;
+    text-anchor: end
+}
+
+.lssj_text {
+    stroke: none;
+    fill: white;
+    text-anchor: start;
+}
+
+.leftUp_line {
+    stroke: #485d67;
+    fill: none;
+}
+
+#jrbl {
+    fill: #1df1f9;
+    text-anchor: middle
+}
+
+#jrzc {
+    fill: #1df1f9;
+    text-anchor: middle
+}
+
+.leftUp_content {
+    font-size: 9.1px;
+    fill: #9ac1db;
+    stroke: none;
+}
+
+
+
+
+/*左下*/
+
+.leftBelow_text {
+    font-size: 10px;
+    stroke: none;
+    fill: #9bc2da;
+}
+
+.leftBelow_num {
+    fill: #1fa3c5;
+    stroke: none;
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+.yq_num {
+    fill: #24b6dd;
+    font-size: 13.14px;
+    stroke: none;
+}
+
+.yq_text {
+    font-size: 35.38px;
+    fill: #24b6dd;
+    stroke: none;
+    text-anchor: middle;
+}
+
+.ds_total_num {
+    font-size: 14.15px;
+    fill: #1df1f9;
+    stroke: none;
+    text-anchor: middle;
+}
+
+.ds_total_text {
+    fill: #24b6dd;
+    font-size: 12.13px;
+    text-anchor: middle;
+}
+
+
+.db_total_num {
+    font-size: 14.15px;
+    fill: #ffffff;
+    stroke: none;
+}
+
+.db_total_text {
+    fill: red;
+    font-size: 12.13px;
+    fill: #ffffff;
+    stroke: none;
+    text-anchor: middle;
+}
+
+.db_c1 {
+    stroke: #024479;
+    fill: none;
+    stroke-width: 2;
+    stroke-dasharray: 2, 1;
+}
+
+.db_c2 {
+    stroke: #024479;
+    fill: none;
+}
+
+.db_c3 {
+    stroke: none;
+    fill: #24b8db;
+}
+
+.db_text {
+    stroke: none;
+    fill: #9ac1db;
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.MyTextx,
+.MyText {
+    text-anchor: middle;
+}
+
+
+
+
+
+
+
+
+
+/*中上*/
+
+.mu_title {
+    stroke: none;
+    font-size: 13.4px;
+    fill: #97c3d7
+}
+
+.manuscriptState {
+    fill: white;
+    stroke: none;
+    font-size: 10.11px;
+}
+
+.middleUp_line {
+    fill: none;
+    stroke: #9c4c50;
+}
+
+#headline {
+    stroke: none;
+    font-size: 13.4px;
+    fill: #97c3d7
+}
+
+#originalRank {
+    stroke: none;
+    stroke-width: 0.5;
+    fill: white;
+    font-size: 10px;
+}
+
+
+/*右上*/
+
+.manuscript_num {
+    font-size: 15.16px;
+    fill: #00b4eb;
+    stroke: none;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.rightUp_line {
+    fill: none;
+    stroke: #485e66;
+}
+
+.rightUp_text {
+    fill: #6a96b4;
+    stroke: none;
+    font-size: 10px;
+}
+
+.hlw_text {
+    font-size: 10px;
+    fill: white;
+    stroke: 0.5px;
+}
+
+
+
+
+/*中下*/
+
+.middleBelow_text {
+    fill: white;
+    stroke-width: 0.5;
+    font-size: 11.11px;
+}
+
+#healthLine {
+    fill: #B45050;
+}
+
+#runLine {
+    fill: #24B6DD;
+}
+
+
+
+
+/*右下*/
+
+#triangle {
+    stroke: none;
+    fill: #0b6479;
+}
+
+.rightBelow_head {
+    stroke: none;
+    fill: #00fcff;
+    font-size: 13.14px;
+}
+
+.vertical_line {
+    fill: none;
+    stroke: black;
+}
+
+
+
+.yAxis {
+    stroke: #2d3c4a;
+    font-size: 10px;
+    stroke-width: 0.5;
+    fill: none;
+    text-anchor: end;
+}
+
+.share_text {
+    fill: #99c2db;
+    font-size: 15.16px;
+}
+
+.percent_num {
+    fill: #9c4c50;
+    stroke-width: 1;
+    text-anchor: middle;
+}

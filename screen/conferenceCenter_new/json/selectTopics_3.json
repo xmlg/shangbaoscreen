@@ -1,0 +1,63 @@
+[{
+    "CRUSER": "admin",
+    "APPENDIXINFO": [{
+        "CRUSER": "admin",
+        "REPORTAPPENDIXID": "22",
+        "REPORTAPPTYPE": "2",
+        "REPORTAPPFILE": "http://cs.8531.cn/protect/P0201703/P020170310/P020170310371882763158.doc",
+        "REPORTFILEEXT": "doc",
+        "CRTIME": "2017-03-14 17:00:06",
+        "REPORTID": "23"
+    }, {
+        "CRUSER": "admin",
+        "REPORTAPPENDIXID": "23",
+        "REPORTAPPTYPE": "3",
+        "CRTIME": "2017-03-14 17:00:06",
+        "REPORTID": "23"
+    }],
+    "REPORTTYPE": "1",
+    "GROUPTYPE": "0",
+    "GROUPID": "2",
+    "NEWREPORTID": "23",
+    "METADATAINFO": [
+
+    ],
+    "STARTTIME": "2017-03-14 00:00:00",
+    "EXECUTOR": [{
+        "CRUSER": "qj",
+        "NEWREPORTUSERSID": "4",
+        "USERNAME": "秦军",
+        "TYPE": "2",
+        "GNAME": "文化新闻编辑室",
+        "CRTIME": "2017-03-13 17:35:31",
+        "USERID": "961",
+        "REPORTID": "2"
+    }],
+    "STATUS": "0",
+    "CRTIME": "2017-03-14 17:00:06",
+    "ISPASS": "0",
+    "REPLIESINFO": [
+
+    ],
+    "CONTENT": "<p>带word附件</p>",
+    "METATYPEINFO": [{
+        "CRUSER": "admin",
+        "METATYPEBYPAPER": "测试1",
+        "METATYPEBYAPP": "1",
+        "NEWREPORTMETATYPEID": "23",
+        "METATYPEBYWEB": "测试",
+        "CRTIME": "2017-03-14 17:00:06",
+        "METATYPEBYOTHER": "1",
+        "REPORTID": "23"
+    }],
+    "CRUSERNAME": "系统管理员",
+    "ENDTIME": "2017-03-16 00:00:00",
+    "FLAG": [{
+        "EDIT": "0",
+        "DELETE": "0",
+        "ADD": "1",
+        "APPROVE": "0",
+        "CANCEL": "0"
+    }],
+    "TITLE": "测试报题1"
+}]

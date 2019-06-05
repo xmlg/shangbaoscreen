@@ -1,0 +1,39 @@
+{
+    "dataContents": [
+        {
+            "brand_id": "43618",
+            "num": 9999
+        },
+        {
+            "brand_id": "11516",
+            "num": 8888
+        },
+        {
+            "brand_id": "5821",
+            "num": 7777
+        },
+        {
+            "brand_id": "8551",
+            "num": 666
+        },
+        {
+            "brand_id": "79238",
+            "num": 555
+        },
+        {
+            "brand_id": "11518",
+            "num": 444
+        },
+        {
+            "brand_id": "8354",
+            "num": 333
+        },
+        {
+            "brand_id": "43617",
+            "num": 222
+        }
+    ],
+	"sum": "629425",
+    "responseCode": "0",
+    "responseMessage": "数据查询成功"
+}

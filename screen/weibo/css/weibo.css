@@ -1,0 +1,91 @@
+body {
+  overflow: hidden;
+  background-color: #0E141D;
+}
+.header {
+  position: absolute;
+  margin: 33px 27px 0;
+  padding-left: 28px;
+  width: 1880px;
+  height: 81px;
+  background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+  background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+  color: #FFFFFF;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-size: 46px;
+  font-family: SimHei;
+  line-height: 87px;
+}
+body {
+  background-size: cover;
+}
+.islands-group {
+  position: absolute;
+  width: 1920px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  opacity: 0.66;
+}
+.islands-group.islands-group0 {
+  top: 485px;
+  left: 0;
+  opacity: 1;
+}
+.islands-group.islands-group1 {
+  top: 265px;
+  left: -549px;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+.islands-group.islands-group2 {
+  top: 265px;
+  right: -549px;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+.islands-group.islands-group3 {
+  bottom: 196px;
+  left: -549px;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+.islands-group.islands-group4 {
+  right: -549px;
+  bottom: 196px;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+.islands-group svg {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  z-index: -1;
+  width: 1920px;
+  height: 900px;
+}
+.islands-group .content {
+  position: relative;
+  display: inline-block;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  font-weight: 900;
+  font-size: 40px;
+  font-family: SimHei;
+  line-height: 90px;
+}
+.islands-group.islands-group1 .content,
+.islands-group.islands-group2 .content,
+.islands-group.islands-group3 .content,
+.islands-group.islands-group4 .content {
+  max-width: 1000px;
+}
+.islands-group .content img {
+  position: absolute;
+  top: 90px;
+  left: -5%;
+  width: 110%;
+  height: 5px;
+  border-style: none;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>微博</title>
+    <link rel="stylesheet" type="text/css" href="lib/normalize.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/base.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/weibo.css" />
+    <link rel="stylesheet" href="css/stars.css">
+
+</head>
+
+<body>
+<!--<div class="header" >-->
+<!--微博-->
+<!--</div>-->
+<!-- <div class="toggle-micro-list toggleMicroList">换一批</div> -->
+<div class="toggle-micro-list">
+    <!--<span class="toggleMicroList" data-id="0">换一批</span>-->
+    <span class="toggleMicroList" data-id="1">1-5</span>
+    <span class="toggleMicroList" data-id="2">6-10</span>
+    <span class="toggleMicroList" data-id="3">11-15</span>
+    <span class="toggleMicroList" data-id="4">16-20</span>
+    <span class="microblog-hot-list">热点列表</span>
+    <!-- <span class="microblog-hot-list">热点列表</span> -->
+</div>
+<!--<div class="toggle-micro-list microblog-hot-list">热点列表</div>-->
+<div class="stars"></div>
+<div class="toolTip">
+    <!--<p>热点</p>-->
+    <!--<p>NO.3  2016; 新闻; 全国; 年度;  新方销量[103370]</p>-->
+    <!--<p>关键字</p>-->
+    <!--<p>NO.2  新闻; [52360]</p>-->
+</div>
+
+<div class="micro-list">
+    <i class="exit"></i>
+
+    <div class="micro-all-list">
+        <div class="head-title1">微博热点</div>
+        <div class="microlist-item-content">
+            <div class="micro-item-content-tabel clear">
+                <!-- <div class="micro-item-content-tabel-thead clear">
+                    <div class="titleNum">序号</div>
+                    <div class="title">文章标题</div>
+                </div> -->
+
+                <div class="micro-item-content-tabel-tbody">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="micro-content">
+        <div class="head-title"></div>
+        <!--<div class="micro-item" >-->
+        <!--<div class="item-title">传播时间趋势</div>-->
+        <!--<div class="item-canvas" id="showline"></div>-->
+        <!--</div>-->
+        <div class="micro-item">
+            <div class="item-title">原创博主及百分比</div>
+            <div class="item-canvas" id="div_topauthors"></div>
+        </div>
+        <div class="micro-item rttauthors">
+            <div class="item-title">转发博主及百分比</div>
+            <div class="item-canvas" id="div_rttauthors"></div>
+        </div>
+        <div class="micro-item-content">
+
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="lib/jquery.nicescroll.min.js"></script>
+<!--<script src="js/resize.js"></script>-->
+<script src="lib/d3.js"></script>
+<!--<script src="lib/echarts-plain-original.js"></script>-->
+<script src="lib/echarts-all.js"></script>
+<script src="js/microBlog/theme.js"></script>
+<script src="js/config.js"></script>
+<script src="js/microBlog/weibo.js"></script>
+<!-- <script src="js/microBlog/weibo_pc.js?v=20170122"></script>
+ --><script src="js/microBlog/microList.js"></script>
+</body>
+
+</html>

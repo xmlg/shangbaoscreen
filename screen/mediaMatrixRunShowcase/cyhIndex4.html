@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="refresh" content="7200">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="./images/global20171207.css" />
+    <link rel="stylesheet" href="./private20180513.css">
+    <link rel="stylesheet" type="text/css" href="./util/ringChart.css">
+    <style type="text/css">
+        .yc-total {
+            background: url(./images/cyhIndex/l-bk.png) no-repeat;
+            background-size: 100% 100%;
+            margin-top: 3%;
+            margin-left: 30px;
+            width: 40%;
+            height: 8%;
+            float: left;
+        }
+        
+        .gj-total {
+            background: url(./images/cyhIndex/l-bk.png) no-repeat;
+            background-size: 100% 100%;
+            margin-top: 3%;
+            margin-right: 30px;
+            width: 40%;
+            height: 8%;
+            float: right;
+        }
+        
+        .r-name {
+            float: left;
+            font-size: 16px;
+            font-family: "Microsoft YaHei";
+            color: rgb(29, 241, 249);
+            width: 50%;
+            text-align: center;
+            line-height: 56px;
+        }
+        
+        .r-num {
+            float: right;
+            font-size: 36px;
+            line-height: 2;
+            font-family: Quartz Regular;
+            color: #00f8ec;
+            width: 50%;
+            text-align: center;
+            line-height: 56px;
+        }
+        
+        .yc-prop,
+        .gj-prop {
+            float: left;
+            width: 50%;
+            height: 30%;
+        }
+        
+        #chartyc,
+        #chartgj {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        
+        .left-bar {
+            height: 54%;
+        }
+        
+        #chartbar1 {
+            width: 100%;
+            height: 65%;
+            margin: 0 auto;
+            float: left;
+        }
+        
+        .char-name>div {
+            height: 35px;
+            background: url(./images/cyhIndex/sitebg.png) no-repeat center;
+            background-size: 80% 100%;
+            float: left;
+            width: 20%;
+            line-height: 35px;
+            color: rgb(29, 241, 249);
+            text-align: center;
+        }
+        
+        .select {
+            float: left;
+            width: 100%;
+            text-align: center;
+            color: #a2a39c;
+            bottom: 1%;
+            margin-left: 4%;
+            position: absolute;
+        }
+        
+        .radio,
+        .radio1 {
+            display: none;
+        }
+        
+        .radioInput {
+            background-color: #fff;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 100%;
+            display: inline-block;
+            height: 10px;
+            margin-right: 10px;
+            margin-top: -2px;
+            vertical-align: middle;
+            width: 10px;
+            line-height: 0;
+        }
+        
+        .radio:checked+.radioInput {
+            border: 2px solid #00f1f2;
+        }
+        
+        .radio:checked+.radioInput:after {
+            background-color: #00f1f2;
+            border-radius: 100%;
+            content: "";
+            display: inline-block;
+            height: 10px;
+            margin-left: 0;
+            margin-top: 0;
+            width: 10px;
+        }
+        
+        .radio:checked+.radioInput:after {
+            background-color: #00f1f2;
+            border-radius: 100%;
+            content: "";
+            display: inline-block;
+            height: 10px;
+            margin-left: 0;
+            margin-top: 0;
+            width: 10px;
+        }
+        
+        .radio:checked+.radioInput {
+            border: 2px solid #00f1f2;
+        }
+        
+        .radio1:checked+.radioInput {
+            border: 2px solid #2e4b97;
+            ;
+        }
+        
+        .radio1:checked+.radioInput:after {
+            background-color: #2e4b97;
+            border-radius: 100%;
+            content: "";
+            display: inline-block;
+            height: 13px;
+            margin-left: -1px;
+            margin-top: -1px;
+            width: 13px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="baoye_bili2 baoye_bili_p" style="padding-bottom: 10px;">
+        <div class="tit">集团用户总量</div>
+        <div class="biliquan" ng-bind="fullData.jituanyonghuzongliang | toThousands">288, 088, 888</div>
+        <div class="bilifang" style="margin-left: 34%;    float: initial;
+    display: flow-root;margin-top: 0px;">
+            <p>23,000,000</p>
+            <h3>深圳新闻网</h3>
+        </div>
+        <div class="bilifang" style="    margin-top: unset;
+    margin-left: 4%;margin-top: -72px;">
+            <p ng-bind="fullData.jtyhkhd | toThousands">101,232,398</p>
+            <h3>客户端</h3>
+        </div>
+        <div class="bilifang bilifang_R" style="margin-top: unset;
+    margin-right: 4%;margin-top: -72px;">
+            <p ng-bind="fullData.daiyunying | toThousands">101,232,398</p>
+            <h3>代运营</h3>
+        </div>
+        <div class=" clear"></div>
+        <div class="bilifang" style="margin-left: 13%;
+    margin-top: unset;margin-top: 5px;">
+            <p ng-bind="fullData.jtyhszxgfwb | toThousands">101,232,398</p>
+            <h3>官方微博</h3>
+        </div>
+        <div class="bilifang bilifang_R" style="margin-right: 13%;
+    margin-top: unset;margin-top: 5px;">
+            <p ng-bind="fullData.jtyhszxgfwx | toThousands">101,232,398</p>
+            <h3>官方微信</h3>
+        </div>
+
+        <div class="baoye_jiange"></div>
+    </div>
+    <div class="baoye_bili2_b">
+        <div class="baoye_bili2_c">
+            <div class="tit2">
+                <span>客户端用户总量</span>
+                <div class="khd-user-totle" ng-bind="fullData.khdyhzl | toThousands">1111</div>
+            </div>
+            <div class="tubiao_one">
+                <div id="clientDayUserTotle" e-charts="clientUserTotleBar" style="width:529px;height: 260px;    margin: 0 auto;"></div>
+            </div>
+        </div>
+        <div class="tubiao_one"><img src="images/chengping20180511_18.png" /></div>
+    </div>
+    <!-- <div class="baoye_bili2 baoye_bili_right">
+        <div class="tit">集团日访问总量</div>
+        <div class="biliquan biliquan_min" ng-bind="fullData.jtfwzl | toThousands">288, 088, 888</div>
+        <div class="bilifang bilifang3">
+            <p ng-bind="fullData.jtfwwz | toThousands">101,232,398</p>
+            <h3>网站</h3>
+        </div>
+        <div class="bilifang bilifang3 bilifang_R">
+            <p ng-bind="fullData.jtfwkhd | toThousands">101,232,398</p>
+            <h3>客户端</h3>
+        </div>
+    </div>
+
+
+    <div class="baoye_bili2 baoye_bili_right">
+        <div class="tit2 khd-day-visit">客户端日访问总量</div>
+        <div class="tubiao_one">
+            <div id="clientDayVisitTotle" e-charts="clientVisitTotleBar" style="width:543px;height: 250px;    margin: 0 auto;"></div>
+        </div>
+
+    </div> -->
+    <div class="baoye_bili2 baoye_bili_p" style="padding-bottom: 10px;height: 698px;position: relative;float: right;padding:0;margin: 20px 1% 0px 0">>
+        <div class="tit">集团稿件总体情况</div>
+        <div class="yc-total">
+            <div class="r-name">当日原创总数</div>
+            <!-- <div class="r-num" ng-bind="gjycTotal | toThousands">66666</div> -->
+            <div class="r-num" ng-bind="OriginalNum | toThousands"></div>
+            <div class="yc-prop"></div>
+        </div>
+        <div class="gj-total">
+            <div class="r-name">当日稿件总数</div>
+            <!-- <div class="r-num" ng-bind="gjycTotal | toThousands">9999</div> -->
+            <div class="r-num" ng-bind="TotalNum | toThousands"></div>
+        </div>
+        <div class="yc-prop">
+            <div id="chartyc" e-charts="getGJZBList"></div>
+        </div>
+        <div class="gj-prop">
+            <div id="chartgj" e-charts="getGJZBListss"></div>
+        </div>
+        <div class="left-bar">
+            <!-- <div id="chartbar1" e-charts="getGJZBListll" style="width:680px;left:-8px"></div> -->
+            <div id="chartbar1" style="width:680px;left:-8px"></div>
+            <div class="char-name">
+                <div>电子报</div>
+                <div>微博</div>
+                <div>APP</div>
+                <div>网站</div>
+                <div>微信</div>
+            </div>
+        </div>
+        <div class="select">
+            <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+            <label class="box" style="width: 15%;float: left;">
+                <input class="radio" type="checkbox" name="radio1" checked ng-click="changegj(1)">
+                <span class="radioInput" style="margin-right: 8px;"></span>稿件总数
+            </label>
+            <label class="box" style="width: 15%;float: left;">
+                <input class="radio1" type="checkbox" name="radio1" checked ng-click="changegj(2)">
+                <span class="radioInput"></span>原创稿件
+            </label>
+            <hr style="border:1px dashed #507bee;width: 23%;float: left;margin: 10px 4%;">
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="baoye_bili2 gfwo">
+        <div class="tit2"><span>官方微博&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户总量</span></div>
+        <div class="tubiao_one">
+            <div id="gfwbUserTotle" e-charts="gfwbUserTotleBar" style="width:543px;height: 250px;    margin: 0 auto;"></div>
+        </div>
+        <!-- <p class="sum ng-binding" ng-bind="fullData.gfwbyhzl | toThousands">32,277,004</p> -->
+    </div>
+    </div>
+    <div class="baoye_bili2 gfwx">
+        <div class="tit gfwx"></div>
+        <div class="tit2 gfwx"><span class="bg2">官方微信&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户总量</span></div>
+        <div class="biliquan2">
+            <p ng-bind="fullData.gfwxsztqb | toThousands">650, 456, 1</p>
+            <h3>深圳特区报</h3>
+        </div>
+        <div class="bilifang2" ng-bind="fullData.gfwxyhzl | toThousands">302,789,278</div>
+        <div class="biliquan2 biliquanR">
+            <p ng-bind="fullData.gfwxszsb | toThousands">650, 456, 1</p>
+            <h3>深圳商报</h3>
+        </div>
+        <div class="clear"></div>
+        <div class="biliquan2 biliquanB">
+            <p ng-bind="fullData.gfwxszwb | toThousands">650, 456, 1</p>
+            <h3>深圳晚报</h3>
+        </div>
+        <div class="biliquan2 biliquanBR">
+            <p ng-bind="fullData.gfwxszjb | toThousands">650, 456, 1</p>
+            <h3>晶报</h3>
+        </div>
+
+
+    </div>
+    <div class="baoye_bili2 baoye_bili_right khdzj-totle" style="margin-top: 0px;">
+        <div class="tit">客户端装机总量</div>
+        <div class="biliquan" ng-bind="fullData.khdzjzl | toThousands">288, 088, 888</div>
+        <div class="bilitiao">
+            <em>IOS</em>
+            <div class="tiaocon">
+                <div class="left_con" ng-style="fullData.khdzjiosWidth"><s>{{fullData.khdzjios+'%'}}</s><span><img src="images/chengping20180511_45_03.png"  /></span></div>
+                <div class="right_con"><s>{{fullData.khdzjandroid+'%'}}</s></div>
+            </div>
+            <em>安卓</em>
+        </div>
+    </div>
+    <script src="./lib/jquery-2.1.0.js"></script>
+    <script src="./lib/angular.js"></script>
+    <script src="./lib/echarts.js" type="text/javascript"></script>
+    <script src="./util/ringChart.js"></script>
+    <script src="./lib/dataHandle.js" type="text/javascript"></script>
+    <script src="./js/cyhIndex.js"></script>
+    <script src="../../cb/js/lib/d3-v4.min.js" type="text/javascript"></script>
+    <script src="../../cb/js/common/bar.js" type="text/javascript"></script>
+    <!-- <script src="../../cb/js/zyzx.js" type="text/javascript"></script> -->
+    <script src="../../cb/js/directive/eCharts.js" type="text/javascript"></script>
+    <script src="../js/resize.js"></script>
+</body>
+
+</html>

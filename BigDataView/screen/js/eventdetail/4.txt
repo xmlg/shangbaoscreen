@@ -1,0 +1,86 @@
+{
+	"2016-09-22": [
+		{
+			"viewPointId": "45182",
+			"SHORTTITLE": "别再干拉票贿选的傻事",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M02/CD/2D/CshKF1fjg0OAD_oaAAAyjJ9FsPg485.jpg",
+			"TITLE": "别再干拉票贿选的傻事"
+		}, {
+			"viewPointId": "45189",
+			"SHORTTITLE": "北京区乡人大选举首启选民登记系统",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M02/CC/E7/CshKGFfhFZSAXyokAAHPRpe3VVg279.jpg",
+			"TITLE": "北京区乡人大选举首启选民登记系统(图)"
+		}, {
+			"viewPointId": "45192",
+			"SHORTTITLE": "辽宁拉票贿选",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M05/A6/39/CshKFlfZXLyAKuNkAABIJBogqco946.gif",
+			"TITLE": "调查｜辽宁人大代表拉票贿选的“游戏规则”"
+		}, {
+			"viewPointId": "45193",
+			"SHORTTITLE": "警示的作用大于严惩",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M04/E1/65/CshKFlfgYQuAf_AHAACuPziF8Ew299.jpg",
+			"TITLE": "贿选，警示的作用大于严惩"
+		}, {
+			"viewPointId": "45194",
+			"SHORTTITLE": "辽足老板被取消人大代表资格球队未受到影响",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M00/74/F4/CshKF1favqaAKxO4AACiXOkDMYc699.jpg",
+			"TITLE": "辽足老板被取消人大代表资格 球队未受到影响"
+		}
+	],
+	"2016-09-21": [
+		{
+			"viewPointId": "45148",
+			"SHORTTITLE": null,
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M05/81/58/CshKGFfYpAqAFZ7pAACdB2NKT8s02.jpeg",
+			"TITLE": "8月私募首尾差103% 罗伟广举牌7股51天赚1.2亿"
+		}, {
+			"viewPointId": "45146",
+			"SHORTTITLE": "严查辽宁贿选彰显中共反腐决心",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M00/AE/B1/CshKF1fheMaAEC2DAADPKZtAfYk31.jpeg",
+			"TITLE": "港媒：严查辽宁贿选彰显中共反腐决心"
+		}, {
+			"viewPointId": "45147",
+			"SHORTTITLE": "与反腐并举",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M04/99/B7/CshKFlfYD9OAWoP_AABTtOZjsQI857.jpg",
+			"TITLE": "媒体：中央在辽宁下一盘“大棋” 人事调整与反腐并举"
+		}, {
+			"viewPointId": "45144",
+			"SHORTTITLE": "北京区乡人大选举首启选民登记系统",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M00/A7/14/CshKF1fgpteAagnbAABq5U20HHU804.jpg",
+			"TITLE": "北京区乡人大选举首启选民登记系统"
+		}, {
+			"viewPointId": "45140",
+			"SHORTTITLE": "辽宁45名全国人创表沓鲻事12名与资本食　有关",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M01/9E/52/CshKFlfYn0uACecyAAAAkvVYRSA493.gif",
+			"TITLE": "辽宁45名全国人大代表出事 12名与资本市场有关"
+		}
+	],
+	"2016-09-23": [
+		{
+			"viewPointId": "45391",
+			"SHORTTITLE": "：拉票贿选坚",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M04/FD/99/CshKFlfiT9iAT7z4AACiMOwn-SQ289.png",
+			"TITLE": "张德江：拉票贿选行为发现一起、查处一起、问责一起"
+		}, {
+			"viewPointId": "45395",
+			"SHORTTITLE": "别再干拉票贿选的傻事",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M02/CD/2D/CshKF1fjg0OAD_oaAAAyjJ9FsPg485.jpg",
+			"TITLE": "别再干拉票贿选的傻事"
+		}, {
+			"viewPointId": "45397",
+			"SHORTTITLE": "党代表选举在",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M05/E6/97/CshKFlfhAN6AZHYTAAAnmq45l3E426.jpg",
+			"TITLE": "李希：把做好省党代表选举与贿选案后续处理结合起来"
+		}, {
+			"viewPointId": "45398",
+			"SHORTTITLE": "辽宁私企被中美调查",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M00/C1/9E/CshKF1fifaSAEbsnAAED3ZwJ4qo144.jpg",
+			"TITLE": "美指控一中国企业协助朝鲜推进核计划 我专家：挑拨是非"
+		}, {
+			"viewPointId": "45400",
+			"SHORTTITLE": "外交部发布会上被人问起的这家企业",
+			"imageUrl": "http://csmlf.8531.cn/fds/group1/M02/11/E1/CshKFlfj6LaAMU6yAABaBwT4bRw825.jpg",
+			"TITLE": "外交部发布会上被人问起的这家企业，到底什么背景？"
+		}
+	]
+}

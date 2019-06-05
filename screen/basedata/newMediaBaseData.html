@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0"/>
+    <title>新媒体用户基础数据</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     td{
+        width: 50%;
+     }
+     .datatop{
+        margin:0 auto;
+        width: 70%;
+     }
+     h5{
+        font-weight: 600;
+     }
+    </style>
+
+</head>
+<body ng-controller="newMediaController">
+    <h2 style="text-align: center;">新媒体用户基础数据</h2>
+    <div class="datatop">
+        <h5>深圳特区报</h5>
+        <table class="table table-bordered table-hover table-striped dataTable no-footer">
+            <tbody class="middle-align ng-scope">
+           <tr>
+            <td>读特下载量：</td>
+            <td >{{dtDownTotal}}</td>
+           </tr>
+           <tr>
+            <td>日均活跃量：</td>
+            <td>{{dtDayTotal}}</td>
+           </tr> 
+           <tr>
+            <td>特区报官方微博粉丝量：</td>
+            <td>{{tqbweiboFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{tqbweiboReadTotal}}</td>
+           </tr>
+            <tr>
+            <td>特区报官方微信粉丝量：</td>
+            <td>{{tqbweixinFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{tqbweixinReadTotal}}</td>
+           </tr>  
+           </tbody>
+        </table>
+    </div>
+    <div class="datatop">
+        <h5>深圳商报</h5>
+        <table class="table table-bordered table-hover table-striped dataTable no-footer">
+            <tbody class="middle-align ng-scope">
+           <tr>
+            <td>读创下载量：</td>
+            <td >{{dcDownTotal}}</td>
+           </tr>
+           <tr>
+            <td>日均活跃量：</td>
+            <td>{{dcDayTotal}}</td>
+           </tr> 
+           <tr>
+            <td>商报官方微博粉丝量：</td>
+            <td>{{sbweiboFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{sbweiboReadTotal}}</td>
+           </tr>
+            <tr>
+            <td>商报官方微信粉丝量：</td>
+            <td>{{sbweixinFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{sbweixinReadTotal}}</td>
+           </tr> 
+           <tr>
+            <td>22度社区粉丝量：</td>
+            <td>{{ttFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{ttReadTotal}}</td>
+           </tr> 
+           </tbody>
+        </table>
+    </div>
+    <div class="datatop">
+        <h5>深圳晚报</h5>
+        <table class="table table-bordered table-hover table-striped dataTable no-footer">
+            <tbody class="middle-align ng-scope">
+           <tr>
+            <td>深圳ZAKER下载量：</td>
+            <td >{{ZAKERDownTotal}}</td>
+           </tr>
+           <tr>
+            <td>日均活跃量：</td>
+            <td>{{ZAKERDayTotal}}</td>
+           </tr> 
+           <tr>
+            <td>深圳网易下载量：</td>
+            <td>{{wyDownTotal}}</td>
+           </tr> 
+           <tr>
+            <td>日均活跃量：</td>
+            <td>{{wyDayTotal}}</td>
+           </tr>
+            <tr>
+            <td>晚报官方微博粉丝量：</td>
+            <td>{{wbweiboFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{wbweiboReadTotal}}</td>
+           </tr>
+           <tr>
+            <td>晚报官方微信粉丝量：</td>
+            <td>{{wbweixinFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{wbweixinReadTotal}}</td>
+           </tr>    
+           </tbody>
+        </table>
+    </div>
+    <div class="datatop">
+        <h5>晶报</h5>
+        <table class="table table-bordered table-hover table-striped dataTable no-footer">
+            <tbody class="middle-align ng-scope">
+           <tr>
+            <td>晶报官方微博粉丝量：</td>
+            <td>{{jbweiboFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{jbweiboReadTotal}}</td>
+           </tr>
+            <tr>
+            <td>晶报官方微信粉丝量：</td>
+            <td>{{jbweixinFansTotal}}</td>
+           </tr> 
+           <tr>
+            <td>平均阅读数：</td>
+            <td>{{jbweixinReadTotal}}</td>
+           </tr>  
+           </tbody>
+        </table>
+    </div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="../mediaMatrixRunShowcase/lib/angular.js"></script>
+<script src="js/newMedia.js"></script>
+</html>

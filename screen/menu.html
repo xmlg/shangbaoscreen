@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>深圳报业集团全媒体调度与监控中心</title>
+</head>
+<style>
+  body{
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: auto;
+    background: url(./mediaMatrixRunShowcase/images/baoyebg20171207_03.jpg);
+  }
+  .box{
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  }
+  .menu1,.menu2,.menu3,.menu4,.menu5{
+     position: absolute;
+      top: 15%;
+      height: 30%; 
+      cursor: pointer;
+  }
+  .menu1{
+background-color: rgb(51, 135, 234);
+  left: 5%;
+  width: 15%;
+  }
+  .menu2{
+    background-color: rgb(249, 190, 62);
+  left: 21%;
+ width: 15%;
+  }
+  .menu3{
+background-color: rgb(211, 87, 63);
+  left: 37%;
+ width: 26%;
+  }
+  .menu4{
+    background-color: rgb(89, 177, 227);
+  left: 64%;
+ width: 15%;
+  }
+  .menu5{
+ background-color: rgb(51, 175, 149);
+  left: 80%;
+ width: 15%;
+  }
+  
+  .menu6,.menu7,.menu8{
+     position: absolute;
+      top: 48%;
+      height: 30%; 
+      cursor: pointer;
+  }
+  .menu6{
+     background-color: rgb(134, 167, 63);
+    left: 5%;
+    width: 31%;
+  }
+  .menu7{
+    background-color: rgb(22, 42, 95);
+  left: 37%;
+  width: 42%;
+  }
+  .menu8{
+    background-color: rgb(182, 64, 70);
+ left: 80%;
+ width: 15%;
+    }
+    .nav1{
+        font-size: 24px;
+  font-family: "Microsoft YaHei";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 4.946;
+  position: absolute;
+  left: 5px;
+  top: 46%;
+    }
+</style>
+
+<body>
+<div class="box">
+   <div class="menu1" onclick="toward(1)">
+   	<iframe src="http://172.16.23.55/bigData/screen/hotnews.html" width="100%" height="100%"></iframe>
+ <!--    <div style="height: 70%;background: url(./menuImg/sort.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">全国热点领域分类</div> -->
+</div>
+   <div class="menu2" onclick="toward(2)">
+   	<iframe src="http://172.16.23.55/bigData/screen/my_china_bureau_screen.html" width="100%" height="100%"></iframe>
+      <!--  <div style="height: 70%;background: url(./menuImg/map.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">全国热点新闻地图</div> -->
+   </div>
+   <div class="menu3" onclick="toward(3)">
+   	 	<iframe src="http://172.16.23.55/screen/zjAndCountryHotNews/countryHotNews/Qghot.html" width="100%" height="100%"></iframe>
+  <!--      <div style="height: 70%;background: url(./menuImg/all-news1.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">全国热点新闻列表</div> -->
+   </div>
+   <div class="menu4" onclick="toward(4)">
+   	<iframe src="http://172.16.23.55/screen/zjAndCountryHotNews/zjHotNews/ZJhot.html" width="100%" height="100%"></iframe>
+   <!--     <div style="height: 70%;background: url(./menuImg/gd-news.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">广东热点新闻列表</div> -->
+   </div>
+   <div class="menu5" onclick="toward(5)">
+   	<iframe src="http://172.16.23.55/screen/zjAndCountryHotNews/wordHotNews/Nation.html" width="100%" height="100%"></iframe>
+ <!--       <div style="height: 70%;background: url(./menuImg/sz-news.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">深圳热点新闻列表</div> -->
+   </div>
+   <div class="menu6" onclick="toward(6)">
+   	<iframe src="http://172.16.23.55/screen/mediaMatrixRunShowcase/cyhIndex.html" width="100%" height="100%"></iframe>
+<!--        <div style="height: 70%;background: url(./menuImg/jituan-jz.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">集团媒体矩阵</div> -->
+   </div>
+   <div class="menu7" onclick="toward(7)">
+   	<iframe src="http://172.16.23.55/cb/2.html" width="100%" height="100%"></iframe>
+      <!--  <div style="height: 70%;background: url(./menuImg/yjb.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">已见报和发布稿件量</div> -->
+   </div>
+   <div class="menu8" onclick="toward(8)">
+   	<iframe src="http://172.16.23.55/screen/fourNewspaper/index.html" width="100%" height="100%"></iframe>
+<!--        <div style="height: 70%;background: url(./menuImg/paper1.png)center no-repeat;" ></div>
+   <div style="height: 30%;font-size:20px;font-family: 'Microsoft YaHei';color: rgb(255, 255, 255);text-transform: uppercase;text-align: center;">四报</div> -->
+   </div>
+</div>
+</body>
+<script type="text/javascript">
+    function toward(val){
+        switch(val){
+            case 1 :
+            window.location.href="/bigData/screen/hotnews.html";
+            break;
+            case 2 :
+            window.location.href="/bigData/screen/my_china_bureau_screen.html";
+            break;
+            case 3 :
+            window.location.href="/screen/zjAndCountryHotNews/countryHotNews/Qghot.html";
+            break;
+            case 4 :
+            window.location.href="/screen/zjAndCountryHotNews/zjHotNews/ZJhot.html";
+            break;
+            case 5 :
+            window.location.href="/screen/zjAndCountryHotNews/wordHotNews/Nation.html";
+            break;
+            case 6 :
+            window.location.href="/screen/mediaMatrixRunShowcase/cyhIndex.html";
+            break;
+            case 7 :
+            window.location.href="/cb/2.html";
+            break;
+            default :
+            window.location.href="/bigData/screen/microBlog.html";
+            break;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<link rel="stylesheet" type="text/css" href="../screen/css/jquery.bxslider.css"/>
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<script src="../screen/js/jquery-1.9.1.min.js"></script>
+<script src="../screen/js/jquery.bxslider.js"></script>
+<style>
+    .baoliao_neiy{ width:96%; margin:20px auto; }
+.baoliao_neiy .tit{ height:75px; line-height:75px; color:#fff;background: linear-gradient(70deg,#218ba3, #0c141e); font-size:40px; text-indent:40px;}
+.baoliao_neiy .baoliaocont{ margin:30px 100px; border-left:10px solid #008d8d;}
+.baoliao_neiy .baoliaocont .cont{ margin:0 0 40px 115px; position:relative; color:#fff; font-size:18px;}
+.baoliao_neiy .baoliaocont .cont span{ position:absolute; left:-175px;  top:50%; margin-top:-24px; height:48px; width:105px; color:#010100; font-size:16px; background:#14c3d1; display:block; line-height:48px; text-align:center; border-radius:10px;}
+.baoliao_neiy .baoliaocont .cont p{ background:#0e2836; padding:20px;}
+.baoliao_neiy .baoliaocont .cont h1{ font-size:18px; font-weight:normal;}
+</style>
+</head>
+<body>
+    <div class="baoliao_neiy">
+        <div class="tit">爆料信息</div>
+        <div id="slideBox" class="baoliaocont">
+            
+        </div>
+    </div>
+
+     <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            //获取数据
+            var dataUrl = "/isearch/front/storme_news.jhtml?pageSize=20";
+            function handle(data){
+                for(var i in data){
+                    $itemDiv = $('<div class="cont"></div>');
+                    $span = $('<span>' + data[i].code + '</span>');
+                    $h1 = $('<h1>' + data[i].name + ' '+ data[i].code + ' ' + data[i].source + '</h1>');
+                    $p = $('<p>' + data[i].content + '</p>');
+                    $itemDiv.append($span).append($h1).append($p);
+                    $("#slideBox").append($itemDiv);
+                    console.log("1111");
+                }
+                $('#slideBox').bxSlider({
+                    mode: 'vertical',
+                    speed:1000,
+                    infiniteLoop:true,
+                    minSlides: 6,
+                    auto:true,
+                    pager:false,
+                });
+            }
+            $.ajax({
+                url: dataUrl,
+//                data: data,
+                success: handle,
+//                dataType: dataType
+            });
+
+
+
+        });
+
+    </script>
+</body>
+</html>

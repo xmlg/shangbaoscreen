@@ -1,0 +1,55 @@
+/* @media (min-width: 1360px) and (max-width: 1600px){
+    
+} */
+#map{
+    width:69%;
+    float: left;
+    /* margin-top:50px; */
+    min-height:800px;
+    position: relative;
+}
+
+
+.my_china .map{
+    width:65%;
+    float: left;
+    /* margin-top:50px; */
+    min-height:800px;
+    position: relative;
+}
+
+.my_china #map{
+    width: 100%;
+    min-height:800px
+}
+
+.xinhuashe{
+    width: 35% !important;
+}
+.myFloat{
+    width: 350px;
+    height: 35px;
+    background: url(../images/float_aperture_bg.png);
+    font-size: 18px;
+    padding: 0 10px;
+    text-align: center;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    color: #fff;
+    line-height: 35px;
+    position: absolute;
+    border-radius: 5px;
+    z-index: 10;
+    cursor: pointer;
+    bottom: 0;
+    right: 30px;
+    overflow: hidden;
+    display: none;
+}
+/*.triangle{*/
+    /*width: 0;*/
+    /*height: 0;*/
+    /*border-left: 50px solid transparent;*/
+    /*border-right: 50px solid transparent;*/
+    /*border-top: 100px solid red;*/
+/*}*/

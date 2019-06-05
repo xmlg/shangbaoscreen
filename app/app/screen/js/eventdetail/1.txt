@@ -1,0 +1,8 @@
+{
+	"entity_name": "习近平,刘芝旭,郭光华",
+	"title": "辽宁人大代表贿选",
+	"entity_time": "9月13日",
+	"label": null,
+	"entity_place": "辽宁省,辽宁",
+	"entity_org": "全国人大常委会,全国人大,新华社"
+}

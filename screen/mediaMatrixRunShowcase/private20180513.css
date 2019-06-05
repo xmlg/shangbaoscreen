@@ -1,0 +1,71 @@
+html,body{
+    width: 1920px;
+    height: 1080px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    padding: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.baoye_bili2_b .tit2{     
+    height:70px; 
+    line-height:70px;
+    margin:10px 20px; 
+    font-size:28px; 
+    color:#13b5e4; 
+    /* text-align:center; */
+}
+.baoye_bili2_b .tit2 .khd-user-totle{
+    display: inline-block;
+    background: url(images/khd-user-totle.png) center center no-repeat;
+    background-size: 100% 100%;
+    height: 60px;
+    line-height: 60px;
+    width: 280px;
+    font-size: 36px;
+    font-family: Quartz Regular;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 30px;
+}
+.baoye_bili2_b .tubiao_one{
+    height: 235px;
+}
+.baoye_bili2.gfwx{
+    /* margin: 10px 0px 20px 0.6%; */
+    margin-top: -6px;
+    height: 310px;
+}
+.baoye_bili2 .tit.gfwx{
+    height: 50px;
+    line-height: 50px;
+}
+.baoye_bili2 .tit2.gfwx{
+    height: 50px;
+    line-height: 50px;
+}
+.baoye_bili_right{
+    height: 340px;
+}
+.baoye_bili_right.khdzj-totle{
+    height: 300px;
+    margin-top: 10px;
+}
+.baoye_bili2 .tit2.khd-day-visit{
+    height: 50px;
+    line-height: 50px;
+}
+.baoye_bili2.gfwo{
+    height: 300px;
+    margin-top: 6px;
+}
+.baoye_bili2.gfwo .tit2{
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 0px;
+}

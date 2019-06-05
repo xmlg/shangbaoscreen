@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>昨日原创稿件排行TOP10</title>
+		<link rel="stylesheet" href="lib/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/yesterdayoriginal.css" />
+	</head>
+
+	<body>
+		<h1 class="left" style="left: 50%;padding-right: 0px;">稿件传播力分析</h1>
+		<h1 class="right" style="padding-right: 28px;">昨日原创稿件排行TOP10</h1>
+		<div class="main-right">
+			<h2></h2>
+			<div class="author-information">
+				<div>
+					<span>▶</span>
+					<span>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：</span>
+					<span class="author"></span>
+				</div>
+				<div>
+					<span>▶</span>
+					<span>刊发媒体：</span>
+					<span class="department"></span>
+				</div>
+			</div>
+			<div class="media-information">
+				<div>▶ 媒体转载分析：</div>
+				<div class="media-distribution">
+					<span class="point-0">·</span><span class="text">核心媒体</span><span class="value exCoreMedias"></span>
+					<span class="point-1">·</span><span class="text">一级媒体</span><span class="value exLv1Medias"></span>
+					<span class="point-2">·</span><span class="text">二级媒体</span><span class="value exLv2Medias"></span>
+				</div>
+			</div>
+			<div class="core-list">
+				<div class="core-list-header">
+					核心媒体
+				</div>
+				<div class="core-list-body"></div>
+			</div>
+			<div class="radar-map">
+				<svg>
+					<g transform="translate(233,167)" style="stroke: #274150;stroke-width: 2px;">
+						<line x1="0" y1="0" x2="0" y2="-125"></line>
+						<line x1="0" y1="0" x2="108" y2="62.5"></line>
+						<line x1="0" y1="0" x2="-108" y2="62.5"></line>
+						<circle style="r: 25;stroke: #274150;stroke-width: 2px;fill: none;"></circle>
+						<circle style="r: 50;stroke: #274150;stroke-width: 2px;fill: none;"></circle>
+						<circle style="r: 75;stroke: #274150;stroke-width: 2px;fill: none;"></circle>
+						<circle style="r: 100;stroke: #274150;stroke-width: 2px;fill: none;"></circle>
+						<circle style="r: 125;stroke: #274150;stroke-width: 2px;fill: none;"></circle>
+					</g>
+					<g transform="translate(233,167)" class="radar">
+
+					</g>
+				</svg>
+				<div class="exponent exponent-1">
+					<div class="text">阅读指数:</div>
+					<div class="value">
+						<span class="numerical radarValues-1"></span><span class="unit">%</span>
+					</div>
+				</div>
+				<div class="exponent exponent-2">
+					<div class="text">互动贡献:</div>
+					<div class="value">
+						<span class="numerical radarValues-2"></span><span class="unit">%</span>
+					</div>
+				</div>
+				<div class="exponent exponent-3">
+					<div class="text">转载贡献:</div>
+					<div class="value">
+						<span class="numerical radarValues-3"></span><span class="unit">%</span>
+					</div>
+				</div>
+			</div>
+			<svg class="relation-map">
+				<g transform="translate(624,274)" class="radar">
+				</g>
+			</svg>
+			<img src="img/icon-gao.png" style="width: 80px;position: absolute;top: 234px;left: 584px;">
+		</div>
+		<div class="main-left">
+			<div class="list-header">
+				<div class="th1">排名</div>
+				<div class="th2">标题</div>
+				<div class="th3">发布时间</div>
+				<div class="th4">传播指数</div>
+			</div>
+			<div class="list-body">
+			</div>
+		</div>
+		<script src="lib/jquery.min.js"></script>
+		<script src="js/resize.js"></script>
+		<script src="lib/d3.min.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/zuori.js"></script>
+	</body>
+
+</html>

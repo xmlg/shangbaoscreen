@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>深圳报业集团所属媒体稿件传播力简报</title>\
+     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/top.css">
+
+    <script src="./lib/jquery-3.3.1.min.js"></script>
+    <script src="./lib/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.min.js"></script>
+    <script src="./lib/echarts.min.js"></script>
+    <script src="./js/top.js"></script>
+
+</head>
+<body ng-controller="jingmeiController">
+<div class="left">
+  <div class="l-tit">集团综合传播力TOP10</div>
+  <table class="cbl">
+    <tr  ng-repeat="obj in jtzhcbl  track by $index">
+      <td class="first"><div class="num" ng-show="$index===0" style="background-color: #ff0015;">{{$index+1}}</div>
+      <div class="num" ng-show="$index===1" style="background-color: #ed6942;">{{$index+1}}</div>
+      <div class="num" ng-show="$index===2" style="background-color: #ffd200;">{{$index+1}}</div>
+      <div class="num" ng-if="$index>2">{{$index+1}}</div></td>
+      <td class="data" ng-click="vc.toDetail(obj)">{{obj.title}}<font class="source">来源：{{obj.siteName}}</font></td>
+      <td><div class="cal-total">
+        <div class="cblzs"> <label class="zs-num" ng-bind="obj.ceiIndex"></label></div>
+        <div class="zzcs"><label class="zs-num" ng-bind="obj.reprints"></label></div>
+      </div></td>
+    </tr>
+  </table>
+  <div class="msg"> <label class="cblzs"></label><label class="message">影响力指数</label>
+        <label class="zzcs"></label><label class="message">总转载数</label></div>
+</div>
+<div class="right">
+  <div class="r-tit">竞媒TOP10</div>
+  <table class="cbl">
+    <tr  ng-repeat="obj in jmcbl  track by $index">
+      <td class="first"><div class="num" ng-show="$index===0" style="background-color: #ff0015;">{{$index+1}}</div>
+      <div class="num" ng-show="$index===1" style="background-color: #ed6942;">{{$index+1}}</div>
+      <div class="num" ng-show="$index===2" style="background-color: #ffd200;">{{$index+1}}</div>
+      <div class="num" ng-if="$index>2">{{$index+1}}</div></td>
+      <td class="data" ng-click="vc.toDetail(obj)">{{obj.title}}<font class="source">来源：{{obj.siteName}}</font></td>
+      <td><div class="cal-total">
+        <div class="cblzs"> <label class="zs-num" ng-bind="obj.ceiIndex"></label></div>
+        <div class="zzcs"><label class="zs-num" ng-bind="obj.reprints"></label></div>
+      </div></td>
+    </tr>
+  </table>
+  <div class="msg"> <label class="cblzs"></label><label class="message">影响力指数</label>
+        <label class="zzcs"></label><label class="message">总转载数</label></div>
+</div>
+</body>
+<script type="text/javascript">
+   
+</script>
+</html>

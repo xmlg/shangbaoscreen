@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>两会专题聚焦</title>
+    <link rel="stylesheet" href="images-lh/global20171207.css">
+    <link rel="stylesheet" type="text/css" href="css/hotnews.css">
+    <link rel="stylesheet" href="css/stars.css">
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <style>
+        html{
+            overflow: hidden;
+        }
+        .layui-layer-title {
+            background-color: #104059 !important;
+            color: #4bfdff !important;
+        }
+
+        .layui-table {
+            margin: 0 !important;
+        }
+
+        .layuititle {
+            width: 480px;
+            color: #2496fc;
+            line-height: 30px !important;
+        }
+
+        .NEWCONTENT {
+            color: #2496fc;
+            font-size: 26px;
+        }
+
+        .layuibtn {
+            width: 70px;
+        }
+
+        .layui-layer-content {
+            background-color: #0e141d !important;
+        }
+
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #0e3045 !important;
+        }
+
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(odd) {
+            background-color: #0e141d !important;
+        }
+
+        .layui-layer-title {
+            border-bottom-width: 0px !important;
+        }
+
+        .baoye_neiy .tit {
+            height: 70px;
+        }
+
+        .baoye_neiy{
+            margin: -64px auto 0 ;
+        }
+
+        .layui-layer-title{
+            background-color: #178fa8 !important;
+            color: #4bfdff !important;
+            border-bottom-width: 0!important;
+        }
+        .layui-layer-content {
+            background-color: #0e141d !important;
+            overflow: hidden!important;
+        }
+    </style>
+</head>
+
+<body>
+<!-- <div class="stars"></div>
+<div class="ico"><a href="/dist/static/BigDataView/index/index.html" target="_blank"><img src="newScreen/images/goPC.png" width="35" height="35" /></a></div> -->
+<div class="baoye_neiy">
+    <div class="tit">两会专题聚焦</div>
+    <!-- <div class="ditucont" id="main" style="width: 950px;height: 650px;"></div> -->
+    <!-- <div class="rdzz_rightList">
+        <h1>热点区域</h1>
+        <ul>
+            <li><span></span>中国</li>
+            <li><span class="bg2"></span>中国</li>
+            <li><span class="bg3"></span>中国</li>
+            <li><span class="bg4"></span>中国</li>
+            <li><span class="bg5"></span>中国</li>
+            <li><span class="bg6"></span>中国</li>
+            <li><span class="bg7"></span>中国</li>
+            <li><span class="bg8"></span>中国</li>
+            <li><span class="bg9"></span>中国</li>
+            <li><span class="bg10"></span>中国</li>
+        </ul>
+    </div> -->
+    <div class="main">
+        <h1 style="text-align: center; color:#3f86c3;font-size: 60px; ">两会专题聚焦</h1>
+        <!--<div class="nav_bar">-->
+
+    <!--<span class="bar bar_active" id="zyzxfield_000">-->
+        <!--全部-->
+    <!--</span>-->
+            <!--<span class="bar" id="zyzxfield_020">-->
+        <!--两会-->
+    <!--</span>-->
+            <!--<span class="bar" id="zyzxfield_001">-->
+        <!--政治-->
+    <!--</span>-->
+            <!--<span class="bar" id="zyzxfield_002">-->
+        <!--财经-->
+    <!--</span>-->
+            <!--<span class="bar" id="zyzxfield_007">-->
+        <!--科技-->
+    <!--</span>-->
+            <!--<span class="bar" id="zyzxfield_004">-->
+        <!--军事-->
+    <!--</span>-->
+        <!--</div>-->
+        <!--<div class="list_btn">-->
+            <!--<a class="list_btn_a" data-type="chart">视图展示</a>-->
+            <!--<a data-type="table">列表展示</a>-->
+        <!--</div>-->
+        <div class="content">
+
+        </div>
+        <div class="news_list_box" style="display: none;">
+            <i class="news_list_jiao"></i>
+            <i class="news_list_jiao"></i>
+            <i class="news_list_jiao"></i>
+            <i class="news_list_jiao"></i>
+            <ul class="news_list_title">
+                <img class="news_list_title_img" src="images/foreign/news_list_03.png" alt="">
+                <li>标题</li>
+                <li class="reportRank">报道量 <img class="reportRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+                <li>持续时间</li>
+                <li>引爆媒体</li>
+                <li class="timeRank">上榜时间 <img class="timeRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+            </ul>
+            <ul class="news_list_center">
+
+
+            </ul>
+            <div class="news_list_page">
+                <a href=""><img src="images/foreign/news_list_14.png" alt=""></a>
+                <a href="" class="news_list_page_a news_list_page_active">1</a>
+                <a href="" class="news_list_page_a">2</a>
+                <a href="" class="news_list_page_a">3</a>
+                <a href=""><img src="images/foreign/news_list_16.png" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- <div class="main">
+<div class="nav_bar">
+
+    <span class="bar bar_active" id="zyzxfield_000">
+        全部
+    </span>
+    <span class="bar" id="zyzxfield_001">
+        政治
+    </span>
+    <span class="bar" id="zyzxfield_002">
+        财经
+    </span>
+    <span class="bar" id="zyzxfield_007">
+        科技
+    </span>
+    <span class="bar" id="zyzxfield_004">
+        军事
+    </span>
+</div>
+ <div class="list_btn">
+    <a  class="list_btn_a" data-type="chart">视图展示</a>
+    <a  data-type="table">列表展示</a>
+  </div>
+<div class="content">
+    
+</div>
+     <div class="news_list_box" style="display: none;">
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <i class="news_list_jiao"></i>
+             <ul class="news_list_title">
+                <img class="news_list_title_img" src="images/foreign/news_list_03.png" alt="">
+                <li>标题</li>
+                <li class="reportRank">报道量 <img class="reportRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+                <li>持续时间 </li>
+                <li>引爆媒体 </li>
+                <li class="timeRank">上榜时间 <img class="timeRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+             </ul>
+             <ul class="news_list_center">
+                
+
+
+             </ul>
+             <div class="news_list_page">
+                 <a href=""><img src="images/foreign/news_list_14.png" alt=""></a>
+                 <a href="" class="news_list_page_a news_list_page_active">1</a>
+                 <a href="" class="news_list_page_a" >2</a>
+                 <a href=""  class="news_list_page_a">3</a>
+                 <a href=""><img src="images/foreign/news_list_16.png" alt=""></a>
+             </div>
+        </div>
+
+</div> -->
+
+<script src="js/LHhotnews.js"></script>
+<script src="../server.js"></script>
+<!--弹窗-->
+<script src="./lib/layer/layer.js"></script>
+<script src="./lib/laytpl/laytpl.js"></script>
+<script src="./lib/layui/layui.js"></script>
+<!--<script src="js/resize.js"></script>-->
+<script type="text/html" id="newHotTpl">
+    <table class="layui-table" lay-even lay-skin="nob">
+
+        <tbody>
+        {{# for(var i = 0, len = d.length; i < len; i++){ }}
+        <tr>
+            <td class="layuititle"> {{ d[i].title }}</td>
+            <td class="layuibtn">
+                <button class='"layui-btn layui-btn-small layui-btn-warm'>
+                    <i index='{{d[i].guid}}' class="layui-icon" style="color: #fff;cursor:pointer;">&#xe60a;</i>
+                </button>
+            </td>
+        </tr>
+        {{# } }}
+        </tbody>
+    </table>
+
+</script>
+<script type="text/html" id="NEWCONTENTTPL">
+    <div class="NEWCONTENTTPL">
+        <div class="NEWCONTENT">
+            {{d}}
+        </div>
+    </div>
+</script>
+<script>
+    //初始化`
+    init();
+    $(".list_btn a").click(function () {
+//        data-type="chart"
+        var self = $(this);
+        var chartL = $('.content');
+        var listL = $('.news_list_box');
+        $(this).addClass("list_btn_a").siblings("a").removeClass("list_btn_a");
+        if (self.attr('data-type') === 'chart') {
+            isList = false;
+            MTdata.eventtype = fieldType;
+            MTdata.loadtime = loadTime;
+            getData(MTdata);
+            chartL.slideDown('normal', 'linear');
+            listL.slideUp();
+        } else {
+            isList = true;
+            MTdata.eventtype = fieldType;
+            MTdata.loadtime = loadTime;
+            getData(MTdata);
+            chartL.slideUp();
+            listL.slideDown('normal', 'linear');
+        }
+
+    });
+
+    //    切换分类
+    var isReportImg = 1;
+    var isTimeImg = 1;
+    $(".news_list_title .reportRank").on('click', function () {
+        console.log(11);
+        isReportImg++;
+        if (isReportImg % 2 == 0) {
+            $('.reportRankImg').attr('src', 'images/foreign/news_list_06.png')
+        } else {
+            $('.reportRankImg').attr('src', 'images/foreign/news_list_061.png')
+        }
+        MTdata.eventtype = fieldType;
+        MTdata.loadtime = loadTime;
+        rankReport++;
+        RrankType = rankReport % 2 == 0 ? 'desc' : 'asc';
+        getData(MTdata, 0, 'SY_CLUSTER_NUMS', RrankType);
+
+    });
+
+    $(".news_list_title .timeRank").on('click', function () {
+        isTimeImg++;
+        if (isTimeImg % 2 == 0) {
+            $('.timeRankImg').attr('src', 'images/foreign/news_list_06.png')
+        } else {
+            $('.timeRankImg').attr('src', 'images/foreign/news_list_061.png')
+        }
+        MTdata.eventtype = fieldType;
+        MTdata.loadtime = loadTime;
+        rankFtime++;
+        TrankType = rankFtime % 2 == 0 ? 'desc' : 'asc';
+        getData(MTdata, 0, 'SY_FIRSTTIME', TrankType);
+
+    });
+    $('.reportRankImg').hide();
+    $('.timeRankImg').hide();
+    //获取稿件
+    $("body").delegate('.jsclusterid', 'click', function () {
+
+        console.log(2233);
+        var _this = this;
+        var clusterid = $(_this).attr('clusterid');
+        var html = '<iframe scrolling="no" src="../../screen/ManuscriptDetail/lianghuiDetail.html?clusterid='+clusterid+'&type=all" frameborder="0" width="100%" height="100%"></iframe>'
+        layer.open({
+            title: "稿件详情",
+//            skin: 'layui-layer-lan',
+            type: 1,
+            skin: 'layui-layer-demo', //样式类名
+            //closeBtn: 0, //不显示关闭按钮
+            maxmin: true, //开启最大化最小化按钮
+            anim: 2,
+            scrollbar:false,
+            area: ['1347px', '800px'],
+            shadeClose: false, //开启遮罩关闭
+            content: html
+        });
+    })
+    //查看稿件
+    $("body").delegate('.layui-icon', 'click', function () {
+        var _this = this;
+        var zbguid = $(_this).attr('index');
+        var data = bigDataUrl + XNbigUrl + '?modelid=hotPonitEventDetail&serviceid=hotpointevent1&typeid=widget&zbguid=' + zbguid;
+        $.ajax({
+            type: "get",
+            url: wcmUrl,
+            data: {
+                url: data
+            },
+            beforeSend: function () {
+                indexB = layer.load(1, {
+                    shade: [0.4, '#fff'] //0.1透明度的白色背景
+                });
+            },
+            success: function (htmls) {
+                layer.close(indexB);
+                var $NEWCONTENTTPL = $("#NEWCONTENTTPL").html();
+                if (htmls.DATA.ISSUCCESS == 'false') {
+                    layer.msg('暂无文章');
+                    return false;
+                }
+                laytpl($NEWCONTENTTPL).render(htmls.DATA.CONTENT.replace(/[\r\n]+/gi, "<br>"), function (html) {
+                    layer.open({
+                        title: htmls.DATA.TITLE,
+                        skin: 'layui-layer-lan',
+                        type: 1,
+                        skin: 'layui-layer-demo', //样式类名
+                        //closeBtn: 0, //不显示关闭按钮
+                        maxmin: true, //开启最大化最小化按钮
+                        anim: 2,
+                        area: ['650px', '600px'],
+                        shadeClose: false, //开启遮罩关闭
+                        content: html
+                    });
+                })
+            }
+        })
+    })
+    /*
+     $(".news_list_title .reportRank").on('mouseenter',function(){
+         $('.reportRankImg').show()
+     }).on('mouseleave',function(){
+         $('.reportRankImg').hide()
+     });
+
+     $(".news_list_title .timeRank").on('mouseenter',function(){
+         $('.timeRankImg').show()
+     }).on('mouseleave',function(){
+         $('.timeRankImg').hide()
+     })
+     */
+
+</script>
+
+</body>
+
+</html>

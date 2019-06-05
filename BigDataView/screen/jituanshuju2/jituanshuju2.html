@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN";>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<link rel="stylesheet" type="text/css" href="images/global20171207.css"/>
+<script src="js/jquery.js"></script>
+</head>
+<body>
+<div class="baoye_neiy">
+  <div class="tit">集团数据总量</div>
+        <div class="ditucont ditucont2"><img src="images/baoyedp20171207_13.png"  /></div>
+  		<div class="zl_jituan">
+        	<h1 class="nei_tit wid4">原创稿件数量</h1>
+            <div class="text2"><font color="#00fcff">报纸：<span id="num1"></span>条</font><font >网站：279242条</font><font color="#fc3491">客户端：273562条</font></div>
+        	<h1 class="nei_tit wid4">历史稿件数量</h1>
+            <div class="text2"><font color="#00fcff">报纸：<span id="num2"></span>条</font><font >网站：757625条</font><font color="#fc3491">客户端：728266条</font></div>
+        	<h1 class="nei_tit wid4">新增稿件数量</h1>
+            <div class="text2"><font color="#00fcff">报纸：<span id="num3"></span>条</font><font >网站：32563条</font><font color="#fc3491">客户端：35634254条</font></div>
+        </div>
+        <div class="clear"></div>
+</div>
+
+<script>
+    $(function(){
+        $.ajax({
+            type: "get",
+            url: "/isearch/front/show/total.jhtml",
+            dataType: "json", 
+　　　　　　　　　 success: function(result){
+                    $('#num1').text(result.原创稿件);
+                    $('#num2').text(result.历史稿件);
+                    $('#num3').text(result.新增稿件);
+            }
+        });
+    });
+</script>
+</body>
+</html>

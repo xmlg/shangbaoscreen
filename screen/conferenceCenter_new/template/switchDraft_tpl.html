@@ -1,0 +1,83 @@
+<div>
+    <div class="bqxt_scroll">
+        <div class="bqxt_scroll_title">
+            <p ng-if="!data[selectedIndex].URL" ng-click="clickTitle(data[selectedIndex])" ng-bind="data[selectedIndex].TITLE"></p>
+        </div>
+        <div class="bqxt_scroll_content_parent">
+            <div class="bqxt_scroll_content" ng-repeat="item in data">
+                <div ng-show="!item.URL&&status.parentWidth">
+                    <div class="bqxt_scroll_col">
+                        <span>撰写中</span>
+                        <div class="bqxt_scroll_state" ng-class="{true:'state_active',false:''}[item.DATA['start']==undefined]">
+                            <span>开始</span>
+                            <i></i>
+                        </div>
+                        <p ng-if="item.DATA['start']==undefined" class="p_active"></p>
+                        <p ng-if="item.DATA['start']!=undefined" ng-bind="item.DATA['start'].username+'正在撰写稿件'"></p>
+                        <b ng-if="item.DATA['start']!=undefined"></b>
+                    </div>
+                    <div class="bqxt_scroll_col">
+                        <span>共享前审批</span>
+                        <div class="bqxt_scroll_state" ng-class="{true:'state_active',false:''}[item.DATA['approval']==undefined]">
+                            <b><img ng-src="{{item.DATA['approval']==undefined?'images/bqxt_centerAndRight_18.png':'images/bqxt_centerAndRight_10.png'}}" alt=""></b>
+                            <i></i>
+                        </div>
+                        <p ng-if="item.DATA['approval']==undefined" class="p_active"></p>
+                        <p ng-if="item.DATA['approval']!=undefined" ng-bind="item.DATA['approval'].username+'正在审批稿件'"></p>
+                        <b ng-if="item.DATA['approval']!=undefined"></b>
+                    </div>
+                    <div class="bqxt_scroll_col">
+                        <span>已共享</span>
+                        <div class="bqxt_scroll_state" ng-class="{true:'state_active',false:''}[item.DATA['share']==undefined]">
+                            <b><img ng-src="{{item.DATA['share']==undefined?'images/bqxt_centerAndRight_18.png':'images/bqxt_centerAndRight_10.png'}}" alt=""></b>
+                            <i></i>
+                        </div>
+                        <p ng-if="item.DATA['share']==undefined" class="p_active"></p>
+                        <p ng-if="item.DATA['share']!=undefined" ng-bind="item.DATA['share'].username+'共享了稿件'"></p>
+                        <b ng-if="item.DATA['share']!=undefined"></b>
+                    </div>
+                    <div class="bqxt_scroll_col">
+                        <span>已取用</span>
+                        <div class="bqxt_scroll_state" ng-class="{true:'state_active',false:''}[!item.DATA['usebypaper'].newspaper&&!item.DATA['usebywebsite'].website&&!item.DATA['usebyapp'].app]">
+                            <b><img ng-src="{{(!item.DATA['usebypaper'].newspaper&&!item.DATA['usebywebsite'].website&&!item.DATA['usebyapp'].app)?'images/bqxt_centerAndRight_18.png':'images/bqxt_centerAndRight_10.png'}}" alt=""></b>
+                            <i></i>
+                        </div>
+                        <div class="bqxt_scroll_modal">
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['usebypaper'].newspaper]">报纸</p>
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['usebywebsite'].website]">网站</p>
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['usebyapp'].app]">客户端</p>
+                        </div>
+                        <b ng-if="item.DATA['usebypaper'].newspaper||item.DATA['usebywebsite'].website||item.DATA['usebyapp'].app"></b>
+                    </div>
+                    <div class="bqxt_scroll_col" ng-class="{true:'state_active',false:''}[!item.DATA['publishbypaper'].newspaper&&!item.DATA['publishbywebsite'].website&&!item.DATA['publishbyapp'].app]">
+                        <span>已发</span>
+                        <div class="bqxt_scroll_state" ng-class="{true:'state_active',false:''}[!item.DATA['publishbypaper'].newspaper&&!item.DATA['publishbywebsite'].website&&!item.DATA['publishbyapp'].app]">
+                            <span>结束</span>
+                        </div>
+                        <div class="bqxt_scroll_modal">
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['publishbypaper'].newspaper]">报纸</p>
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['publishbywebsite'].website]">网站</p>
+                            <p ng-class="{true:'modal_active',false:''}[item.DATA['publishbyapp'].app]">客户端</p>
+                        </div>
+                        <b ng-if="item.DATA['publishbypaper'].newspaper||item.DATA['publishbywebsite'].website||item.DATA['publishbyapp'].app"></b>
+                    </div>
+                </div>
+                <div class="notMediacube" ng-show="item.URL&&status.parentWidth">
+                    <div>
+                        <p ng-bind="item.TITLE"></p>
+                    </div>
+                    <div>
+                        <p>
+                            (非媒立方稿件)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-click="toLeft()" class="bqxt_scroll_left" ng-class="{'bqxt_scroll_left_active': selectedIndex !== 0}"></div>
+    <div ng-click="toRight()" class="bqxt_scroll_right" ng-class="{'bqxt_scroll_right_active': selectedIndex !== data.length - 1}"></div>
+    <ol class="bqxt_scroll_spot">
+        <li ng-repeat="item in data" ng-click="jumpTo($index)" ng-class="{true:'active',false:''}[$index===selectedIndex]"></li>
+    </ol>
+</div>

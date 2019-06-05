@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./newScreen/lib/jquery.min.js"></script>
+    <script src="../lib/echarts/dist/echarts.js"></script>
+   
+    <script src="js/jquery.page.js"></script>
+    <script type="text/javascript" src="js/laydate.dev.js"></script>
+    
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/global20171207.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <style>
+        html{
+            overflow: hidden;
+        }
+        .baoye_neiy .rdzz_rightList ul li>a{
+            width:70%;
+        }
+        .baoye_neiy .rdzz_rightList ul li{
+            font-size: 20px;
+            line-height: 60px;
+            height: 60px;
+            white-space: nowrap;
+            overflow: inherit;
+        }
+    </style>
+</head>
+<body>
+<div class="baoye_neiy">
+    <div class="tit">深圳市热点追踪</div>
+    <div id="map"></div>
+    <div class="rdzz_rightList">
+        <h1>热点排行榜</h1>
+        <ul class="listUl">
+        </ul>
+        <div class="listUlNone">暂无相关数据</div>
+    </div>
+    <div class="clear"></div>
+</div>
+        <input class="logoRightIn"  type="text" id="J-xl" >
+<div class="center">
+</div>
+
+<script src="../server.js"></script>
+<!--弹窗-->
+<script src="./lib/layer/layer.js"></script>
+<script src="./lib/laytpl/laytpl.js"></script>
+<script src="./lib/layui/layui.js"></script>
+
+<script>
+    //var time="2017-12-07";
+     var time=laydate.now();
+    var pageCount1,
+        current1,
+        cluster_name='country_1';
+        startpage=0;
+    listData1(startpage,"001013013",time,cluster_name);
+    function listData1(startpage,nameNum,time,cluster_name){
+        $.ajax({
+            type:"get",
+            url:XNbigUrl,
+            data:{
+                area:nameNum,
+                cluster_name:"country_1",
+                field:"000",
+                loaddate:time,
+                modelid:"hotpoint",
+                pagesize:10,
+                serviceid:"areahotpoint",
+                startpage:0,
+                subjectarea:0,
+                typeid:"widget"
+            },
+            beforeSend:function(){
+                indexB =layer.load(1, {
+                    shade: [0.4,'#fff'] //0.1透明度的白色背景
+                });
+            },
+            success:function(res){
+                layer.close(indexB);
+                $('.listUl li').remove();
+                var data = eval('('+res+')');
+                console.log(data)
+                if(data.length > 0){
+                    data.sort(function(a,b){
+                        var tag=sortDate(a.HOTPOINTNUM,b.HOTPOINTNUM);
+                        return tag;
+                    })
+                    // $('.tcdPageCode').css('display','block');
+                    // $('.listUlNone').css('display','none');
+                    var leng = data.length < 10 ? data.length : 10;
+                    for(var i=0;i<leng;i++){
+                        //9月19日
+                        var li=$("<li index='"+data[i].TITLE+"' title='"+data[i].TITLE+"'><span class='bg"+(i+1)+"'></span><a target='_blank' style='color: #FFFFFF' href='javascript:void(0);' >"+data[i].TITLE+"</a>"+data[i].AREANAME+"&nbsp;"+data[i].HOTPOINTNUM+"</li>");
+                        $(".listUl").append(li);
+                    }
+                    $('.listUlNone').css('display','none');
+                }else{
+                    $('.listUlNone').css('display','block');
+                }
+                // if(res.DATA.PAGEITEMS!=undefined){
+                //     if(res.DATA.PAGEITEMS.length>0){
+                //         $('.tcdPageCode').css('display','block');
+                //         $('.listUlNone').css('display','none');
+                //     }else{
+                //         $('.tcdPageCode').css('display','none');
+                //         $('.listUlNone').css('display','block');
+                //     }
+                //     for(var i=0;i<res.DATA.PAGEITEMS.length;i++){
+                //         //9月19日
+                //         var li=$("<li index='"+res.DATA.PAGEITEMS[i].TITLE+"' title='"+res.DATA.PAGEITEMS[i].TITLE+"' data='"+res.DATA.PAGEITEMS[i].CLUSTERID+"'><a target='_blank' href='javascript:void(0);' >"+res.DATA.PAGEITEMS[i].TITLE+"</a><span>"+res.DATA.PAGEITEMS[i].CLUSTERNUMS+"</span></li>");
+                //         $(".listUl").append(li);
+                //     }
+                //     pageCount1=res.DATA.PAGETOTAL
+                //     current1=res.DATA.STARTPAGE+1
+                //     $(".listUlNone").hide();
+
+                // }else{
+                //     pageCount1=1
+                //     current1=1
+                //     $(".listUlNone").show();
+                // }
+                $('.tcdPageCode').pager({pagenumber: current1, pagecount: pageCount1, buttonClickCallback: function(p){
+                        listData1(p-1,nameNum,time,cluster_name);
+                    }
+                })
+
+            }         
+        });
+    }
+    function Map(placeName,times,nameNums){
+        $.ajax({
+            type:"get",
+            url:'../lib/echarts/src/util/echartMap/map/city/440300.json',
+            beforeSend:function(){
+                indexA =layer.load(1, {
+                    shade: [0.4,'#fff'] //0.1透明度的白色背景
+                });
+            },
+            success:function(placeJson){
+                layer.close(indexA);
+                echarts.registerMap(placeName,placeJson); // 注册地图
+                var mapChart = echarts.init(document.getElementById('map'));
+                option = {
+                    title: {
+                        left: 'center',
+                        textStyle: {
+                            color: '#fff',
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                    },
+                    visualMap: {
+                        min: 10,
+                        max: 400,
+                        text:['热度高','热度低'],
+                        textStyle: {
+                            color: '#fff',
+                        },
+                        realtime: false,
+                        calculable: true,
+                        inRange: {
+                            color: ['#0ed7e0','#5ee496','#78e87d','#c9f632', '#ffff00']
+                        }
+                    },
+                    series: [ 
+                        {
+                            name: ' ',
+                            type: 'map',
+                            mapType: placeName,
+//                            roam:true,
+                            label: {
+                                normal: {
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            }, 
+                            itemStyle: {
+                                normal: {
+                                    borderColor: '#389BB7',
+                                    areaColor: '#86dde0',
+                                    label:{
+                                        textStyle: {
+                                            fontSize:'16',
+                                            color:'#F6754D'
+                                        }
+                                    },
+                                },
+                                emphasis: {
+                                    areaColor: '#fac027',
+                                    borderWidth: 0
+                                }
+                            },
+                            animation: false,
+                            data:[]
+                            
+                        }
+                    ]
+                };
+                var tempData=[];
+                //获取热度值
+                // var mapDataUrl = XNbigUrl;
+                $.ajax({
+                    type:"get",
+                    url:XNbigUrl,
+                    async:false,
+                    data:{
+                        modelid:"hotpoint",
+                        serviceid:"areahotpoint",
+                        loaddate:time,
+                        area:nameNums
+                    },
+                    success:function(data){
+                        var data=eval("("+data+")");
+                        if(data.length > 0){
+                            tempData=[];
+                            for(var i=0;i<data.length;i++){
+                                tempData.push({
+                                    "name":data[i].AREANAME,
+                                    "value":data[i].HOTPOINTNUM,
+                                    "area":data[i].AREA
+                                })
+                            }
+                            tempData.sort(function(a,b){
+                                var tag=sortDate(a.value,b.value);
+                                return tag;
+                            });
+                            
+                            option.series[0].data=tempData; 
+                            // option.visualMap.max=tempData[0].value;
+                        }
+                    }
+                });
+                mapChart.setOption(option);
+            }
+        })
+
+
+    }
+    Map('深圳',time,"001013013");
+    function sortDate(a,b){
+            return b-a
+        }
+
+    laydate({
+        elem: '#J-xl',max:laydate.now()
+    });
+    //设置input 默 认时间
+    $('#J-xl').attr('value',laydate.now());
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿/***********全局重置CSS*****************/
+body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{margin:0; font-size:12px;}
+p{ margin:0;}
+ul,ol,li{padding-left:0;list-style-type:none;}
+img{border:0;}/***消除img默认边框*****/
+a{text-decoration:none;}/* 链接无下划线 */
+a:hover{cursor:pointer;text-decoration:underline;} /*鼠标在链接上出下划线,为手势形态 */
+table {border-collapse:collapse;}/*细线表格*/
+em{font-style:normal;}
+html{ overflow-y:scroll;}/***默认让所有浏览器出现右边滚动条****/
+.clear{font-size:0;line-height:0;height:0;clear:both;overflow:hidden;display:block;}
+:focus{ outline: 0;}
+/***默认清除浮动****/
+body {font-family:"微软雅黑","sans-serif","Arial";font-size:12px;  width:100%;background:url(baoyebg20171207_03.jpg) !important;}
+/****************全局头尾******************/
+/******底部样式******/
+/****中间头部样式***/
+.baoye_index{ width:100%; position:absolute; top:calc(25%); overflow:hidden;}
+.baoye_index ul{ width:100%; padding:0 1%; overflow:hidden;}
+.baoye_index ul li{ display:inline; float:left; width:14%;}
+.baoye_index ul li img{ width:100%;}
+.baoye_index ul li a{ display:block;}
+
+.baoye_neiy{ width:95%; margin:60px auto; border:5px solid #28546a; border-radius:20px; padding:20px 0;}
+.baoye_neiy .tit{ background:url(baoyenei20171207_03.jpg) no-repeat; height:117px; width:500px; text-align:center; font-size:26px; color:#00fcff; font-weight:bold; line-height:60px; padding:0 0 0 130px; position:relative; top:-55px; left:-5px;}
+.baoye_neiy .ditucont{ width:75%; float:left; display:inline; margin:0 2%;}
+.baoye_neiy .ditucont img{ width:100%;}
+.baoye_neiy .rdzz_rightList{ float:left; width:15%;}
+.baoye_neiy .rdzz_rightList h1{ font-size:36px;color:#00fcff; font-weight:bold; background:#0e384e; text-align:center; border-radius:20px; height:70px; line-height:70px; border:1px solid #1d9bbd; box-shadow:0px 0px 10px rgba(256,256,256,.4); margin:0 0 20px 0;}
+.baoye_neiy .rdzz_rightList ul{ padding:0 0 0 40px;}
+.baoye_neiy .rdzz_rightList ul li{ line-height:60px; height:60px; font-size:30px; overflow:hidden; color:#fff; position:relative; padding:0 0 0 20px;}
+.baoye_neiy .rdzz_rightList ul li span{ position:absolute; left:0px; top:50%; margin-top:-6px; height:13px; width:13px; display:block; background:#00fcff; border-radius:15px;}
+.baoye_neiy .rdzz_rightList ul li span.bg2{ opacity:0.9;}
+.baoye_neiy .rdzz_rightList ul li span.bg3{ opacity:0.8;}
+.baoye_neiy .rdzz_rightList ul li span.bg4{ opacity:0.7;}
+.baoye_neiy .rdzz_rightList ul li span.bg5{ opacity:0.6;}
+.baoye_neiy .rdzz_rightList ul li span.bg6{ opacity:0.5;}
+.baoye_neiy .rdzz_rightList ul li span.bg7{ opacity:0.4;}
+.baoye_neiy .rdzz_rightList ul li span.bg8{ opacity:0.3;}
+.baoye_neiy .rdzz_rightList ul li span.bg9{ opacity:0.2;}
+.baoye_neiy .rdzz_rightList ul li span.bg10{ opacity:0.1;}

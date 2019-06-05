@@ -1,0 +1,48 @@
+{
+	"OUTSIDE_DATA": [
+		{
+			"guid": "775713145703501824",
+			"shorttitle": "辽宁贿选案中国",
+			"cluster_nums": 1479
+		}, {
+			"guid": "778032468648939520",
+			"shorttitle": "“一只皮鞋”的贿选故事终将落幕",
+			"cluster_nums": 51
+		}, {
+			"guid": "775697597079375872",
+			"shorttitle": "绝不容拉票贿选侵蚀党和国家肌体",
+			"cluster_nums": 45
+		}, {
+			"guid": "777825170454368256",
+			"shorttitle": "党中央的决心给予群众信心",
+			"cluster_nums": 40
+		}, {
+			"guid": "777508038747246592",
+			"shorttitle": "别再干拉票贿选的傻事",
+			"cluster_nums": 35
+		}, {
+			"guid": "778177469093662720",
+			"shorttitle": "辽宁贿选案打破的那些“禁区”",
+			"cluster_nums": 34
+		}, {
+			"guid": "778391392073961472",
+			"shorttitle": "辽宁私企被中美调查",
+			"cluster_nums": 18
+		}, {
+			"guid": "778031974576705536",
+			"shorttitle": "党代表选举在",
+			"cluster_nums": 18
+		}
+	],
+	"INTERNAL_DATA": [
+		{
+			"guid": "775867213021454336",
+			"shorttitle": "因拉票贿选当选无效",
+			"cluster_nums": 10
+		}, {
+			"guid": "775867217404502016",
+			"shorttitle": "贿选坚持“零容忍”",
+			"cluster_nums": 3
+		}
+	]
+}

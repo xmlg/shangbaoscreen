@@ -1,0 +1,377 @@
+﻿html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+body {
+    color: white;
+    /*overflow: hidden;*/
+    background: #0e141d;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Arial";
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.headline-right-container {
+    position: relative;
+
+    /*padding: 0 30px;*/
+    margin: 25px 25px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.headline-right-container .headline-content-wrapper {
+    position: relative;
+    width: 100%;
+    height:850px;
+    padding:20px 40px;
+}
+
+.headline-right-container .headline-paper,
+.headline-right-container .headline-network {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.headline-right-container .headline-content-wrapper .content-title {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.headline-right-container .headline-content-wrapper .content-title .desc {
+    margin-left: 23%;
+}
+
+.headline-right-container .headline-content-wrapper .content-title .value {
+    position: relative;
+    float: right;
+    font-size: 30px;
+    color: #fff600;
+}
+
+.headline-right-container .headline-content-wrapper .headline-paper .content-items-wrapper{
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+.headline-right-container .headline-content-wrapper .content-item {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    padding: 10px 0 0 0;
+}
+
+.headline-right-container .headline-content-wrapper .content-item-bar-wrapper {
+    position: relative;
+    float: left;
+    width: 26%;
+    padding: 5px 0;
+    height: 100%;
+}
+
+.headline-right-container .headline-content-wrapper .content-item-bar-wrapper .content-item-bar {
+    position: relative;
+    float: right;
+    height: 100%;
+    display: block;
+}
+
+.headline-right-container .headline-content-wrapper .content-item .content-item-desc {
+    position: relative;
+    float: left;
+    width:64%;
+    height: 40px;
+    padding-left: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.headline-right-container .headline-content-wrapper .content-item .content-item-value {
+    position: relative;
+    float: left;
+    width: 10%;
+    height: 40px;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: right;
+}
+
+
+/**************************/
+
+.headline-right-container .headline-summary,
+.headline-right-container .headline-details {
+    position: relative;
+    float: left;
+    height: 100%;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.headline-right-container .headline-summary {
+    width: 1240px;
+}
+
+
+/* .headline-right-container .headline-details {
+    width: 620px;
+    background-color: lightblue;
+} */
+
+.headline-right-container .headline-summary .active-title {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.headline-right-container .headline-summary .active-title>div {
+    position: relative;
+    width: 50%;
+    margin-left: 50%;
+    /*background-color: lightgreen;*/
+    text-align: center;
+}
+
+.headline-right-container .headline-summary .active-title .active-title-desc {
+    height: 90px;
+    line-height: 90px;
+    background-color: #43d5ff;
+    color: #000;
+    font-weight: bold;
+}
+
+.headline-right-container .headline-summary .active-title .active-title-info {
+    height: 50px;
+    /*background-color: #43d5ff;*/
+    color: #fff;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.headline-right-container .headline-summary .active-title .active-title-info .item {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid #fff;
+}
+
+.headline-right-container .headline-summary .active-title .active-title-info .day {
+    border-right: 0px;
+}
+
+.headline-right-container .headline-summary .summary {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.headline-right-container .headline-summary .summary .summary-item {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    padding: 13px 0 0 0;
+}
+
+.headline-right-container .headline-summary .summary .summary-item .bar-wrapper {
+    position: relative;
+    float: left;
+    width: 62%;
+}
+
+.headline-right-container .headline-summary .summary .summary-item .item-short-title {
+    position: relative;
+    float: left;
+    width: 38%;
+    height: 100%;
+    padding-left: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.headline-right-container .headline-summary .summary .summary-item .item-short-title .short-title-border {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 120%;
+    height: 5px;
+    margin-left: -20%;
+    background: -webkit-linear-gradient(left, #4a4e55, #fff, #4a4e55);
+    display: none;
+}
+
+.headline-right-container .headline-summary .summary .summary-item.active .short-title-border {
+    display: block;
+}
+
+.headline-right-container .summary-item .bar-wrapper .bar {
+    position: relative;
+    float: right;
+    height: 100%;
+    display: block;
+}
+
+.headline-right-container .headline-details {
+    padding: 0 0 0 30px;
+    width: 620px;
+}
+
+.headline-right-container .headline-details .pointer {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: 17px;
+    display: block;
+    background-color: #009f07;
+    z-index: 0;
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+
+.headline-right-container .details-wrapper {
+    border: 5px solid;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #0f3847, #000);
+    border-image: -webkit-linear-gradient(-55deg, #fff, #000, #fff) 30 30;
+    border-image: linear-gradient(-38deg, #fff, #000, #fff) 30 30;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.headline-right-container .details-wrapper .detail-item {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.headline-right-container .details-wrapper .detail-item .detail-item-title-wrapper {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* .headline-right-container .details-wrapper .detail-item .detail-item-title-wrapper .detail-item-title{
+    position: relative;
+} */
+
+.headline-right-container .details-wrapper .detail-item .detail-item-source {
+    position: relative;
+    float: right;
+    width: 150px;
+    text-align: right;
+}
+
+
+.headline-china .content-items-wrapper,
+.headline-abroad .content-items-wrapper{
+    background-color: #101a29;
+    padding: 10px;
+}
+.headline-right-container .headline-china .content-title .desc,
+.headline-right-container .headline-abroad .content-title .desc{
+    margin-left: 0%;
+    padding-left: 0px;
+}
+
+.headline-right-container .headline-china  .content-item .content-item-desc,
+.headline-right-container .headline-abroad  .content-item .content-item-desc{
+    padding-left: 0px;
+    width:100%;
+}
+.headline-right-container .headline-china,
+.headline-right-container .headline-abroad{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: block;
+    margin-bottom: 0px;
+}
+.content-items-wrapper{
+    color: #40D0F2;
+}
+.headline-right-container{
+    float:left;
+    width:850px;
+    height:850px;
+    border: 1px solid #0d7a91;
+    /*margin-top: 100px;*/
+}
+.headline{
+    width: 1800px;
+    height: 944px;
+}
+body{
+    width: 1920px;
+    /*height: 1080px;*/
+    padding-top: 136px;
+    padding-right: 0px;
+}
+.fl{
+    float:left;
+    width: 900px;
+    height: 944px;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 2px;
+    color: #00FCFE;
+    font-size: 35px;
+    font-weight: 500;
+    background-image:url(../img/title-bg.png);
+    background-size: 90% 100%;
+    background-position: 59px -3px;
+    background-repeat: no-repeat;
+}
+
+ .ico{position:absolute;left:30px;top:140px;height:45px;width:45px;background:#294867;border:0px;}
+ .ico img{margin-left:5px;margin-top:5px;border:0px; }

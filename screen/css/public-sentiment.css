@@ -1,0 +1,431 @@
+﻿html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+body {
+    color: white;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "simhei", "Arial";
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.pub-sentiment-main-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background: #0e141d;
+    /*padding: 0 30px;*/
+    padding-top: 30px;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.pub-sentiment-main-container .pub-sentiment-header {
+    position: relative;
+    /*width: 100%;*/
+    height: 80px;
+    font-size: 45px;
+    font-family: simhei;
+    font-weight: bolder;
+    margin: 0 30px;
+    background: -webkit-linear-gradient(left, #238aa4, #000);
+}
+
+.pub-sentiment-main-container .pub-sentiment-header .header-title {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    font-size: 46px;
+    font-family: simhei;
+    font-weight: bolder;
+}
+
+.pub-sentiment-main-container .pub-sentiment-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 970px;
+    padding: 0 30px;
+}
+
+.pub-sentiment-main-container .pub-sentiment-content-wrapper .map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    display: block;
+}
+
+.pub-sentiment-main-container .map-wrapper .map,
+.pub-sentiment-main-container .map-wrapper .sentiment-count {
+    position: relative;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.pub-sentiment-main-container .map-wrapper .map {
+    width: 1640px;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-ch {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: url(../images/ch.gif) no-repeat;
+    background-size: 810px;
+    background-position-y: 50%;
+    background-position-x: 49%;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad {
+    position: absolute;
+    width: 350px;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    display: block;
+    padding-bottom: 20px;
+    /*background-color: lightblue;*/
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad.left {
+    left: 0;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad.right {
+    right: 0;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad-item {
+    position: relative;
+    width: 100%;
+    height: 33%;
+    display: block;
+    background-repeat: no-repeat;
+    /*background-image: url(../images/asian.gif);*/
+}
+
+.pub-sentiment-main-container .map-wrapper .map .left .map-abroad-item {
+    background-position: right center;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .right .map-abroad-item {
+    background-position: left center;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad .desc {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    font-size: 30px;
+    color: #238aa4;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad.left .desc {
+    margin-left: 80px;
+}
+
+.pub-sentiment-main-container .map-wrapper .map .map-abroad.right .desc {
+    right: 0;
+    margin-right: 80px;
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.asian {
+    background-image: url(../images/asian.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.africa {
+    background-image: url(../images/africa.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.europe {
+    background-image: url(../images/europe.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.n-america {
+    background-image: url(../images/n-america.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.s-america {
+    background-image: url(../images/s-america.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .map-abroad-item.australia {
+    background-image: url(../images/australia.gif);
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count {
+    width: 220px;
+    padding-bottom: 20px;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .positive {
+    color: #00ff90;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .neutral {
+    color: #fff600;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .negative {
+    color: #ff1e4b;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .sentiment-count-item {
+    position: relative;
+    height: 33%;
+    width: 100%;
+}
+
+.pub-sentiment-main-container .sentiment-count .sentiment-count-item .outer-ring {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.pub-sentiment-main-container .sentiment-count .sentiment-count-item .inner-ring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .positive .outer-ring {
+    border: 10px solid #0a5d50;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .positive .inner-ring {
+    border: 15px solid #00ff90;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .neutral .outer-ring {
+    border: 10px solid #595a14;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .neutral .inner-ring {
+    border: 15px solid #fff600;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .negative .outer-ring {
+    border: 10px solid #592134;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .negative .inner-ring {
+    border: 15px solid #ff1e4b;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .sentiment-count-item .item-value {
+    position: relative;
+    height: 100%;
+    line-height: 80px;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .sentiment-count-item .item-desc {
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .scan {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100% 0 0 0;
+    animation: scan 4s linear infinite;
+    -webkit-animation: scan 4s linear infinite;
+    z-index: 999;
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .positive .scan {
+    border-right: 1px solid #00ff90;
+    background: linear-gradient(0deg, rgba(0, 218, 188, 0.1), rgba(6, 161, 130, 0.8));
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .neutral .scan {
+    border-right: 1px solid #fff600;
+    background: linear-gradient(0deg, rgba(255, 246, 0, 0.1), rgba(255, 246, 0, 0.8));
+}
+
+.pub-sentiment-main-container .map-wrapper .sentiment-count .negative .scan {
+    border-right: 1px solid #ff1e4b;
+    background: linear-gradient(0deg, rgba(255, 30, 75, 0.1), rgba(255, 30, 75, 0.8));
+}
+
+@keyframes scan {
+    0% {
+        transform: rotateZ(0deg);
+        transform-origin: 55px 55px;
+    }
+    100% {
+        transform: rotateZ(360deg);
+        transform-origin: 55px 55px;
+    }
+}
+
+@-webkit-keyframes scan {
+    0% {
+        transform: rotateZ(0deg);
+        transform-origin: 55px 55px;
+    }
+    100% {
+        transform: rotateZ(360deg);
+        transform-origin: 55px 55px;
+    }
+}
+
+.pub-sentiment-main-container .pub-sentiment-content-wrapper .sentiment-items-wrapper {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.pub-sentiment-main-container .pub-sentiment-content-wrapper .sentiment-items {
+    background-image: url(../img/szyq_bg.jpg);
+    background-size: 100% 100%;
+    position: relative;
+    width: 100%;
+    height: 395px;
+    /*background: #238aa4;*/
+    display: block;
+    color: #238aa4;
+    font-size: 38px;
+    overflow: hidden;
+    /*font-weight: normal;*/
+    /*background: -webkit-linear-gradient(top, rgba(35, 138, 164, 0.2), rgba(35, 138, 164, 0));*/
+}
+
+.pub-sentiment-main-container .sentiment-items .sentiment-item-title {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    line-height: 110px;
+    text-align: center;
+    font-size: 48px;
+}
+
+.pub-sentiment-main-container .sentiment-items .sentiment-item-title>div {
+    position: relative;
+    float: left;
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+
+.pub-sentiment-main-container .sentiment-items .sentiment-item {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.pub-sentiment-main-container .sentiment-items .sentiment-item>div {
+    position: relative;
+    float: left;
+    display: block;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pub-sentiment-main-container .sentiment-items .index {
+    width: 300px;
+}
+
+.pub-sentiment-main-container .sentiment-items .negative .index {
+    color: #ff2d58;
+}
+
+.pub-sentiment-main-container .sentiment-items .content {
+    width: 1040px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.pub-sentiment-main-container .sentiment-items .content .content-detail {
+    display: inline;
+}
+
+.pub-sentiment-main-container .sentiment-items .source {
+    width: 250px;
+}
+
+.pub-sentiment-main-container .sentiment-items .time {
+    width: 250px;
+}
+
+.meteor-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+}
+
+.south-2 {
+    position: absolute;
+    right: 487px;
+    bottom: 11px;
+    width: 87px;
+}
+
+.runner {
+    position: absolute;
+    height: 10px;
+    display: block;
+    overflow: hidden;
+    transform-origin: left center;
+}
+
+.runner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+}
+
+.pub-sentiment-main-container .pub-sentiment-content-wrapper .sentiment-items-wrapper.color_white {
+    color: #fff;
+}

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="lib/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/base_top.css" />
+    <link type="text/css" rel="stylesheet" href="./css/forceStyle.css"/>
+    <title>稿件传播路径</title>
+    <style type="text/css">
+        html{
+            background-color: '#000';
+        }
+
+        circle.node {
+            cursor: pointer;
+            stroke: #000;
+            stroke-width: .5px;
+        }
+
+        line.link {
+            fill: none;
+            stroke: #9ecae1;
+            stroke-width: 1.5px;
+        }
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.6;
+            stroke-width: 1.5px;
+        }
+
+        .nodes circle {
+            stroke: #999;
+            stroke-width: 1.5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="top">稿件传播路径</h1>
+<h2 class="top_img"><img src="images/header_title.png" width="531" alt=""></h2>
+<div class="main">
+    <div class="forceMap">
+        <svg id="forceSvg" width="1000" height="800" ></svg>
+    </div>
+    <div class="forceMsg">
+     <div class="explain">
+         <span><i style="color: #e05081;">●</i>内容源</span>
+         <span><i style="color: #b6a2df;">●</i>传播点</span>
+         <span><i style="color: #2ec7ca;">●</i>爆发点</span>
+     </div>
+     <div class="forceInfo">
+         事件是由<span>新华通讯社</span>于11-06 13:20首发，原创站点为
+         <span class="infoSource">新华网</span>，传播时长 <span class="transTime">14天0小时</span>，
+         传播总量 <span class="transTotal">1200</span>篇，被 <span class="transMedia">321</span>家媒体转载。
+         其中有 <span class="reship">260</span>篇新闻从新闻网转载。有 <span class="reship2">35</span>篇从中国政府网转载。
+     </div>
+    </div>
+</div>
+<div class=""></div>
+<!--<script type="text/javascript" src="./lib/d3.js"></script>-->
+<!--<script type="text/javascript" src="lib/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="./lib/d3.min.js"></script>-->
+<script type="text/javascript" src="./lib/d3.v4.min.js"></script>
+<!--<script type="text/javascript" src="./js/d3.geom.js"></script>-->
+<!--<script type="text/javascript" src="./js/d3.layout.js"></script>-->
+<!--<script type="text/javascript" src="js/resize.js"></script>-->
+<!--<script type="text/javascript" src="./js/travlPath.js"></script>-->
+<!--<script type="text/javascript" src="js/transPath.js"></script>-->
+<script>
+            function get_url()
+            {
+                var src = window.location.href;
+//var I = src.substr(src.indexOf("?id=") + 4).length;
+                var T = src.indexOf("?zbGuid=");
+//alert(src);
+                if (0 >= T) return "";
+//if (I == src.length) return -1;
+                var url = src.substr(src.indexOf("?zbGuid=") + 8);
+//alert(url);
+                return url;
+//也就是分析src字符串!!
+            }
+
+</script>
+<script>
+
+    var url_param=get_url();
+    var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
+    /**布局开始*/
+    var simulation = d3.forceSimulation()
+
+            .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(100))
+            .force("charge", d3.forceManyBody().strength(-140))
+            .force("center", d3.forceCenter(width/2 , height/2 ));
+    /**布局结束*/
+    d3.json('json/getExReprintMaualsByGUID.json', function(error, graph
+                                                                                                     /* d3.json("miserables.json", function(error, graph) */){
+        if (error) throw error;
+        /**绘制开始*/
+        var link = svg.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+
+        var node = svg.append("g")
+                .attr("class", "nodes")
+                .selectAll("circle")
+                .data(graph.nodes)
+                .enter().append("circle")
+                .attr("r", 10)
+                .attr("fill", function(d) {
+                    return color(d.group); })
+                .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+
+
+
+        var svg_text = svg.selectAll("text")
+                .data(graph.nodes)
+                .enter()
+                .append("text")
+                .style("fill","#333333")
+                .style("font-size","8px")
+                .style("font","微软雅黑")
+                .attr("dx",12)
+                .attr("dy",5)
+                .text(function(d){return d.id;});
+
+        node.append("title")
+                .text(function(d) { return d.id; });
+
+        simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+
+        simulation.force("link")
+                .links(graph.links);
+        /**更新连线坐标，对于每一个时间间隔*/
+        function ticked() {
+            link
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+
+            node
+                    .attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+            svg_text
+                    .attr("x", function(d){ return d.x; })
+                    .attr("y", function(d){ return d.y; });
+            graph.nodes.forEach(function(d,i){
+                d.x = d.x - 20/2 < 0     ? 20/2 : d.x ;
+                d.x = d.x + 20/2 > width ? width - 20/2 : d.x ;
+                d.y = d.y - 20/2 < 0      ? 20/2 : d.y ;
+                d.y = d.y + 20/2  > height ? height - 20/2  : d.y ;
+            });
+
+        }
+    });
+    /**绘制结束*/
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
+
+
+
+
+</script>
+</body>
+</html>

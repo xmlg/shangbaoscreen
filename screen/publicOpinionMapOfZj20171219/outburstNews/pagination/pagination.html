@@ -1,0 +1,17 @@
+<div class="m-pagebox" ng-show="page.PAGESIZE<page.ITEMCOUNT">
+	<a href="javascript:;" class="ico-prev" ng-click="up()"></a>
+	<a href="javascript:;" id="page" ></a>
+	<!--<a href="javascript:;" class="m-txt" ng-click="up()">上一页</a>
+	<a href="javascript:;" class="z-numlink">1</a>
+	<span class="m-line">／</span>
+	<a href="javascript:;" class="z-numlink">2</a>
+	<span class="m-line">／</span>
+	<a href="javascript:;" class="z-numlink">3</a>
+	<span class="m-omit">...</span>
+	<a href="javascript:;" class="z-numlink" ng-bind="page.PAGECOUNT"></a>
+	<a href="javascript:;" class="m-txt" ng-click="down()">下一页</a>-->
+	<a href="javascript:;" class="ico-next" ng-click="down()"></a>
+	<div class="m-pagetxt">跳至</div>
+	<input type="text" ng-model="page.copyCurrPage" ng-keydown="jump($event)" />
+	<div class="m-pagetxt">页</div>
+</div>

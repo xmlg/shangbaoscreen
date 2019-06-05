@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+    <script src="v2/api.v2.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/queue.v1.js"></script>
+    
+    <style type="text/css">
+    .we-pm-icon{cursor:pointer;-webkit-animation: scaleout .8s infinite ease-in-out;animation: scaleout .8s infinite ease-in-out;}
+    .we-pm-icon {
+    position: absolute;
+    z-index: 64;
+    /*box-shadow:5px 5px 5px 2px yellow;*/
+    background: url(http://www.easyicon.net/api/resizeApi.php?id=1074050&size=24) no-repeat !important;
+}
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(1.0) }
+    100% {
+        -webkit-transform: scale(1.5);
+        opacity: 0.8;
+    }
+}
+@keyframes scaleout {
+   0% { -webkit-transform: scale(1.0) }
+    100% {
+        -webkit-transform: scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+    </style>
+    <script>
+      function initialize() {
+        var earth = new WE.map('earth_div');
+        //数据地球配置
+        //WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+        //自然地球配置
+        WE.tileLayer('http://data.webglearth.com/natural-earth-color/{z}/{x}/{y}.jpg', {
+        
+        // WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+          tileSize: 256,
+          bounds: [[-85, -180], [85, 180]],
+          minZoom: 1,
+          maxZoom: 16,
+          attribution: 'trs.com.cn',
+          tms: true
+        }).addTo(earth);
+        earth.setView([39.9,116.3], 1.5);
+
+
+        queue().defer(d3.json,"data/cities.json").defer(d3.json,"data/events.json").defer(d3.json, "data/capitals.json").await(function(error,cities,events,capitals){
+          if(error)throw error;
+          cities.forEach(function(item,index){
+            item.TITLE = events[item.AREA].TITLE;
+          });
+          cities.forEach(function(item,index){
+              capitals.contents.forEach(function(_item,_index){
+                    if(_item.province == item.AREANAME){
+                        item.latitude = _item.latitude;
+                        item.longitude = _item.longitude;
+                    }
+                });
+          });
+
+          var index = 0;
+          var points = {};
+          var interval = setInterval(function(){
+             var _marker;
+            if(!points[index]){
+              
+              _marker = WE.marker([cities[index].latitude,cities[index].longitude]).addTo(earth);
+      //        _marker.bindPopup("<font style='text-align:center;' color=orange>["+cities[index].AREANAME+"]</font>&nbsp;"+cities[index].TITLE, {maxWidth: 120, closeButton: false});//.openPopup()
+              //earth.panTo([cities[index].latitude,cities[index].longitude],100);
+              points[index] = _marker; 
+            }else{
+              _marker = points[index];
+              //_marker.openPopup();
+            }
+            index++;
+            if(index>=cities.length){
+              //clearInterval(interval);
+              index = 0;
+            }
+            setTimeout(function(){
+                // earth.removeMarker(_marker);
+                _marker.closePopup();
+            },1000);
+
+
+          },1000);
+
+
+
+        });
+
+          var before = null;
+          requestAnimationFrame(function animate(now) {
+              var c = earth.getPosition();
+              var elapsed = before? now - before: 0;
+              before = now;
+              earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+              requestAnimationFrame(animate);
+          });
+
+          //startsbg(document.getElementById("bg"));
+       /*  html5_3d_animation(document.getElementById("bg"),{
+            window_width: '1600',
+            window_height: '768',
+            window_background: '#00113F',
+            star_count: '1000',
+            star_color: '#FBFFAF',
+            star_depth: '100'
+        });
+*/
+      }
+    </script>
+    <style>
+      html, body{padding: 0; margin: 0; background-color: black;}
+      #earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+      #bg{width:100%;height:100%;width:1600px;height:768px;}
+    </style>
+    <title>WebGL Earth API: Markers</title>
+  </head>
+  <body onload="initialize()">
+    <div id="earth_div"></div>
+    <canvas id="bg" width=1600 height=768></canvas>
+  </body>
+</html>

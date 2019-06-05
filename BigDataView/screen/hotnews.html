@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>全网热点追踪</title>
+    <link rel="stylesheet" href="images-lh/global20171207.css">
+    <link rel="stylesheet" type="text/css" href="css/hotnews.css">
+    <link rel="stylesheet" href="css/stars.css">
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+        .layui-layer-title {
+            background-color: #104059 !important;
+            color: #4bfdff !important;
+        }
+        
+        .layui-table {
+            margin: 0 !important;
+        }
+        
+        .layuititle {
+            width: 480px;
+            color: #2496fc;
+            line-height: 30px !important;
+        }
+        
+        .NEWCONTENT {
+            color: #2496fc;
+            font-size: 26px;
+        }
+        
+        .layuibtn {
+            width: 70px;
+        }
+        
+        .layui-layer-content {
+            background-color: #0e141d !important;
+        }
+        
+        .layui-table tr:hover,
+        .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #0e3045 !important;
+        }
+        
+        .layui-table tr:hover,
+        .layui-table[lay-even] tr:nth-child(odd) {
+            background-color: #0e141d !important;
+        }
+        
+        .layui-layer-title {
+            border-bottom-width: 0px !important;
+        }
+        
+        .baoye_neiy .tit {
+            height: 70px;
+        }
+        
+        .baoye_neiy {
+            margin: -40px auto 0;
+        }
+        
+        .layui-layer-title {
+            background-color: #178fa8 !important;
+            color: #4bfdff !important;
+            border-bottom-width: 0!important;
+        }
+        
+        .layui-layer-content {
+            background-color: #0e141d !important;
+            overflow: hidden!important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="stars"></div>
+<div class="ico"><a href="/dist/static/BigDataView/index/index.html" target="_blank"><img src="newScreen/images/goPC.png" width="35" height="35" /></a></div> -->
+    <div class="baoye_neiy">
+        <div class="tit">全网热点追踪</div>
+        <!-- <div class="ditucont" id="main" style="width: 950px;height: 650px;"></div> -->
+        <!-- <div class="rdzz_rightList">
+        <h1>热点区域</h1>
+        <ul>
+            <li><span></span>中国</li>
+            <li><span class="bg2"></span>中国</li>
+            <li><span class="bg3"></span>中国</li>
+            <li><span class="bg4"></span>中国</li>
+            <li><span class="bg5"></span>中国</li>
+            <li><span class="bg6"></span>中国</li>
+            <li><span class="bg7"></span>中国</li>
+            <li><span class="bg8"></span>中国</li>
+            <li><span class="bg9"></span>中国</li>
+            <li><span class="bg10"></span>中国</li>
+        </ul>
+    </div> -->
+        <div class="main">
+            <div class="nav_bar">
+                <span class="bar bar_active" id="zyzxfield_000">全部</span>
+                <!-- <span class="bar" id="zyzxfield_020"> 两会</span> -->
+                <span class="bar" id="zyzxfield_001">政治</span>
+                <span class="bar" id="zyzxfield_002">财经</span>
+                <span class="bar" id="zyzxfield_007">科技</span>
+                <span class="bar" id="zyzxfield_004">军事</span>
+            </div>
+            <div class="list_btn">
+                <a class="list_btn_a" data-type="chart">视图展示</a>
+                <a data-type="table">列表展示</a>
+            </div>
+            <div class="content">
+
+            </div>
+            <div class="news_list_box" style="display: none;">
+                <div class="outer-container">
+
+                    <i class="news_list_jiao"></i>
+                    <i class="news_list_jiao"></i>
+                    <i class="news_list_jiao"></i>
+                    <i class="news_list_jiao"></i>
+                    <ul class="news_list_title">
+                        <img class="news_list_title_img" src="images/foreign/news_list_03.png" alt="">
+                        <li>标题</li>
+                        <li class="reportRank">报道量 <img class="reportRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+                        <li>持续时间</li>
+                        <li>引爆媒体</li>
+                        <li class="timeRank">上榜时间 <img class="timeRankImg" src="images/foreign/news_list_06.png" alt=""></li>
+                    </ul>
+                    <ul class="news_list_center">
+
+
+                    </ul>
+                    <div class="news_list_page">
+                        <a href=""><img src="images/foreign/news_list_14.png" alt=""></a>
+                        <a href="" class="news_list_page_a news_list_page_active">1</a>
+                        <a href="" class="news_list_page_a">2</a>
+                        <a href="" class="news_list_page_a">3</a>
+                        <a href=""><img src="images/foreign/news_list_16.png" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script src="./lib/layer/layer.js"></script>
+    <script src="./lib/layui/layui.js"></script>
+    <script src="js/hotnews.js"></script>
+    <script src="../server.js"></script>
+    <!--弹窗-->
+    <script src="./lib/laytpl/laytpl.js"></script>
+    <script src="js/resize.js"></script>
+
+</body>
+
+</html>

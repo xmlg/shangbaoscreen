@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="countryHotnewsModule" ng-controller="countryHotnewsCtrl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title ng-bind="status.mainTitle"></title>
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/ng-animation.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/base_1.css">
+    <link rel="stylesheet" type="text/css" href="css/hotNews.css">
+    <link rel="stylesheet" href="css/hotNews_right.css">
+</head>
+
+<body>
+    <div class="big-border"></div>
+    <div class="wrap">
+        <div class="header">
+            <span ng-bind="status.mainTitle"></span>
+        </div>
+        <div class="content">
+            <div class="contemt_main">
+                <div class="content_c">
+                    <div class="content_c_top">
+                        <div class="content_c_top_l">
+                            <ul>
+                                <li ng-class="{true:'active',false:''}[status.selectedTab=='today']" ng-click="getDefaultList()" class="time" ng-bind="status.today"></li>
+                                <li ng-if="status.showMorning" ng-class="{true:'active',false:''}[status.selectedTab=='morning']" ng-click="morning()" style="" class="parallelogram scale-fade" ng-bind="status.customHotPointArea.pointNm1"></li>
+                                <li ng-if="status.showNoon" ng-class="{true:'active',false:''}[status.selectedTab=='noon']" ng-click="noon()" style="" class="parallelogram scale-fade" ng-bind="status.customHotPointArea.pointNm2"></li>
+                                <li ng-if="status.showNight" ng-class="{true:'active',false:''}[status.selectedTab=='night']" ng-click="night()" class="evening scale-fade" ng-bind="status.customHotPointArea.pointNm3"></li>
+                            </ul>
+                        </div>
+                        <div class="content_c_top_r">
+                            <img src="images/tit-1.png" class="hottitle-left">
+                            <span>热度</span>
+                            <img src="images/tit-2.png" class="hottitle-right">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="content_c_list_outer">
+                        <div class="clear"></div>
+                        <div class="wrapper" id="wrapper1">
+                            <div class="scroller" id="scroller1" style="transform: translate(0px, 0px) translateZ(0px);">
+                                <div class="content_c_list">
+                                    <ol class="list1" style="display: block; opacity: 1;">
+                                        <li ng-click="selectDoc(item)" class="toggle" ng-class="{true:'focus',false:''}[status.selectedDoc == item]" ng-repeat="item in data.list">
+                                            <div class="content">
+                                                <div class="content-inner"><span>{{$index+1}}.</span><span ng-bind="item.docTitle"></span></div>
+                                            </div>
+                                            <div class="bar">
+                                                <div class="value" ng-bind="item.weighted_nums"></div>
+                                                <div class="bar-outer focus2">
+                                                    <div ng-init="getPercent(item)" class="bar-inner" style="{{item.percent}}"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contemt_right">
+                <div class="hotNews_right">
+                    <div class="hotNews_right_info">
+                        <span>稿件详情</span>
+                        <img src="images/tit-1.png" class="hotNews_right_left">
+                        <img src="images/tit-2.png" class="hotNews_right_right">
+                    </div>
+                    <div class="hotNews_right_body toggle" ng-if="data.detail">
+                        <div class="hotNews_right_titile" ng-bind="data.detail.DOCTITLE"></div>
+                        <div class="hotNews_right_adds">
+                            <span class="hotNews_right_resource" ng-bind="data.detail.ZB_SOURCE_SITE"></span>
+                            <span class="hotNews_right_date" ng-bind="data.detail.DOCPUBTIME"></span>
+                        </div>
+                        <div class="hotNews_right_content">
+                            <div class="wrapper" id="wrapper2">
+                                <div class="hotNews_right_media" style="height: 400px; display: block;">
+                                    <div class="media_group detonate_group" style="height: 150px;" ng-show="status.selectedDoc.detonateMedia">
+                                        <div class="label">主要引爆媒体：</div>
+                                        <div class="media hotNews_right_detonate_media" ng-bind="status.selectedDoc.detonateMedia"></div>
+                                    </div>
+                                    <div class="media_group main_group" style="height: 250px;" ng-show="status.selectedDoc.mainMedia">
+                                        <div class="label">重要参与媒体：</div>
+                                        <div class="media hotNews_right_main_media" ng-bind="status.selectedDoc.mainMedia"></div>
+                                    </div>
+                                </div>
+                                <div class="hotNews_right_text" ng-bind-html="status.htmlContent">
+                                </div>
+                                <div style="width:100%;height:500px"></div>
+                            </div>
+                        </div>
+                        <div class="shadow top_shadow" style="display: block;"></div>
+                        <div class="shadow middle_shadow" style="display: block;"></div>
+                        <div class="shadow bottom_shadow" style="display: block;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="service/httpServer.js"></script>
+    <script type="text/javascript" src="country.js"></script>
+    <script type="text/javascript" src="lib/resize.js"></script>
+</body>"
+
+</html>

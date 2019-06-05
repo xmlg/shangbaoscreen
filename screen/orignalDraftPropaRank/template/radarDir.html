@@ -1,0 +1,19 @@
+<div class="radar">
+    <svg>
+        <g transform="translate(920,432)" style="stroke: #274150;stroke-width: 2px;">
+            <line x1="0" y1="0" x2="0" y2="-330"></line>
+            <line x1="0" y1="0" x2="285.8" y2="165"></line>
+            <line x1="0" y1="0" x2="-285.8" y2="165"></line>
+            <circle style="r: 110;stroke: #274150;stroke-width: 4px;fill: none;"></circle>
+            <circle style="r: 165;stroke: #274150;stroke-width: 4px;fill: none;"></circle>
+            <circle style="r: 220;stroke: #274150;stroke-width: 4px;fill: none;"></circle>
+            <circle style="r: 275;stroke: #274150;stroke-width: 4px;fill: none;"></circle>
+            <circle style="r: 330;stroke: #274150;stroke-width: 4px;fill: none;"></circle>
+        </g>
+        <g transform="translate(920,432)" class="radar">
+        </g>
+    </svg>
+    <span class="ydgx">阅读贡献：<span ng-bind="article.ARTICLE.CONTRIBOFREAD*100|number:0" ></span>%</span>
+    <span class="zzgx">转载贡献：<span ng-bind="article.ARTICLE.CONTRIBOFREPRINT*100|number:0" ></span>%</span>
+    <span class="hdgx">互动贡献：<span ng-bind="article.ARTICLE.CONTRIBOFINTERACT*100|number:0" ></span>%</span>
+</div>

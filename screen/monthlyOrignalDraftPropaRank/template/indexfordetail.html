@@ -1,0 +1,90 @@
+<div class="midrank">
+    <div class="midup">
+        <img src="images/midt.png" />
+        <span class="midname">稿件详情</span>
+        <img src="images/midtr.png" />
+    </div>
+    <div class="midmid">
+        <img src="images/border_top.png" class="midimg" />
+        <div class="mid_cot">
+            <div class="midtitle" ng-bind="article.ARTICLE.TITLE">
+            </div>
+            <div class="wzinfo">
+                <div class="midtime" ng-bind="article.ARTICLE.PUBTIME"></div>
+                <div class="authermid">作者：<span ng-bind="article.ARTICLE.AUTHOR"></span></div>
+            </div>
+            <!--文本区-->
+            <div class="midnewsdetail" scroll-bar load-watch="status.contentLoadWatch">
+                <div ng-if="article.ARTICLE.CONTENT" ng-init="handleHtmlContent()" ng-bind-html="article.ARTICLE.CONTENTTRUST | trsSce">
+                </div>
+            </div>
+        </div>
+        <img src="images/border_bottom.png" class="midimg2" />
+    </div>
+</div>
+</div>
+<div class="midrank">
+    <div class="midup">
+        <img src="images/midt.png" />
+        <span class="midname">稿件分析</span>
+        <img src="images/midtr.png" />
+    </div>
+    <div class="rightmid">
+        <div class="cbzs">传播指数：<span ng-bind="article.ARTICLE.CEIINDEX"></span></div>
+        <div class="contribute">
+            <radar ng-if="article.ARTICLE.CONTRIBOFREAD"></radar>
+        </div>
+        <div class="mediareprint">外部媒体转载（共<span ng-bind="article.ARTICLE.alltimes"></span>次）</div>
+        <div class="mediareprintitem">
+            <div class="mediareprintitem1">
+                <span class="itemtitle">核心媒体头条</span>
+                <span class="itemcount" ng-if="article.ARTICLE.EXCOREMEDIATOPS!=0">
+                <span class="transpondDetail" ng-bind="'转载'+article.ARTICLE.EXCOREMEDIATOPS+'次'" title="深圳网,深圳新闻网,深圳特区报"></span>
+                </span>
+                <span class="itemcount"  ng-if="article.ARTICLE.EXCOREMEDIATOPS==0" >
+                    <span>-</span></span>
+                <span class="itemtitle">核心媒体</span><span class="itemcount" ng-if="article.ARTICLE.EXCOREMEDIAS!=0"  ><span ng-bind="'转载'+article.ARTICLE.EXCOREMEDIAS+'次'" title="深圳网,深圳新闻网,深圳特区报"></span></span>
+                <span class="itemcount"  ng-if="article.ARTICLE.EXCOREMEDIAS==0" >-</span>
+            </div>
+            <div class="mediareprintitem1">
+                <span class="itemtitle">一级媒体</span><span class="itemcount" ng-if="article.ARTICLE.EXLV1MEDIAS!=0"  ><span ng-bind="'转载'+article.ARTICLE.EXLV1MEDIAS+'次'" title="深圳网,深圳新闻网,深圳特区报"></span></span>
+                <span class="itemcount"  ng-if="article.ARTICLE.EXLV1MEDIAS==0" >-</span>
+                <span class="itemtitle">二级媒体</span><span class="itemcount" ng-if="article.ARTICLE.EXLV2MEDIAS!=0"  ><span ng-bind="'转载'+article.ARTICLE.EXLV2MEDIAS+'次'" title="深圳网,深圳新闻网,深圳特区报"></span></span>
+                <span class="itemcount"  ng-if="article.ARTICLE.EXLV2MEDIAS==0" >-</span>
+            </div>
+        </div>
+    </div>
+    <div class="rightdown">
+        <div class="rightdowntitle">集团媒体刊发列表（共<span ng-bind="article.IMPS.length"></span>家）</div>
+        <table border="0" class="table">
+            <tr>
+                <th class="col-name">媒体</th>
+                <th class="col-chnl">版面/栏目</th>
+                <th>发稿时间</th>
+            </tr>
+        </table>
+        <div class="table_cox" style="width:{{status.tableItemsWidth}}px">
+            <div class="table_items" ng-repeat="table in status.dataArrs">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr ng-repeat="item in table">
+                        <td class="col-name" ng-if="item.MEDIANAME!=''">
+                        	<div ng-bind="item.MEDIANAME"></div>
+                        </td>
+                        <td class="col-name" ng-if="item.MEDIANAME==''">-</td>
+                        <td class="col-chnl" ng-if="item.DOCCHANNEL!=''">
+                        	<div ng-bind="item.DOCCHANNEL"></div>
+                        </td>
+                        <td class="col-chnl" ng-if="item.DOCCHANNEL==''">-</td>
+                        <td ng-if="item.PUBTIME!=''">
+                        	<div ng-bind="item.PUBTIME"></div>
+                        </td>
+                        <td ng-if="item.PUBTIME==''">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="rightdownyuan">
+            <span class="diandian" ng-repeat="a in article.tablelength track by $index" ng-click="playIndex($index)" ng-class="{true:'diandian2',false:''}[status.index==$index]"   ></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="../lib/echarts/dist/echarts.js"></script>
+   
+    <script src="js/jquery.page.js"></script>
+    <script type="text/javascript" src="js/laydate.dev.js"></script>
+    <!-- <link rel="stylesheet" href="css/stars.css"> -->
+    <link rel="stylesheet" href="css/bureau_screen.css">
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+
+    <style>
+        .ico {
+            position: absolute;
+            left: 30px;
+            top: 140px;
+            padding: 3px;
+            background: #294867;
+            border: 0px;
+            z-index: 1;
+            cursor:pointer;
+        }
+        .layui-layer-title{
+            background-color: #104059 !important;
+            color: #4bfdff !important;
+        }
+        .layui-table{
+            margin: 0!important;
+        }
+        .layuititle{
+            width: 480px;
+            color: #2496fc;
+            line-height: 30px!important;  
+        }
+        .NEWCONTENT{
+            color: #2496fc;
+            font-size: 26px;  
+        }
+        .layuibtn{
+            width: 70px;
+        }
+
+        .layui-layer-content{
+            background-color: #0e141d!important; 
+        }
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: #0e3045!important;
+        }
+        .layui-table tr:hover, .layui-table[lay-even] tr:nth-child(odd) {
+            background-color: #0e141d!important;
+        }
+        .layui-layer-title {
+            border-bottom-width: 0px!important;
+        }
+        
+    </style>
+</head>
+<body>
+  
+<!-- <div class="stars"></div> -->
+   
+<!-- <div class="logoLeft">
+    <img src="images/regionalHotDist01_01.png" alt="">
+</div> -->
+<div class="ico"><a href="/dist/static/BigDataView/index/index.html" target="_blank"><img src="newScreen/images/goPC.png" width="35" height="35" /></a></div>
+<div class="">
+    <div class="rightTopTerritory">
+        <span>全国</span>
+        <a class="territoryjiantou"><i>     
+        </i></a>
+        <ul class="Allarea">
+        </ul>
+    </div>
+    <!--<div class="daysBtn">
+        <a class="active" name="country_1">1日</a>
+        <a name="country_3">3日</a>
+        <a name="country_7">7日</a>
+    </div>-->
+    <input class="logoRightIn"  type="text" id="J-xl" >
+</div>
+<!-- <div class="topBox"></div> -->
+
+
+
+<div class="center">
+    <div id="map"></div>
+    <div class="list">
+        <div class="listTitle">
+            <div class="listTitleL">
+                <img src="images/bureauList_03.png" alt="">
+                <span>全国热点</span>
+            </div>
+            <div class="listTitleR">
+                <img src="images/bureauList_05.png" alt="">
+                热度
+            </div>
+        </div>
+        <ul class="listUl">
+        </ul>
+        <div class="listUlNone">暂无相关数据</div>
+        <div class="tcdPageCode"></div>
+    </div>
+</div>
+
+<script src="../server.js"></script>
+<!--弹窗-->
+<script src="./lib/layer/layer.js"></script>
+<script src="./lib/laytpl/laytpl.js"></script>
+<script src="./lib/layui/layui.js"></script>
+
+<script type="text/html" id="newHotTpl">
+    <table class="layui-table" lay-even lay-skin="nob" >
+    
+            <tbody>
+             {{# for(var i = 0, len = d.length; i < len; i++){ }}
+              <tr>
+                <td class="layuititle"> {{ d[i].title }}</td>
+                <td class="layuibtn"> 
+                    <button class='"layui-btn layui-btn-small layui-btn-warm'>
+                            <i index='{{ d[i].guid }}' class="layui-icon" style="color: #fff;cursor:pointer;">&#xe60a;</i>
+                    </button>    
+                </td>
+              </tr>   
+              {{# } }}
+            </tbody>
+     </table>
+
+</script>
+<script type="text/html" id="NEWCONTENTTPL">
+  <div class="NEWCONTENTTPL">  
+    <div class="NEWCONTENT">
+    {{d}}
+    </div>
+   </div>  
+</script>
+
+<script>
+   
+    var nameArr={},
+        nameValArr=[],
+        nameKeyArr=[];
+         /*初始化默认省份*/
+    var nameNum='001',
+	    placeName="china";
+    var jiantouA=1,
+        time=laydate.now(),
+        cluster_name='country_1';
+        var provinces = {
+            '上海':'shanghai',
+            '河北':'hebei',
+            '山西':'shanxi1',
+            '内蒙古':'neimenggu',
+            '辽宁': 'liaoning',
+            '吉林': 'jilin',
+            '黑龙江': 'heilongjiang',
+            '江苏': 'jiangsu',
+            '浙江': 'zhejiang',
+            '安徽': 'anhui',
+            '福建': 'fujian',
+            '江西': 'jiangxi',
+            '山东': 'shandong',
+            '河南': 'henan',
+            '湖北': 'hubei',
+            '湖南': 'hunan',
+            '广东': 'guangdong',
+            '广西': 'guangxi',
+            '海南': 'hainan',
+            '四川': 'sichuan',
+            '贵州': 'guizhou',
+            '云南': 'yunnan',
+            '西藏': 'xizang',
+            '陕西': 'shanxi1',
+            '甘肃': 'gansu',
+            '青海': 'qinghai',
+            '宁夏': 'ningxia',
+            '新疆': 'xinjiang',
+            '北京': 'beijing',
+            '天津': 'tianjin',
+            '重庆': 'chongqing',
+            '香港': 'xianggang',
+            '澳门': 'aomen',
+             "台湾":"taiwan",
+             "全国":"china"
+        }  
+        var provincesCode = {
+            "全国":"001",
+            '上海':'001001',
+            '河北':'001018',
+            '山西':'001012',
+            '内蒙古':'001003',
+            '辽宁': '001029',
+            '吉林': '001006',
+            '黑龙江':'001034',
+            '江苏': '001016',
+            '浙江': '001020',
+            '安徽': '001010',
+            '福建': '001026',
+            '江西': '001017',
+            '山东': '001011',
+            '河南': '001019',
+            '湖北': '001022',
+            '湖南': '001023',
+            '广东': '001013',
+            '广西': '001014',
+            '海南': '001021',
+            '四川': '001007',
+            '贵州': '001028',
+            '云南': '001002',
+            '西藏': '001027',
+            '陕西': '001031',
+            '甘肃': '001025',
+            '青海': '001032',
+            '宁夏': '001009',
+            '新疆': '001015',
+            '北京': '001004',
+            '天津': '001008',
+            '重庆': '001030',
+            '香港': '001033',
+            '澳门': '001024',
+            "台湾":"001005"
+          
+        }  
+        var hubeicitycoDe={
+            "仙桃市":"001022001",
+            "十堰市":"001022002",
+            "咸宁市":"001022003",
+            "天门市":"001022004",
+            "孝感市":"001022005",
+            "宜昌市":"001022006",
+           "恩施土家族苗族自治州":"001022007",
+            "恩施州":"001022008",
+           "武汉市":"001022009",
+            "潜江市":"001022010",
+            "神农架林区":"001022011",
+            "荆州市":"001022012",
+            "荆门市":"001022013",
+            "襄樊市":"001022014",
+            "襄阳市":"001022015",
+            "鄂州市":"001022016",
+            "随州市":"001022017",
+            "黄冈市":"001022018",
+            "黄石市":"001022019"
+        }
+      
+
+    //获取稿件
+    $(".listUl").delegate("li","click",function(){
+         var _this=this;
+         var clusterid=$(_this).attr('data');
+         var clustername=$(_this).attr('index');
+         var data=bigDataUrl+XNbigUrl+'?entityfield=EVENT_POLICY&modelid=hotRelationInfo&serviceid=areahotpointevent&typeid=widget&clusterid='+clusterid;
+        $.ajax({
+            type:"get",
+            url:wcmUrl,
+            data:{
+              url:data
+            },
+            beforeSend:function(){
+                indexB =layer.load(1, {
+                        shade: [0.4,'#fff'] //0.1透明度的白色背景
+                        });
+                     },
+            success:function(htmls){
+                   layer.close(indexB);
+                   if(htmls.DATA.length=='0'||htmls.DATA.ISSUCCESS=='false'){
+            layer.msg('暂无相关热点文章');
+            return false;
+        }
+        var $newHotTpl=$("#newHotTpl").html();
+        laytpl($newHotTpl).render(htmls.DATA,function(html){
+               layer.open({
+                    title:clustername,
+                    skin: 'layui-layer-lan',
+                    type: 1,
+                    skin: 'layui-layer-demo', //样式类名
+                    //closeBtn: 0, //不显示关闭按钮
+                    anim: 2,
+                    area: ['550px', '600px'],
+                    shadeClose: false, //开启遮罩关闭
+                    content: html
+                    });
+            })
+
+
+
+            }
+
+        })
+     
+
+      
+       
+           /*
+           
+            */
+
+
+
+     
+
+
+});
+//查看稿件
+    $("body").delegate('.layui-icon','click',function(){
+        var _this=this;
+        var zbguid=$(_this).attr('index');
+        var data=bigDataUrl+XNbigUrl+'?modelid=hotPonitEventDetail&serviceid=hotpointevent1&typeid=widget&zbguid='+zbguid; 
+        $.ajax({
+            type:"get",
+            url:wcmUrl,
+            data:{
+              url:data
+            },
+            beforeSend:function(){
+                indexB =layer.load(1, {
+                        shade: [0.4,'#fff'] //0.1透明度的白色背景
+                        });
+                        
+                     },
+            success:function(htmls){
+                   layer.close(indexB);
+                   if(htmls.DATA.ISSUCCESS=='false'){
+                    layer.msg('暂无文章');
+                    return false;
+                   }
+                   var $NEWCONTENTTPL=$("#NEWCONTENTTPL").html();
+                   laytpl($NEWCONTENTTPL).render(htmls.DATA.CONTENT.replace(/[\r\n]+/gi,"<br>"),function(html){
+                    layer.open({
+                        title:htmls.DATA.TITLE,
+                        skin: 'layui-layer-lan',
+                        type: 1,
+                        skin: 'layui-layer-demo', //样式类名
+                        //closeBtn: 0, //不显示关闭按钮
+                        maxmin: true, //开启最大化最小化按钮
+                        anim: 2,
+                        area: ['650px', '600px'],
+                        shadeClose: false, //开启遮罩关闭
+                        content: html
+                        });              
+                })           
+            }
+        })
+    })
+    chinaData(nameNum);
+    function chinaData(){
+        for(item in provincesCode){
+            var li=$("<li name="+provincesCode[item]+">"+item+"</li>");
+            $(".Allarea").append(li);
+        }
+    }
+    //下拉小箭头点击事件
+    $('.territoryjiantou').click(function(event){
+        if(jiantouA==1){
+            jiantouA=2;
+            $('.territoryjiantou i').css('transform','rotate(180deg)');
+            $('.rightTopTerritory ul').slideDown()
+        }else{
+            jiantouA=1;
+            $('.territoryjiantou i').css('transform','rotate(0deg)');
+            $('.rightTopTerritory ul').slideUp()
+        }
+        event.stopPropagation();
+    });
+
+    //下拉菜单点击
+    $('.rightTopTerritory ul li').click(function(event){
+        $('.rightTopTerritory span').html($(this).html());
+        $(this).addClass('active').siblings('li').removeClass('active');
+        jiantouA=1;
+        $('.territoryjiantou i').css('transform','rotate(0deg)');
+        $('.rightTopTerritory ul').slideUp();
+
+        aPlaceName=$(this).text();
+        nameNum=$(this).attr('name');
+        placeName=provinces[aPlaceName];
+    
+        Map(placeName,time,nameNum);
+        listData1(0,nameNum,time,cluster_name);
+        $('.listTitleL').html(' <img src="images/bureauList_03.png" alt=""><span>'+$(this).html()+'热点</span>');
+        event.stopPropagation();
+         });
+        $('body').click(function(){
+            jiantouA=1;
+            $('.territoryjiantou i').css('transform','rotate(0deg)');
+            $('.rightTopTerritory ul').slideUp()
+        });
+
+    //列表数据
+    var pageCount1,
+        current1,
+        startpage=0;
+    listData1(startpage,nameNum,time,cluster_name);
+    function listData1(startpage,nameNum,time,cluster_name){
+        var data=bigDataUrl+XNbigUrl+"?cluster_name=country_1&field=000&modelid=hotnewslist&pagesize=8&serviceid=areahotpoint&typeid=widget&area="+nameNum+'&loaddate='+time+"&startpage="+startpage;
+        $.ajax({
+            type:"get",
+            url:wcmUrl,
+            data:{
+              url:data
+            },
+            beforeSend:function(){
+                indexB =layer.load(1, {
+                        shade: [0.4,'#fff'] //0.1透明度的白色背景
+                        });
+                     },
+            success:function(res){
+                   layer.close(indexB);
+                   $('.listUl li').remove();
+                   if(res.DATA.PAGEITEMS!=undefined){            
+                if(res.DATA.PAGEITEMS.length>0){
+                    $('.tcdPageCode').css('display','block');
+                    $('.listUlNone').css('display','none');
+                }else{
+                    $('.tcdPageCode').css('display','none');
+                    $('.listUlNone').css('display','block');
+                }
+            for(var i=0;i<res.DATA.PAGEITEMS.length;i++){
+                //9月19日
+                var li=$("<li index='"+res.DATA.PAGEITEMS[i].TITLE+"' title='"+res.DATA.PAGEITEMS[i].TITLE+"' data='"+res.DATA.PAGEITEMS[i].CLUSTERID+"'><a target='_blank' href='javascript:void(0);' >"+res.DATA.PAGEITEMS[i].TITLE+"</a><span>"+res.DATA.PAGEITEMS[i].CLUSTERNUMS+"</span></li>");
+                $(".listUl").append(li);
+            }
+            pageCount1=res.DATA.PAGETOTAL
+            current1=res.DATA.STARTPAGE+1
+            $(".listUlNone").hide();
+
+           }else{
+            pageCount1=1
+            current1=1
+            $(".listUlNone").show();
+           }
+           $('.tcdPageCode').pager({pagenumber: current1, pagecount: pageCount1, buttonClickCallback: function(p){
+			        	listData1(p-1,nameNum,time,cluster_name);
+			        } })
+
+             
+
+
+
+                 }         
+        });
+    }
+
+
+    function keysrt(key,desc) {
+        return function(a,b){
+            return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+        }
+    }
+
+    // 1日 3日 7日 点击事件
+    $('.daysBtn a').click(function(event){
+        $(this).addClass('active').siblings('a').removeClass('active');
+        cluster_name=$(this).attr('name');
+        listData(startpage,nameNum,time,cluster_name);
+        event.stopPropagation();
+    });
+        
+    function Map(placeName,times,nameNums){
+        $.ajax({
+            type:"get",
+            url:'../lib/echarts/src/util/mapData/geoJson/'+placeName+'.json',
+            beforeSend:function(){
+                indexA =layer.load(1, {
+                        shade: [0.4,'#fff'] //0.1透明度的白色背景
+                        });
+                     },
+            success:function(placeJson){
+                 layer.close(indexA);
+                  echarts.registerMap(placeName,placeJson); // 注册地图
+                  var mapChart = echarts.init(document.getElementById('map'));
+                  mapChart.on("click", function (param){
+                         if(typeof(param.data)=="undefined"){
+                            return false;
+                         }
+                         $(".listUlNone").show();
+                         $(".listUl").empty();
+                        if(typeof(param.data.area)=="undefined"){
+                            placeName="china";
+                            nameNum="001";
+                            $(".rightTopTerritory span").html("全国");
+                            $(".listTitleL span").html("全国热点");
+                            listData1(0,nameNum,time,cluster_name);
+                            Map(placeName,time,nameNum);
+                            return false;
+                            }
+                        if(param.data.area.indexOf("001022")!='-1'&&param.data.area!=='001022'){
+                            nameNum=param.data.area;
+                            $(".listTitleL span").html(param.data.name+"热点");
+                        }else{
+                            if (!provinces[param.name]) {
+                            placeName="china";
+                            nameNum="001";
+                            $(".rightTopTerritory span").html("全国");
+                            $(".listTitleL span").html("全国热点");
+                                }else{
+                                    placeName=provinces[param.name];
+                                    nameNum=provincesCode[param.name];
+                                    $(".rightTopTerritory span").html(param.name);
+                                    $(".listTitleL span").html(param.name+"热点");
+                                    }
+
+                            Map(placeName,time,nameNum);
+                        }
+                
+                listData1(0,nameNum,time,cluster_name);   
+            });
+            option = {
+                title: {
+                    left: 'center',
+                    textStyle: {
+                        color: '#fff',
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                },
+                visualMap: {
+                    min: 10,
+                    max: 400,
+                    text:['热度高','热度低'],
+                    textStyle: {
+                        color: '#fff',
+                    },
+                    realtime: false,
+                    calculable: true,
+                    inRange: {
+                        color: ['#0ed7e0','#5ee496','#78e87d','#c9f632', '#ffff00']
+                    }
+                },
+                 
+                
+                series: [ 
+                    {
+                        name: ' ',
+                        type: 'map',
+                        mapType: placeName,
+                        label: {
+                            normal: {
+                                show: true
+                            },
+                            emphasis: {
+                                show: true
+                            }
+                        }, 
+                        itemStyle: {
+                            normal: {
+                                borderColor: '#389BB7',
+                                areaColor: '#86dde0',
+                                label:{
+                                    textStyle: {
+                                        fontSize:'16',
+                                        color:'#F6754D'
+                                    }
+                                },
+                            },
+                            emphasis: {
+                                areaColor: '#fac027',
+                                borderWidth: 0
+                            }
+                        },
+                        animation: false,
+                         data:[],
+                          
+                    }
+                ]
+            };
+            var tempData=[];
+            //获取热度值
+            if(nameNum=='001'){
+             
+            var dataa=bigDataUrl+XNbigUrl+"?modelid=hotpoint&serviceid=areahotpoint"+'&loaddate='+time;
+            var html= $.ajax({
+                type:"get",
+                url:wcmUrl,
+                async: false,
+                data:{
+                 url:dataa
+                },
+            }).responseText;
+            html=eval("("+html+")");
+            var data=html.DATA;
+            if(data.length>0){
+                 tempData=[];
+            for(var i=0;i<data.length;i++){
+            	var AREANAME=data[i].AREANAME;
+                for(var i=0;i<data.length;i++){
+                    var AREANAME=data[i].AREANAME;
+                    if(nameNum=='001'){
+                        if(nameNum=='001004'){
+                            AREANAME=AREANAME.replace(/密云县/, "密云区");
+                            AREANAME=AREANAME.replace(/延庆县/, "延庆区");
+                        }else {
+                            AREANAME=AREANAME.replace(/省/, "");
+                            AREANAME=AREANAME.replace(/市/, "");
+                            AREANAME=AREANAME.replace(/自治区/, "");
+                            AREANAME=AREANAME.replace(/回族/, "");
+                            AREANAME=AREANAME.replace(/壮族/, "");
+                            AREANAME=AREANAME.replace(/维吾尔/, "");
+                            AREANAME=AREANAME.replace(/特别行政区/, "");
+                        } 
+                        tempData.push({'name':AREANAME,'value':data[i].HOTPOINTNUM,'area':data[i].AREA})
+
+                    }else{
+                        tempData.push({'name':AREANAME,'value':data[i].HOTNUM,'area':data[i].AREA})
+                    }
+               }
+            }
+            tempData.sort(function(a,b){
+                var tag=sortDate(a.value,b.value);
+                return tag;
+            });
+                
+            option.series[0].data=tempData; 
+            option.visualMap.max=tempData[0].value;   
+            
+            }
+            }else if(nameNum=='001022'){
+                tempData=[];
+                for(item in hubeicitycoDe){
+                    tempData.push({'name':item,'value':"",'area':hubeicitycoDe[item]})
+                }
+                option.series[0].data=tempData; 
+                //var data=bigDataUrl+XNbigUrl+"?serviceid=areahotpoint&modelid=countryhotpoint"+'&loaddate='+time+"&area="+nameNum; 
+            } 
+            mapChart.setOption(option);
+            }
+          })
+
+
+    }
+    Map(placeName,time,nameNum);
+
+    function sortDate(a,b){
+        return b-a
+    }
+
+    laydate({
+        elem: '#J-xl',max:laydate.now()
+    });
+    //设置input 默 认时间
+    $('#J-xl').attr('value',laydate.now());
+    function getData(time,cluster_name){
+        //Map(placeName,time,nameNum)
+        listData1(startpage,nameNum,time,cluster_name)
+    }
+
+</script>
+</body>
+</html>

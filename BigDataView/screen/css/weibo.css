@@ -1,0 +1,337 @@
+body {
+  /*overflow: hidden;*/
+  width:1920px;
+  height:1080px;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
+  font-family: "Microsoft yahei";
+}
+.header {
+  position: absolute;
+  margin: 33px 27px 0;
+  padding-left: 28px;
+  width: 1880px;
+  height: 81px;
+  background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+  background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+  color: #FFFFFF;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-size: 48px;
+  font-family: SimHei;
+  line-height: 87px;
+}
+body {
+  background-size: cover;
+}
+.logoRightIn{
+  height: 45px;
+  padding: 0 10px 0 20px;
+  border-radius: 4px;
+  border: 2px solid #164b73;
+  outline: none;
+  width: 130px;
+  background: #0e141d;
+  color: #7aebff;
+  font-size: 18px;
+ 
+  float: right;
+}
+.islands-group {
+  position: absolute;
+  width: 1920px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  opacity: 0.66;
+}
+.islands-group.islands-group0 {
+  top: 485px;
+  left: 0;
+  opacity: 1;
+
+}
+.islands-group.islands-group1 {
+  top: 265px;
+  left: -549px;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+.islands-group.islands-group2 {
+  top: 265px;
+  right: -549px;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+.islands-group.islands-group3 {
+  bottom: 196px;
+  left: -549px;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+.islands-group.islands-group4 {
+  right: -549px;
+  bottom: 196px;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+.islands-group svg {
+  position: absolute;
+  top: -108px;
+  left: 611px;
+  z-index: -1;
+  width: 640px;
+  height: 540px;
+}
+
+.islands-group .content {
+  position: relative;
+  display: inline-block;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  font-weight: 900;
+  font-size: 40px;
+  font-family: SimHei;
+  line-height: 90px;
+  z-index:99;
+  cursor: pointer;
+}
+.islands-group.islands-group1 .content,
+.islands-group.islands-group2 .content,
+.islands-group.islands-group3 .content,
+.islands-group.islands-group4 .content {
+  max-width: 1000px;
+}
+
+.islands-group0 svg{
+  z-index:98;
+}
+.islands-group .content{
+  z-index:99
+}
+.islands-group .content img {
+  position: absolute;
+  top: 90px;
+  left: -5%;
+  width: 110%;
+  height: 5px;
+  border-style: none;
+}
+.micro-list{
+  z-index:100;
+  position: absolute;
+  width:700px;
+  height:auto;
+  top:140px;
+  bottom: 100px;
+  right:-1500px;
+  background: url("../images/listBg.png") no-repeat;
+  background-size:100% 100%;
+  border-right:3px solid #02314b;
+  transition: all .7s linear;
+  opacity: 0;
+
+}
+.micro-list .exit{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../images/exit.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  z-index:99;
+  cursor: pointer;
+}
+.micro-list .micro-content{
+  margin: 12px auto 0;
+  position: absolute;
+  width: 511px;
+  height: auto;
+  top: 10px;
+  right: 19px;
+  bottom: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.micro-content .head-title{
+  font-size: 21px;
+  margin:0px 0 20px;
+  font-weight: bold;
+  width:510px;
+  text-align: center;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(115, 253, 254, 1)), to(rgba(255, 255, 255, 1)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.micro-content .micro-item{
+  background: url(../images/itemTitle.png) top center no-repeat rgba(0,52,73,0.7);
+  width: 100%;
+  /*height: 150px;*/
+  margin: 4px 0 24px;
+  background-size: 196% 17%;
+
+}
+.micro-content .micro-item .item-title{
+  /*padding-top: 2px;*/
+  font-size: 23px;
+  color: #fff;
+  /*font-weight: bold;*/
+  text-align: center;
+}
+.micro-content .micro-item .item-canvas{
+  margin-top: 20px;
+  width:510px;
+  height:180px;
+}
+.micro-item-content{
+  padding:20px;
+  font-size: 20px;
+  color: #fff;
+  background:rgba(0,52,73,0.7);
+  border-top:3px solid #64f9fe;
+}
+.micro-item-content .item{
+  margin:15px 0;
+}
+.micro-item-content .title span{
+  margin:0 5px;
+}
+.micro-item-content .title span:nth-child(1),
+.micro-item-content .title span:nth-child(3){
+  color: #00cd60;
+}
+.micro-item-content .title span:nth-child(3)>a{
+  color: #00cd60;
+  text-decoration: none;
+}
+.micro-item-content .content{
+  margin-top: 18px;
+  line-height: 2;
+}
+
+/*鎻愮ず妗�*/
+.toolTip{
+  border:1px solid #079bb7;
+  border-radius: 5px;
+  background: #030316;
+  padding:15px;
+  font-size: 24px;
+  max-width: 425px;
+  position: absolute;
+  top:20px;
+  left:100px;
+  z-index:100;
+  opacity: 0;
+
+}
+.toolTip p{
+  color: #fff;
+  margin: 10px 0;
+}
+.toolTip p:nth-child(1){
+  color: #fff000;
+}
+.toolTip p:nth-child(3){
+  color: #00f5fe;
+}
+
+.toggle-micro-list{
+  position: absolute;
+  top:44px;
+  left:30px;
+  z-index:999;
+  padding:5px 12px;
+  cursor: pointer;
+}
+
+.toggle-micro-list span{
+  /*border:3px solid #00f5fe;*/
+  cursor: pointer;
+  border-radius: 9px;
+  border:2px solid #52cee0;
+  color: #89e8f6;
+  background: #030316;
+  font-size: 20px;
+  padding:9px 22px;
+  display: inline-block;
+  margin-right: 15px;
+}
+.toggle-micro-list span.itemActive,
+.toggle-micro-list span:hover{
+  color: #fff;
+  background: #0099cd;
+}
+
+.micro-all-list{
+  width:593px;
+  overflow-y: scroll;
+  margin:23px 0px 0px 53px;
+  height:808px;
+  /* overflow: hidden; */
+}
+.head-title1{
+  font-family: 幼圆;
+  font-size: 24px;
+  color: #64f9fe;
+  margin:0px 0  20px;
+}
+.microlist-item-content{
+  background:#02314b;
+  border-top: 2px solid #64f9fe;
+  box-sizing: border-box;
+  padding-left:27px;
+}
+.item-list{
+  cursor:pointer;
+  height:58px;
+  width:540px;
+  border-bottom: 2px solid #024965;
+}
+.titleNum1{
+  width:20px;
+  height:21px;
+  background:url("../images/weiboList_dian_03.jpg");
+  float: left;
+  margin:21px 17px 0px 5px;
+}
+.title{
+  float: left;
+  color:#a2f2fe;
+  font-family: 微软雅黑;
+  font-size: 20px;
+  line-height: 58px;
+  width:470px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+
+
+
+
+
+
+/* .toggle-micro-list{
+  position: absolute;
+  top:140px;
+  left:30px;
+  border:3px solid #00f5fe;
+  border-radius: 9px;
+  color: #fff;
+  background: #030316;
+  font-size: 36px;
+  padding:5px 12px;
+  cursor: pointer;
+  z-index:999;
+}
+.toggle-micro-list:hover{
+  color: #fff;
+  background: #0099cd;
+} */

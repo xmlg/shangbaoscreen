@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0 auto;
+    /*background-color: #0E141D;*/
+    background-color: #0d141d;
+    /*background-color: #0C1D24;*/
+    font-family: simhei;
+    width: 5760px;
+    overflow: hidden;
+    height: 3240px;
+}
+
+.main {
+    width: 100%;
+    background-color: inherit;
+}
+
+.main>div {
+    width: 33.33333333333%;
+    float: left;
+    background-color: inherit;
+}
+
+.big-border{
+    width: 5748px;
+    height: 3228px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border: 12px solid #2bd3ff;
+    border-radius: 50px;
+}

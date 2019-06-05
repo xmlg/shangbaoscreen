@@ -1,0 +1,126 @@
+.flareVideo .controls .play,
+.flareVideo .controls .pause,
+.flareVideo .controls .fullScreen,
+.flareVideo .controls .volMin,
+.flareVideo .controls .volMax {
+    cursor: pointer;
+}
+
+
+/*.flareVideo .controls input[type="range"],
+.flareVideo .controls .ui-slider {
+  -khtml-appearance: none; 
+  border: 1px solid #1B1B1B;
+  border-top-color: #060606;
+  border-bottom-color: #202020;
+  background: #0E0E0E;
+  background: -moz-linear-gradient(top, #0E0E0E, #141414);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0E0E0E), to(#141414));
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  height: 10px;
+}*/
+
+.flareVideo .controls .seek .seekRange {
+    width: 100%;
+}
+
+.flareVideo .controls .fullScreen {
+    width: 16px;
+    height: 16px;
+    text-indent: -5000px;
+    background: url(../images/default/full-screen.png) no-repeat center center;
+}
+
+.flareVideo .controls .timeMin,
+.flareVideo .controls .timeMax {
+    font-family: Apex, "Helvetica Neue", "HelveticaNeue", helvetica, sans-serif;
+    font-size: 13px;
+    color: #C2C2C2;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #000;
+}
+
+.flareVideo .controls .pause,
+.flareVideo .controls .play {
+    width: 23px;
+    height: 23px;
+    text-indent: -5000px;
+    transform: translate(10%, 0%) scale(0.8, 0.8);
+}
+
+.flareVideo .controls .pause {
+    display: none;
+    background: url(../images/default/pause.png) no-repeat center center;
+}
+
+.flareVideo .controls .play {
+    display: block;
+    background: url(../images/default/play.png) no-repeat center center;
+}
+
+.flareVideo.playing .controls .play {
+    display: none;
+}
+
+.flareVideo.playing .controls .pause {
+    display: block;
+}
+
+.flareVideo.idle .controls {
+    opacity: 0;
+}
+
+.flareVideo .controls .fullScreen {
+    position: absolute;
+    right: 8px;
+    top: 13px;
+}
+
+.flareVideo .controls .play,
+.flareVideo .controls .pause {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.flareVideo .controls .seek {
+    position: absolute;
+    bottom: 8px;
+    left: 60px;
+    right: 60px;
+}
+
+.flareVideo .controls .timeMin {
+    position: absolute;
+    bottom: 10px;
+    left: 128px;
+}
+
+.flareVideo .controls .timeMax {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+.flareVideo .controls .volume {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+
+.flareVideo .controls .volume .volMin {
+    position: absolute;
+    left: 0;
+}
+
+.flareVideo .controls .volume .volMax {
+    position: absolute;
+    right: -12px;
+    top: -5px;
+}
+
+.flareVideo .controls .volume .volRange {
+    position: absolute;
+    left: 16px;
+}

@@ -1,0 +1,68 @@
+body ,div, p, span {
+    margin:0;
+    padding:0;
+}
+@font-face {
+        font-family: 'FangZhengLangTing';
+        src: url('../font/FZLT_GBK.TTF') format('truetype');
+}
+body{
+    background-color: #0e141d;
+    color: white;
+}
+.header{
+    width: 1846px;
+    margin:20px auto;
+    background: -webkit-linear-gradient(left, #228AA4, #1790A9, #0D7A91, #0E1720);
+    background: linear-gradient(to right, #228AA4, #1790A9, #0D7A91, #0E1720);
+}
+.content{
+    width: 100%;
+    overflow: auto;
+    height: 900px;
+    padding-top: 58px;
+}
+.header p{
+    font-family: 'FangZhengLangTing';
+    font-size: 44px;
+    font-weight: 900;
+    padding:16px 0 16px 50px;
+}
+.competing-box{
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+
+}
+.newstime{
+    width: 520px;
+    height: 150px;
+    border-right: 10px #18e1f3 solid;
+    color: #18e1f3;
+    font-size: 40px;
+    font-family: 'FangZhengLangTing';
+    padding-left: 30px;
+}
+.circle{
+    width: 40px;
+    height: 40px;
+    background: #18e1f3;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    top: -4px;
+    left: 565px;
+    position: absolute;
+}
+.newscontent{
+    position: absolute;
+    color: white;
+    width: 1150px;
+    font-size: 36px;
+    font-family: 'FangZhengLangTing';
+    left: 678px;
+    top: -8px;
+}
+.focus{
+    color: yellow!important;
+}

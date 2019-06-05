@@ -1,0 +1,33 @@
+<div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="text-l col-name" cellspacing="0">媒体</th>
+                <th class="text-l col-chnl" cellspacing="0">版面/栏目</th>
+                <th class="col-time" cellspacing="0">发稿时间</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="table_items" style="width:{{status.tableItemsWidth}}px">
+        <div class="table_item" ng-repeat="table in status.dataArrs">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="imp in table">
+                    <td class="col-name" ng-if="imp.MEDIANAME!=''"><div ng-bind="imp.MEDIANAME"></div></td>
+                        <td class="col-name" ng-if="imp.MEDIANAME==''">-</td>
+                        <td class="col-chnl" ng-if="imp.DOCCHANNEL!=''"><div ng-bind="imp.DOCCHANNEL"></div></td>
+                        <td class="col-chnl" ng-if="imp.DOCCHANNEL==''">-</td>
+                        <td class="col-time" ng-bind="imp.PUBTIME | date:'yyyy/MM/dd HH:mm:ss'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="dot" ng-show="data.length>5">
+        <a ng-repeat="$index in status.dataArrs" ng-click="jumpTo($index)" ng-class="{true:'active',false:''}[$index===selectedIndex]"></a>
+    </div>
+</div>

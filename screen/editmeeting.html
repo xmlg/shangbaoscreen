@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60*60">
+    <title>编前会</title>
+    <link rel="stylesheet" href="css/audiostyle.css">
+    <link rel="stylesheet" href="lib/jQuery-video5.8/css/video-js.min.css">
+    <link rel="stylesheet" href="css/editmeeting.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <span class="span-left">编前选题</span>
+        <span class="span-right"></span>
+        <p>晨 间</p>
+    </div>
+    <div class="content">
+        <div class="box reportlist">
+      <!--  <div class="reportlistheader-1"></div>-->
+        </div>
+        <div class="box middlebox">
+            <div class="center-wrap">
+            <div class="centerbox reportdetails">
+                <div class="reportheader">
+                    报题详情
+                    <img src="img/middle-title-left.png" class="headertitle-left">
+                    <img src="img/middle-title-right.png" class="headertitle-right">
+                </div>
+                <div class="details-box">
+                   <div class="details-content-title" id="details-title">
+                       <img src="img/yellowchoose.png" class="details-choose">
+                       <p></p>
+                   </div>
+                    <div class="details-content">
+
+                    </div>
+                    <div class="details-keyword">
+                        <span> 关键词：</span>
+                    </div>
+                    <img src="img/middle-md-up.png" class="blueborderup" style="top: -6.4px;">
+                    <img src="img/middle-bg-down.png" class="blueborderdown">
+                </div>
+            </div>
+            <div class="adddata centerbox">
+                <div class="reportheader" style="font-size: 16px;padding-top: 10px">
+                    补充资料
+                    <img src="img/middle-title-left.png" class="headertitle-left" style="left: 38px">
+                    <img src="img/middle-title-right.png" class="headertitle-right" style="right: 38px">
+                </div>
+                <div class="adddata-list">
+
+                </div>
+            </div>
+            </div>
+            <div class="centerbox topicback">
+                <div class="reportheader" style="margin-top: 10px">
+                    选题背景
+                    <img src="img/middle-title-left.png" class="headertitle-left">
+                    <img src="img/middle-title-right.png" class="headertitle-right">
+                </div>
+                <div class="topic-back">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="box rightbox">
+            <div class="taskdatalog rightcontent">
+                <div class="big-box" id="bigbox">
+
+                </div>
+                <div class="tasklogheader">
+                    <div class="reportheader">
+                        任务跟踪
+                        <img src="img/middle-title-left.png" class="headertitle-left">
+                        <img src="img/middle-title-right.png" class="headertitle-right">
+                    </div>
+                    <div class="tasklog">
+                        <div id="fs" class="tasklogpro" style="margin-left: 37px">任务已发送</div>
+                        <div id="dq" class="tasklogpro">任务已读取</div>
+                        <div id="js" class="tasklogpro">任务已接受</div>
+                        <div id="hc" class="tasklogpro">回传素材</div>
+                    </div>
+                    <div class="taskMaterials">
+                        <div class="taskmaterial-up"></div>
+                        <div class="taskmaterial-down"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="metalog-box rightcontent">
+                <div class="metedatalog">
+                    <div class="reportheader">
+                        稿件跟踪
+                        <img src="img/middle-title-left.png" class="headertitle-left">
+                        <img src="img/middle-title-right.png" class="headertitle-right">
+                    </div>
+                </div>
+                <div class="metalogpro">
+                    <img src="img/middle-md-up.png" class="blueborderup" style="top: -6.4px;">
+                    <img src="img/middle-bg-down.png" class="blueborderdown">
+                    <div class="metalog">
+                        <p class="metalog-p" style="margin-top: 12px">撰写中</p>
+                        <img src="img/metalog-start.png" class=" metalog-start">
+                    </div>
+                    <div class="metalog">
+                        <p class="metalog-p">共享前审批</p>
+                        <img src="img/metalog-notpro.png" class="metalog-img metalog-process">
+                    </div>
+                    <div class="metalog">
+                        <p class="metalog-p">已共享</p>
+                        <img src="img/metalog-notpro.png" class=" metalog-img metalog-process">
+                    </div>
+                    <div class="metalog">
+                        <p class="metalog-p">已取用</p>
+                        <img src="img/metalog-notpro.png" class="metalog-img metalog-process">
+                    </div>
+                    <div class="metalog">
+                        <p class="metalog-p">待审</p>
+                        <img src="img/metalog-notpro.png" class="metalog-img metalog-process">
+                    </div>
+                    <div class="metalog">
+                        <p class="metalog-p">已签</p>
+                        <img src="img/metalog-end.png" class="metalog-img metalog-process">
+                    </div>
+                </div>
+            </div>
+            <div class="rightcontent hotcurve">
+                <div class="reportheader" style="margin-top: 10px">
+                    热度曲线
+                    <img src="img/middle-title-left.png" class="headertitle-left">
+                    <img src="img/middle-title-right.png" class="headertitle-right">
+                </div>
+                <div class="hotarea">
+                    <svg>
+                        <g transform="translate(50,200)" style="stroke: #ffffff;stroke-width: 3px;">
+                            <g class="backgroundline"></g>
+                            <g class="axis-line">
+                               <!-- <line x1="0" y1="0" x2="0" y2="-215"></line>-->
+                                <line x1="0" y1="0" x2="525" y2="0"></line>
+                            </g>
+                            <g class="x-axis">
+                            </g>
+                            <g class="y-axis"></g>
+                            <g class="main"></g>
+                        </g>
+                        <defs>
+                            <filter id="filter3000" inkscape:label="Glow" inkscape:menu="Shadows and Glows" inkscape:menu-tooltip="Glow of object's own color at the edges" color-interpolation-filters="sRGB">
+                                <feGaussianBlur id="feGaussianBlur3002" stdDeviation="3" result="result91" />
+                                <feComposite id="feComposite3004" in2="result91" in="SourceGraphic" operator="over" />
+                            </filter>
+
+                        </defs>
+                    </svg>
+
+                    <div class="legend">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/d3.min.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/doT.js"></script>
+<script src="lib/jquery.nicescroll.min.js"></script>
+<script src="lib/jQuery-video5.8/js/video.min.js"></script>
+
+<script src="js/TimedTask.js"></script>
+<script src="js/editmeeting.js"></script>
+
+
+<script id="audiotmp" type="text/x-dot-template">
+    <div class="audio_area" id="audioplayer">
+        <div class="audio_wrp" id= "{{=it.MATERIALAPPFILE}}" preload="true">
+            <div class="audio_play_area play " id="pButton ">
+                <i class="icon_audio_default" id="default{{=it.MATERIALAPPFILE}}"></i>
+                <i class="icon_audio_playing " id="playing{{=it.MATERIALAPPFILE}}"></i>
+            </div>
+            <div class="audio_info_area ">
+                <strong class="audio_title ">{{=it.MATERIALDESC}}</strong>
+            </div>
+        </div>
+    </div>
+</script>
+
+</body>
+</html>
